@@ -1,5 +1,5 @@
-Date    : 2010-12-23T03:09:38+09:00
-Version : 0.9, svn revision 5070 from http://svn.macosforge.org/repository/ruby/MacRuby/trunk
+Date    : 2010-12-24T03:09:05+09:00
+Version : 0.9, svn revision 5078 from http://svn.macosforge.org/repository/ruby/MacRuby/trunk
 
 ----------------------------------------
 /macruby-test/test-mri/test/-ext-/test_bug-3662.rb:1:in `<main>': no such file to load -- -test-/bug-3662/bug (LoadError)
@@ -150,17 +150,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/cgi/test_cgi_session
 Started
-FFFmacruby(17216,0xXXXXXXXX) malloc: resurrection error for object 0xXXXXXXXX while assigning {conservative-block}[128](0xXXXXXXXX)[16] = FileStore[32](0xXXXXXXXX)
-garbage pointer stored into reachable memory, break on auto_zone_resurrection_error to debug
-macruby(17216,0xXXXXXXXX) malloc: resurrection error for object 0xXXXXXXXX while assigning {conservative-block}[32](0xXXXXXXXX)[0] = String[64](0xXXXXXXXX)
-garbage pointer stored into reachable memory, break on auto_zone_resurrection_error to debug
-macruby(17216,0xXXXXXXXX) malloc: resurrection error for object 0xXXXXXXXX while assigning {conservative-block}[32](0xXXXXXXXX)[8] = String[64](0xXXXXXXXX)
-garbage pointer stored into reachable memory, break on auto_zone_resurrection_error to debug
-macruby(17216,0xXXXXXXXX) malloc: resurrection error for object 0xXXXXXXXX while assigning {conservative-block}[32](0xXXXXXXXX)[0] = String[64](0xXXXXXXXX)
-garbage pointer stored into reachable memory, break on auto_zone_resurrection_error to debug
-macruby(17216,0xXXXXXXXX) malloc: resurrection error for object 0xXXXXXXXX while assigning {conservative-block}[32](0xXXXXXXXX)[0] = String[64](0xXXXXXXXX)
-garbage pointer stored into reachable memory, break on auto_zone_resurrection_error to debug
-F
+FFFF
 
   1) Failure:
 test_cgi_session_filestore(CGISessionTest) [/macruby-test/test-mri/test/cgi/test_cgi_session.rb:54]:
@@ -225,31 +215,31 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/csv/test_data_converters
 Started
-...........Emacruby(17274,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
+...........Emacruby(45761,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
 *** set a breakpoint in malloc_error_break to debug
 
 ----------------------------------------
 Loaded suite test/csv/test_encodings
 Started
-..macruby(17285,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
+..macruby(45772,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
 *** set a breakpoint in malloc_error_break to debug
 
 ----------------------------------------
 Loaded suite test/csv/test_features
 Started
-FF...macruby(17295,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
+FF...macruby(45782,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
 *** set a breakpoint in malloc_error_break to debug
 
 ----------------------------------------
 Loaded suite test/csv/test_headers
 Started
-macruby(17305,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
+macruby(45792,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
 *** set a breakpoint in malloc_error_break to debug
 
 ----------------------------------------
 Loaded suite test/csv/test_interface
 Started
-..macruby(17315,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
+..macruby(45802,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
 *** set a breakpoint in malloc_error_break to debug
 
 ----------------------------------------
@@ -378,27 +368,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/date/test_date_strftime
 Started
-E.E...E....
-
-  1) Error:
-test__different_format(TestDateStrftime):
-ArgumentError: wrong number of arguments (1 for 0)
-    /macruby-test/test-mri/test/date/test_date_strftime.rb:344:in `test__different_format'
-
-  2) Error:
-test_strftime__2(TestDateStrftime):
-ArgumentError: wrong number of arguments (1 for 0)
-    /macruby-test/test-mri/test/date/test_date_strftime.rb:110:in `test_strftime__2'
-
-  3) Error:
-test_strftime__gnuext(TestDateStrftime):
-ArgumentError: wrong number of arguments (1 for 0)
-    /macruby-test/test-mri/test/date/test_date_strftime.rb:255:in `test_strftime__gnuext'
-
-11 tests, 149360 assertions, 0 failures, 3 errors, 0 skips
-
-Test run options: --seed 0
-
+E.E..
 ----------------------------------------
 Loaded suite test/date/test_date_strptime
 Started
@@ -648,32 +618,27 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/erb/test_erb_m17n
 Started
-.EFFEE
+..FFEE
 
-  1) Error:
-test_generate_magic_comment(TestERB):
-ArgumentError: unknown encoding name - ISO-8859-9
-    /macruby-test/test-mri/test/erb/test_erb_m17n.rb:31:in `test_generate_magic_comment'
-
-  2) Failure:
+  1) Failure:
 test_literal_encoding(TestERB) [/macruby-test/test-mri/test/erb/test_erb_m17n.rb:40]:
 Expected /literal encoding is EUC-JP/ to match "literal encoding is UTF-8".
 
-  3) Failure:
+  2) Failure:
 test_method_with_encoding(TestERB) [/macruby-test/test-mri/test/erb/test_erb_m17n.rb:108]:
 Expected /literal encoding is EUC-JP/ to match "\nliteral encoding is UTF-8\n__ENCODING__ is EUC-JP\n".
 
-  4) Error:
+  3) Error:
 test_recognize_magic_comment(TestERB):
 ArgumentError: unknown encoding name - EUC-KR
     /macruby-test/test-mri/test/erb/test_erb_m17n.rb:58:in `test_recognize_magic_comment'
 
-  5) Error:
+  4) Error:
 test_result_encoding(TestERB):
 ArgumentError: unknown encoding name - EUC-CN
     /macruby-test/test-mri/test/erb/test_erb_m17n.rb:13:in `test_result_encoding'
 
-6 tests, 11 assertions, 2 failures, 3 errors, 0 skips
+6 tests, 12 assertions, 2 failures, 2 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -1347,8 +1312,21 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/net/http/test_https
 Started
-macruby(18366,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: pointer being freed was not allocated
-*** set a breakpoint in malloc_error_break to debug
+.F..F
+
+  1) Failure:
+test_get(TestNetHTTPS) [/macruby-test/test-mri/test/net/http/test_https.rb:41]:
+<nil> expected but was
+<"">.
+
+  2) Failure:
+test_verify_none(TestNetHTTPS) [/macruby-test/test-mri/test/net/http/test_https.rb:73]:
+<nil> expected but was
+<"">.
+
+5 tests, 7 assertions, 2 failures, 0 errors, 0 skips
+
+Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/net/http/test_https_proxy
@@ -1427,7 +1405,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/open-uri/test_open-uri
 Started
-................E......F..F........
+................E.........F........
 
   1) Error:
 test_mode(TestOpenURI):
@@ -1438,21 +1416,17 @@ NoMethodError: undefined method `set_encoding' for #<StringIO:0xXXXXXXXX ...>
     /macruby-test/test-mri/test/open-uri/test_open-uri.rb:126:in `test_mode'
 
   2) Failure:
-test_proxy(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.rb:205]:
-Expected /http:\/\/127\.0\.0\.1:58292/ to match "\x986\x00\x00\x00\x00\x00\x00\x00]\x18\x06\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x05\x00\x00\x00\x00\x00\x00\x00\x05\x00\x00".
-
-  3) Failure:
 test_read_timeout(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.rb:113]:
 Timeout::Error expected but nothing was raised.
 
-35 tests, 137 assertions, 2 failures, 1 errors, 0 skips
+35 tests, 148 assertions, 1 failures, 1 errors, 0 skips
 
 Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/open-uri/test_ssl
 Started
-macruby(18454,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
+macruby(46942,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
 *** set a breakpoint in malloc_error_break to debug
 
 ----------------------------------------
@@ -2078,7 +2052,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rake/test_fileutils
 Started
-.2010-12-23 03:22:41.004 macruby[19170:613] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
+.2010-12-24 03:22:02.057 macruby[47628:613] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
 F.....................
 
   1) Failure:
@@ -2210,11 +2184,8 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rake/test_rules
 Started
-...........................
-
-27 tests, 33 assertions, 0 failures, 0 errors, 0 skips
-
-Test run options: --seed 0
+..............macruby(47746,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
+*** set a breakpoint in malloc_error_break to debug
 
 ----------------------------------------
 Loaded suite test/rake/test_task_arguments
@@ -4162,7 +4133,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_parser_simple
 Started
-Unrecognized directive 'unhandled' in /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/TestRDocParserSimple20101223-19652-16tc0n7
+Unrecognized directive 'unhandled' in /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/TestRDocParserSimple20101224-48111-16tc0n7
 E..F
 
   1) Error:
@@ -4208,7 +4179,7 @@ NoMethodError: undefined method `read_file_contents' for #<RDoc::RDoc:0xXXXXXXXX
 
   6) Failure:
 test_setup_output_dir_exists_file(TestRDocRDoc) [/macruby-test/test-mri/test/rdoc/test_rdoc_rdoc.rb:149]:
-Expected /\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/test_rdoc_rdoc20101223\-19662\-1lot1rb exists and is not a directory/ to match "'/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_rdoc20101223-19662-1lot1rb' exists, and is not a directory".
+Expected /\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/test_rdoc_rdoc20101224\-48121\-1lot1rb exists and is not a directory/ to match "'/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_rdoc20101224-48121-1lot1rb' exists, and is not a directory".
 
   7) Error:
 test_setup_output_dir_exists(TestRDocRDoc):
@@ -4833,7 +4804,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/readline/test_readline
 Started
-.......2010-12-23 03:25:27.605 macruby[19742:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
+.......2010-12-24 03:24:29.737 macruby[48201:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
 '
 *** Call stack at first throw:
 (
@@ -4855,7 +4826,7 @@ terminate called after throwing an instance of 'NSException'
 ----------------------------------------
 Loaded suite test/readline/test_readline_history
 Started
-.............2010-12-23 03:25:29.791 macruby[19752:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
+.............2010-12-24 03:24:31.792 macruby[48211:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
 '
 *** Call stack at first throw:
 (
@@ -4904,14 +4875,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rinda/test_rinda
 Started
-.....EEEE..E..E..EEEE*** Thread 0xXXXXXXXX exited prematurely because of an uncaught exception:
-/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/monitor.rb:189:in `mon_exit': Attempt to unlock a mutex which is not locked (ThreadError)
-	from /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/monitor.rb:203:in `synchronize'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/rinda/tuplespace.rb:525:in `read:'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/rinda/rinda.rb:237:in `read:'
-	from /macruby-test/test-mri/test/rinda/test_rinda.rb:452:in `block'
-
-E.E.
+.....EEEE..E..E..EEEEE.E.
 
   1) Error:
 test_cancel_02(Rinda::TupleSpaceProxyTest):
@@ -5055,19 +5019,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ripper/test_filter
 Started
-macruby(19822,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19822,0xXXXXXXXX) malloc: *** auto malloc[19822]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19822,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19822,0xXXXXXXXX) malloc: *** auto malloc[19822]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-Emacruby(19822,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19822,0xXXXXXXXX) malloc: *** auto malloc[19822]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-Fmacruby(19822,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19822,0xXXXXXXXX) malloc: *** auto malloc[19822]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19822,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19822,0xXXXXXXXX) malloc: *** auto malloc[19822]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19822,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19822,0xXXXXXXXX) malloc: *** auto malloc[19822]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.
+.EF...
 
   1) Error:
 test_filter_filename(TestRipper::Filter):
@@ -5087,85 +5039,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ripper/test_parser_events
 Started
-macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-E.macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-Emacruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-Emacruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-Emacruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-Emacruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-Emacruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-Emacruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-Emacruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-Emacruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-Emacruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-Emacruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-E..macruby(19832,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:683:in `run:': failed to allocate memory (NoMemoryError)
+......E..EEEE..EEE.EEEE../Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:683:in `run:': failed to allocate memory (NoMemoryError)
 	from /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:641:in `block'
 	from /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:635:in `block'
 	from /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:634:in `run_test_suites:'
@@ -5175,499 +5049,7 @@ macruby(19832,0xXXXXXXXX) malloc: *** auto malloc[19832]: agc error for object 0
 ----------------------------------------
 Loaded suite test/ripper/test_scanner_events
 Started
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-..macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-..macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-Fmacruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-..macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-Fmacruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-Fmacruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-....macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-Fmacruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-macruby(19842,0xXXXXXXXX) malloc: *** free() called with 0xXXXXXXXX with refcount 0
-macruby(19842,0xXXXXXXXX) malloc: *** auto malloc[19842]: agc error for object 0xXXXXXXXX: Deallocating a non-block
-.
+..................F........FF...................F...
 
   1) Failure:
 test_heredoc_end(TestRipper::ScannerEvents) [/macruby-test/test-mri/test/ripper/test_scanner_events.rb:648]:
@@ -6331,7 +5713,7 @@ Expected /^(\xdf)\1$/i to match "\xDF\xDF".
 
   3) Error:
 test_iso_8859_11(TestISO8859):
-ArgumentError: unknown encoding name - iso8859-11
+ArgumentError: encoding `#<Encoding:ISO-8859-11>' not supported yet
     /macruby-test/test-mri/(eval):3:in `block'
     /macruby-test/test-mri/(eval):2:in `<main>'
     /macruby-test/test-mri/test/ruby/enc/test_iso_8859.rb:144:in `test_iso_8859_11'
@@ -6366,28 +5748,28 @@ Expected /^(\xdf)\1$/i to match "\xDF\xDF".
 
  11) Error:
 test_iso_8859_5(TestISO8859):
-ArgumentError: unknown encoding name - iso8859-5
+ArgumentError: encoding `#<Encoding:ISO-8859-5>' not supported yet
     /macruby-test/test-mri/(eval):3:in `block'
     /macruby-test/test-mri/(eval):2:in `<main>'
     /macruby-test/test-mri/test/ruby/enc/test_iso_8859.rb:78:in `test_iso_8859_5'
 
  12) Error:
 test_iso_8859_6(TestISO8859):
-ArgumentError: unknown encoding name - iso8859-6
+ArgumentError: encoding `#<Encoding:ISO-8859-6>' not supported yet
     /macruby-test/test-mri/(eval):3:in `block'
     /macruby-test/test-mri/(eval):2:in `<main>'
     /macruby-test/test-mri/test/ruby/enc/test_iso_8859.rb:87:in `test_iso_8859_6'
 
  13) Error:
 test_iso_8859_7(TestISO8859):
-ArgumentError: unknown encoding name - iso8859-7
+ArgumentError: encoding `#<Encoding:ISO-8859-7>' not supported yet
     /macruby-test/test-mri/(eval):3:in `block'
     /macruby-test/test-mri/(eval):2:in `<main>'
     /macruby-test/test-mri/test/ruby/enc/test_iso_8859.rb:104:in `test_iso_8859_7'
 
  14) Error:
 test_iso_8859_8(TestISO8859):
-ArgumentError: unknown encoding name - iso8859-8
+ArgumentError: encoding `#<Encoding:ISO-8859-8>' not supported yet
     /macruby-test/test-mri/(eval):3:in `block'
     /macruby-test/test-mri/(eval):2:in `<main>'
     /macruby-test/test-mri/test/ruby/enc/test_iso_8859.rb:113:in `test_iso_8859_8'
@@ -6610,7 +5992,7 @@ test_encoding(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:284]:
 
   4) Failure:
 test_file(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:638]:
-<"\"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/argf-foo20101223-20426-1vzjxdx\""> expected but was
+<"\"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/argf-foo20101224-48881-1vzjxdx\""> expected but was
 <"-e:2:in `<main>': undefined method `dump' for nil:NilClass (NoMethodError)">.
 
   5) Error:
@@ -6709,7 +6091,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_array
 Started
-...................S.........FE..............................EF......FF......2010-12-23 03:27:41.805 macruby[20479:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
+...................S.........FE..............................EF......FF......2010-12-24 03:26:42.345 macruby[48937:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
 '
 *** Call stack at first throw:
 (
@@ -6832,7 +6214,7 @@ Test run options: --seed 0
 Loaded suite test/ruby/test_beginendblock
 Started
 can't find slot for variable local_for_end2
-FF.2010-12-23 03:27:58.145 macruby[20530:903] *** Terminating app due to uncaught exception 'RuntimeError', reason: '-e:5:in `block': e5 (RuntimeError)
+FF.2010-12-24 03:26:58.692 macruby[48989:903] *** Terminating app due to uncaught exception 'RuntimeError', reason: '-e:5:in `block': e5 (RuntimeError)
 '
 *** Call stack at first throw:
 (
@@ -7140,7 +6522,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_dir
 Started
-S...E.FF..2010-12-23 03:28:34.328 macruby[20674:3103] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
+S...E.FF..2010-12-24 03:27:34.766 macruby[49133:3103] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
 '
 *** Call stack at first throw:
 (
@@ -7207,7 +6589,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_econv
 Started
-EEEEEEEEEEE.EEEEEEEEEEEEEEE..SEEEEEEFmacruby(20694,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
+EEEEEEEEEEE.EEEEEEEEEEEEEEE..SEEEEEEmacruby(49153,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
 *** set a breakpoint in malloc_error_break to debug
 
 ----------------------------------------
@@ -7239,7 +6621,7 @@ NoMethodError: undefined method `replicate' for #<Encoding:UTF-8>
 test_singleton(TestEncoding) [/macruby-test/test-mri/test/ruby/test_encoding.rb:33]:
 TypeError expected but nothing was raised.
 
-10 tests, 161 assertions, 2 failures, 3 errors, 0 skips
+10 tests, 329 assertions, 2 failures, 3 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -7410,7 +6792,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_env
 Started
-2010-12-23 03:28:46.584 macruby[20734:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
+2010-12-24 03:27:46.986 macruby[49193:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
 '
 *** Call stack at first throw:
 (
@@ -7432,7 +6814,7 @@ terminate called after throwing an instance of 'NSException'
 ----------------------------------------
 Loaded suite test/ruby/test_eval
 Started
-E...FEEE..2010-12-23 03:28:49.128 macruby[20745:2c07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
+E...FEEE..2010-12-24 03:27:49.531 macruby[49204:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
 '
 *** Call stack at first throw:
 (
@@ -7523,7 +6905,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_file_exhaustive
 Started
-..F......F...FF.2010-12-23 03:29:02.897 macruby[20786:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
+..F......F...FF.2010-12-24 03:28:03.283 macruby[49245:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
 '
 *** Call stack at first throw:
 (
@@ -7602,7 +6984,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_hash
 Started
-....E..F......S.SSS...............E..........F.......2010-12-23 03:29:13.694 macruby[20836:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
+....E..F......S.SSS...............E..........F.......2010-12-24 03:28:14.039 macruby[49295:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
 '
 *** Call stack at first throw:
 (
@@ -7695,7 +7077,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_io
 Started
-..SS....2010-12-23 03:30:46.154 macruby[20881:2c07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
+..SS....2010-12-24 03:29:44.793 macruby[49335:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
 '
 *** Call stack at first throw:
 (
@@ -7717,7 +7099,9 @@ terminate called after throwing an instance of 'NSException'
 ----------------------------------------
 Loaded suite test/ruby/test_io_m17n
 Started
-EFFFFFFFFFF.FFSF.EFFFEEF.FFFFFFFEEEEFFFFEEFEEFFFFFFFEEEEEFFFFFFFEFF
+EFFFFFFFFFF.FFSF.EFFFEEF.FFFFFFFEEEEFFFFEEFEEFFFFFFFEEEEEFFFFFFFEFFmacruby(49349,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
+*** set a breakpoint in malloc_error_break to debug
+
 ----------------------------------------
 Loaded suite test/ruby/test_iterator
 Started
@@ -7793,7 +7177,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_m17n
 Started
-F..EFEF..EFF..EEEE..F.FE.E...EE.FFFF.FF.F...F.EEEF.EEFF.FEFFFEE..E..FFFF.FEEFFEE.FFEEFF...FES.EEEEEE..E..
+F..EFEF..EFF..EEEE..F.FE.E...EE.FFFF.FF.F...F.EEEF.EEFF.FEFFFEE..E..FFFF.FEEFFEE.FFEEFFF..FES.EEEEEE..F..
 
   1) Failure:
 test_array_to_s(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1194]:
@@ -8125,76 +7509,80 @@ test_sub(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:978]:
 <#<Encoding:UTF-8>>.
 
  60) Failure:
+test_sub2(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:988]:
+Failed assertion, no message given.
+
+ 61) Failure:
 test_symbol_op(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1136]:
 [ruby-dev:33449].
 <#<Encoding:US-ASCII>> expected but was
 <#<Encoding:UTF-8>>.
 
- 61) Error:
+ 62) Error:
 test_tr(TestM17N):
 ArgumentError: unknown encoding name - Windows-31J
     /macruby-test/test-mri/test/ruby/test_m17n.rb:13:in `s:'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:917:in `test_tr'
 
- 62) Skipped:
+ 63) Skipped:
 test_tr_s(TestM17N) [/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:472]:
 [BUG : #827] Assertion
 
- 63) Error:
+ 64) Error:
 test_union_0(TestM17N):
 NoMethodError: undefined method `encoding' for /(?!)/:Regexp
     /macruby-test/test-mri/test/ruby/test_m17n.rb:58:in `assert_regexp_generic_ascii:'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:597:in `test_union_0'
 
- 64) Error:
+ 65) Error:
 test_union_1_asciionly_string(TestM17N):
 NoMethodError: undefined method `encoding' for //:Regexp
     /macruby-test/test-mri/test/ruby/test_m17n.rb:58:in `assert_regexp_generic_ascii:'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:605:in `test_union_1_asciionly_string'
 
- 65) Error:
+ 66) Error:
 test_union_1_nonascii_string(TestM17N):
 NoMethodError: undefined method `encoding' for /ￂ:Regexp
     /macruby-test/test-mri/test/ruby/test_m17n.rb:63:in `assert_regexp_fixed_ascii8bit:'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:620:in `test_union_1_nonascii_string'
 
- 66) Error:
+ 67) Error:
 test_union_1_regexp(TestM17N):
 NoMethodError: undefined method `encoding' for //:Regexp
     /macruby-test/test-mri/test/ruby/test_m17n.rb:58:in `assert_regexp_generic_ascii:'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:627:in `test_union_1_regexp'
 
- 67) Error:
+ 68) Error:
 test_union_2(TestM17N):
 ArgumentError: unknown encoding name - Windows-31J
     /macruby-test/test-mri/test/ruby/test_m17n.rb:13:in `s:'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:638:in `test_union_2'
 
- 68) Error:
+ 69) Error:
 test_upto(TestM17N):
 ArgumentError: unknown encoding name - Windows-31J
     /macruby-test/test-mri/test/ruby/test_m17n.rb:13:in `s:'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:1023:in `test_upto'
 
- 69) Error:
-test_valid_encoding(TestM17N):
-Encoding::CompatibilityError: incompatible character encodings: UTF-8 and EUC-JP
-    /macruby-test/test-mri/test/ruby/test_m17n.rb:1293:in `test_valid_encoding'
+ 70) Failure:
+test_valid_encoding(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1297]:
+<true> expected but was
+<false>.
 
-105 tests, 510 assertions, 34 failures, 34 errors, 1 skips
+105 tests, 513 assertions, 36 failures, 33 errors, 1 skips
 
 Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/ruby/test_m17n_comb
 Started
-FFEEEEFFFFF.....SEFSEF...FFFF..FF.F......FFSF.F..F...SFSFF.FFF.FFFAssertion failed: (enc != rb_encodings[ENCODING_BINARY]), function rb_enc_str_new, file string.c, line 5931.
+FFEEEEFFFFF.....SEFSEF...FFFF..FF.F......FFSF.F..F...SFSFF.FFF.FFFAssertion failed: (enc != rb_encodings[ENCODING_BINARY]), function rb_enc_str_new, file string.c, line 6012.
 
 ----------------------------------------
 unknown: warning: already initialized constant Résumé
 Loaded suite test/ruby/test_marshal
 Started
-..FF....EF.FF.......E......F.FFF...2010-12-23 03:31:34.958 macruby[20960:613] *** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '*** -length only defined for abstract class.  Define -[RBAnonymous27 length]!'
+..FF....EF.FF.......E......F.FFF...2010-12-24 03:30:32.938 macruby[49419:613] *** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '*** -length only defined for abstract class.  Define -[RBAnonymous27 length]!'
 *** Call stack at first throw:
 (
 	0   CoreFoundation                      0xXXXXXXXX __exceptionPreprocess + 180
@@ -8414,8 +7802,8 @@ TypeError expected but nothing was raised.
   2) Failure:
 test_quo(TestNumeric) [/macruby-test/test-mri/test/ruby/test_numeric.rb:55]:
 [ArgumentError] exception expected, not
-Class: <NoMethodError>
-Message: <"undefined method `<' for #<TestNumeric::DummyNumeric:0xXXXXXXXX>">
+Class: <TypeError>
+Message: <"TestNumeric::DummyNumeric can't be coerced into Fixnum">
 ---Backtrace---
 /macruby-test/test-mri/test/ruby/test_numeric.rb:55:in `block'
 ---------------
@@ -8511,6 +7899,9 @@ test_finalizer(TestObjectSpace) [/macruby-test/test-mri/test/ruby/test_objectspa
 <[":ok", ":ok"]>.
 
 21 tests, 27 assertions, 2 failures, 0 errors, 0 skips
+
+Test run options: --seed 0
+
 ----------------------------------------
 Loaded suite test/ruby/test_optimization
 Started
@@ -8538,7 +7929,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_pack
 Started
-.....2010-12-23 03:32:17.758 macruby[21077:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
+.....2010-12-24 03:31:15.321 macruby[49535:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
 '
 *** Call stack at first throw:
 (
@@ -8810,7 +8201,7 @@ test_random_bytes(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:345]:
 
  19) Failure:
 test_random_range(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:362]:
-<2010-12-23 03:35:32 +0900> expected but was
+<2010-12-24 03:34:29 +0900> expected but was
 <1.97626258336499e-323>.
 
  20) Failure:
@@ -9017,7 +8408,7 @@ Timeout::Error: Timeout::Error
 test_relative_symlink(TestRequire) [/macruby-test/test-mri/test/ruby/test_require.rb:296]:
 [ruby-dev:40040].
 <"a/lib.rb\n"> expected but was
-<"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20101223-21218-1nyvruo/b/tst.rb:1:in `<main>': undefined method `require_relative' for main:TopLevel (NoMethodError)\n">.
+<"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20101224-49673-1nyvruo/b/tst.rb:1:in `<main>': undefined method `require_relative' for main:TopLevel (NoMethodError)\n">.
 
   8) Error:
 test_require_invalid_shared_object(TestRequire):
@@ -9052,7 +8443,152 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_rubyoptions
 Started
-.FFFF.FFEF.FF
+.FFFF.FFEF.FFEFF..EF..F.EFE..FF..
+
+  1) Failure:
+test_assignment_in_conditional(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:301]:
+[ruby-dev:39363].
+Expected /\A(\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/test_ruby_test_rubyoption20101224\-49695\-163yxpr\.rb):1(: warning: found = in conditional, should be ==)\n\1:4\2\Z/ to match "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20101224-49695-163yxpr.rb:1: warning: found = in conditional, should be ==\n".
+
+  2) Failure:
+test_autosplit(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:146]:
+<["[\"foo\", \"bar\", \"baz\\n\"]", "[\"qux\", \"quux\", \"quuux\\n\"]"]> expected but was
+<[]>.
+
+  3) Failure:
+test_chdir(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:150]:
+<[]> expected but was
+<["Can't chdir (fatal)"]>.
+
+  4) Failure:
+test_copyright(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:79]:
+Expected /^ruby - Copyright \(C\) 1993-\d+ Yukihiro Matsumoto$/ to match "MacRuby - Copyright (C) 2007-2008 Apple Inc.\n".
+
+  5) Failure:
+test_disable(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:99]:
+<[]> expected but was
+<["missing argument for --disable (RuntimeError)"]>.
+
+  6) Failure:
+test_enable(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:90]:
+<[]> expected but was
+<["missing argument for --enable (RuntimeError)"]>.
+
+  7) Error:
+test_encoding(TestRubyOptions):
+Timeout::Error: Timeout::Error
+    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
+    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
+    /macruby-test/test-mri/test/ruby/test_rubyoptions.rb:174:in `test_encoding'
+
+  8) Failure:
+test_eval(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:120]:
+<[]> expected but was
+<["no code specified for -e (RuntimeError)"]>.
+
+  9) Failure:
+test_indentation_check(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:313]:
+<["/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20101224-49695-1estiet.rb:2: warning: mismatched indentations at 'end' with 'begin' at 1"]> expected but was
+<[]>.
+
+ 10) Failure:
+test_invalid_option(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:189]:
+<[]> expected but was
+<["invalid option --foobarbazqux  (-h will show valid options) (RuntimeError)"]>.
+
+ 11) Error:
+test_kanji(TestRubyOptions):
+Timeout::Error: Timeout::Error
+    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
+    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
+    /macruby-test/test-mri/test/ruby/test_rubyoptions.rb:103:in `test_kanji'
+
+ 12) Failure:
+test_notfound(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:325]:
+[ruby-core:23717].
+<[]> expected but was
+<["no such file to load -- ./notexist.rb (LoadError)"]>.
+
+ 13) Failure:
+test_option_variables(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:31]:
+<["[true, true, true]",
+ "foo",
+ "[true, true, true]",
+ "bar",
+ "[true, true, true]",
+ "baz"]> expected but was
+<[]>.
+
+ 14) Error:
+test_rubyopt(TestRubyOptions):
+Timeout::Error: Timeout::Error
+    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
+    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
+    /macruby-test/test-mri/test/ruby/test_rubyoptions.rb:204:in `test_rubyopt'
+
+ 15) Failure:
+test_safe_level(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:53]:
+<[]> expected but was
+<["no -e allowed in tainted mode (SecurityError)"]>.
+
+ 16) Failure:
+test_segv_test(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:402]:
+Expected /\A
+      -e:(?:1:)?\s\[BUG\]\sSegmentation\sfault\n
+      MacRuby\ 0\.9\ \(ruby\ 1\.9\.2\)\ \[universal\-darwin10\.0,\ x86_64\]\n\n
+      --\scontrol\sframe\s----------\n
+      (?:c:.*\n)*
+      ---------------------------\n
+      (?:
+      --\sRuby\slevel\sbacktrace\sinformation\s----------------------------------------\n
+      -e:1:in\s`<main>'\n
+      -e:1:in\s`kill'\n
+      )?
+      \n
+      (?:
+        --\sC\slevel\sbacktrace\sinformation\s-------------------------------------------\n
+        (?:(?:.*\s)?\[0x\h+\]\n)*\n
+      )?
+      \[NOTE\]\n
+      You\smay\shave\sencountered\sa\sbug\sin\sthe\sRuby\sinterpreter\sor\sextension\slibraries.\n
+      Bug\sreports\sare\swelcome.\n
+      For\sdetails:\shttp:\\/\\/www.ruby-lang.org\/bugreport.html\n
+      \n
+      (?:)
+      \z
+      /x to match "".
+
+ 17) Error:
+test_sflag(TestRubyOptions):
+Timeout::Error: Timeout::Error
+    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
+    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
+    /macruby-test/test-mri/test/ruby/test_rubyoptions.rb:279:in `test_sflag'
+
+ 18) Failure:
+test_shebang(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:265]:
+<[]> expected but was
+<["Can't exec /test_r_u_b_y_test_r_u_b_y_options_foobarbazqux (fatal)"]>.
+
+ 19) Error:
+test_source_file(TestRubyOptions):
+Timeout::Error: Timeout::Error
+    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
+    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
+    /macruby-test/test-mri/test/ruby/test_rubyoptions.rb:9:in `test_source_file'
+
+ 20) Failure:
+test_verbose(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:66]:
+Expected /^ruby 1.9.2(?:[p ]|dev).*? \[universal-darwin10.0\]$/ to match "MacRuby 0.9 (ruby 1.9.2) [universal-darwin10.0, x86_64]".
+
+ 21) Failure:
+test_version(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:112]:
+Expected /^ruby 1.9.2(?:[p ]|dev).*? \[universal-darwin10.0\]$/ to match "MacRuby 0.9 (ruby 1.9.2) [universal-darwin10.0, x86_64]".
+
+33 tests, 86 assertions, 16 failures, 5 errors, 0 skips
+
+Test run options: --seed 0
+
 ----------------------------------------
 Loaded suite test/ruby/test_settracefunc
 Started
@@ -9368,7 +8904,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_struct
 Started
-..............2010-12-23 03:37:10.098 macruby[21350:2d17] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
+..............2010-12-24 03:36:26.723 macruby[49839:2d17] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
 '
 *** Call stack at first throw:
 (
@@ -9412,19 +8948,20 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_symbol
 Started
-F..........F..
+E..........F..
 
-  1) Failure:
-test_ascii_incomat_inspect(TestSymbol) [/macruby-test/test-mri/test/ruby/test_symbol.rb:144]:
-<":\"\\u3042\\u3044\\u3046\""> expected but was
-<":\"\\x42\\x30\\x44\\x30\\x46\\x30\"">.
+  1) Error:
+test_ascii_incomat_inspect(TestSymbol):
+Encoding::CompatibilityError: incompatible character encodings: UTF-8 and UTF-16LE
+    /macruby-test/test-mri/test/ruby/test_symbol.rb:143:in `block'
+    /macruby-test/test-mri/test/ruby/test_symbol.rb:142:in `test_ascii_incomat_inspect'
 
   2) Failure:
 test_succ(TestSymbol) [/macruby-test/test-mri/test/ruby/test_symbol.rb:102]:
 <:fop> expected but was
 <"fop">.
 
-14 tests, 115 assertions, 2 failures, 0 errors, 0 skips
+14 tests, 113 assertions, 1 failures, 1 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -9445,55 +8982,55 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_thread
 Started
-EEE.objc[21398]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+EEE.objc[49887]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-Eobjc[21398]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+Eobjc[49887]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-EEEEFE..objc[21398]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+EEEEFE...objc[49887]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[21398]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[49887]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-.objc[21398]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+Eobjc[49887]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-EEEEEFEEEEESEobjc[21398]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[49887]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[21398]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+EEEEFEEEEESEobjc[49887]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[21398]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[49887]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[21398]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[49887]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[21398]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[49887]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[21398]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[49887]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[21398]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[49887]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[21398]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[49887]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[21398]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[49887]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[21398]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[49887]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[21398]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[49887]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[21398]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[49887]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
 EFS..
@@ -9554,7 +9091,7 @@ Timeout::Error: Timeout::Error
 test_local_barrier(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:114]:
 [ruby-dev:30653].
 <"exit."> expected but was
-<"4: cont">.
+<"3: cont">.
 
  10) Error:
 test_main(TestThread):
@@ -9660,7 +9197,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_time
 Started
-.FF....F.....EEE.EE.E.F.E2010-12-23 03:37:49.160 macruby[21414:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
+.FF....F.....EEE.EE.E.F.E2010-12-24 03:37:05.813 macruby[49903:1807] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
 '
 *** Call stack at first throw:
 (
@@ -9704,7 +9241,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_transcode
 Started
-FEEEEEEEEEEEEEEEEFFE.EEEFFE.EFEEEEEmacruby(21445,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
+FEEEEEEEEEEEEEEEEFF..EEEFFE.EFEEEEEmacruby(49934,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
 *** set a breakpoint in malloc_error_break to debug
 
 ----------------------------------------
@@ -9844,19 +9381,19 @@ Started
 
   1) Failure:
 test_self_user_dir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:589]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21516/userhome/.gem/macruby/1.9.2", not "/Users/watson/.gem/macruby/1.9.2".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50005/userhome/.gem/macruby/1.9.2", not "/Users/watson/.gem/macruby/1.9.2".
 
   2) Failure:
 test_self_datadir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:147]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21516/gemhome/gems/foo-2/data/foo", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21516/gemhome/gems/foo-2/data/foo".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50005/gemhome/gems/foo-2/data/foo", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50005/gemhome/gems/foo-2/data/foo".
 
   3) Failure:
 test_self_required_location(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:464]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21516/gemhome/gems/c-1.2/lib/code.rb", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21516/gemhome/gems/c-1.2/lib/code.rb".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50005/gemhome/gems/c-1.2/lib/code.rb", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50005/gemhome/gems/c-1.2/lib/code.rb".
 
   4) Failure:
 test_self_user_home(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:594]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21516/userhome", not "/Users/watson".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50005/userhome", not "/Users/watson".
 
   5) Error:
 test_load_plugins(TestGem):
@@ -9965,13 +9502,9 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_commands_dependency_command
 Started
-.......F.
+.........
 
-  1) Failure:
-test_execute_remote(TestGemCommandsDependencyCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_dependency_command.rb:191]:
-Expected "Gem foo-2\n  bar (> 1, runtime)\n\n", not "Gem foo-2\n\n".
-
-9 tests, 19 assertions, 1 failures, 0 errors, 0 skips
+9 tests, 20 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -9982,7 +9515,7 @@ Started
 
   1) Failure:
 test_execute(TestGemCommandsEnvironmentCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_environment_command.rb:36]:
-Expected /"gemcutter_key" => "\*\*\*\*"/ to match "RubyGems Environment:\n  - RUBYGEMS VERSION: 1.3.6\n  - RUBY VERSION: 1.9.2 (2008-06-03 patchlevel 0) [universal-darwin10.0]\n  - INSTALLATION DIRECTORY: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21619/gemhome\n  - RUBYGEMS PREFIX: /macruby-test/test-mri\n  - RUBY EXECUTABLE: /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/bin/macruby\n  - EXECUTABLE DIRECTORY: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21619/gemhome/bin\n  - RUBYGEMS PLATFORMS:\n    - ruby\n    - x86-darwin-8\n  - GEM PATHS:\n     - /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21619/gemhome\n  - GEM CONFIGURATION:\n     - :update_sources => true\n     - :verbose => true\n     - :benchmark => false\n     - :backtrace => false\n     - :bulk_threshold => 1000\n     - :sources => [\"http://gems.example.com\"]\n     - \"http_proxy\" => \"http://proxy.example.com\"\n     - \"gemcutter_key\" => \"blah\"\n  - REMOTE SOURCES:\n     - http://gems.example.com\n".
+Expected /"gemcutter_key" => "\*\*\*\*"/ to match "RubyGems Environment:\n  - RUBYGEMS VERSION: 1.3.6\n  - RUBY VERSION: 1.9.2 (2008-06-03 patchlevel 0) [universal-darwin10.0]\n  - INSTALLATION DIRECTORY: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50105/gemhome\n  - RUBYGEMS PREFIX: /macruby-test/test-mri\n  - RUBY EXECUTABLE: /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/bin/macruby\n  - EXECUTABLE DIRECTORY: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50105/gemhome/bin\n  - RUBYGEMS PLATFORMS:\n    - ruby\n    - x86-darwin-8\n  - GEM PATHS:\n     - /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50105/gemhome\n  - GEM CONFIGURATION:\n     - :update_sources => true\n     - :verbose => true\n     - :benchmark => false\n     - :backtrace => false\n     - :bulk_threshold => 1000\n     - \"gemcutter_key\" => \"blah\"\n  - REMOTE SOURCES:\n     - http://gems.example.com\n".
 
 8 tests, 39 assertions, 1 failures, 0 errors, 0 skips
 
@@ -10013,7 +9546,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_commands_install_command
 Started
-macruby(21649,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
+macruby(50138,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
 *** set a breakpoint in malloc_error_break to debug
 
 ----------------------------------------
@@ -10077,7 +9610,7 @@ Started
 
   1) Failure:
 test_sending_gem(TestGemCommandsPushCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_push_command.rb:33]:
-Expected 3072, not 3057.
+Expected 3072, not 3054.
 
 3 tests, 9 assertions, 1 failures, 0 errors, 0 skips
 
@@ -10094,7 +9627,7 @@ Expected "\n*** REMOTE GEMS ***\n\na (3.a, 2, 1)\npl (1 i386-linux)\n", not "***
 
   2) Failure:
 test_execute_local_details(TestGemCommandsQueryCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_query_command.rb:323]:
-Expected "\n*** LOCAL GEMS ***\n\na (3.a, 2, 1)\n    Author: A User\n    Homepage: http://example.com\n    Installed at (3.a): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21730/gemhome\n                 (2): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21730/gemhome\n                 (1): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21730/gemhome\n\n    this is a summary\n\na_evil (9)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21730/gemhome\n\n    this is a summary\n\nb (2)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21730/gemhome\n\n    this is a summary\n\nc (1.2)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21730/gemhome\n\n    this is a summary\n\npl (1)\n    Platform: i386-linux\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21730/gemhome\n\n    this is a summary\n", not "*** LOCAL GEMS ***\na (3.a, 2, 1)\n    Author: A User\n    Homepage: http://example.com\n    Installed at (3.a): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21730/gemhome\n                 (2): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21730/gemhome\n                 (1): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21730/gemhome\n\n    this is a summary\n\na_evil (9)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21730/gemhome\n\n    this is a summary\n\nb (2)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21730/gemhome\n\n    this is a summary\n\nc (1.2)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21730/gemhome\n\n    this is a summary\n\npl (1)\n    Platform: i386-linux\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21730/gemhome\n\n    this is a summary\n".
+Expected "\n*** LOCAL GEMS ***\n\na (3.a, 2, 1)\n    Author: A User\n    Homepage: http://example.com\n    Installed at (3.a): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50219/gemhome\n                 (2): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50219/gemhome\n                 (1): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50219/gemhome\n\n    this is a summary\n\na_evil (9)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50219/gemhome\n\n    this is a summary\n\nb (2)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50219/gemhome\n\n    this is a summary\n\nc (1.2)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50219/gemhome\n\n    this is a summary\n\npl (1)\n    Platform: i386-linux\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50219/gemhome\n\n    this is a summary\n", not "*** LOCAL GEMS ***\na (3.a, 2, 1)\n    Author: A User\n    Homepage: http://example.com\n    Installed at (3.a): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50219/gemhome\n                 (2): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50219/gemhome\n                 (1): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50219/gemhome\n\n    this is a summary\n\na_evil (9)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50219/gemhome\n\n    this is a summary\n\nb (2)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50219/gemhome\n\n    this is a summary\n\nc (1.2)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50219/gemhome\n\n    this is a summary\n\npl (1)\n    Platform: i386-linux\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50219/gemhome\n\n    this is a summary\n".
 
   3) Failure:
 test_execute_details(TestGemCommandsQueryCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_query_command.rb:144]:
@@ -10147,7 +9680,7 @@ F.F
 
   1) Failure:
 test_handle_options(TestGemCommandsServerCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_server_command.rb:16]:
-Expected [], not "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21740/gemhome".
+Expected [], not "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50229/gemhome".
 
   2) Failure:
 test_handle_options_gemdir(TestGemCommandsServerCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_server_command.rb:30]:
@@ -10191,15 +9724,9 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_commands_uninstall_command
 Started
-.E.
+...
 
-  1) Error:
-test_execute_removes_executable(TestGemCommandsUninstallCommand):
-NoMethodError: undefined method `>=' for nil:NilClass
-    /macruby-test/test-mri/test/rubygems/test_gem_commands_uninstall_command.rb:37:in `block'
-    /macruby-test/test-mri/test/rubygems/test_gem_commands_uninstall_command.rb:36:in `test_execute_removes_executable'
-
-3 tests, 8 assertions, 0 failures, 1 errors, 0 skips
+3 tests, 14 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -10214,7 +9741,7 @@ a should be unpacked
 
   2) Error:
 test_execute_sudo(TestGemCommandsUnpackCommand):
-Gem::FilePermissionError: You don't have write permissions into the /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21806/gemhome directory.
+Gem::FilePermissionError: You don't have write permissions into the /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50295/gemhome directory.
     /macruby-test/test-mri/test/rubygems/test_gem_commands_unpack_command.rb:106:in `block'
     /macruby-test/test-mri/test/rubygems/test_gem_commands_unpack_command.rb:105:in `block'
     /macruby-test/test-mri/test/rubygems/test_gem_commands_unpack_command.rb:104:in `test_execute_sudo'
@@ -10226,7 +9753,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_commands_update_command
 Started
-macruby(21816,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
+macruby(50305,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
 *** set a breakpoint in malloc_error_break to debug
 
 ----------------------------------------
@@ -10278,7 +9805,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_dependency_installer
 Started
-macruby(21857,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
+macruby(50346,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
 *** set a breakpoint in malloc_error_break to debug
 
 ----------------------------------------
@@ -10311,7 +9838,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_ext_ext_conf_builder
 Started
-.../bin/sh: line 1: 21937 Abort trap              /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/bin/macruby extconf.rb 2>&1
+.../bin/sh: line 1: 50422 Abort trap              /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/bin/macruby extconf.rb 2>&1
 .
 
 4 tests, 15 assertions, 0 failures, 0 errors, 0 skips
@@ -10343,7 +9870,7 @@ F.......
 
   1) Failure:
 test_lib_dirs_for(TestGemGemPathSearcher) [/macruby-test/test-mri/test/rubygems/test_gem_gem_path_searcher.rb:53]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21993/gemhome/gems/foo-0.1/{lib,lib2}", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_21993/gemhome/gems/foo-0.1/{lib,lib2}".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50478/gemhome/gems/foo-0.1/{lib,lib2}", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50478/gemhome/gems/foo-0.1/{lib,lib2}".
 
 8 tests, 11 assertions, 1 failures, 0 errors, 0 skips
 
@@ -10366,7 +9893,7 @@ EEEEE
   1) Error:
 test_sign_in_skips_with_existing_credentials(TestGemGemcutterUtilities):
 NameError: uninitialized constant Gem::Command
-    /macruby-test/test-mri/test/rubygems/test_gem_gemcutter_utilities.rb:11:in `setup'
+    /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:492:in `block'
 
   2) Error:
 test_sign_in_with_bad_credentials(TestGemGemcutterUtilities):
@@ -10417,11 +9944,11 @@ Started
 
   1) Failure:
 test_initialize(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:518]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_22044/gemhome/gems/a-2-x86-mswin32", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_22044/gemhome/gems/a-2-x86-mswin32".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50531/gemhome/gems/a-2-x86-mswin32", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50531/gemhome/gems/a-2-x86-mswin32".
 
   2) Failure:
 test_extract_files_relative(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:145]:
-Expected "attempt to install file into \"../thefile\" under \"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_22044/gemhome/gems/a-2\"", not "attempt to install file into \"../thefile\" under \"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_22044/gemhome/gems/a-2\"".
+Expected "attempt to install file into \"../thefile\" under \"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50531/gemhome/gems/a-2\"", not "attempt to install file into \"../thefile\" under \"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50531/gemhome/gems/a-2\"".
 
   3) Skipped:
 test_generate_bin_script_wrappers(TestGemInstaller) [/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:472]:
@@ -10789,7 +10316,7 @@ Expected ["bin/common",
 
   2) Failure:
 test_to_ruby_fancy(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:855]:
-Expected "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"1\"\n  s.platform = Gem::Platform.new([\"x86\", \"darwin\", \"8\"])\n\n  s.required_rubygems_version = Gem::Requirement.new(\">= 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2010-12-23}\n  s.default_executable = %q{exec}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.executables = [\"exec\"]\n  s.extensions = [\"ext/a/extconf.rb\"]\n  s.files = [\"lib/code.rb\", \"test/suite.rb\", \"bin/exec\", \"ext/a/extconf.rb\"]\n  s.homepage = %q{http://example.com}\n  s.licenses = [\"MIT\"]\n  s.require_paths = [\"lib\"]\n  s.requirements = [\"A working computer\"]\n  s.rubyforge_project = %q{example}\n  s.rubygems_version = %q{1.3.6}\n  s.summary = %q{this is a summary}\n  s.test_files = [\"test/suite.rb\"]\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_runtime_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_runtime_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    else\n      s.add_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    end\n  else\n    s.add_dependency(%q<rake>, [\"> 0.4\"])\n    s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n    s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n  end\nend\n", not "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"1\"\n  s.platform = Gem::Platform.new([\"x86\", \"darwin\", \"8\"])\n\n  s.required_rubygems_version = Gem::Requirement.new(\">= 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2010-12-23}\n  s.default_executable = %q{exec}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.executables = [\"exec\"]\n  s.extensions = [\"ext/a/extconf.rb\"]\n  s.files = [\"lib/code.rb\", \"test/suite.rb\", \"bin/exec\", \"ext/a/extconf.rb\"]\n  s.homepage = %q{http://example.com}\n  s.licenses = [\"MIT\"]\n  s.require_paths = [\"lib\"]\n  s.requirements = [\"A working computer\"]\n  s.rubyforge_project = %q{example}\n  s.rubygems_version = %q{1.3.6}\n  s.summary = %q{this is a summary}\n  s.test_files = [\"test/suite.rb\"]\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_runtime_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_runtime_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    else\n      s.add_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    end\n  else\n    s.add_dependency(%q<rake>, [\"> 0.4\"])\n    s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n    s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n  end\nend\n".
+Expected "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"1\"\n  s.platform = Gem::Platform.new([\"x86\", \"darwin\", \"8\"])\n\n  s.required_rubygems_version = Gem::Requirement.new(\">= 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2010-12-24}\n  s.default_executable = %q{exec}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.executables = [\"exec\"]\n  s.extensions = [\"ext/a/extconf.rb\"]\n  s.files = [\"lib/code.rb\", \"test/suite.rb\", \"bin/exec\", \"ext/a/extconf.rb\"]\n  s.homepage = %q{http://example.com}\n  s.licenses = [\"MIT\"]\n  s.require_paths = [\"lib\"]\n  s.requirements = [\"A working computer\"]\n  s.rubyforge_project = %q{example}\n  s.rubygems_version = %q{1.3.6}\n  s.summary = %q{this is a summary}\n  s.test_files = [\"test/suite.rb\"]\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_runtime_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_runtime_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    else\n      s.add_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    end\n  else\n    s.add_dependency(%q<rake>, [\"> 0.4\"])\n    s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n    s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n  end\nend\n", not "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"1\"\n  s.platform = Gem::Platform.new([\"x86\", \"darwin\", \"8\"])\n\n  s.required_rubygems_version = Gem::Requirement.new(\">= 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2010-12-24}\n  s.default_executable = %q{exec}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.executables = [\"exec\"]\n  s.extensions = [\"ext/a/extconf.rb\"]\n  s.files = [\"lib/code.rb\", \"test/suite.rb\", \"bin/exec\", \"ext/a/extconf.rb\"]\n  s.homepage = %q{http://example.com}\n  s.licenses = [\"MIT\"]\n  s.require_paths = [\"lib\"]\n  s.requirements = [\"A working computer\"]\n  s.rubyforge_project = %q{example}\n  s.rubygems_version = %q{1.3.6}\n  s.summary = %q{this is a summary}\n  s.test_files = [\"test/suite.rb\"]\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_runtime_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_runtime_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    else\n      s.add_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    end\n  else\n    s.add_dependency(%q<rake>, [\"> 0.4\"])\n    s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n    s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n  end\nend\n".
 
   3) Failure:
 test_load_errors_contain_filename(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:1264]:
@@ -10797,19 +10324,19 @@ Failed assertion, no message given.
 
   4) Failure:
 test_installation_path(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:607]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_22211/gemhome", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_22211/gemhome".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50698/gemhome", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50698/gemhome".
 
   5) Failure:
 test_to_ruby(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:794]:
-Expected "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"2\"\n\n  s.required_rubygems_version = Gem::Requirement.new(\"> 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2010-12-23}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.files = [\"lib/code.rb\"]\n  s.homepage = %q{http://example.com}\n  s.require_paths = [\"lib\"]\n  s.rubygems_version = %q{1.3.6}\n  s.summary = %q{this is a summary}\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<b>, [\"= 1\"])\n    else\n      s.add_dependency(%q<b>, [\"= 1\"])\n    end\n  else\n    s.add_dependency(%q<b>, [\"= 1\"])\n  end\nend\n", not "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"2\"\n\n  s.required_rubygems_version = Gem::Requirement.new(\"> 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2010-12-23}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.files = [\"lib/code.rb\"]\n  s.homepage = %q{http://example.com}\n  s.require_paths = [\"lib\"]\n  s.rubygems_version = %q{1.3.6}\n  s.summary = %q{this is a summary}\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<b>, [\"= 1\"])\n    else\n      s.add_dependency(%q<b>, [\"= 1\"])\n    end\n  else\n    s.add_dependency(%q<b>, [\"= 1\"])\n  end\nend\n".
+Expected "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"2\"\n\n  s.required_rubygems_version = Gem::Requirement.new(\"> 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2010-12-24}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.files = [\"lib/code.rb\"]\n  s.homepage = %q{http://example.com}\n  s.require_paths = [\"lib\"]\n  s.rubygems_version = %q{1.3.6}\n  s.summary = %q{this is a summary}\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<b>, [\"= 1\"])\n    else\n      s.add_dependency(%q<b>, [\"= 1\"])\n    end\n  else\n    s.add_dependency(%q<b>, [\"= 1\"])\n  end\nend\n", not "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"2\"\n\n  s.required_rubygems_version = Gem::Requirement.new(\"> 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2010-12-24}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.files = [\"lib/code.rb\"]\n  s.homepage = %q{http://example.com}\n  s.require_paths = [\"lib\"]\n  s.rubygems_version = %q{1.3.6}\n  s.summary = %q{this is a summary}\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<b>, [\"= 1\"])\n    else\n      s.add_dependency(%q<b>, [\"= 1\"])\n    end\n  else\n    s.add_dependency(%q<b>, [\"= 1\"])\n  end\nend\n".
 
   6) Failure:
 test_full_gem_path(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:540]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_22211/gemhome/gems/a-1", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_22211/gemhome/gems/a-1".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50698/gemhome/gems/a-1", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50698/gemhome/gems/a-1".
 
   7) Failure:
 test_full_gem_path_double_slash(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:553]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_22211/gemhome/gems/a-1", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_22211/gemhome/gems/a-1".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50698/gemhome/gems/a-1", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_50698/gemhome/gems/a-1".
 
 95 tests, 227 assertions, 7 failures, 0 errors, 0 skips
 
@@ -11751,7 +11278,7 @@ ArgumentError: wrong number of arguments (2 for 3)
 
  10) Error:
 test_sysaccept(TestSocket):
-NoMethodError: undefined method `to_sockaddr' for "\x10\x02\xE5\f\x7F\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00":String
+NoMethodError: undefined method `to_sockaddr' for #<String:0xXXXXXXXX>
     /macruby-test/test-mri/test/socket/test_socket.rb:30:in `test_sysaccept'
 
  11) Error:
@@ -12965,7 +12492,7 @@ FSFS
 
   1) Failure:
 test_bad_header(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:133]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2010-12-23 03:48:14] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2010-12-24 03:47:16] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
 
   2) Skipped:
 test_bad_request(TestWEBrickCGI) [/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:472]:
@@ -12973,7 +12500,7 @@ test_bad_request(TestWEBrickCGI) [/Library/Frameworks/MacRuby.framework/Versions
 
   3) Failure:
 test_bad_uri(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:119]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2010-12-23 03:48:15] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2010-12-24 03:47:16] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
 
   4) Skipped:
 test_cgi(TestWEBrickCGI) [/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:472]:
@@ -13168,10 +12695,10 @@ Started
   1) Failure:
 test_server(TestWEBrickServer) [/macruby-test/test-mri/test/webrick/test_server.rb:19]:
 webrick log start:
-  [2010-12-23 03:49:01] INFO  WEBrick 1.3.1
-  [2010-12-23 03:49:01] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
-  [2010-12-23 03:49:01] INFO  TestWEBrickServer::Echo#start: pid=23022 port=58741
-  [2010-12-23 03:49:01] ERROR Errno::EAGAIN: Resource temporarily unavailable - read() failed
+  [2010-12-24 03:48:02] INFO  WEBrick 1.3.1
+  [2010-12-24 03:48:02] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
+  [2010-12-24 03:48:02] INFO  TestWEBrickServer::Echo#start: pid=51512 port=51997
+  [2010-12-24 03:48:02] ERROR Errno::EAGAIN: Resource temporarily unavailable - read() failed
   	/macruby-test/test-mri/test/webrick/test_server.rb:9:in `run:'
   	/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/webrick/server.rb:183:in `block'
 webrick log end.
@@ -13344,7 +12871,7 @@ E
 
   1) Error:
 test_cookie(TestCookie):
-EOFError: end of file reached
+Errno::ECONNRESET: Connection reset by peer - read(2) failed.
     /macruby-test/test-mri/test/xmlrpc/test_cookie.rb:93:in `do_test'
     /macruby-test/test-mri/test/xmlrpc/test_cookie.rb:80:in `test_cookie'
 
