@@ -1,5 +1,5 @@
-Date    : 2010-12-30T03:09:01+09:00
-Version : 0.9, svn revision 5092 from http://svn.macosforge.org/repository/ruby/MacRuby/trunk
+Date    : 2010-12-31T03:09:07+09:00
+Version : 0.9, svn revision 5093 from http://svn.macosforge.org/repository/ruby/MacRuby/trunk
 
 ----------------------------------------
 /macruby-test/test-mri/test/-ext-/test_bug-3662.rb:1:in `<main>': no such file to load -- -test-/bug-3662/bug (LoadError)
@@ -38,33 +38,10 @@ Started
 Test run options: --seed 0
 
 ----------------------------------------
-Loaded suite test/bigdecimal/test_bigdecimal
-Started
-..........................E...F......F........F...........
-
-  1) Error:
-test_gc(TestBigDecimal):
-NotImplementedError: stress=:() function is unimplemented on this machine
-    /macruby-test/test-mri/test/bigdecimal/test_bigdecimal.rb:710:in `test_gc'
-
-  2) Failure:
-test_inspect(TestBigDecimal) [/macruby-test/test-mri/test/bigdecimal/test_bigdecimal.rb:586]:
-Expected /^#<BigDecimal:[0-9a-f]+,'0.12345678E4',38\(38\)>$/ to match "#<BigDecimal:0xXXXXXXXX,'0.12345678E4',38(38)>".
-
-  3) Failure:
-test_new(TestBigDecimal) [/macruby-test/test-mri/test/bigdecimal/test_bigdecimal.rb:28]:
-<1> expected but was
-<nil>.
-
-  4) Failure:
-test_sqrt_bigdecimal(TestBigDecimal) [/macruby-test/test-mri/test/bigdecimal/test_bigdecimal.rb:485]:
-<1267650600228229401496703205376> expected but was
-<#<BigDecimal:0xXXXXXXXX,'0.1267650600 2282294014 9670320537 5999999999 9999999999 9999999999 9999999995 234375E31',95(114)>>.
-
-58 tests, 364 assertions, 3 failures, 1 errors, 0 skips
-
-Test run options: --seed 0
-
+macruby(36392,0xXXXXXXXX) malloc: garbage block 0xXXXXXXXX(non-object) was over-retained during finalization, refcount = 1
+This could be an unbalanced CFRetain(), or CFRetain() balanced with -release.
+Break on auto_zone_resurrection_error() to debug.
+macruby(36392,0xXXXXXXXX) malloc: fatal resurrection error for garbage block 0xXXXXXXXX(non-object): over-retained during finalization, refcount = 1
 ----------------------------------------
 Loaded suite test/bigdecimal/test_bigmath
 Started
@@ -150,17 +127,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/cgi/test_cgi_session
 Started
-FFFmacruby(2001,0xXXXXXXXX) malloc: resurrection error for object 0xXXXXXXXX while assigning {conservative-block}[128](0xXXXXXXXX)[16] = FileStore[32](0xXXXXXXXX)
-garbage pointer stored into reachable memory, break on auto_zone_resurrection_error to debug
-macruby(2001,0xXXXXXXXX) malloc: resurrection error for object 0xXXXXXXXX while assigning {conservative-block}[32](0xXXXXXXXX)[0] = String[64](0xXXXXXXXX)
-garbage pointer stored into reachable memory, break on auto_zone_resurrection_error to debug
-macruby(2001,0xXXXXXXXX) malloc: resurrection error for object 0xXXXXXXXX while assigning {conservative-block}[32](0xXXXXXXXX)[8] = String[64](0xXXXXXXXX)
-garbage pointer stored into reachable memory, break on auto_zone_resurrection_error to debug
-macruby(2001,0xXXXXXXXX) malloc: resurrection error for object 0xXXXXXXXX while assigning {conservative-block}[32](0xXXXXXXXX)[0] = String[64](0xXXXXXXXX)
-garbage pointer stored into reachable memory, break on auto_zone_resurrection_error to debug
-Fmacruby(2001,0xXXXXXXXX) malloc: resurrection error for object 0xXXXXXXXX while assigning {conservative-block}[32](0xXXXXXXXX)[0] = String[64](0xXXXXXXXX)
-garbage pointer stored into reachable memory, break on auto_zone_resurrection_error to debug
-
+FFFF
 
   1) Failure:
 test_cgi_session_filestore(CGISessionTest) [/macruby-test/test-mri/test/cgi/test_cgi_session.rb:54]:
@@ -225,31 +192,31 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/csv/test_data_converters
 Started
-...........Emacruby(2061,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
+...........Emacruby(36523,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
 *** set a breakpoint in malloc_error_break to debug
 
 ----------------------------------------
 Loaded suite test/csv/test_encodings
 Started
-..macruby(2072,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
+..macruby(36534,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
 *** set a breakpoint in malloc_error_break to debug
 
 ----------------------------------------
 Loaded suite test/csv/test_features
 Started
-FF...macruby(2082,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
+FF...macruby(36544,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
 *** set a breakpoint in malloc_error_break to debug
 
 ----------------------------------------
 Loaded suite test/csv/test_headers
 Started
-macruby(2092,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
+macruby(36554,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
 *** set a breakpoint in malloc_error_break to debug
 
 ----------------------------------------
 Loaded suite test/csv/test_interface
 Started
-..macruby(2102,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
+..macruby(36564,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
 *** set a breakpoint in malloc_error_break to debug
 
 ----------------------------------------
@@ -378,7 +345,27 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/date/test_date_strftime
 Started
-E.E..
+E.E...E....
+
+  1) Error:
+test__different_format(TestDateStrftime):
+ArgumentError: wrong number of arguments (1 for 0)
+    /macruby-test/test-mri/test/date/test_date_strftime.rb:344:in `test__different_format'
+
+  2) Error:
+test_strftime__2(TestDateStrftime):
+ArgumentError: wrong number of arguments (1 for 0)
+    /macruby-test/test-mri/test/date/test_date_strftime.rb:110:in `test_strftime__2'
+
+  3) Error:
+test_strftime__gnuext(TestDateStrftime):
+ArgumentError: wrong number of arguments (1 for 0)
+    /macruby-test/test-mri/test/date/test_date_strftime.rb:255:in `test_strftime__gnuext'
+
+11 tests, 149360 assertions, 0 failures, 3 errors, 0 skips
+
+Test run options: --seed 0
+
 ----------------------------------------
 Loaded suite test/date/test_date_strptime
 Started
@@ -1129,24 +1116,19 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/monitor/test_monitor
 Started
-E.F.E.
+E...E.
 
   1) Error:
 test_cond(TestMonitor):
 ThreadError: Attempt to unlock a mutex which is not locked
     /macruby-test/test-mri/test/monitor/test_monitor.rb:116:in `test_cond'
 
-  2) Failure:
-test_killed_thread_in_synchronize(TestMonitor) [/macruby-test/test-mri/test/monitor/test_monitor.rb:80]:
-<[:main]> expected but was
-<[:main, :t1, :t2]>.
-
-  3) Error:
+  2) Error:
 test_timedwait(TestMonitor):
 ThreadError: Attempt to unlock a mutex which is not locked
     /macruby-test/test-mri/test/monitor/test_monitor.rb:136:in `test_timedwait'
 
-6 tests, 13 assertions, 1 failures, 2 errors, 0 skips
+6 tests, 13 assertions, 0 failures, 2 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -1184,7 +1166,7 @@ NoMethodError: undefined method `size' for nil:NilClass
 
   5) Error:
 test_post(TestNetHTTP_v1_2):
-EOFError: end of file reached
+Errno::ECONNRESET: Connection reset by peer - read(2) failed.
     /macruby-test/test-mri/test/net/http/test_http.rb:149:in `_test_post__file:'
     /macruby-test/test-mri/test/net/http/test_http.rb:129:in `block'
     /macruby-test/test-mri/test/net/http/utils.rb:11:in `start'
@@ -1326,7 +1308,7 @@ FF..F
 
   1) Failure:
 test_certificate_verify_failure(TestNetHTTPS) [/macruby-test/test-mri/test/net/http/test_https.rb:83]:
-Expected /certificate verify failed/ to match "SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: tlsv1 alert unknown ca".
+Expected /certificate verify failed/ to match "SSL_connect SYSCALL returned=5 errno=0 state=SSLv3 read server certificate B".
 
   2) Failure:
 test_get(TestNetHTTPS) [/macruby-test/test-mri/test/net/http/test_https.rb:41]:
@@ -1431,7 +1413,7 @@ NoMethodError: undefined method `set_encoding' for #<StringIO:0xXXXXXXXX ...>
 
   2) Failure:
 test_proxy(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.rb:205]:
-Expected /http:\/\/127\.0\.0\.1:62588/ to match "\xA0!\x01\x00\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xA0 \x01\x00\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00".
+Expected /http:\/\/127\.0\.0\.1:55745/ to match "\xD1Y\x00\x00\x00\x00\x00\x00\x05\x00\x00\x00\x00\x00\x00\x00\xD9Y\x00\x00\x00\x00\x00\x00\x05\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x06\x00\x00".
 
   3) Failure:
 test_read_timeout(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.rb:113]:
@@ -1444,7 +1426,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/open-uri/test_ssl
 Started
-macruby(3246,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
+macruby(37706,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
 *** set a breakpoint in malloc_error_break to debug
 
 ----------------------------------------
@@ -2070,7 +2052,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rake/test_fileutils
 Started
-.2010-12-30 03:22:01.953 macruby[3932:613] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
+.2010-12-31 03:22:06.025 macruby[38392:613] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
 F.....................
 
   1) Failure:
@@ -4154,7 +4136,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_parser_simple
 Started
-Unrecognized directive 'unhandled' in /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/TestRDocParserSimple20101230-4414-16tc0n7
+Unrecognized directive 'unhandled' in /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/TestRDocParserSimple20101231-38874-16tc0n7
 E..F
 
   1) Error:
@@ -4200,7 +4182,7 @@ NoMethodError: undefined method `read_file_contents' for #<RDoc::RDoc:0xXXXXXXXX
 
   6) Failure:
 test_setup_output_dir_exists_file(TestRDocRDoc) [/macruby-test/test-mri/test/rdoc/test_rdoc_rdoc.rb:149]:
-Expected /\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/test_rdoc_rdoc20101230\-4424\-1lot1rb exists and is not a directory/ to match "'/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_rdoc20101230-4424-1lot1rb' exists, and is not a directory".
+Expected /\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/test_rdoc_rdoc20101231\-38884\-1lot1rb exists and is not a directory/ to match "'/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_rdoc20101231-38884-1lot1rb' exists, and is not a directory".
 
   7) Error:
 test_setup_output_dir_exists(TestRDocRDoc):
@@ -4825,7 +4807,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/readline/test_readline
 Started
-.......2010-12-30 03:24:46.209 macruby[4504:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
+.......2010-12-31 03:24:49.677 macruby[38964:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
 '
 *** Call stack at first throw:
 (
@@ -4847,7 +4829,7 @@ terminate called after throwing an instance of 'NSException'
 ----------------------------------------
 Loaded suite test/readline/test_readline_history
 Started
-.............2010-12-30 03:24:48.391 macruby[4515:1d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
+.............2010-12-31 03:24:51.873 macruby[38975:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
 '
 *** Call stack at first throw:
 (
@@ -5874,11 +5856,128 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_argf
 Started
-F.......EF.F.....EEEEEEE
+F.......EF.F.....EEEEEEEEFFE.....FF.....F
+
+  1) Failure:
+test_argf(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:72]:
+[ruby-dev:34445]: line 75.
+<"[\"1\", 1, \"1\", 1]"> expected but was
+<"[\"1\", 1, \"2\", nil]">.
+
+  2) Error:
+test_each_line_paragraph(TestArgf):
+Timeout::Error: Timeout::Error
+    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
+    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
+    /macruby-test/test-mri/test/ruby/test_argf.rb:569:in `test_each_line_paragraph'
+
+  3) Failure:
+test_encoding(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:284]:
+<"true\ntrue\ntrue\nnil\n"> expected but was
+<"true\ntrue\ntrue\n#<Encoding:UTF-8>\n">.
+
+  4) Failure:
+test_file(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:638]:
+<"\"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/argf-foo20101231-39654-1vzjxdx\""> expected but was
+<"-e:2:in `<main>': undefined method `dump' for nil:NilClass (NoMethodError)">.
+
+  5) Error:
+test_inplace(TestArgf):
+Timeout::Error: Timeout::Error
+    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
+    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
+    /macruby-test/test-mri/test/ruby/test_argf.rb:139:in `test_inplace'
+
+  6) Error:
+test_inplace2(TestArgf):
+Timeout::Error: Timeout::Error
+    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
+    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
+    /macruby-test/test-mri/test/ruby/test_argf.rb:154:in `test_inplace2'
+
+  7) Error:
+test_inplace3(TestArgf):
+Timeout::Error: Timeout::Error
+    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
+    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
+    /macruby-test/test-mri/test/ruby/test_argf.rb:178:in `test_inplace3'
+
+  8) Error:
+test_inplace_dup(TestArgf):
+Timeout::Error: Timeout::Error
+    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
+    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
+    /macruby-test/test-mri/test/ruby/test_argf.rb:243:in `test_inplace_dup'
+
+  9) Error:
+test_inplace_no_backup(TestArgf):
+Timeout::Error: Timeout::Error
+    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
+    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
+    /macruby-test/test-mri/test/ruby/test_argf.rb:224:in `test_inplace_no_backup'
+
+ 10) Error:
+test_inplace_rename_impossible(TestArgf):
+Timeout::Error: Timeout::Error
+    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
+    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
+    /macruby-test/test-mri/test/ruby/test_argf.rb:203:in `test_inplace_rename_impossible'
+
+ 11) Error:
+test_inplace_stdin(TestArgf):
+Timeout::Error: Timeout::Error
+    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
+    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
+    /macruby-test/test-mri/test/ruby/test_argf.rb:256:in `test_inplace_stdin'
+
+ 12) Error:
+test_inplace_stdin2(TestArgf):
+Timeout::Error: Timeout::Error
+    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
+    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
+    /macruby-test/test-mri/test/ruby/test_argf.rb:268:in `test_inplace_stdin2'
+
+ 13) Failure:
+test_lineno(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:92]:
+[ruby-dev:34445]: line 98.
+<"3"> expected but was
+<"4">.
+
+ 14) Failure:
+test_lineno2(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:112]:
+[ruby-dev:34445]: line 116.
+<"1"> expected but was
+<"3">.
+
+ 15) Error:
+test_lineno3(TestArgf):
+Timeout::Error: Timeout::Error
+    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
+    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
+    /macruby-test/test-mri/test/ruby/test_argf.rb:131:in `test_lineno3'
+
+ 16) Failure:
+test_readpartial(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:477]:
+<"1\n2\n3\n4\n5\n6\n"> expected but was
+<"-e:4:in `block': TODO() function is unimplemented on this machine (NotImplementedError)\n\tfrom -e:3:in `<main>'\n">.
+
+ 17) Failure:
+test_readpartial2(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:499]:
+<"foo\nbar\nbaz\n"> expected but was
+<"-e:4:in `block': TODO() function is unimplemented on this machine (NotImplementedError)\n\tfrom -e:3:in `<main>'\n">.
+
+ 18) Failure:
+test_to_io(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:403]:
+Expected /\(closed\)/ to match "ARGF".
+
+41 tests, 114 assertions, 8 failures, 10 errors, 0 skips
+
+Test run options: --seed 0
+
 ----------------------------------------
 Loaded suite test/ruby/test_array
 Started
-...................S.........FE..............................EF......FF......2010-12-30 03:29:48.876 macruby[5233:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
+...................S.........FE..............................EF......FF......2010-12-31 03:29:58.230 macruby[39707:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
 '
 *** Call stack at first throw:
 (
@@ -6001,7 +6100,7 @@ Test run options: --seed 0
 Loaded suite test/ruby/test_beginendblock
 Started
 can't find slot for variable local_for_end2
-FF.2010-12-30 03:30:05.204 macruby[5287:903] *** Terminating app due to uncaught exception 'RuntimeError', reason: '-e:5:in `block': e5 (RuntimeError)
+FF.2010-12-31 03:30:14.554 macruby[39762:903] *** Terminating app due to uncaught exception 'RuntimeError', reason: '-e:5:in `block': e5 (RuntimeError)
 '
 *** Call stack at first throw:
 (
@@ -6309,7 +6408,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_dir
 Started
-S...E.FF..2010-12-30 03:30:41.664 macruby[5431:3103] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
+S...E.FF..2010-12-31 03:30:50.666 macruby[39906:3103] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
 '
 *** Call stack at first throw:
 (
@@ -6376,7 +6475,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_econv
 Started
-EEEEEEEEEEE.EEEEEEEEEEEEEEE..SEEEEEEmacruby(5451,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
+EEEEEEEEEEE.EEEEEEEEEEEEEEE..SEEEEEEmacruby(39926,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
 *** set a breakpoint in malloc_error_break to debug
 
 ----------------------------------------
@@ -6579,7 +6678,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_env
 Started
-2010-12-30 03:30:54.022 macruby[5492:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
+2010-12-31 03:31:02.907 macruby[39966:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
 '
 *** Call stack at first throw:
 (
@@ -6601,7 +6700,7 @@ terminate called after throwing an instance of 'NSException'
 ----------------------------------------
 Loaded suite test/ruby/test_eval
 Started
-E...FEEE..2010-12-30 03:30:56.530 macruby[5502:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
+E...FEEE..2010-12-31 03:31:05.462 macruby[39977:2c07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
 '
 *** Call stack at first throw:
 (
@@ -6692,7 +6791,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_file_exhaustive
 Started
-..F......F...FF.2010-12-30 03:31:10.328 macruby[5543:2a03] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
+..F......F...FF.2010-12-31 03:31:19.224 macruby[40018:1807] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
 '
 *** Call stack at first throw:
 (
@@ -6771,7 +6870,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_hash
 Started
-....E..F......S.SSS...............E..........F.......2010-12-30 03:31:21.134 macruby[5593:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
+....E..F......S.SSS...............E..........F.......2010-12-31 03:31:29.971 macruby[40068:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
 '
 *** Call stack at first throw:
 (
@@ -6864,7 +6963,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_io
 Started
-..SS....2010-12-30 03:32:53.635 macruby[5637:2a03] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
+..SS....2010-12-31 03:33:01.076 macruby[40113:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
 '
 *** Call stack at first throw:
 (
@@ -6886,7 +6985,7 @@ terminate called after throwing an instance of 'NSException'
 ----------------------------------------
 Loaded suite test/ruby/test_io_m17n
 Started
-EFFFFFFFFFF.FFSF.EFFFEEF.FFFFFFFEEEEFFFFEEFEEFFFFFFFEEEEEFFFFFFFEFFmacruby(5651,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
+EFFFFFFFFFF.FFSF.EFFFEEF.FFFFFFFEEEEFFFFEEFEEFFFFFFFEEEEEFFFFFFFEFFmacruby(40127,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
 *** set a breakpoint in malloc_error_break to debug
 
 ----------------------------------------
@@ -7363,13 +7462,13 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_m17n_comb
 Started
-FFEEEEFFFFF.....SEFSEF...FFFF..FF.F......FFSF.F..F...SFSFF.FFF.FFFAssertion failed: (enc != rb_encodings[ENCODING_BINARY]), function rb_enc_str_new, file string.c, line 6047.
+FFEEEEFFFFF.....SEFSEF...FFFF..FF.F......FFSF.F..F...SFSFF.FFF.FFFAssertion failed: (enc != rb_encodings[ENCODING_BINARY]), function rb_enc_str_new, file string.c, line 6048.
 
 ----------------------------------------
 unknown: warning: already initialized constant Résumé
 Loaded suite test/ruby/test_marshal
 Started
-..FF....EF.FF.......E......F.FFF...2010-12-30 03:33:41.752 macruby[5716:613] *** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '*** -length only defined for abstract class.  Define -[RBAnonymous27 length]!'
+..FF....EF.FF.......E......F.FFF...2010-12-31 03:33:49.534 macruby[40192:613] *** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '*** -length only defined for abstract class.  Define -[RBAnonymous27 length]!'
 *** Call stack at first throw:
 (
 	0   CoreFoundation                      0xXXXXXXXX __exceptionPreprocess + 180
@@ -7676,7 +7775,7 @@ Loaded suite test/ruby/test_objectspace
 Started
 FF...................
 
-  1)        
+  1) Failure:
 test_count_objects(TestObjectSpace) [/macruby-test/test-mri/test/ruby/test_objectspace.rb:50]:
 TypeError expected but nothing was raised.
 
@@ -7716,7 +7815,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_pack
 Started
-.....2010-12-30 03:34:24.346 macruby[5832:2a03] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
+.....2010-12-31 03:34:31.993 macruby[40308:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
 '
 *** Call stack at first throw:
 (
@@ -7988,7 +8087,7 @@ test_random_bytes(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:345]:
 
  19) Failure:
 test_random_range(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:362]:
-<2010-12-30 03:37:38 +0900> expected but was
+<2010-12-31 03:37:45 +0900> expected but was
 <1.97626258336499e-323>.
 
  20) Failure:
@@ -8195,7 +8294,7 @@ Timeout::Error: Timeout::Error
 test_relative_symlink(TestRequire) [/macruby-test/test-mri/test/ruby/test_require.rb:296]:
 [ruby-dev:40040].
 <"a/lib.rb\n"> expected but was
-<"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20101230-5973-1nyvruo/b/tst.rb:1:in `<main>': undefined method `require_relative' for main:TopLevel (NoMethodError)\n">.
+<"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20101231-40448-1nyvruo/b/tst.rb:1:in `<main>': undefined method `require_relative' for main:TopLevel (NoMethodError)\n">.
 
   8) Error:
 test_require_invalid_shared_object(TestRequire):
@@ -8230,152 +8329,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_rubyoptions
 Started
-.FFFF.FFEF.FFEFF..EF..F.EFE..FF..
-
-  1) Failure:
-test_assignment_in_conditional(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:301]:
-[ruby-dev:39363].
-Expected /\A(\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/test_ruby_test_rubyoption20101230\-5994\-163yxpr\.rb):1(: warning: found = in conditional, should be ==)\n\1:4\2\Z/ to match "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20101230-5994-163yxpr.rb:1: warning: found = in conditional, should be ==\n".
-
-  2) Failure:
-test_autosplit(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:146]:
-<["[\"foo\", \"bar\", \"baz\\n\"]", "[\"qux\", \"quux\", \"quuux\\n\"]"]> expected but was
-<[]>.
-
-  3) Failure:
-test_chdir(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:150]:
-<[]> expected but was
-<["Can't chdir (fatal)"]>.
-
-  4) Failure:
-test_copyright(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:79]:
-Expected /^ruby - Copyright \(C\) 1993-\d+ Yukihiro Matsumoto$/ to match "MacRuby - Copyright (C) 2007-2008 Apple Inc.\n".
-
-  5) Failure:
-test_disable(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:99]:
-<[]> expected but was
-<["missing argument for --disable (RuntimeError)"]>.
-
-  6) Failure:
-test_enable(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:90]:
-<[]> expected but was
-<["missing argument for --enable (RuntimeError)"]>.
-
-  7) Error:
-test_encoding(TestRubyOptions):
-Timeout::Error: Timeout::Error
-    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
-    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
-    /macruby-test/test-mri/test/ruby/test_rubyoptions.rb:174:in `test_encoding'
-
-  8) Failure:
-test_eval(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:120]:
-<[]> expected but was
-<["no code specified for -e (RuntimeError)"]>.
-
-  9) Failure:
-test_indentation_check(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:313]:
-<["/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20101230-5994-1estiet.rb:2: warning: mismatched indentations at 'end' with 'begin' at 1"]> expected but was
-<[]>.
-
- 10) Failure:
-test_invalid_option(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:189]:
-<[]> expected but was
-<["invalid option --foobarbazqux  (-h will show valid options) (RuntimeError)"]>.
-
- 11) Error:
-test_kanji(TestRubyOptions):
-Timeout::Error: Timeout::Error
-    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
-    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
-    /macruby-test/test-mri/test/ruby/test_rubyoptions.rb:103:in `test_kanji'
-
- 12) Failure:
-test_notfound(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:325]:
-[ruby-core:23717].
-<[]> expected but was
-<["no such file to load -- ./notexist.rb (LoadError)"]>.
-
- 13) Failure:
-test_option_variables(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:31]:
-<["[true, true, true]",
- "foo",
- "[true, true, true]",
- "bar",
- "[true, true, true]",
- "baz"]> expected but was
-<[]>.
-
- 14) Error:
-test_rubyopt(TestRubyOptions):
-Timeout::Error: Timeout::Error
-    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
-    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
-    /macruby-test/test-mri/test/ruby/test_rubyoptions.rb:204:in `test_rubyopt'
-
- 15) Failure:
-test_safe_level(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:53]:
-<[]> expected but was
-<["no -e allowed in tainted mode (SecurityError)"]>.
-
- 16) Failure:
-test_segv_test(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:402]:
-Expected /\A
-      -e:(?:1:)?\s\[BUG\]\sSegmentation\sfault\n
-      MacRuby\ 0\.9\ \(ruby\ 1\.9\.2\)\ \[universal\-darwin10\.0,\ x86_64\]\n\n
-      --\scontrol\sframe\s----------\n
-      (?:c:.*\n)*
-      ---------------------------\n
-      (?:
-      --\sRuby\slevel\sbacktrace\sinformation\s----------------------------------------\n
-      -e:1:in\s`<main>'\n
-      -e:1:in\s`kill'\n
-      )?
-      \n
-      (?:
-        --\sC\slevel\sbacktrace\sinformation\s-------------------------------------------\n
-        (?:(?:.*\s)?\[0x\h+\]\n)*\n
-      )?
-      \[NOTE\]\n
-      You\smay\shave\sencountered\sa\sbug\sin\sthe\sRuby\sinterpreter\sor\sextension\slibraries.\n
-      Bug\sreports\sare\swelcome.\n
-      For\sdetails:\shttp:\\/\\/www.ruby-lang.org\/bugreport.html\n
-      \n
-      (?:)
-      \z
-      /x to match "".
-
- 17) Error:
-test_sflag(TestRubyOptions):
-Timeout::Error: Timeout::Error
-    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
-    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
-    /macruby-test/test-mri/test/ruby/test_rubyoptions.rb:279:in `test_sflag'
-
- 18) Failure:
-test_shebang(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:265]:
-<[]> expected but was
-<["Can't exec /test_r_u_b_y_test_r_u_b_y_options_foobarbazqux (fatal)"]>.
-
- 19) Error:
-test_source_file(TestRubyOptions):
-Timeout::Error: Timeout::Error
-    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
-    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
-    /macruby-test/test-mri/test/ruby/test_rubyoptions.rb:9:in `test_source_file'
-
- 20) Failure:
-test_verbose(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:66]:
-Expected /^ruby 1.9.2(?:[p ]|dev).*? \[universal-darwin10.0\]$/ to match "MacRuby 0.9 (ruby 1.9.2) [universal-darwin10.0, x86_64]".
-
- 21) Failure:
-test_version(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:112]:
-Expected /^ruby 1.9.2(?:[p ]|dev).*? \[universal-darwin10.0\]$/ to match "MacRuby 0.9 (ruby 1.9.2) [universal-darwin10.0, x86_64]".
-
-33 tests, 86 assertions, 16 failures, 5 errors, 0 skips
-
-Test run options: --seed 0
-
+.FFFF.FFEF.FF
 ----------------------------------------
 Loaded suite test/ruby/test_settracefunc
 Started
@@ -8691,7 +8645,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_struct
 Started
-..............2010-12-30 03:39:36.161 macruby[6138:2d17] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
+..............2010-12-31 03:39:22.824 macruby[40581:2d17] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
 '
 *** Call stack at first throw:
 (
@@ -8769,63 +8723,63 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_thread
 Started
-EEE.objc[6186]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+EEE.objc[40629]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-Eobjc[6186]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+Eobjc[40629]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-EEEEFE...objc[6186]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+EEEEFE...objc[40629]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[6186]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+Eobjc[40629]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-Eobjc[6186]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[40629]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[6186]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[40629]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-EEEEFEEEEESEobjc[6186]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+EEEEFEEEEESEobjc[40629]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[6186]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[40629]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[6186]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[40629]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[6186]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[40629]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[6186]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[40629]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[6186]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[40629]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[6186]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[40629]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[6186]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[40629]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[6186]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[40629]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[6186]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[40629]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[6186]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[40629]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
 EFS..
 
   1) Error:
 test_abort_on_exception(TestThread):
-Errno::EPIPE: Broken pipe - write() failed
-    /macruby-test/test-mri/test/ruby/envutil.rb:74:in `invoke_ruby:'
+Timeout::Error: Timeout::Error
+    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
     /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
     /macruby-test/test-mri/test/ruby/test_thread.rb:251:in `test_abort_on_exception'
 
@@ -8878,7 +8832,7 @@ Timeout::Error: Timeout::Error
 test_local_barrier(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:114]:
 [ruby-dev:30653].
 <"exit."> expected but was
-<"3: cont">.
+<"0: cont">.
 
  10) Error:
 test_main(TestThread):
@@ -8984,7 +8938,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_time
 Started
-.FF....F.....EEE.EE.E.F.E2010-12-30 03:40:10.363 macruby[6203:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
+.FF....F.....EEE.EE.E.F.E2010-12-31 03:40:01.940 macruby[40645:2d07] *** Terminating app due to uncaught exception 'SecurityError', reason: 'Insecure: can't modify array (SecurityError)
 '
 *** Call stack at first throw:
 (
@@ -9028,7 +8982,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_transcode
 Started
-FEEEEEEEEEEEEEEEEFF..EEEFFE.EFEEEEEmacruby(6233,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
+FEEEEEEEEEEEEEEEEFF..EEEFFE.EFEEEEEmacruby(40676,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
 *** set a breakpoint in malloc_error_break to debug
 
 ----------------------------------------
@@ -9168,19 +9122,19 @@ Started
 
   1) Failure:
 test_self_user_dir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:589]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6306/userhome/.gem/macruby/1.9.2", not "/Users/watson/.gem/macruby/1.9.2".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_40747/userhome/.gem/macruby/1.9.2", not "/Users/watson/.gem/macruby/1.9.2".
 
   2) Failure:
 test_self_datadir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:147]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6306/gemhome/gems/foo-2/data/foo", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6306/gemhome/gems/foo-2/data/foo".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_40747/gemhome/gems/foo-2/data/foo", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_40747/gemhome/gems/foo-2/data/foo".
 
   3) Failure:
 test_self_required_location(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:464]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6306/gemhome/gems/c-1.2/lib/code.rb", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6306/gemhome/gems/c-1.2/lib/code.rb".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_40747/gemhome/gems/c-1.2/lib/code.rb", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_40747/gemhome/gems/c-1.2/lib/code.rb".
 
   4) Failure:
 test_self_user_home(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:594]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6306/userhome", not "/Users/watson".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_40747/userhome", not "/Users/watson".
 
   5) Error:
 test_load_plugins(TestGem):
@@ -9306,7 +9260,7 @@ Started
 
   1) Failure:
 test_execute(TestGemCommandsEnvironmentCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_environment_command.rb:36]:
-Expected /"gemcutter_key" => "\*\*\*\*"/ to match "RubyGems Environment:\n  - RUBYGEMS VERSION: 1.3.6\n  - RUBY VERSION: 1.9.2 (2008-06-03 patchlevel 0) [universal-darwin10.0]\n  - INSTALLATION DIRECTORY: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6406/gemhome\n  - RUBYGEMS PREFIX: /macruby-test/test-mri\n  - RUBY EXECUTABLE: /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/bin/macruby\n  - EXECUTABLE DIRECTORY: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6406/gemhome/bin\n  - RUBYGEMS PLATFORMS:\n    - ruby\n    - x86-darwin-8\n  - GEM PATHS:\n     - /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6406/gemhome\n  - GEM CONFIGURATION:\n     - :update_sources => true\n     - :verbose => true\n     - :benchmark => false\n     - :backtrace => false\n     - :bulk_threshold => 1000\n     - :sources => [\"http://gems.example.com\"]\n     - \"http_proxy\" => \"http://proxy.example.com\"\n     - \"gemcutter_key\" => \"blah\"\n  - REMOTE SOURCES:\n     - http://gems.example.com\n".
+Expected /"gemcutter_key" => "\*\*\*\*"/ to match "RubyGems Environment:\n  - RUBYGEMS VERSION: 1.3.6\n  - RUBY VERSION: 1.9.2 (2008-06-03 patchlevel 0) [universal-darwin10.0]\n  - INSTALLATION DIRECTORY: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_40847/gemhome\n  - RUBYGEMS PREFIX: /macruby-test/test-mri\n  - RUBY EXECUTABLE: /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/bin/macruby\n  - EXECUTABLE DIRECTORY: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_40847/gemhome/bin\n  - RUBYGEMS PLATFORMS:\n    - ruby\n    - x86-darwin-8\n  - GEM PATHS:\n     - /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_40847/gemhome\n  - GEM CONFIGURATION:\n     - :update_sources => true\n     - :verbose => true\n     - :benchmark => false\n     - :backtrace => false\n     - :bulk_threshold => 1000\n     - :sources => [\"http://gems.example.com\"]\n     - \"http_proxy\" => \"http://proxy.example.com\"\n     - \"gemcutter_key\" => \"blah\"\n  - REMOTE SOURCES:\n     - http://gems.example.com\n".
 
 8 tests, 39 assertions, 1 failures, 0 errors, 0 skips
 
@@ -9337,7 +9291,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_commands_install_command
 Started
-macruby(6436,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
+macruby(40878,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
 *** set a breakpoint in malloc_error_break to debug
 
 ----------------------------------------
@@ -9401,7 +9355,7 @@ Started
 
   1) Failure:
 test_sending_gem(TestGemCommandsPushCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_push_command.rb:33]:
-Expected 3072, not 3062.
+Expected 3072, not 3054.
 
 3 tests, 9 assertions, 1 failures, 0 errors, 0 skips
 
@@ -9418,7 +9372,7 @@ Expected "\n*** REMOTE GEMS ***\n\na (3.a, 2, 1)\npl (1 i386-linux)\n", not "***
 
   2) Failure:
 test_execute_local_details(TestGemCommandsQueryCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_query_command.rb:323]:
-Expected "\n*** LOCAL GEMS ***\n\na (3.a, 2, 1)\n    Author: A User\n    Homepage: http://example.com\n    Installed at (3.a): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6520/gemhome\n                 (2): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6520/gemhome\n                 (1): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6520/gemhome\n\n    this is a summary\n\na_evil (9)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6520/gemhome\n\n    this is a summary\n\nb (2)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6520/gemhome\n\n    this is a summary\n\nc (1.2)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6520/gemhome\n\n    this is a summary\n\npl (1)\n    Platform: i386-linux\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6520/gemhome\n\n    this is a summary\n", not "*** LOCAL GEMS ***\na (3.a, 2, 1)\n    Author: A User\n    Homepage: http://example.com\n    Installed at (3.a): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6520/gemhome\n                 (2): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6520/gemhome\n                 (1): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6520/gemhome\n\n    this is a summary\n\na_evil (9)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6520/gemhome\n\n    this is a summary\n\nb (2)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6520/gemhome\n\n    this is a summary\n\nc (1.2)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6520/gemhome\n\n    this is a summary\n\npl (1)\n    Platform: i386-linux\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6520/gemhome\n\n    this is a summary\n".
+Expected "\n*** LOCAL GEMS ***\n\na (3.a, 2, 1)\n    Author: A User\n    Homepage: http://example.com\n    Installed at (3.a): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_40962/gemhome\n                 (2): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_40962/gemhome\n                 (1): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_40962/gemhome\n\n    this is a summary\n\na_evil (9)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_40962/gemhome\n\n    this is a summary\n\nb (2)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_40962/gemhome\n\n    this is a summary\n\nc (1.2)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_40962/gemhome\n\n    this is a summary\n\npl (1)\n    Platform: i386-linux\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_40962/gemhome\n\n    this is a summary\n", not "*** LOCAL GEMS ***\na (3.a, 2, 1)\n    Author: A User\n    Homepage: http://example.com\n    Installed at (3.a): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_40962/gemhome\n                 (2): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_40962/gemhome\n                 (1): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_40962/gemhome\n\n    this is a summary\n\na_evil (9)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_40962/gemhome\n\n    this is a summary\n\nb (2)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_40962/gemhome\n\n    this is a summary\n\nc (1.2)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_40962/gemhome\n\n    this is a summary\n\npl (1)\n    Platform: i386-linux\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_40962/gemhome\n\n    this is a summary\n".
 
   3) Failure:
 test_execute_details(TestGemCommandsQueryCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_query_command.rb:144]:
@@ -9471,7 +9425,7 @@ F.F
 
   1) Failure:
 test_handle_options(TestGemCommandsServerCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_server_command.rb:16]:
-Expected [], not "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6530/gemhome".
+Expected [], not "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_40972/gemhome".
 
   2) Failure:
 test_handle_options_gemdir(TestGemCommandsServerCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_server_command.rb:30]:
@@ -9538,7 +9492,7 @@ a should be unpacked
 
   2) Error:
 test_execute_sudo(TestGemCommandsUnpackCommand):
-Gem::FilePermissionError: You don't have write permissions into the /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6596/gemhome directory.
+Gem::FilePermissionError: You don't have write permissions into the /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_41038/gemhome directory.
     /macruby-test/test-mri/test/rubygems/test_gem_commands_unpack_command.rb:106:in `block'
     /macruby-test/test-mri/test/rubygems/test_gem_commands_unpack_command.rb:105:in `block'
     /macruby-test/test-mri/test/rubygems/test_gem_commands_unpack_command.rb:104:in `test_execute_sudo'
@@ -9550,8 +9504,6 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_commands_update_command
 Started
-macruby(6607,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
-*** set a breakpoint in malloc_error_break to debug
 
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_commands_which_command
@@ -9602,7 +9554,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_dependency_installer
 Started
-macruby(6648,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
+macruby(41089,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
 *** set a breakpoint in malloc_error_break to debug
 
 ----------------------------------------
@@ -9635,7 +9587,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_ext_ext_conf_builder
 Started
-.../bin/sh: line 1:  6724 Abort trap              /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/bin/macruby extconf.rb 2>&1
+.../bin/sh: line 1: 41165 Abort trap              /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/bin/macruby extconf.rb 2>&1
 .
 
 4 tests, 15 assertions, 0 failures, 0 errors, 0 skips
@@ -9667,7 +9619,7 @@ F.......
 
   1) Failure:
 test_lib_dirs_for(TestGemGemPathSearcher) [/macruby-test/test-mri/test/rubygems/test_gem_gem_path_searcher.rb:53]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6780/gemhome/gems/foo-0.1/{lib,lib2}", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6780/gemhome/gems/foo-0.1/{lib,lib2}".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_41221/gemhome/gems/foo-0.1/{lib,lib2}", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_41221/gemhome/gems/foo-0.1/{lib,lib2}".
 
 8 tests, 11 assertions, 1 failures, 0 errors, 0 skips
 
@@ -9741,11 +9693,11 @@ Started
 
   1) Failure:
 test_initialize(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:518]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6833/gemhome/gems/a-2-x86-mswin32", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6833/gemhome/gems/a-2-x86-mswin32".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_41275/gemhome/gems/a-2-x86-mswin32", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_41275/gemhome/gems/a-2-x86-mswin32".
 
   2) Failure:
 test_extract_files_relative(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:145]:
-Expected "attempt to install file into \"../thefile\" under \"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6833/gemhome/gems/a-2\"", not "attempt to install file into \"../thefile\" under \"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6833/gemhome/gems/a-2\"".
+Expected "attempt to install file into \"../thefile\" under \"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_41275/gemhome/gems/a-2\"", not "attempt to install file into \"../thefile\" under \"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_41275/gemhome/gems/a-2\"".
 
   3) Skipped:
 test_generate_bin_script_wrappers(TestGemInstaller) [/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:472]:
@@ -9864,11 +9816,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_remote_fetcher
 Started
-F.F......F..F......F..F....F.F.E...*** Thread 0xXXXXXXXX exited prematurely because of an uncaught exception:
-/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/webrick/utils.rb:127:in `block': can't dup FalseClass (TypeError)
-	from /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/webrick/utils.rb:126:in `block'
-
-F.
+F.F......F..F......F..F....F.F.E...F.
 
   1) Failure:
 test_implicit_proxy(TestGemRemoteFetcher) [/macruby-test/test-mri/test/rubygems/test_gem_remote_fetcher.rb:528]:
@@ -10117,7 +10065,7 @@ Expected ["bin/common",
 
   2) Failure:
 test_to_ruby_fancy(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:855]:
-Expected "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"1\"\n  s.platform = Gem::Platform.new([\"x86\", \"darwin\", \"8\"])\n\n  s.required_rubygems_version = Gem::Requirement.new(\">= 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2010-12-30}\n  s.default_executable = %q{exec}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.executables = [\"exec\"]\n  s.extensions = [\"ext/a/extconf.rb\"]\n  s.files = [\"lib/code.rb\", \"test/suite.rb\", \"bin/exec\", \"ext/a/extconf.rb\"]\n  s.homepage = %q{http://example.com}\n  s.licenses = [\"MIT\"]\n  s.require_paths = [\"lib\"]\n  s.requirements = [\"A working computer\"]\n  s.rubyforge_project = %q{example}\n  s.rubygems_version = %q{1.3.6}\n  s.summary = %q{this is a summary}\n  s.test_files = [\"test/suite.rb\"]\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_runtime_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_runtime_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    else\n      s.add_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    end\n  else\n    s.add_dependency(%q<rake>, [\"> 0.4\"])\n    s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n    s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n  end\nend\n", not "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"1\"\n  s.platform = Gem::Platform.new([\"x86\", \"darwin\", \"8\"])\n\n  s.required_rubygems_version = Gem::Requirement.new(\">= 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2010-12-30}\n  s.default_executable = %q{exec}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.executables = [\"exec\"]\n  s.extensions = [\"ext/a/extconf.rb\"]\n  s.files = [\"lib/code.rb\", \"test/suite.rb\", \"bin/exec\", \"ext/a/extconf.rb\"]\n  s.homepage = %q{http://example.com}\n  s.licenses = [\"MIT\"]\n  s.require_paths = [\"lib\"]\n  s.requirements = [\"A working computer\"]\n  s.rubyforge_project = %q{example}\n  s.rubygems_version = %q{1.3.6}\n  s.summary = %q{this is a summary}\n  s.test_files = [\"test/suite.rb\"]\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_runtime_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_runtime_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    else\n      s.add_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    end\n  else\n    s.add_dependency(%q<rake>, [\"> 0.4\"])\n    s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n    s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n  end\nend\n".
+Expected "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"1\"\n  s.platform = Gem::Platform.new([\"x86\", \"darwin\", \"8\"])\n\n  s.required_rubygems_version = Gem::Requirement.new(\">= 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2010-12-31}\n  s.default_executable = %q{exec}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.executables = [\"exec\"]\n  s.extensions = [\"ext/a/extconf.rb\"]\n  s.files = [\"lib/code.rb\", \"test/suite.rb\", \"bin/exec\", \"ext/a/extconf.rb\"]\n  s.homepage = %q{http://example.com}\n  s.licenses = [\"MIT\"]\n  s.require_paths = [\"lib\"]\n  s.requirements = [\"A working computer\"]\n  s.rubyforge_project = %q{example}\n  s.rubygems_version = %q{1.3.6}\n  s.summary = %q{this is a summary}\n  s.test_files = [\"test/suite.rb\"]\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_runtime_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_runtime_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    else\n      s.add_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    end\n  else\n    s.add_dependency(%q<rake>, [\"> 0.4\"])\n    s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n    s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n  end\nend\n", not "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"1\"\n  s.platform = Gem::Platform.new([\"x86\", \"darwin\", \"8\"])\n\n  s.required_rubygems_version = Gem::Requirement.new(\">= 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2010-12-31}\n  s.default_executable = %q{exec}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.executables = [\"exec\"]\n  s.extensions = [\"ext/a/extconf.rb\"]\n  s.files = [\"lib/code.rb\", \"test/suite.rb\", \"bin/exec\", \"ext/a/extconf.rb\"]\n  s.homepage = %q{http://example.com}\n  s.licenses = [\"MIT\"]\n  s.require_paths = [\"lib\"]\n  s.requirements = [\"A working computer\"]\n  s.rubyforge_project = %q{example}\n  s.rubygems_version = %q{1.3.6}\n  s.summary = %q{this is a summary}\n  s.test_files = [\"test/suite.rb\"]\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_runtime_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_runtime_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    else\n      s.add_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    end\n  else\n    s.add_dependency(%q<rake>, [\"> 0.4\"])\n    s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n    s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n  end\nend\n".
 
   3) Failure:
 test_load_errors_contain_filename(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:1264]:
@@ -10125,19 +10073,19 @@ Failed assertion, no message given.
 
   4) Failure:
 test_installation_path(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:607]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6998/gemhome", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6998/gemhome".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_41439/gemhome", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_41439/gemhome".
 
   5) Failure:
 test_to_ruby(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:794]:
-Expected "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"2\"\n\n  s.required_rubygems_version = Gem::Requirement.new(\"> 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2010-12-30}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.files = [\"lib/code.rb\"]\n  s.homepage = %q{http://example.com}\n  s.require_paths = [\"lib\"]\n  s.rubygems_version = %q{1.3.6}\n  s.summary = %q{this is a summary}\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<b>, [\"= 1\"])\n    else\n      s.add_dependency(%q<b>, [\"= 1\"])\n    end\n  else\n    s.add_dependency(%q<b>, [\"= 1\"])\n  end\nend\n", not "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"2\"\n\n  s.required_rubygems_version = Gem::Requirement.new(\"> 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2010-12-30}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.files = [\"lib/code.rb\"]\n  s.homepage = %q{http://example.com}\n  s.require_paths = [\"lib\"]\n  s.rubygems_version = %q{1.3.6}\n  s.summary = %q{this is a summary}\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<b>, [\"= 1\"])\n    else\n      s.add_dependency(%q<b>, [\"= 1\"])\n    end\n  else\n    s.add_dependency(%q<b>, [\"= 1\"])\n  end\nend\n".
+Expected "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"2\"\n\n  s.required_rubygems_version = Gem::Requirement.new(\"> 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2010-12-31}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.files = [\"lib/code.rb\"]\n  s.homepage = %q{http://example.com}\n  s.require_paths = [\"lib\"]\n  s.rubygems_version = %q{1.3.6}\n  s.summary = %q{this is a summary}\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<b>, [\"= 1\"])\n    else\n      s.add_dependency(%q<b>, [\"= 1\"])\n    end\n  else\n    s.add_dependency(%q<b>, [\"= 1\"])\n  end\nend\n", not "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"2\"\n\n  s.required_rubygems_version = Gem::Requirement.new(\"> 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2010-12-31}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.files = [\"lib/code.rb\"]\n  s.homepage = %q{http://example.com}\n  s.require_paths = [\"lib\"]\n  s.rubygems_version = %q{1.3.6}\n  s.summary = %q{this is a summary}\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<b>, [\"= 1\"])\n    else\n      s.add_dependency(%q<b>, [\"= 1\"])\n    end\n  else\n    s.add_dependency(%q<b>, [\"= 1\"])\n  end\nend\n".
 
   6) Failure:
 test_full_gem_path(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:540]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6998/gemhome/gems/a-1", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6998/gemhome/gems/a-1".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_41439/gemhome/gems/a-1", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_41439/gemhome/gems/a-1".
 
   7) Failure:
 test_full_gem_path_double_slash(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:553]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6998/gemhome/gems/a-1", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_6998/gemhome/gems/a-1".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_41439/gemhome/gems/a-1", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_41439/gemhome/gems/a-1".
 
 95 tests, 227 assertions, 7 failures, 0 errors, 0 skips
 
@@ -11079,7 +11027,7 @@ ArgumentError: wrong number of arguments (2 for 3)
 
  10) Error:
 test_sysaccept(TestSocket):
-NoMethodError: undefined method `to_sockaddr' for #<String:0xXXXXXXXX>
+NoMethodError: undefined method `to_sockaddr' for "\x10\x02\xDB)\x7F\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00":String
     /macruby-test/test-mri/test/socket/test_socket.rb:30:in `test_sysaccept'
 
  11) Error:
@@ -12068,54 +12016,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/test_tempfile
 Started
-...E.........EF.F.EE.E...
-
-  1) Error:
-test_binmode(TestTempfile):
-TypeError: can't convert Hash into Integer
-    /macruby-test/test-mri/test/test_tempfile.rb:12:in `tempfile:'
-    /macruby-test/test-mri/test/test_tempfile.rb:298:in `test_binmode'
-
-  2) Error:
-test_finalizer_does_not_unlink_if_already_unlinked(TestTempfile):
-Timeout::Error: Timeout::Error
-    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
-    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
-    /macruby-test/test-mri/test/test_tempfile.rb:160:in `test_finalizer_does_not_unlink_if_already_unlinked'
-
-  3) Failure:
-test_saves_in_dir_tmpdir_by_default(TestTempfile) [/macruby-test/test-mri/test/test_tempfile.rb:32]:
-<"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/"> expected but was
-<"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-">.
-
-  4) Failure:
-test_size_flushes_buffer_before_determining_file_size(TestTempfile) [/macruby-test/test-mri/test/test_tempfile.rb:212]:
-<0> expected but was
-<5>.
-
-  5) Error:
-test_tempfile_encoding_ascii8bit(TestTempfile):
-TypeError: can't convert Hash into Integer
-    /macruby-test/test-mri/test/test_tempfile.rb:12:in `tempfile:'
-    /macruby-test/test-mri/test/test_tempfile.rb:283:in `test_tempfile_encoding_ascii8bit'
-
-  6) Error:
-test_tempfile_encoding_ascii8bit2(TestTempfile):
-TypeError: can't convert Hash into Integer
-    /macruby-test/test-mri/test/test_tempfile.rb:12:in `tempfile:'
-    /macruby-test/test-mri/test/test_tempfile.rb:291:in `test_tempfile_encoding_ascii8bit2'
-
-  7) Error:
-test_tempfile_is_unlinked_when_ruby_exits(TestTempfile):
-Timeout::Error: Timeout::Error
-    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
-    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
-    /macruby-test/test-mri/test/test_tempfile.rb:202:in `test_tempfile_is_unlinked_when_ruby_exits'
-
-25 tests, 29 assertions, 2 failures, 5 errors, 0 skips
-
-Test run options: --seed 0
-
+...E.........EF.F.EE.
 ----------------------------------------
 Loaded suite test/test_time
 Started
@@ -12293,7 +12194,7 @@ FSFS
 
   1) Failure:
 test_bad_header(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:133]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2010-12-30 03:50:28] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2010-12-31 03:50:15] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
 
   2) Skipped:
 test_bad_request(TestWEBrickCGI) [/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:472]:
@@ -12301,7 +12202,7 @@ test_bad_request(TestWEBrickCGI) [/Library/Frameworks/MacRuby.framework/Versions
 
   3) Failure:
 test_bad_uri(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:119]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2010-12-30 03:50:28] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2010-12-31 03:50:16] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
 
   4) Skipped:
 test_cgi(TestWEBrickCGI) [/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:472]:
@@ -12496,10 +12397,10 @@ Started
   1) Failure:
 test_server(TestWEBrickServer) [/macruby-test/test-mri/test/webrick/test_server.rb:19]:
 webrick log start:
-  [2010-12-30 03:51:14] INFO  WEBrick 1.3.1
-  [2010-12-30 03:51:14] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
-  [2010-12-30 03:51:14] INFO  TestWEBrickServer::Echo#start: pid=7812 port=63054
-  [2010-12-30 03:51:14] ERROR Errno::EAGAIN: Resource temporarily unavailable - read() failed
+  [2010-12-31 03:51:02] INFO  WEBrick 1.3.1
+  [2010-12-31 03:51:02] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
+  [2010-12-31 03:51:02] INFO  TestWEBrickServer::Echo#start: pid=42256 port=56210
+  [2010-12-31 03:51:02] ERROR Errno::EAGAIN: Resource temporarily unavailable - read() failed
   	/macruby-test/test-mri/test/webrick/test_server.rb:9:in `run:'
   	/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/webrick/server.rb:183:in `block'
 webrick log end.
@@ -12672,7 +12573,7 @@ E
 
   1) Error:
 test_cookie(TestCookie):
-Errno::ECONNRESET: Connection reset by peer - read(2) failed.
+EOFError: end of file reached
     /macruby-test/test-mri/test/xmlrpc/test_cookie.rb:93:in `do_test'
     /macruby-test/test-mri/test/xmlrpc/test_cookie.rb:80:in `test_cookie'
 
