@@ -1,5 +1,5 @@
-Date    : 2011-01-15T03:09:22+09:00
-Version : 0.9, svn revision 5166 from http://svn.macosforge.org/repository/ruby/MacRuby/trunk
+Date    : 2011-01-16T03:09:18+09:00
+Version : 0.9, svn revision 5172 from http://svn.macosforge.org/repository/ruby/MacRuby/trunk
 
 ----------------------------------------
 /macruby-test/test-mri/test/-ext-/test_bug-3662.rb:1:in `<main>': no such file to load -- -test-/bug-3662/bug (LoadError)
@@ -290,8 +290,34 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/csv/test_features
 Started
-FF......F......macruby(7557,0xXXXXXXXX) malloc: *** error for object 0xXXXXXXXX: incorrect checksum for freed object - object was probably modified after being freed.
-*** set a breakpoint in malloc_error_break to debug
+FF......F......F.E....
+
+  1) Failure:
+test_col_sep(TestCSVFeatures) [/macruby-test/test-mri/test/csv/test_features.rb:49]:
+<["\r\n;"]> expected but was
+<["\r\r\n\n;"]>.
+
+  2) Failure:
+test_converters_reader(TestCSVFeatures) [/macruby-test/test-mri/test/csv/test_features.rb:155]:
+Expected nil to be an instance of Proc, not NilClass.
+
+  3) Failure:
+test_header_converters_reader(TestCSVFeatures) [/macruby-test/test-mri/test/csv/test_features.rb:170]:
+Expected nil to be an instance of Proc, not NilClass.
+
+  4) Failure:
+test_quote_char(TestCSVFeatures) [/macruby-test/test-mri/test/csv/test_features.rb:67]:
+<["\r\n,"]> expected but was
+<["\r\r\n\n,"]>.
+
+  5) Error:
+test_row_sep(TestCSVFeatures):
+CSV::MalformedCSVError: Unquoted fields do not allow \r or \n (line 1).
+    /macruby-test/test-mri/test/csv/test_features.rb:60:in `test_row_sep'
+
+22 tests, 130 assertions, 4 failures, 1 errors, 0 skips
+
+Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/csv/test_headers
@@ -603,7 +629,13 @@ Test run options: --seed 0
 Loaded suite test/drb/test_drb
 Started
 E.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
-EEEEEEEEEEEEEEEEEEEEEEEE.../Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/drb/drb.rb:1117:in `prepare_backtrace:': undefined method `each' for nil:NilClass (NoMethodError)
+EEEE/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/drb/drb.rb:1117:in `prepare_backtrace:': undefined method `each' for nil:NilClass (NoMethodError)
+	from /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/drb/drb.rb:1097:in `method_missing:'
+	from /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/drb/extserv.rb:20:in `block'
+	from /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/monitor.rb:201:in `synchronize'
+	from /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/drb/extserv.rb:19:in `initialize:'
+	from /macruby-test/test-mri/test/drb/ut_array.rb:12:in `<main>'
+EEEEEEEEEEEEEEEEEEEE.../Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/drb/drb.rb:1117:in `prepare_backtrace:': undefined method `each' for nil:NilClass (NoMethodError)
 	from /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/drb/drb.rb:1097:in `method_missing:'
 	from /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/drb/extserv.rb:20:in `block'
 	from /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/monitor.rb:201:in `synchronize'
@@ -620,26 +652,26 @@ ThreadError: Attempt to unlock a mutex which is not locked
 
   2) Error:
 test_03_redo(TestDRbAry):
-ThreadError: Attempt to unlock a mutex which is not locked
+ThreadError: Attempt to unlock a mutex which is locked by another thread
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/drbtest.rb:274:in `setup'
 
   3) Error:
 test_05_break(TestDRbAry):
-DRb::DRbConnError: druby://maco.local:52994 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://maco.local:56608 - #<ThreadError: Attempt to unlock a mutex which is locked by another thread>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/drbtest.rb:274:in `setup'
 
   4) Error:
 test_06_next(TestDRbAry):
-DRb::DRbConnError: druby://maco.local:52994 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://maco.local:56608 - #<ThreadError: Attempt to unlock a mutex which is locked by another thread>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/drbtest.rb:274:in `setup'
 
   5) Error:
 test_07_break_18(TestDRbAry):
-DRb::DRbConnError: druby://maco.local:52994 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://maco.local:56608 - #<ThreadError: Attempt to unlock a mutex which is locked by another thread>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/drbtest.rb:274:in `setup'
 
@@ -652,79 +684,79 @@ ThreadError: Attempt to unlock a mutex which is not locked
 
   7) Error:
 test_01(TestDRbCore):
-DRb::DRbConnError: druby://localhost:53010 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:56624 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
 
   8) Error:
 test_01_02_loop(TestDRbCore):
-DRb::DRbConnError: druby://localhost:53010 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:56624 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
 
   9) Error:
 test_02_unknown(TestDRbCore):
-DRb::DRbConnError: druby://localhost:53010 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:56624 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
 
  10) Error:
 test_03(TestDRbCore):
-DRb::DRbConnError: druby://localhost:53010 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:56624 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
 
  11) Error:
 test_04(TestDRbCore):
-DRb::DRbConnError: druby://localhost:53010 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:56624 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
 
  12) Error:
 test_05_eq(TestDRbCore):
-DRb::DRbConnError: druby://localhost:53010 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:56624 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
 
  13) Error:
 test_06_timeout(TestDRbCore):
-DRb::DRbConnError: druby://localhost:53010 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:56624 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
 
  14) Error:
 test_07_public_private_protected_missing(TestDRbCore):
-DRb::DRbConnError: druby://localhost:53010 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:56624 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
 
  15) Error:
 test_08_here(TestDRbCore):
-DRb::DRbConnError: druby://localhost:53010 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:56624 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
 
  16) Error:
 test_09_option(TestDRbCore):
-DRb::DRbConnError: druby://localhost:53010 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:56624 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
 
  17) Error:
 test_10_yield(TestDRbCore):
-DRb::DRbConnError: druby://localhost:53010 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:56624 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
 
  18) Error:
 test_10_yield_undumped(TestDRbCore):
-DRb::DRbConnError: druby://localhost:53010 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:56624 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
 
  19) Error:
 test_11_remote_no_method_error(TestDRbCore):
-DRb::DRbConnError: druby://localhost:53010 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:56624 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
 
@@ -737,31 +769,31 @@ ThreadError: Attempt to unlock a mutex which is locked by another thread
 
  21) Error:
 test_02_large_ary(TestDRbLarge):
-DRb::DRbConnError: druby://localhost:53056 - #<ThreadError: Attempt to unlock a mutex which is locked by another thread>
+DRb::DRbConnError: druby://localhost:56670 - #<ThreadError: Attempt to unlock a mutex which is locked by another thread>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/test_drb.rb:261:in `setup'
 
  22) Error:
 test_03_large_ary(TestDRbLarge):
-DRb::DRbConnError: druby://localhost:53056 - #<ThreadError: Attempt to unlock a mutex which is locked by another thread>
+DRb::DRbConnError: druby://localhost:56670 - #<ThreadError: Attempt to unlock a mutex which is locked by another thread>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/test_drb.rb:261:in `setup'
 
  23) Error:
 test_04_many_arg(TestDRbLarge):
-DRb::DRbConnError: druby://localhost:53056 - #<ThreadError: Attempt to unlock a mutex which is locked by another thread>
+DRb::DRbConnError: druby://localhost:56670 - #<ThreadError: Attempt to unlock a mutex which is locked by another thread>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/test_drb.rb:261:in `setup'
 
  24) Error:
 test_05_too_large_ary(TestDRbLarge):
-DRb::DRbConnError: druby://localhost:53056 - #<ThreadError: Attempt to unlock a mutex which is locked by another thread>
+DRb::DRbConnError: druby://localhost:56670 - #<ThreadError: Attempt to unlock a mutex which is locked by another thread>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/test_drb.rb:261:in `setup'
 
  25) Error:
 test_01(TestDRbMServer):
-DRb::DRbConnError: druby://localhost:53056 - #<ThreadError: Attempt to unlock a mutex which is locked by another thread>
+DRb::DRbConnError: druby://localhost:56670 - #<ThreadError: Attempt to unlock a mutex which is locked by another thread>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/test_drb.rb:184:in `setup'
 
@@ -779,76 +811,70 @@ ThreadError: Attempt to unlock a mutex which is not locked
 
  28) Error:
 test_02_collect(TestDRbSafe1):
-DRb::DRbConnError: druby://localhost:53078 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:56692 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/test_drb.rb:205:in `setup'
 
  29) Error:
 test_03_redo(TestDRbSafe1):
-DRb::DRbConnError: druby://localhost:53078 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:56692 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/test_drb.rb:205:in `setup'
 
  30) Error:
 test_05_break(TestDRbSafe1):
-DRb::DRbConnError: druby://localhost:53078 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:56692 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/test_drb.rb:205:in `setup'
 
  31) Error:
 test_06_next(TestDRbSafe1):
-DRb::DRbConnError: druby://localhost:53078 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:56692 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/test_drb.rb:205:in `setup'
 
  32) Error:
 test_07_break_18(TestDRbSafe1):
-DRb::DRbConnError: druby://localhost:53078 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:56692 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/test_drb.rb:205:in `setup'
 
  33) Error:
 test_01_one(TestDRbYield):
-DRb::DRbConnError: druby://localhost:53078 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:56692 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/test_drb.rb:9:in `setup'
 
  34) Error:
 test_02_two(TestDRbYield):
-DRb::DRbConnError: druby://localhost:53078 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:56692 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/test_drb.rb:9:in `setup'
 
  35) Error:
 test_03_many(TestDRbYield):
-DRb::DRbConnError: druby://localhost:53078 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:56692 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/test_drb.rb:9:in `setup'
 
  36) Error:
 test_04_many_to_one(TestDRbYield):
-DRb::DRbConnError: druby://localhost:53078 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:56692 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/test_drb.rb:9:in `setup'
 
  37) Error:
 test_05_array_subclass(TestDRbYield):
-DRb::DRbConnError: druby://localhost:53078 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:56692 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/test_drb.rb:9:in `setup'
 
  38) Error:
 test_06_taint(TestDRbYield):
-DRb::DRbConnError: druby://localhost:53078 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:56692 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service:'
     /macruby-test/test-mri/test/drb/test_drb.rb:9:in `setup'
 
-/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/drb/drb.rb:1117:in `prepare_backtrace:': undefined method `each' for nil:NilClass (NoMethodError)
-	from /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/drb/drb.rb:1097:in `method_missing:'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/drb/extserv.rb:20:in `block'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/monitor.rb:201:in `synchronize'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/drb/extserv.rb:19:in `initialize:'
-	from /macruby-test/test-mri/test/drb/ut_safe1.rb:13:in `<main>'
 50 tests, 62 assertions, 0 failures, 38 errors, 0 skips
 
 Test run options: --seed 0
@@ -1563,11 +1589,11 @@ Errno::ECONNRESET: Connection reset by peer - read(2) failed.
   6) Failure:
 test_get__break(TestNetHTTP_v1_2_chunked) [/macruby-test/test-mri/test/net/http/test_http.rb:92]:
 <1> expected but was
-<4096>.
+<4097>.
 
   7) Error:
 test_request(TestNetHTTP_v1_2_chunked):
-Errno::ECONNRESET: Connection reset by peer - read(2) failed.
+EOFError: end of file reached
     /macruby-test/test-mri/test/net/http/test_http.rb:204:in `_test_request__file:'
     /macruby-test/test-mri/test/net/http/test_http.rb:180:in `block'
     /macruby-test/test-mri/test/net/http/utils.rb:11:in `start'
@@ -1611,9 +1637,13 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/net/http/test_https
 Started
-.....
+F....
 
-5 tests, 7 assertions, 0 failures, 0 errors, 0 skips
+  1) Failure:
+test_certificate_verify_failure(TestNetHTTPS) [/macruby-test/test-mri/test/net/http/test_https.rb:83]:
+Expected /certificate verify failed/ to match "SSL_connect SYSCALL returned=5 errno=0 state=SSLv3 read server certificate B".
+
+5 tests, 7 assertions, 1 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -1716,7 +1746,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/open-uri/test_open-uri
 Started
-................E....F.F..F........
+................E......F..F........
 
   1) Error:
 test_mode(TestOpenURI):
@@ -1727,19 +1757,14 @@ NoMethodError: undefined method `set_encoding' for #<StringIO:0xXXXXXXXX ...>
     /macruby-test/test-mri/test/open-uri/test_open-uri.rb:126:in `test_mode'
 
   2) Failure:
-test_progress(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.rb:394]:
-<100000> expected but was
-<81508>.
+test_proxy(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.rb:205]:
+Expected /http:\/\/127\.0\.0\.1:56890/ to match "Y\x04\x00\x00\x00\x00\x00\x00\xA0gD\x00\x02\x00\x00\x00 v'\x00\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xE0iA\x00\x02\x00\x00\x00\x00t+".
 
   3) Failure:
-test_proxy(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.rb:205]:
-Expected /http:\/\/127\.0\.0\.1:53305/ to match "\xA0!\x01\x00\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xA0 \x01\x00\x02\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\xC0YY".
-
-  4) Failure:
 test_read_timeout(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.rb:113]:
 Timeout::Error expected but nothing was raised.
 
-35 tests, 136 assertions, 3 failures, 1 errors, 0 skips
+35 tests, 137 assertions, 2 failures, 1 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -2597,7 +2622,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rake/test_fileutils
 Started
-.2011-01-15 03:22:50.941 macruby[8463:903] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
+.2011-01-16 03:22:41.038 macruby[47305:903] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
 F.....................
 
   1) Failure:
@@ -4681,7 +4706,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_parser_simple
 Started
-Unrecognized directive 'unhandled' in /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/TestRDocParserSimple20110115-8625-16tc0n7
+Unrecognized directive 'unhandled' in /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/TestRDocParserSimple20110116-47529-16tc0n7
 E..F
 
   1) Error:
@@ -4727,7 +4752,7 @@ NoMethodError: undefined method `read_file_contents' for #<RDoc::RDoc:0xXXXXXXXX
 
   6) Failure:
 test_setup_output_dir_exists_file(TestRDocRDoc) [/macruby-test/test-mri/test/rdoc/test_rdoc_rdoc.rb:149]:
-Expected /\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/test_rdoc_rdoc20110115\-8628\-1lot1rb exists and is not a directory/ to match "'/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_rdoc20110115-8628-1lot1rb' exists, and is not a directory".
+Expected /\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/test_rdoc_rdoc20110116\-47532\-1lot1rb exists and is not a directory/ to match "'/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_rdoc20110116-47532-1lot1rb' exists, and is not a directory".
 
   7) Error:
 test_setup_output_dir_exists(TestRDocRDoc):
@@ -5560,15 +5585,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rinda/test_rinda
 Started
-.....EE*** Thread 0xXXXXXXXX exited prematurely because of an uncaught exception:
-/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/monitor.rb:231:in `mon_check_owner': current thread not owner (ThreadError)
-	from /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/monitor.rb:185:in `mon_exit'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/monitor.rb:203:in `synchronize'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/rinda/tuplespace.rb:209:in `signal'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/rinda/tuplespace.rb:196:in `cancel'
-	from /macruby-test/test-mri/test/rinda/test_rinda.rb:455:in `block'
-
-EE..E..E..EEEEE.E.
+.....EEEE..E..E..EEEEE.E.
 
   1) Error:
 test_cancel_02(Rinda::TupleSpaceProxyTest):
@@ -5682,7 +5699,7 @@ ThreadError: deadlock; recursive locking
     /macruby-test/test-mri/test/rinda/test_rinda.rb:104:in `sleep:'
     /macruby-test/test-mri/test/rinda/test_rinda.rb:244:in `test_ruby_talk_264062'
 
-25 tests, 220 assertions, 0 failures, 12 errors, 0 skips
+25 tests, 221 assertions, 0 failures, 12 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -6685,7 +6702,7 @@ test_encoding(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:284]:
 
   4) Failure:
 test_file(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:638]:
-<"\"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/argf-foo20110115-8966-1vzjxdx\""> expected but was
+<"\"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/argf-foo20110116-47872-1vzjxdx\""> expected but was
 <"-e:2:in `<main>': undefined method `dump' for nil:NilClass (NoMethodError)">.
 
   5) Error:
@@ -7025,7 +7042,7 @@ Test run options: --seed 0
 Loaded suite test/ruby/test_beginendblock
 Started
 can't find slot for variable local_for_end2
-FF.2011-01-15 03:28:56.115 macruby[9033:903] *** Terminating app due to uncaught exception 'RuntimeError', reason: '-e:5:in `block': e5 (RuntimeError)
+FF.2011-01-16 03:28:48.017 macruby[47940:903] *** Terminating app due to uncaught exception 'RuntimeError', reason: '-e:5:in `block': e5 (RuntimeError)
 '
 *** Call stack at first throw:
 (
@@ -7033,7 +7050,7 @@ FF.2011-01-15 03:28:56.115 macruby[9033:903] *** Terminating app due to uncaught
 	1   libobjc.A.dylib                     0xXXXXXXXX objc_exception_throw + 45
 	2   libmacruby.dylib                    0xXXXXXXXX rb_vm_raise + 437
 	3   libmacruby.dylib                    0xXXXXXXXX rb_make_exception + 523
-	4   libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 6997
+	4   libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 6981
 	5   ???                                 0xXXXXXXXX 0x0 + 4342523446
 	6   ???                                 0xXXXXXXXX 0x0 + 4342527165
 	7   libmacruby.dylib                    0xXXXXXXXX rb_vm_block_eval + 1401
@@ -7262,7 +7279,7 @@ Encoding::CompatibilityError expected but nothing was raised.
 
   4) Failure:
 test_inspect(TestDir) [/macruby-test/test-mri/test/ruby/test_dir.rb:63]:
-Expected /^#<Dir:\/private\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/__test_dir__20110115\-9118\-1o6inhj>$/ to match "#<Dir:/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/__test_dir__20110115-9118-1o6inhj".
+Expected /^#<Dir:\/private\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/__test_dir__20110116\-48026\-1o6inhj>$/ to match "#<Dir:/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/__test_dir__20110116-48026-1o6inhj".
 
   5) Error:
 test_rewind(TestDir):
@@ -8308,314 +8325,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_io
 Started
-..SS....SS..SFSEEESEEE.EEEFEEESE...E.....F.FFSE.EE..FE.ES.E..S....EE.S.FS....FEEFF.FE.EF.F.S.
-
-  1) Skipped:
-test_bytes(TestIO) [/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:472]:
-[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
-
-  2) Skipped:
-test_chars(TestIO) [/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:472]:
-[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
-
-  3) Skipped:
-test_close_read_security_error(TestIO) [/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:472]:
-[BUG : #1076] Abort
-
-  4) Skipped:
-test_close_security_error(TestIO) [/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:472]:
-[BUG : #1076] Abort
-
-  5) Skipped:
-test_close_write_security_error(TestIO) [/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:472]:
-[BUG : #1076] Abort
-
-  6) Failure:
-test_copy_stream(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:266]:
-<2> expected but was
-<3>.
-
-  7) Skipped:
-test_copy_stream_dst_rbuf(TestIO) [/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:472]:
-[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
-
-  8) Error:
-test_copy_stream_fname_to_strio(TestIO):
-TypeError: can't convert StringIO into String
-    /macruby-test/test-mri/test/ruby/test_io.rb:635:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:76:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:75:in `block'
-
-  9) Error:
-test_copy_stream_io_to_rot13(TestIO):
-TypeError: can't convert TestIO::Rot13IO into String
-    /macruby-test/test-mri/test/ruby/test_io.rb:705:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:703:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:702:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:76:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:75:in `block'
-
- 10) Error:
-test_copy_stream_io_to_strio(TestIO):
-TypeError: can't convert StringIO into String
-    /macruby-test/test-mri/test/ruby/test_io.rb:658:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:656:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:76:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:75:in `block'
-
- 11) Skipped:
-test_copy_stream_rbuf(TestIO) [/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:472]:
-[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
-
- 12) Error:
-test_copy_stream_rot13_to_io(TestIO):
-TypeError: can't convert TestIO::Rot13IO into String
-    /macruby-test/test-mri/test/ruby/test_io.rb:719:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:718:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:716:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:76:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:75:in `block'
-
- 13) Error:
-test_copy_stream_rot13_to_rot13(TestIO):
-TypeError: can't convert TestIO::Rot13IO into String
-    /macruby-test/test-mri/test/ruby/test_io.rb:734:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:732:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:730:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:76:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:75:in `block'
-
- 14) Error:
-test_copy_stream_socket(TestIO):
-TypeError: can't convert false into Integer
-    /macruby-test/test-mri/test/ruby/test_io.rb:559:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:513:in `with_socketpair'
-    /macruby-test/test-mri/test/ruby/test_io.rb:557:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:555:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:76:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:75:in `block'
-
- 15) Error:
-test_copy_stream_strio(TestIO):
-TypeError: can't convert StringIO into String
-    /macruby-test/test-mri/test/ruby/test_io.rb:606:in `test_copy_stream_strio'
-
- 16) Error:
-test_copy_stream_strio_flush(TestIO):
-TypeError: can't convert StringIO into String
-    /macruby-test/test-mri/test/ruby/test_io.rb:747:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:57:in `with_pipe'
-    /macruby-test/test-mri/test/ruby/test_io.rb:743:in `test_copy_stream_strio_flush'
-
- 17) Error:
-test_copy_stream_strio_len(TestIO):
-TypeError: can't convert StringIO into String
-    /macruby-test/test-mri/test/ruby/test_io.rb:615:in `test_copy_stream_strio_len'
-
- 18) Failure:
-test_copy_stream_strio_off(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:624]:
-[ArgumentError] exception expected, not
-Class: <TypeError>
-Message: <"can't convert StringIO into String">
----Backtrace---
-/macruby-test/test-mri/test/ruby/test_io.rb:625:in `block'
----------------
-
- 19) Error:
-test_copy_stream_strio_rbuf(TestIO):
-TypeError: can't convert StringIO into String
-    /macruby-test/test-mri/test/ruby/test_io.rb:51:in `pipe:'
-    /macruby-test/test-mri/test/ruby/test_io.rb:760:in `test_copy_stream_strio_rbuf'
-
- 20) Error:
-test_copy_stream_strio_to_fname(TestIO):
-TypeError: can't convert StringIO into String
-    /macruby-test/test-mri/test/ruby/test_io.rb:645:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:76:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:75:in `block'
-
- 21) Error:
-test_copy_stream_strio_to_io(TestIO):
-TypeError: can't convert StringIO into String
-    /macruby-test/test-mri/test/ruby/test_io.rb:671:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:670:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:76:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:75:in `block'
-
- 22) Skipped:
-test_display(TestIO) [/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:472]:
-[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
-
- 23) Error:
-test_dup(TestIO):
-Errno::EBADF: Bad file descriptor - write() failed
-    /macruby-test/test-mri/test/ruby/test_io.rb:856:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:821:in `ruby'
-    /macruby-test/test-mri/test/ruby/test_io.rb:853:in `test_dup'
-
- 24) Error:
-test_each_codepoint(TestIO):
-NoMethodError: undefined method `each_codepoint' for #<File:0xXXXXXXXX>
-    /macruby-test/test-mri/test/ruby/test_io.rb:235:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:234:in `test_each_codepoint'
-
- 25) Failure:
-test_gets_limit_extra_arg(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:51]:
-TypeError expected but nothing was raised.
-
- 26) Failure:
-test_initialize(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1606]:
-r [ruby-dev:38571]
-Errno::EINVAL expected but nothing was raised.
-
- 27) Failure:
-test_inspect(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:888]:
-Expected /^#<IO:fd \d+>$/ to match "#<IO:0xXXXXXXXX>".
-
- 28) Skipped:
-test_lines(TestIO) [/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:472]:
-[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
-
- 29) Error:
-test_new_with_block(TestIO):
-Timeout::Error: Timeout::Error
-    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
-    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
-    /macruby-test/test-mri/test/ruby/test_io.rb:1624:in `test_new_with_block'
-
- 30) Error:
-test_open_pipe(TestIO):
-IOError: not opened for writing
-    /macruby-test/test-mri/test/ruby/test_io.rb:1416:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:1415:in `test_open_pipe'
-
- 31) Error:
-test_open_redirect(TestIO):
-TypeError: can't convert NSObject into String
-    /macruby-test/test-mri/test/ruby/test_io.rb:1406:in `test_open_redirect'
-
- 32) Failure:
-test_pipe_block(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:116]:
-<:foooo> expected but was
-<[#<IO:0xXXXXXXXX>, #<IO:0xXXXXXXXX>]>.
-
- 33) Error:
-test_pipe_block_close(TestIO):
-NoMethodError: undefined method `[]' for nil:NilClass
-    /macruby-test/test-mri/test/ruby/test_io.rb:124:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:122:in `test_pipe_block_close'
-
- 34) Error:
-test_print(TestIO):
-Timeout::Error: Timeout::Error
-    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
-    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
-    /macruby-test/test-mri/test/ruby/test_io.rb:1532:in `test_print'
-
- 35) Skipped:
-test_print_separators(TestIO) [/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:472]:
-[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
-
- 36) Error:
-test_putc(TestIO):
-Timeout::Error: Timeout::Error
-    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
-    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
-    /macruby-test/test-mri/test/ruby/test_io.rb:1565:in `test_putc'
-
- 37) Skipped:
-test_read_lock(TestIO) [/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:472]:
-[BUG : #954] Race condition: assertion fails with IO.pipe, when checks size of String which had read from pipe.
-
- 38) Error:
-test_readline2(TestIO):
-Timeout::Error: Timeout::Error
-    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
-    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
-    /macruby-test/test-mri/test/ruby/test_io.rb:1628:in `test_readline2'
-
- 39) Error:
-test_readlines(TestIO):
-Timeout::Error: Timeout::Error
-    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
-    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
-    /macruby-test/test-mri/test/ruby/test_io.rb:1642:in `test_readlines'
-
- 40) Skipped:
-test_readpartial_lock(TestIO) [/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:472]:
-[BUG : #954] Race condition: assertion fails with IO.pipe, when checks size of String which had read from pipe.
-
- 41) Failure:
-test_reinitialize(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1618]:
-[RuntimeError] exception expected, not
-Class: <ArgumentError>
-Message: <"wrong number of arguments (0 for 1)">
----Backtrace---
-/macruby-test/test-mri/test/ruby/test_io.rb:1619:in `block'
-/macruby-test/test-mri/test/ruby/test_io.rb:1619:in `block'
----------------
-
- 42) Skipped:
-test_reopen(TestIO) [/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:472]:
-[BUG : #1076] Abort
-
- 43) Failure:
-test_set_lineno(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1109]:
-<"0,1,2,2,1001,1001,1001,1,2,3,3"> expected but was
-<"nil,1,2,2,1001,1001,1001,1,2,3,3">.
-
- 44) Error:
-test_set_stdout(TestIO):
-Timeout::Error: Timeout::Error
-    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
-    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
-    /macruby-test/test-mri/test/ruby/test_io.rb:1595:in `test_set_stdout'
-
- 45) Error:
-test_sysopen(TestIO):
-IOError: not opened for writing
-    /macruby-test/test-mri/test/ruby/test_io.rb:1350:in `test_sysopen'
-
- 46) Failure:
-test_sysread(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1318]:
-IOError expected but nothing was raised.
-
- 47) Failure:
-test_sysseek(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1297]:
-IOError expected but nothing was raised.
-
- 48) Failure:
-test_tainted(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1679]:
-[ruby-dev:38826]
-
- 49) Error:
-test_threaded_flush(TestIO):
-Timeout::Error: Timeout::Error
-    /macruby-test/test-mri/test/ruby/test_io.rb:1700:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:1696:in `test_threaded_flush'
-
- 50) Error:
-test_ungetbyte(TestIO):
-NoMethodError: undefined method `ungetbyte' for #<Tempfile:0xXXXXXXXX>
-    /macruby-test/test-mri/test/ruby/test_io.rb:202:in `test_ungetbyte'
-
- 51) Failure:
-test_ungetc(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:51]:
-[ruby-dev:31650]
-IOError expected but nothing was raised.
-
- 52) Failure:
-test_uninitialized(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1654]:
-IOError expected but nothing was raised.
-
- 53) Skipped:
-test_write_nonblock(TestIO) [/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:472]:
-[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
-
-93 tests, 141 assertions, 13 failures, 26 errors, 14 skips
-
-Test run options: --seed 0
-
+..SS....SS..SFSEEESEEE.EEEFEEESE...E.....F.FFSE.EE..FE.ES.E..S....EE.S.FS....FEEFF.FE.E
 ----------------------------------------
 Loaded suite test/ruby/test_io_m17n
 Started
@@ -9965,7 +9675,7 @@ Test run options: --seed 0
 unknown: warning: already initialized constant Résumé
 Loaded suite test/ruby/test_marshal
 Started
-..FF....EF.FF.......E......F.FFF...2011-01-15 03:39:25.220 macruby[9251:903] *** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '*** -length only defined for abstract class.  Define -[RBAnonymous27 length]!'
+..FF....EF.FF.......E......F.FFF...2011-01-16 03:39:17.749 macruby[48162:903] *** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '*** -length only defined for abstract class.  Define -[RBAnonymous27 length]!'
 *** Call stack at first throw:
 (
 	0   CoreFoundation                      0xXXXXXXXX __exceptionPreprocess + 180
@@ -9978,33 +9688,33 @@ Started
 	7   libmacruby.dylib                    0xXXXXXXXX rb_marshal_load + 4787
 	8   libmacruby.dylib                    0xXXXXXXXX rb_ensure + 37
 	9   libmacruby.dylib                    0xXXXXXXXX rb_marshal_define_compat + 807
-	10  libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 6997
+	10  libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 6981
 	11  ???                                 0xXXXXXXXX 0x0 + 4342522854
 	12  ???                                 0xXXXXXXXX 0x0 + 4342874691
-	13  libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 8614
+	13  libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 8598
 	14  libmacruby.dylib                    0xXXXXXXXX rb_block_call + 956
-	15  libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 6997
+	15  libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 6981
 	16  ???                                 0xXXXXXXXX 0x0 + 4342522854
 	17  ???                                 0xXXXXXXXX 0x0 + 4342766997
-	18  libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 8587
+	18  libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 8571
 	19  ???                                 0xXXXXXXXX 0x0 + 4342522854
 	20  ???                                 0xXXXXXXXX 0x0 + 4342764711
 	21  libmacruby.dylib                    0xXXXXXXXX rb_vm_yield_args + 1895
 	22  libmacruby.dylib                    0xXXXXXXXX rb_yield + 40
 	23  libmacruby.dylib                    0xXXXXXXXX rary_reserve + 989
-	24  libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 8614
+	24  libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 8598
 	25  ???                                 0xXXXXXXXX 0x0 + 4342522854
 	26  ???                                 0xXXXXXXXX 0x0 + 4342761887
 	27  libmacruby.dylib                    0xXXXXXXXX rb_vm_yield_args + 1895
 	28  libmacruby.dylib                    0xXXXXXXXX rb_yield + 40
 	29  libmacruby.dylib                    0xXXXXXXXX rary_reserve + 989
-	30  libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 8614
+	30  libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 8598
 	31  ???                                 0xXXXXXXXX 0x0 + 4342522854
 	32  ???                                 0xXXXXXXXX 0x0 + 4342759831
-	33  libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 8587
+	33  libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 8571
 	34  ???                                 0xXXXXXXXX 0x0 + 4342522854
 	35  ???                                 0xXXXXXXXX 0x0 + 4342750309
-	36  libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 8587
+	36  libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 8571
 	37  ???                                 0xXXXXXXXX 0x0 + 4342522854
 	38  ???                                 0xXXXXXXXX 0x0 + 4342638721
 	39  libmacruby.dylib                    0xXXXXXXXX rb_vm_block_eval + 1401
@@ -10762,7 +10472,7 @@ test_random_bytes(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:345]:
 
  19) Failure:
 test_random_range(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:362]:
-<2011-01-15 03:40:35 +0900> expected but was
+<2011-01-16 03:40:27 +0900> expected but was
 <1.97626258336499e-323>.
 
  20) Failure:
@@ -10927,7 +10637,7 @@ Started
   1) Failure:
 test_assignment_in_conditional(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:307]:
 [ruby-dev:39363].
-Expected /\A(\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/test_ruby_test_rubyoption20110115\-9416\-163yxpr\.rb):1(: warning: found = in conditional, should be ==)\n\1:4\2\Z/ to match "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20110115-9416-163yxpr.rb:1: warning: found = in conditional, should be ==\n".
+Expected /\A(\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/test_ruby_test_rubyoption20110116\-48325\-163yxpr\.rb):1(: warning: found = in conditional, should be ==)\n\1:4\2\Z/ to match "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20110116-48325-163yxpr.rb:1: warning: found = in conditional, should be ==\n".
 
   2) Failure:
 test_autosplit(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:146]:
@@ -10967,7 +10677,7 @@ test_eval(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb
 
   9) Failure:
 test_indentation_check(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:319]:
-<["/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20110115-9416-1estiet.rb:2: warning: mismatched indentations at 'end' with 'begin' at 1"]> expected but was
+<["/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20110116-48325-1estiet.rb:2: warning: mismatched indentations at 'end' with 'begin' at 1"]> expected but was
 <[]>.
 
  10) Failure:
@@ -11469,226 +11179,22 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_thread
 Started
-EEEobjc[9528]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+EEE.objc[48437]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[9528]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[48437]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-.EEEEE.E...Eobjc[9528]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+EEEEEFE..objc[48437]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[9528]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[48437]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[9528]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[48437]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-objc[9528]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
-	undefined method `message' for false:FalseClass (NoMethodError)
-
-objc[9528]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
-	undefined method `message' for false:FalseClass (NoMethodError)
-
-EEEEFEEEEEEEobjc[9528]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
-	undefined method `message' for false:FalseClass (NoMethodError)
-
-objc[9528]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
-	undefined method `message' for false:FalseClass (NoMethodError)
-
-objc[9528]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
-	undefined method `message' for false:FalseClass (NoMethodError)
-
-objc[9528]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
-	undefined method `message' for false:FalseClass (NoMethodError)
-
-objc[9528]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
-	undefined method `message' for false:FalseClass (NoMethodError)
-
-objc[9528]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
-	undefined method `message' for false:FalseClass (NoMethodError)
-
-objc[9528]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
-	undefined method `message' for false:FalseClass (NoMethodError)
-
-objc[9528]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
-	undefined method `message' for false:FalseClass (NoMethodError)
-
-objc[9528]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
-	undefined method `message' for false:FalseClass (NoMethodError)
-
-objc[9528]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
-	undefined method `message' for false:FalseClass (NoMethodError)
-
-objc[9528]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
-	undefined method `message' for false:FalseClass (NoMethodError)
-
-EFS.F
-
-  1) Error:
-test_abort_on_exception(TestThread):
-Timeout::Error: Timeout::Error
-    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
-    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
-    /macruby-test/test-mri/test/ruby/test_thread.rb:251:in `test_abort_on_exception'
-
-  2) Error:
-test_condvar(TestThread):
-ThreadError: must be called with a block
-    /macruby-test/test-mri/test/ruby/test_thread.rb:9:in `new'
-    /macruby-test/test-mri/test/ruby/test_thread.rb:55:in `block'
-    /macruby-test/test-mri/test/ruby/test_thread.rb:54:in `test_condvar'
-
-  3) Error:
-test_condvar_wait_exception_handling(TestThread):
-ThreadError: must be called with a block
-    /macruby-test/test-mri/test/ruby/test_thread.rb:9:in `new'
-    /macruby-test/test-mri/test/ruby/test_thread.rb:84:in `test_condvar_wait_exception_handling'
-
-  4) Error:
-test_exit(TestThread):
-ThreadError: must be called with a block
-    /macruby-test/test-mri/test/ruby/test_thread.rb:9:in `new'
-    /macruby-test/test-mri/test/ruby/test_thread.rb:192:in `test_exit'
-
-  5) Error:
-test_join(TestThread):
-ThreadError: must be called with a block
-    /macruby-test/test-mri/test/ruby/test_thread.rb:9:in `new'
-    /macruby-test/test-mri/test/ruby/test_thread.rb:157:in `test_join'
-
-  6) Error:
-test_join2(TestThread):
-ThreadError: must be called with a block
-    /macruby-test/test-mri/test/ruby/test_thread.rb:9:in `new'
-    /macruby-test/test-mri/test/ruby/test_thread.rb:165:in `test_join2'
-
-  7) Error:
-test_kill_main_thread(TestThread):
-Timeout::Error: Timeout::Error
-    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
-    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
-    /macruby-test/test-mri/test/ruby/test_thread.rb:183:in `test_kill_main_thread'
-
-  8) Error:
-test_list(TestThread):
-Timeout::Error: Timeout::Error
-    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
-    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
-    /macruby-test/test-mri/test/ruby/test_thread.rb:230:in `test_list'
-
-  9) Error:
-test_main(TestThread):
-Timeout::Error: Timeout::Error
-    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
-    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
-    /macruby-test/test-mri/test/ruby/test_thread.rb:244:in `test_main'
-
- 10) Error:
-test_mutex_interrupt(TestThread):
-ThreadError: must be called with a block
-    /macruby-test/test-mri/test/ruby/test_thread.rb:9:in `new'
-    /macruby-test/test-mri/test/ruby/test_thread.rb:402:in `test_mutex_interrupt'
-
- 11) Error:
-test_mutex_synchronize(TestThread):
-ThreadError: must be called with a block
-    /macruby-test/test-mri/test/ruby/test_thread.rb:9:in `new'
-    /macruby-test/test-mri/test/ruby/test_thread.rb:35:in `block'
-    /macruby-test/test-mri/test/ruby/test_thread.rb:34:in `test_mutex_synchronize'
-
- 12) Error:
-test_mutex_trylock(TestThread):
-ThreadError: must be called with a block
-    /macruby-test/test-mri/test/ruby/test_thread.rb:9:in `new'
-    /macruby-test/test-mri/test/ruby/test_thread.rb:448:in `test_mutex_trylock'
-
- 13) Error:
-test_new(TestThread):
-ThreadError: must be called with a block
-    /macruby-test/test-mri/test/ruby/test_thread.rb:9:in `new'
-    /macruby-test/test-mri/test/ruby/test_thread.rb:141:in `test_new'
-
- 14) Error:
-test_priority(TestThread):
-ThreadError: must be called with a block
-    /macruby-test/test-mri/test/ruby/test_thread.rb:9:in `new'
-    /macruby-test/test-mri/test/ruby/test_thread.rb:120:in `test_priority'
-
- 15) Failure:
-test_recursive_outer(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:465]:
-Failed assertion, no message given.
-
- 16) Error:
-test_safe_level(TestThread):
-ThreadError: must be called with a block
-    /macruby-test/test-mri/test/ruby/test_thread.rb:9:in `new'
-    /macruby-test/test-mri/test/ruby/test_thread.rb:330:in `test_safe_level'
-
- 17) Error:
-test_select_wait(TestThread):
-ThreadError: must be called with a block
-    /macruby-test/test-mri/test/ruby/test_thread.rb:9:in `new'
-    /macruby-test/test-mri/test/ruby/test_thread.rb:381:in `test_select_wait'
-
- 18) Error:
-test_status_and_stop_p(TestThread):
-ThreadError: must be called with a block
-    /macruby-test/test-mri/test/ruby/test_thread.rb:9:in `new'
-    /macruby-test/test-mri/test/ruby/test_thread.rb:301:in `test_status_and_stop_p'
-
- 19) Error:
-test_stop(TestThread):
-Timeout::Error: Timeout::Error
-    /macruby-test/test-mri/test/ruby/envutil.rb:80:in `invoke_ruby:'
-    /macruby-test/test-mri/test/ruby/envutil.rb:168:in `assert_in_out_err:'
-    /macruby-test/test-mri/test/ruby/test_thread.rb:219:in `test_stop'
-
- 20) Error:
-test_thread_local(TestThread):
-ThreadError: must be called with a block
-    /macruby-test/test-mri/test/ruby/test_thread.rb:9:in `new'
-    /macruby-test/test-mri/test/ruby/test_thread.rb:340:in `test_thread_local'
-
- 21) Error:
-test_thread_local_security(TestThread):
-ThreadError: must be called with a block
-    /macruby-test/test-mri/test/ruby/test_thread.rb:9:in `new'
-    /macruby-test/test-mri/test/ruby/test_thread.rb:360:in `test_thread_local_security'
-
- 22) Error:
-test_wakeup(TestThread):
-ThreadError: must be called with a block
-    /macruby-test/test-mri/test/ruby/test_thread.rb:9:in `new'
-    /macruby-test/test-mri/test/ruby/test_thread.rb:202:in `test_wakeup'
-
- 23) Error:
-test_backtrace(TestThreadGroup):
-NoMethodError: undefined method `backtrace' for #<Thread:0xXXXXXXXX run>
-    /macruby-test/test-mri/test/ruby/test_thread.rb:529:in `test_backtrace'
-
- 24) Failure:
-test_enclosed_thgroup(TestThreadGroup) [/macruby-test/test-mri/test/ruby/test_thread.rb:505]:
-Exception raised:
-<#<ThreadError: can't move from the enclosed thread group>>.
-
- 25) Skipped:
-test_frozen_thgroup(TestThreadGroup) [/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:472]:
-[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
-
- 26) Failure:
-test_uninitialized(TestThreadGroup) [/macruby-test/test-mri/test/ruby/test_thread.rb:525]:
-[ThreadError] exception expected, not
-Class: <NoMethodError>
-Message: <"undefined method `start' for #<#<Class:0xXXXXXXXX>:0xXXXXXXXX run>">
----Backtrace---
-/macruby-test/test-mri/test/ruby/test_thread.rb:525:in `block'
----------------
-
-32 tests, 25 assertions, 3 failures, 22 errors, 1 skips
-
-Test run options: --seed 0
-
+.EEEEEFEE
 ----------------------------------------
 Loaded suite test/ruby/test_time
 Started
@@ -12370,19 +11876,19 @@ Message: <"can't find gem a (>= 0) with executable 2">
 
   4) Failure:
 test_self_user_dir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:589]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9573/userhome/.gem/macruby/1.9.2", not "/Users/watson/.gem/macruby/1.9.2".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48481/userhome/.gem/macruby/1.9.2", not "/Users/watson/.gem/macruby/1.9.2".
 
   5) Failure:
 test_self_datadir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:147]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9573/gemhome/gems/foo-2/data/foo", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9573/gemhome/gems/foo-2/data/foo".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48481/gemhome/gems/foo-2/data/foo", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48481/gemhome/gems/foo-2/data/foo".
 
   6) Failure:
 test_self_required_location(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:464]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9573/gemhome/gems/c-1.2/lib/code.rb", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9573/gemhome/gems/c-1.2/lib/code.rb".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48481/gemhome/gems/c-1.2/lib/code.rb", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48481/gemhome/gems/c-1.2/lib/code.rb".
 
   7) Failure:
 test_self_user_home(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:594]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9573/userhome", not "/Users/watson".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48481/userhome", not "/Users/watson".
 
   8) Error:
 test_load_plugins(TestGem):
@@ -12423,7 +11929,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_command_manager
 Started
-.F.F.F.E.
+.F.F.F...
 
   1) Failure:
 test_run_crash_command(TestGemCommandManager) [/macruby-test/test-mri/test/rubygems/test_gem_command_manager.rb:32]:
@@ -12437,12 +11943,7 @@ Expected false, not nil.
 test_run_interrupt(TestGemCommandManager) [/macruby-test/test-mri/test/rubygems/test_gem_command_manager.rb:20]:
 Expected "ERROR:  Interrupted\n", not "ERROR:  While executing gem ... (RuntimeError)\n    Unknown command interrupt\n".
 
-  4) Error:
-test_process_args_update(TestGemCommandManager):
-OptionParser::InvalidOption: invalid option: --test
-    /macruby-test/test-mri/test/rubygems/test_gem_command_manager.rb:198:in `test_process_args_update'
-
-9 tests, 27 assertions, 3 failures, 1 errors, 0 skips
+9 tests, 30 assertions, 3 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -12493,13 +11994,9 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_commands_dependency_command
 Started
-.......F.
+.........
 
-  1) Failure:
-test_execute_remote(TestGemCommandsDependencyCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_dependency_command.rb:191]:
-Expected "Gem foo-2\n  bar (> 1, runtime)\n\n", not "Gem foo-2\n\n".
-
-9 tests, 19 assertions, 1 failures, 0 errors, 0 skips
+9 tests, 20 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -12524,13 +12021,9 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_commands_generate_index_command
 Started
-............F
+.............
 
-  1) Failure:
-test_execute(TestGemCommandsGenerateIndexCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_generate_index_command.rb:24]:
-/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9619/gemhome/yaml
-
-13 tests, 23 assertions, 1 failures, 0 errors, 0 skips
+13 tests, 26 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -12627,7 +12120,7 @@ Expected "\n*** REMOTE GEMS ***\n\na (3.a, 2, 1)\npl (1 i386-linux)\n", not "***
 
   2) Failure:
 test_execute_local_details(TestGemCommandsQueryCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_query_command.rb:323]:
-Expected "\n*** LOCAL GEMS ***\n\na (3.a, 2, 1)\n    Author: A User\n    Homepage: http://example.com\n    Installed at (3.a): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9652/gemhome\n                 (2): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9652/gemhome\n                 (1): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9652/gemhome\n\n    this is a summary\n\na_evil (9)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9652/gemhome\n\n    this is a summary\n\nb (2)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9652/gemhome\n\n    this is a summary\n\nc (1.2)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9652/gemhome\n\n    this is a summary\n\npl (1)\n    Platform: i386-linux\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9652/gemhome\n\n    this is a summary\n", not "*** LOCAL GEMS ***\na (3.a, 2, 1)\n    Author: A User\n    Homepage: http://example.com\n    Installed at (3.a): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9652/gemhome\n                 (2): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9652/gemhome\n                 (1): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9652/gemhome\n\n    this is a summary\n\na_evil (9)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9652/gemhome\n\n    this is a summary\n\nb (2)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9652/gemhome\n\n    this is a summary\n\nc (1.2)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9652/gemhome\n\n    this is a summary\n\npl (1)\n    Platform: i386-linux\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9652/gemhome\n\n    this is a summary\n".
+Expected "\n*** LOCAL GEMS ***\n\na (3.a, 2, 1)\n    Author: A User\n    Homepage: http://example.com\n    Installed at (3.a): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48561/gemhome\n                 (2): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48561/gemhome\n                 (1): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48561/gemhome\n\n    this is a summary\n\na_evil (9)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48561/gemhome\n\n    this is a summary\n\nb (2)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48561/gemhome\n\n    this is a summary\n\nc (1.2)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48561/gemhome\n\n    this is a summary\n\npl (1)\n    Platform: i386-linux\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48561/gemhome\n\n    this is a summary\n", not "*** LOCAL GEMS ***\na (3.a, 2, 1)\n    Author: A User\n    Homepage: http://example.com\n    Installed at (3.a): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48561/gemhome\n                 (2): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48561/gemhome\n                 (1): /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48561/gemhome\n\n    this is a summary\n\na_evil (9)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48561/gemhome\n\n    this is a summary\n\nb (2)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48561/gemhome\n\n    this is a summary\n\nc (1.2)\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48561/gemhome\n\n    this is a summary\n\npl (1)\n    Platform: i386-linux\n    Author: A User\n    Homepage: http://example.com\n    Installed at: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48561/gemhome\n\n    this is a summary\n".
 
   3) Failure:
 test_execute_details(TestGemCommandsQueryCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_query_command.rb:144]:
@@ -12708,15 +12201,9 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_commands_uninstall_command
 Started
-.E.
+...
 
-  1) Error:
-test_execute_removes_executable(TestGemCommandsUninstallCommand):
-NoMethodError: undefined method `>=' for nil:NilClass
-    /macruby-test/test-mri/test/rubygems/test_gem_commands_uninstall_command.rb:37:in `block'
-    /macruby-test/test-mri/test/rubygems/test_gem_commands_uninstall_command.rb:36:in `test_execute_removes_executable'
-
-3 tests, 8 assertions, 0 failures, 1 errors, 0 skips
+3 tests, 14 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -12772,24 +12259,14 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_dependency
 Started
-........EF.E...
+.........F.....
 
-  1) Error:
-test_subclass(TestGemDependency):
-NoMethodError: undefined method `version_requirement' for <#<Class:0xXXXXXXXX> type=:runtime name="a" requirements=">= 0">:#<Class:0xXXXXXXXX>
-    /macruby-test/test-mri/test/rubygems/test_gem_dependency.rb:11:in `block'
-
-  2) Failure:
+  1) Failure:
 test_hash(TestGemDependency) [/macruby-test/test-mri/test/rubygems/test_gem_dependency.rb:110]:
 requirement.
 Expected 5289015114286989031 to not be equal to 5289015114286989031.
 
-  3) Error:
-test_version_requirements_equals_deprecated(TestGemDependency):
-NoMethodError: undefined method `version_requirements=' for <Gem::Dependency type=:runtime name="pkg" requirements="= 1.0">:Gem::Dependency
-    /macruby-test/test-mri/test/rubygems/test_gem_dependency.rb:141:in `block'
-
-15 tests, 55 assertions, 1 failures, 2 errors, 0 skips
+15 tests, 61 assertions, 1 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -12828,7 +12305,7 @@ Gem::RemoteFetcher::FetchError: no data for http://gems.example.com/gems/a-1.gem
 
   6) Failure:
 test_install_domain_both(TestGemDependencyInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_dependency_installer.rb:343]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9710/gemhome/specifications/a-1.gemspec", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9710/gemhome/specifications/a-1.gemspec".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48619/gemhome/specifications/a-1.gemspec", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48619/gemhome/specifications/a-1.gemspec".
 
 38 tests, 50 assertions, 1 failures, 4 errors, 1 skips
 
@@ -12864,7 +12341,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_ext_ext_conf_builder
 Started
-.../bin/sh: line 1:  9760 Abort trap              /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/bin/macruby extconf.rb 2>&1
+.../bin/sh: line 1: 48667 Abort trap              /Library/Frameworks/MacRuby.framework/Versions/0.9/usr/bin/macruby extconf.rb 2>&1
 .
 
 4 tests, 15 assertions, 0 failures, 0 errors, 0 skips
@@ -12896,7 +12373,7 @@ F.......
 
   1) Failure:
 test_lib_dirs_for(TestGemGemPathSearcher) [/macruby-test/test-mri/test/rubygems/test_gem_gem_path_searcher.rb:53]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9803/gemhome/gems/foo-0.1/{lib,lib2}", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9803/gemhome/gems/foo-0.1/{lib,lib2}".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48710/gemhome/gems/foo-0.1/{lib,lib2}", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48710/gemhome/gems/foo-0.1/{lib,lib2}".
 
 8 tests, 11 assertions, 1 failures, 0 errors, 0 skips
 
@@ -13023,13 +12500,9 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_install_update_options
 Started
-....F
+.....
 
-  1) Failure:
-test_add_install_update_options(TestGemInstallUpdateOptions) [/macruby-test/test-mri/test/rubygems/test_gem_install_update_options.rb:19]:
-Failed assertion, no message given.
-
-5 tests, 8 assertions, 1 failures, 0 errors, 0 skips
+5 tests, 8 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -13040,14 +12513,14 @@ Started
 
   1) Failure:
 test_initialize(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:518]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9821/gemhome/gems/a-2-x86-mswin32", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9821/gemhome/gems/a-2-x86-mswin32".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48728/gemhome/gems/a-2-x86-mswin32", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48728/gemhome/gems/a-2-x86-mswin32".
 
   2) Failure:
 test_extract_files_relative(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:145]:
-Expected "attempt to install file into \"../thefile\" under \"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9821/gemhome/gems/a-2\"", not "attempt to install file into \"../thefile\" under \"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9821/gemhome/gems/a-2\"".
+Expected "attempt to install file into \"../thefile\" under \"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48728/gemhome/gems/a-2\"", not "attempt to install file into \"../thefile\" under \"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48728/gemhome/gems/a-2\"".
 
   3) Skipped:
-test_generate_bin_script_wrappers(TestGemInstaller) [/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:680]:
+test_generate_bin_script_wrappers(TestGemInstaller) [/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:472]:
 [BUG : #???] Timeout, MacRuby don't finish
 
   4) Failure:
@@ -13347,8 +12820,33 @@ ArgumentError: wrong number of arguments (2 for 1)
 Test run options: --seed 0
 
 ----------------------------------------
-/macruby-test/test-mri/test/rubygems/test_gem_source_index.rb:8:in `block': undefined method `fetcher' for class `Gem::SourceIndex' (NameError)
-	from /macruby-test/test-mri/test/rubygems/test_gem_source_index.rb:5:in `<main>'
+Loaded suite test/rubygems/test_gem_source_index
+Started
+......EInvalid gemspec in [/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48795/gemhome/specifications/a-1.gemspec]: epic fail
+F............EInvalid gemspec in [/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48795/gemhome/specifications/a-1.gemspec]: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48795/gemhome/specifications/a-1.gemspec:1: syntax error, unexpected $end
+F......
+
+  1) Error:
+test_remove_extra_no_changes(TestGemSourceIndex):
+NoMethodError: undefined method `original_name' for false:FalseClass
+    /macruby-test/test-mri/test/rubygems/test_gem_source_index.rb:378:in `test_remove_extra_no_changes'
+
+  2) Failure:
+test_self_load_specification_exception(TestGemSourceIndex) [/macruby-test/test-mri/test/rubygems/test_gem_source_index.rb:131]:
+Expected "WARNING:  #<Exception: epic fail>\nraise Exception, \"epic fail\"\nWARNING:  Invalid .gemspec format in '/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48795/gemhome/specifications/a-1.gemspec'\n", not "".
+
+  3) Error:
+test_remove_extra(TestGemSourceIndex):
+NoMethodError: undefined method `original_name' for false:FalseClass
+    /macruby-test/test-mri/test/rubygems/test_gem_source_index.rb:367:in `test_remove_extra'
+
+  4) Failure:
+test_self_load_specification_syntax_error(TestGemSourceIndex) [/macruby-test/test-mri/test/rubygems/test_gem_source_index.rb:172]:
+Expected /syntax error/ to match "".
+
+28 tests, 53 assertions, 2 failures, 2 errors, 0 skips
+
+Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_spec_fetcher
@@ -13362,12 +12860,12 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_specification
 Started
-...........F.........F.........Invalid gemspec in [/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/testgemspecification20110115-9892-1bxf1bp]: boom
+...........F.........F.........Invalid gemspec in [/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/testgemspecification20110116-48801-1bxf1bp]: boom
 .F.F.............F.............F................................
 
   1) Failure:
 test_to_ruby_fancy(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:855]:
-Expected "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"1\"\n  s.platform = Gem::Platform.new([\"x86\", \"darwin\", \"8\"])\n\n  s.required_rubygems_version = Gem::Requirement.new(\">= 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2011-01-15}\n  s.default_executable = %q{exec}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.executables = [\"exec\"]\n  s.extensions = [\"ext/a/extconf.rb\"]\n  s.files = [\"lib/code.rb\", \"test/suite.rb\", \"bin/exec\", \"ext/a/extconf.rb\"]\n  s.homepage = %q{http://example.com}\n  s.licenses = [\"MIT\"]\n  s.require_paths = [\"lib\"]\n  s.requirements = [\"A working computer\"]\n  s.rubyforge_project = %q{example}\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n  s.test_files = [\"test/suite.rb\"]\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_runtime_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_runtime_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    else\n      s.add_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    end\n  else\n    s.add_dependency(%q<rake>, [\"> 0.4\"])\n    s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n    s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n  end\nend\n", not "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"1\"\n  s.platform = Gem::Platform.new([\"x86\", \"darwin\", \"8\"])\n\n  s.required_rubygems_version = Gem::Requirement.new(\">= 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2011-01-15}\n  s.default_executable = %q{exec}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.executables = [\"exec\"]\n  s.extensions = [\"ext/a/extconf.rb\"]\n  s.files = [\"lib/code.rb\", \"test/suite.rb\", \"bin/exec\", \"ext/a/extconf.rb\"]\n  s.homepage = %q{http://example.com}\n  s.licenses = [\"MIT\"]\n  s.require_paths = [\"lib\"]\n  s.requirements = [\"A working computer\"]\n  s.rubyforge_project = %q{example}\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n  s.test_files = [\"test/suite.rb\"]\n\n  if s.respond_to? :specification_version then\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_runtime_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_runtime_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    else\n      s.add_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    end\n  else\n    s.add_dependency(%q<rake>, [\"> 0.4\"])\n    s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n    s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n  end\nend\n".
+Expected "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"1\"\n  s.platform = Gem::Platform.new([\"x86\", \"darwin\", \"8\"])\n\n  s.required_rubygems_version = Gem::Requirement.new(\">= 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2011-01-16}\n  s.default_executable = %q{exec}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.executables = [\"exec\"]\n  s.extensions = [\"ext/a/extconf.rb\"]\n  s.files = [\"lib/code.rb\", \"test/suite.rb\", \"bin/exec\", \"ext/a/extconf.rb\"]\n  s.homepage = %q{http://example.com}\n  s.licenses = [\"MIT\"]\n  s.require_paths = [\"lib\"]\n  s.requirements = [\"A working computer\"]\n  s.rubyforge_project = %q{example}\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n  s.test_files = [\"test/suite.rb\"]\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_runtime_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_runtime_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    else\n      s.add_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    end\n  else\n    s.add_dependency(%q<rake>, [\"> 0.4\"])\n    s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n    s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n  end\nend\n", not "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"1\"\n  s.platform = Gem::Platform.new([\"x86\", \"darwin\", \"8\"])\n\n  s.required_rubygems_version = Gem::Requirement.new(\">= 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2011-01-16}\n  s.default_executable = %q{exec}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.executables = [\"exec\"]\n  s.extensions = [\"ext/a/extconf.rb\"]\n  s.files = [\"lib/code.rb\", \"test/suite.rb\", \"bin/exec\", \"ext/a/extconf.rb\"]\n  s.homepage = %q{http://example.com}\n  s.licenses = [\"MIT\"]\n  s.require_paths = [\"lib\"]\n  s.requirements = [\"A working computer\"]\n  s.rubyforge_project = %q{example}\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n  s.test_files = [\"test/suite.rb\"]\n\n  if s.respond_to? :specification_version then\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_runtime_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_runtime_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    else\n      s.add_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    end\n  else\n    s.add_dependency(%q<rake>, [\"> 0.4\"])\n    s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n    s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n  end\nend\n".
 
   2) Failure:
 test_validate_rubyforge_project(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:1189]:
@@ -13376,19 +12874,19 @@ Expected "WARNING:  no rubyforge_project specified\n", not "".
 
   3) Failure:
 test_installation_path(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:607]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9892/gemhome", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9892/gemhome".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48801/gemhome", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48801/gemhome".
 
   4) Failure:
 test_to_ruby(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:794]:
-Expected "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"2\"\n\n  s.required_rubygems_version = Gem::Requirement.new(\"> 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2011-01-15}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.files = [\"lib/code.rb\"]\n  s.homepage = %q{http://example.com}\n  s.require_paths = [\"lib\"]\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<b>, [\"= 1\"])\n    else\n      s.add_dependency(%q<b>, [\"= 1\"])\n    end\n  else\n    s.add_dependency(%q<b>, [\"= 1\"])\n  end\nend\n", not "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"2\"\n\n  s.required_rubygems_version = Gem::Requirement.new(\"> 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2011-01-15}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.files = [\"lib/code.rb\"]\n  s.homepage = %q{http://example.com}\n  s.require_paths = [\"lib\"]\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n\n  if s.respond_to? :specification_version then\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<b>, [\"= 1\"])\n    else\n      s.add_dependency(%q<b>, [\"= 1\"])\n    end\n  else\n    s.add_dependency(%q<b>, [\"= 1\"])\n  end\nend\n".
+Expected "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"2\"\n\n  s.required_rubygems_version = Gem::Requirement.new(\"> 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2011-01-16}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.files = [\"lib/code.rb\"]\n  s.homepage = %q{http://example.com}\n  s.require_paths = [\"lib\"]\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<b>, [\"= 1\"])\n    else\n      s.add_dependency(%q<b>, [\"= 1\"])\n    end\n  else\n    s.add_dependency(%q<b>, [\"= 1\"])\n  end\nend\n", not "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"2\"\n\n  s.required_rubygems_version = Gem::Requirement.new(\"> 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2011-01-16}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.files = [\"lib/code.rb\"]\n  s.homepage = %q{http://example.com}\n  s.require_paths = [\"lib\"]\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n\n  if s.respond_to? :specification_version then\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<b>, [\"= 1\"])\n    else\n      s.add_dependency(%q<b>, [\"= 1\"])\n    end\n  else\n    s.add_dependency(%q<b>, [\"= 1\"])\n  end\nend\n".
 
   5) Failure:
 test_full_gem_path(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:540]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9892/gemhome/gems/a-1", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9892/gemhome/gems/a-1".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48801/gemhome/gems/a-1", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48801/gemhome/gems/a-1".
 
   6) Failure:
 test_full_gem_path_double_slash(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:553]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9892/gemhome/gems/a-1", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_9892/gemhome/gems/a-1".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48801/gemhome/gems/a-1", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_48801/gemhome/gems/a-1".
 
 95 tests, 226 assertions, 6 failures, 0 errors, 0 skips
 
@@ -13482,26 +12980,10 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_kernel
 Started
-FFF/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:641:Warning: Gem::LoadError#version_requirement is deprecated and will be removed on or after January 2011. Use #requirement.
-F
+.../Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/minitest/unit.rb:641:Warning: Gem::LoadError#version_requirement is deprecated and will be removed on or after January 2011. Use #requirement.
+.
 
-  1) Failure:
-test_gem(TestKernel) [/macruby-test/test-mri/test/rubygems/test_kernel.rb:23]:
-Failed assertion, no message given.
-
-  2) Failure:
-test_gem_redundent(TestKernel) [/macruby-test/test-mri/test/rubygems/test_kernel.rb:30]:
-Expected 1, not 0.
-
-  3) Failure:
-test_gem_overlapping(TestKernel) [/macruby-test/test-mri/test/rubygems/test_kernel.rb:37]:
-Expected 1, not 0.
-
-  4) Failure:
-test_gem_conflicting(TestKernel) [/macruby-test/test-mri/test/rubygems/test_kernel.rb:53]:
-Failed assertion, no message given.
-
-4 tests, 21 assertions, 4 failures, 0 errors, 0 skips
+4 tests, 23 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -15569,16 +15051,16 @@ FFFF
 
   1) Failure:
 test_bad_header(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:129]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2011-01-15 03:58:11] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2011-01-16 03:57:53] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
 
   2) Failure:
 test_bad_request(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:95]:
 webrick log start:
-  [2011-01-15 03:58:11] INFO  WEBrick 1.3.1
-  [2011-01-15 03:58:11] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
-  [2011-01-15 03:58:11] INFO  WEBrick::HTTPServer#start: pid=10175 port=53735
-  [2011-01-15 03:58:11] WARN  :RequestHandler is deprecated, please use :RequestCallback
-  [2011-01-15 03:58:15] ERROR Errno::EBADF: Bad file descriptor - read() failed
+  [2011-01-16 03:57:53] INFO  WEBrick 1.3.1
+  [2011-01-16 03:57:53] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
+  [2011-01-16 03:57:53] INFO  WEBrick::HTTPServer#start: pid=49088 port=57098
+  [2011-01-16 03:57:53] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2011-01-16 03:57:57] ERROR Errno::EBADF: Bad file descriptor - read() failed
   	/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/delegate.rb:241:in `block'
   	/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/webrick/httpservlet/cgihandler.rb:65:in `do_POST:'
   	/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/webrick/httpservlet/abstract.rb:35:in `service:'
@@ -15591,20 +15073,20 @@ webrick log start:
   	/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/webrick/server.rb:183:in `block'
   
 webrick log end.
-Expected /\AHTTP\/\d.\d 400 Bad Request/ to match "HTTP/1.1 500 Internal Server Error \r\nContent-Type: text/html; charset=utf-8\r\nServer: WEBrick/1.3.1 (Ruby/1.9.2/2008-06-03) OpenSSL/0.9.8l\r\nDate: Fri, 14 Jan 2011 18:58:15 GMT\r\nContent-Length: 331\r\nConnection: close\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\">\n<HTML>\n  <HEAD><TITLE>Internal Server Error</TITLE></HEAD>\n  <BODY>\n    <H1>Internal Server Error</H1>\n    Bad file descriptor - read() failed\n    <HR>\n    <ADDRESS>\n     WEBrick/1.3.1 (Ruby/1.9.2/2008-06-03) OpenSSL/0.9.8l at\n     localhost:53735\n    </ADDRESS>\n  </BODY>\n</HTML>\n".
+Expected /\AHTTP\/\d.\d 400 Bad Request/ to match "HTTP/1.1 500 Internal Server Error \r\nContent-Type: text/html; charset=utf-8\r\nServer: WEBrick/1.3.1 (Ruby/1.9.2/2008-06-03) OpenSSL/0.9.8l\r\nDate: Sat, 15 Jan 2011 18:57:57 GMT\r\nContent-Length: 331\r\nConnection: close\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\">\n<HTML>\n  <HEAD><TITLE>Internal Server Error</TITLE></HEAD>\n  <BODY>\n    <H1>Internal Server Error</H1>\n    Bad file descriptor - read() failed\n    <HR>\n    <ADDRESS>\n     WEBrick/1.3.1 (Ruby/1.9.2/2008-06-03) OpenSSL/0.9.8l at\n     localhost:57098\n    </ADDRESS>\n  </BODY>\n</HTML>\n".
 
   3) Failure:
 test_bad_uri(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:115]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2011-01-15 03:58:15] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2011-01-16 03:57:57] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
 
   4) Failure:
 test_cgi(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:33]:
 webrick log start:
-  [2011-01-15 03:58:15] INFO  WEBrick 1.3.1
-  [2011-01-15 03:58:15] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
-  [2011-01-15 03:58:15] INFO  WEBrick::HTTPServer#start: pid=10175 port=53739
-  [2011-01-15 03:58:15] WARN  :RequestHandler is deprecated, please use :RequestCallback
-  [2011-01-15 03:58:18] ERROR Errno::EBADF: Bad file descriptor - read() failed
+  [2011-01-16 03:57:57] INFO  WEBrick 1.3.1
+  [2011-01-16 03:57:57] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
+  [2011-01-16 03:57:57] INFO  WEBrick::HTTPServer#start: pid=49088 port=57102
+  [2011-01-16 03:57:57] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2011-01-16 03:58:00] ERROR Errno::EBADF: Bad file descriptor - read() failed
   	/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/delegate.rb:241:in `block'
   	/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/webrick/httpservlet/cgihandler.rb:65:in `do_POST:'
   	/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/webrick/httpservlet/abstract.rb:35:in `service:'
@@ -15618,7 +15100,7 @@ webrick log start:
   
 webrick log end.
 <"/webrick.cgi"> expected but was
-<"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\">\n<HTML>\n  <HEAD><TITLE>Internal Server Error</TITLE></HEAD>\n  <BODY>\n    <H1>Internal Server Error</H1>\n    Bad file descriptor - read() failed\n    <HR>\n    <ADDRESS>\n     WEBrick/1.3.1 (Ruby/1.9.2/2008-06-03) OpenSSL/0.9.8l at\n     127.0.0.1:53739\n    </ADDRESS>\n  </BODY>\n</HTML>\n">.
+<"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\">\n<HTML>\n  <HEAD><TITLE>Internal Server Error</TITLE></HEAD>\n  <BODY>\n    <H1>Internal Server Error</H1>\n    Bad file descriptor - read() failed\n    <HR>\n    <ADDRESS>\n     WEBrick/1.3.1 (Ruby/1.9.2/2008-06-03) OpenSSL/0.9.8l at\n     127.0.0.1:57102\n    </ADDRESS>\n  </BODY>\n</HTML>\n">.
 
 4 tests, 6 assertions, 4 failures, 0 errors, 0 skips
 
@@ -15647,10 +15129,10 @@ ArgumentError: wrong number of arguments (2 for 1)
   2) Failure:
 test_script_disclosure(WEBrick::TestFileHandler) [/macruby-test/test-mri/test/webrick/test_filehandler.rb:250]:
 webrick log start:
-  [2011-01-15 03:58:29] INFO  WEBrick 1.3.1
-  [2011-01-15 03:58:29] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
-  [2011-01-15 03:58:29] INFO  WEBrick::HTTPServer#start: pid=10186 port=53761
-  [2011-01-15 03:58:32] ERROR Errno::EBADF: Bad file descriptor - read() failed
+  [2011-01-16 03:58:11] INFO  WEBrick 1.3.1
+  [2011-01-16 03:58:11] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
+  [2011-01-16 03:58:11] INFO  WEBrick::HTTPServer#start: pid=49096 port=57122
+  [2011-01-16 03:58:14] ERROR Errno::EBADF: Bad file descriptor - read() failed
   	/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/delegate.rb:241:in `block'
   	/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/webrick/httpservlet/cgihandler.rb:65:in `do_POST:'
   	/Library/Frameworks/MacRuby.framework/Versions/0.9/usr/lib/ruby/1.9.2/webrick/httpservlet/abstract.rb:35:in `service:'
@@ -15697,11 +15179,8 @@ Errno::EAGAIN: Resource temporarily unavailable - read(2) failed.
 
   2) Error:
 test_upstream_proxy(TestWEBrickHTTPProxy):
-Errno::EAGAIN: Resource temporarily unavailable - read(2) failed.
-    /macruby-test/test-mri/test/webrick/test_httpproxy.rb:267:in `block'
-    /macruby-test/test-mri/test/webrick/utils.rb:40:in `start_server:'
-    /macruby-test/test-mri/test/webrick/utils.rb:51:in `start_httpserver:'
-    /macruby-test/test-mri/test/webrick/test_httpproxy.rb:256:in `block'
+NoMethodError: undefined method `split' for nil:NilClass
+    /macruby-test/test-mri/test/webrick/test_httpproxy.rb:229:in `block'
     /macruby-test/test-mri/test/webrick/utils.rb:40:in `start_server:'
     /macruby-test/test-mri/test/webrick/utils.rb:55:in `start_httpproxy:'
     /macruby-test/test-mri/test/webrick/test_httpproxy.rb:200:in `block'
@@ -15709,7 +15188,7 @@ Errno::EAGAIN: Resource temporarily unavailable - read(2) failed.
     /macruby-test/test-mri/test/webrick/utils.rb:55:in `start_httpproxy:'
     /macruby-test/test-mri/test/webrick/test_httpproxy.rb:190:in `test_upstream_proxy'
 
-5 tests, 52 assertions, 0 failures, 2 errors, 0 skips
+5 tests, 45 assertions, 0 failures, 2 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -15827,20 +15306,20 @@ E.E
   1) Error:
 test_callbacks(TestWEBrickServer):
 Errno::ECONNRESET: Connection reset by peer - read() failed
-    /macruby-test/test-mri/test/webrick/test_server.rb:39:in `block'
-    /macruby-test/test-mri/test/webrick/test_server.rb:39:in `block'
+    /macruby-test/test-mri/test/webrick/test_server.rb:40:in `block'
+    /macruby-test/test-mri/test/webrick/test_server.rb:40:in `block'
     /macruby-test/test-mri/test/webrick/utils.rb:40:in `start_server:'
     /macruby-test/test-mri/test/webrick/test_server.rb:33:in `test_callbacks'
 
   2) Error:
 test_server(TestWEBrickServer):
 Errno::EPIPE: Broken pipe - write() failed
-    /macruby-test/test-mri/test/webrick/test_server.rb:19:in `block'
+    /macruby-test/test-mri/test/webrick/test_server.rb:18:in `block'
     /macruby-test/test-mri/test/webrick/test_server.rb:17:in `block'
     /macruby-test/test-mri/test/webrick/utils.rb:40:in `start_server:'
     /macruby-test/test-mri/test/webrick/test_server.rb:16:in `test_server'
 
-3 tests, 4 assertions, 0 failures, 2 errors, 0 skips
+3 tests, 3 assertions, 0 failures, 2 errors, 0 skips
 
 Test run options: --seed 0
 
