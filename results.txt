@@ -1,5 +1,5 @@
-Date    : 2011-07-19T03:10:39+09:00
-Version : 0.11, git commit 2d83e71887304bbaba779be37d800c6c448ac475
+Date    : 2011-07-20T03:10:55+09:00
+Version : 0.11, git commit fdc3e9e2d25383b95eab5c55bd6fbece79185253
 
 ----------------------------------------
 /macruby-test/test-mri/test/-ext-/string/test_cstr.rb:2:in `<main>': no such file to load -- -test-/string/string (LoadError)
@@ -361,9 +361,15 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/date/test_date
 Started
-.....
+.F....
 
-5 tests, 66 assertions, 0 failures, 0 errors, 0 skips
+  1) Failure:
+test_coerce(TestDate) [/macruby-test/test-mri/test/date/test_date.rb:121]:
+[ruby-core:35127].
+Exception raised:
+<#<NoMethodError: undefined method `coerce' for nil:NilClass>>.
+
+6 tests, 67 assertions, 1 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -607,13 +613,13 @@ Test run options: --seed 0
 Loaded suite test/drb/test_drb
 Started
 E.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
-EEEEEEEEEEEE/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/drb/drb.rb:1117:in `prepare_backtrace': undefined method `each' for nil:NilClass (NoMethodError)
+EEEE/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/drb/drb.rb:1117:in `prepare_backtrace': undefined method `each' for nil:NilClass (NoMethodError)
 	from /Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/drb/drb.rb:1097:in `method_missing'
 	from /Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/drb/extserv.rb:20:in `block'
 	from /Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/monitor.rb:201:in `synchronize'
 	from /Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/drb/extserv.rb:19:in `initialize'
-	from /macruby-test/test-mri/test/drb/ut_drb.rb:158:in `<main>'
-EEEEEEEEEEEE............EEEEEEEEEEEE
+	from /macruby-test/test-mri/test/drb/ut_array.rb:12:in `<main>'
+EEEEEEEEEEEEEEEEEEEE............EEEEEEEEEEEE
 
   1) Error:
 test_01(TestDRbAry):
@@ -631,119 +637,119 @@ ThreadError: Attempt to unlock a mutex which is not locked
 
   3) Error:
 test_05_break(TestDRbAry):
-DRb::DRbConnError: druby://maco.local:51897 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:54989 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/drbtest.rb:274:in `setup'
 
   4) Error:
 test_06_next(TestDRbAry):
-DRb::DRbConnError: druby://maco.local:51897 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:54989 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/drbtest.rb:274:in `setup'
 
   5) Error:
 test_07_break_18(TestDRbAry):
-DRb::DRbConnError: druby://maco.local:51897 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:54989 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/drbtest.rb:274:in `setup'
 
   6) Error:
 test_00_DRbObject(TestDRbCore):
-ThreadError: Attempt to unlock a mutex which is locked by another thread
+ThreadError: Attempt to unlock a mutex which is not locked
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
 
   7) Error:
 test_01(TestDRbCore):
-DRb::DRbConnError: druby://localhost:51907 - #<ThreadError: Attempt to unlock a mutex which is locked by another thread>
+DRb::DRbConnError: druby://localhost:54995 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
 
   8) Error:
 test_01_02_loop(TestDRbCore):
-DRb::DRbConnError: druby://localhost:51907 - #<ThreadError: Attempt to unlock a mutex which is locked by another thread>
+DRb::DRbConnError: druby://localhost:54995 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
 
   9) Error:
 test_02_unknown(TestDRbCore):
-DRb::DRbConnError: druby://localhost:51907 - #<ThreadError: Attempt to unlock a mutex which is locked by another thread>
+DRb::DRbConnError: druby://localhost:54995 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
 
  10) Error:
 test_03(TestDRbCore):
-DRb::DRbConnError: druby://localhost:51907 - #<ThreadError: Attempt to unlock a mutex which is locked by another thread>
+DRb::DRbConnError: druby://localhost:54995 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
 
  11) Error:
 test_04(TestDRbCore):
-DRb::DRbConnError: druby://localhost:51907 - #<ThreadError: Attempt to unlock a mutex which is locked by another thread>
+DRb::DRbConnError: druby://localhost:54995 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
 
  12) Error:
 test_05_eq(TestDRbCore):
-DRb::DRbConnError: druby://localhost:51907 - #<ThreadError: Attempt to unlock a mutex which is locked by another thread>
+DRb::DRbConnError: druby://localhost:54995 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
 
  13) Error:
 test_06_timeout(TestDRbCore):
-DRb::DRbConnError: druby://localhost:51907 - #<ThreadError: Attempt to unlock a mutex which is locked by another thread>
+DRb::DRbConnError: druby://localhost:54995 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
 
  14) Error:
 test_07_public_private_protected_missing(TestDRbCore):
-DRb::DRbConnError: druby://localhost:51907 - #<Errno::ECONNREFUSED: Connection refused - connect(2)>
+DRb::DRbConnError: druby://localhost:54995 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
 
  15) Error:
 test_08_here(TestDRbCore):
-DRb::DRbConnError: druby://localhost:51907 - #<Errno::ECONNREFUSED: Connection refused - connect(2)>
+DRb::DRbConnError: druby://localhost:54995 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
 
  16) Error:
 test_09_option(TestDRbCore):
-DRb::DRbConnError: druby://localhost:51907 - #<Errno::ECONNREFUSED: Connection refused - connect(2)>
+DRb::DRbConnError: druby://localhost:54995 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
 
  17) Error:
 test_10_yield(TestDRbCore):
-DRb::DRbConnError: druby://localhost:51907 - #<Errno::ECONNREFUSED: Connection refused - connect(2)>
+DRb::DRbConnError: druby://localhost:54995 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
 
  18) Error:
 test_10_yield_undumped(TestDRbCore):
-DRb::DRbConnError: druby://localhost:51907 - #<Errno::ECONNREFUSED: Connection refused - connect(2)>
+DRb::DRbConnError: druby://localhost:54995 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
 
  19) Error:
 test_11_remote_no_method_error(TestDRbCore):
-DRb::DRbConnError: druby://localhost:51907 - #<Errno::ECONNREFUSED: Connection refused - connect(2)>
+DRb::DRbConnError: druby://localhost:54995 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/drbtest.rb:68:in `setup'
@@ -757,38 +763,38 @@ ThreadError: Attempt to unlock a mutex which is not locked
 
  21) Error:
 test_02_large_ary(TestDRbLarge):
-DRb::DRbConnError: druby://localhost:51935 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:55011 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/test_drb.rb:261:in `setup'
 
  22) Error:
 test_03_large_ary(TestDRbLarge):
-DRb::DRbConnError: druby://localhost:51935 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:55011 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/test_drb.rb:261:in `setup'
 
  23) Error:
 test_04_many_arg(TestDRbLarge):
-DRb::DRbConnError: druby://localhost:51935 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:55011 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/test_drb.rb:261:in `setup'
 
  24) Error:
 test_05_too_large_ary(TestDRbLarge):
-DRb::DRbConnError: druby://localhost:51935 - #<ThreadError: Attempt to unlock a mutex which is not locked>
+DRb::DRbConnError: druby://localhost:55011 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/test_drb.rb:261:in `setup'
 
  25) Error:
 test_01(TestDRbMServer):
-DRb::DRbConnError: druby://localhost:51907 - #<Errno::ECONNREFUSED: Connection refused - connect(2)>
+DRb::DRbConnError: druby://localhost:55011 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
-    /macruby-test/test-mri/test/drb/test_drb.rb:184:in `setup'
+    /macruby-test/test-mri/test/drb/test_drb.rb:261:in `setup'
 
  26) Error:
 test_01(TestDRbMServer):
@@ -797,87 +803,87 @@ NoMethodError: undefined method `each' for nil:NilClass
 
  27) Error:
 test_01(TestDRbSafe1):
-ThreadError: Attempt to unlock a mutex which is locked by another thread
+ThreadError: Attempt to unlock a mutex which is not locked
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/test_drb.rb:205:in `setup'
 
  28) Error:
 test_02_collect(TestDRbSafe1):
-DRb::DRbConnError: druby://localhost:51945 - #<ThreadError: Attempt to unlock a mutex which is locked by another thread>
+DRb::DRbConnError: druby://localhost:55019 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/test_drb.rb:205:in `setup'
 
  29) Error:
 test_03_redo(TestDRbSafe1):
-DRb::DRbConnError: druby://localhost:51945 - #<ThreadError: Attempt to unlock a mutex which is locked by another thread>
+DRb::DRbConnError: druby://localhost:55019 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/test_drb.rb:205:in `setup'
 
  30) Error:
 test_05_break(TestDRbSafe1):
-DRb::DRbConnError: druby://localhost:51945 - #<ThreadError: Attempt to unlock a mutex which is locked by another thread>
+DRb::DRbConnError: druby://localhost:55019 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/test_drb.rb:205:in `setup'
 
  31) Error:
 test_06_next(TestDRbSafe1):
-DRb::DRbConnError: druby://localhost:51945 - #<ThreadError: Attempt to unlock a mutex which is locked by another thread>
+DRb::DRbConnError: druby://localhost:55019 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/test_drb.rb:205:in `setup'
 
  32) Error:
 test_07_break_18(TestDRbSafe1):
-DRb::DRbConnError: druby://localhost:51945 - #<ThreadError: Attempt to unlock a mutex which is locked by another thread>
+DRb::DRbConnError: druby://localhost:55019 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
     /macruby-test/test-mri/test/drb/test_drb.rb:205:in `setup'
 
  33) Error:
 test_01_one(TestDRbYield):
-DRb::DRbConnError: druby://localhost:51907 - #<Errno::ECONNREFUSED: Connection refused - connect(2)>
+DRb::DRbConnError: druby://localhost:55019 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
-    /macruby-test/test-mri/test/drb/test_drb.rb:9:in `setup'
+    /macruby-test/test-mri/test/drb/test_drb.rb:205:in `setup'
 
  34) Error:
 test_02_two(TestDRbYield):
-DRb::DRbConnError: druby://localhost:51907 - #<Errno::ECONNREFUSED: Connection refused - connect(2)>
+DRb::DRbConnError: druby://localhost:55019 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
-    /macruby-test/test-mri/test/drb/test_drb.rb:9:in `setup'
+    /macruby-test/test-mri/test/drb/test_drb.rb:205:in `setup'
 
  35) Error:
 test_03_many(TestDRbYield):
-DRb::DRbConnError: druby://localhost:51907 - #<Errno::ECONNREFUSED: Connection refused - connect(2)>
+DRb::DRbConnError: druby://localhost:55019 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
-    /macruby-test/test-mri/test/drb/test_drb.rb:9:in `setup'
+    /macruby-test/test-mri/test/drb/test_drb.rb:205:in `setup'
 
  36) Error:
 test_04_many_to_one(TestDRbYield):
-DRb::DRbConnError: druby://localhost:51907 - #<Errno::ECONNREFUSED: Connection refused - connect(2)>
+DRb::DRbConnError: druby://localhost:55019 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
-    /macruby-test/test-mri/test/drb/test_drb.rb:9:in `setup'
+    /macruby-test/test-mri/test/drb/test_drb.rb:205:in `setup'
 
  37) Error:
 test_05_array_subclass(TestDRbYield):
-DRb::DRbConnError: druby://localhost:51907 - #<Errno::ECONNREFUSED: Connection refused - connect(2)>
+DRb::DRbConnError: druby://localhost:55019 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
-    /macruby-test/test-mri/test/drb/test_drb.rb:9:in `setup'
+    /macruby-test/test-mri/test/drb/test_drb.rb:205:in `setup'
 
  38) Error:
 test_06_taint(TestDRbYield):
-DRb::DRbConnError: druby://localhost:51907 - #<Errno::ECONNREFUSED: Connection refused - connect(2)>
+DRb::DRbConnError: druby://localhost:55019 - #<ThreadError: Attempt to unlock a mutex which is not locked>
     /macruby-test/test-mri/test/drb/drbtest.rb:30:in `block'
     /macruby-test/test-mri/test/drb/drbtest.rb:29:in `ext_service'
-    /macruby-test/test-mri/test/drb/test_drb.rb:9:in `setup'
+    /macruby-test/test-mri/test/drb/test_drb.rb:205:in `setup'
 
 /Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/drb/drb.rb:1117:in `prepare_backtrace': undefined method `each' for nil:NilClass (NoMethodError)
 	from /Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/drb/drb.rb:1097:in `method_missing'
@@ -1038,9 +1044,13 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/fileutils/test_dryrun
 Started
-.
+F........
 
-1 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+  1) Failure:
+test_copy_entry(TestFileUtilsDryRun) [/macruby-test/test-mri/test/fileutils/clobber.rb:52]:
+file not exist: tmp/copy_entry: [ruby-dev:43129]
+
+9 tests, 15 assertions, 1 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -1072,9 +1082,13 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/fileutils/test_nowrite
 Started
-........
+F........
 
-8 tests, 14 assertions, 0 failures, 0 errors, 0 skips
+  1) Failure:
+test_copy_entry(TestFileUtilsNoWrite) [/macruby-test/test-mri/test/fileutils/clobber.rb:52]:
+file not exist: tmp/copy_entry: [ruby-dev:43129]
+
+9 tests, 15 assertions, 1 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -1158,6 +1172,15 @@ Started
 Test run options: --seed 0
 
 ----------------------------------------
+Loaded suite test/io/wait/test_io_wait
+Started
+
+
+0 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 0
+
+----------------------------------------
 Loaded suite test/irb/test_option
 Started
 F
@@ -1175,9 +1198,14 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/json/test_json
 Started
-...................
+F...................
 
-19 tests, 1581 assertions, 0 failures, 0 errors, 0 skips
+  1) Failure:
+test_allocate(TC_JSON) [/macruby-test/test-mri/test/json/test_json.rb:343]:
+[ruby-core:35079]
+TypeError expected but nothing was raised.
+
+20 tests, 1582 assertions, 1 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -1418,7 +1446,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/net/http/test_http
 Started
-E.F..EE...F.F.F...E..EF*** Thread 0xXXXXXXXX exited prematurely because of an uncaught exception:
+F.F..EE...F.F.F...E..EFF.*** Thread 0xXXXXXXXX exited prematurely because of an uncaught exception:
 /Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/minitest/unit.rb:85:in `assert': [Timeout::Error] exception expected, not
 Class: <Errno::ECONNRESET>
 Message: <"Connection reset by peer - read(2) failed.">
@@ -1430,15 +1458,12 @@ Message: <"Connection reset by peer - read(2) failed.">
 	from /Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/test/unit/assertions.rb:23:in `assert_raise'
 	from /macruby-test/test-mri/test/net/http/test_http.rb:188:in `block'
 
-F.F.....F
+F.....F
 
-  1) Error:
-test_get(TestNetHTTP_v1_2):
-EOFError: end of file reached
-    /macruby-test/test-mri/test/net/http/test_http.rb:35:in `_test_get__get'
-    /macruby-test/test-mri/test/net/http/test_http.rb:28:in `block'
-    /macruby-test/test-mri/test/net/http/utils.rb:11:in `start'
-    /macruby-test/test-mri/test/net/http/test_http.rb:27:in `test_get'
+  1) Failure:
+test_get(TestNetHTTP_v1_2) [/macruby-test/test-mri/test/net/http/test_http.rb:49]:
+Exception raised:
+<#<RuntimeError: can't modify frozen/immutable hash>>.
 
   2) Failure:
 test_get__break(TestNetHTTP_v1_2) [/macruby-test/test-mri/test/net/http/test_http.rb:96]:
@@ -1509,7 +1534,7 @@ test_get__break(TestNetHTTP_version_1_1) [/macruby-test/test-mri/test/net/http/t
 test_timeout_during_HTTP_session(TestNetHTTP_version_1_1) [/macruby-test/test-mri/test/net/http/test_http.rb:192]:
 expected the HTTP session to have timed out but have not. c.f. [ruby-core:34203]
 
-32 tests, 141 assertions, 8 failures, 5 errors, 0 skips
+32 tests, 151 assertions, 9 failures, 4 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -1761,6 +1786,23 @@ Started
 Test run options: --seed 0
 
 ----------------------------------------
+Loaded suite test/openssl/test_buffering
+Started
+FF
+
+  1) Failure:
+test_flush(OpenSSL::TestBuffering) [/macruby-test/test-mri/test/openssl/test_buffering.rb:43]:
+Expected #<OpenSSL::TestBuffering::IO:0xXXXXXXXX @io=#<StringIO:0xXXXXXXXX @string="a" @pos=1 @lineno=0 @append=false @writable=true @readable=true> @eof=false @rbuffer="" @sync=false @wbuffer="">, not false.
+
+  2) Failure:
+test_flush_error(OpenSSL::TestBuffering) [/macruby-test/test-mri/test/openssl/test_buffering.rb:63]:
+sync must not change
+
+2 tests, 9 assertions, 2 failures, 0 errors, 0 skips
+
+Test run options: --seed 0
+
+----------------------------------------
 Loaded suite test/openssl/test_cipher
 Started
 EEEEEEE
@@ -1889,11 +1931,30 @@ NoMethodError: super called outside of method
 Test run options: --seed 0
 
 ----------------------------------------
+Loaded suite test/openssl/test_pkey_dsa
+Started
+.F.....
+
+  1) Failure:
+test_new(OpenSSL::TestPKeyDSA) [/macruby-test/test-mri/test/openssl/test_pkey_dsa.rb:22]:
+<[]> expected but was
+<["error:0906D06C:PEM routines:PEM_read_bio:no start line"]>.
+
+7 tests, 29 assertions, 1 failures, 0 errors, 0 skips
+
+Test run options: --seed 0
+
+----------------------------------------
 Loaded suite test/openssl/test_pkey_rsa
 Started
-..
+..F...
 
-2 tests, 11 assertions, 0 failures, 0 errors, 0 skips
+  1) Failure:
+test_new(OpenSSL::TestPKeyRSA) [/macruby-test/test-mri/test/openssl/test_pkey_rsa.rb:52]:
+<[]> expected but was
+<["error:0906D06C:PEM routines:PEM_read_bio:no start line"]>.
+
+6 tests, 16 assertions, 1 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -2375,6 +2436,11 @@ test/psych/test_json_tree.rb:28: regexp `}$' compilation error: U_REGEX_RULE_SYN
 ----------------------------------------
 /macruby-test/test-mri/test/psych/helper.rb:57:in `<main>': no such file to load -- psych (LoadError)
 	from /macruby-test/test-mri/require_relative.rb:4:in `require_relative'
+	from /macruby-test/test-mri/test/psych/test_merge_keys.rb:1:in `<main>'
+
+----------------------------------------
+/macruby-test/test-mri/test/psych/helper.rb:57:in `<main>': no such file to load -- psych (LoadError)
+	from /macruby-test/test-mri/require_relative.rb:4:in `require_relative'
 	from /macruby-test/test-mri/test/psych/test_null.rb:1:in `<main>'
 
 ----------------------------------------
@@ -2431,6 +2497,9 @@ test/psych/test_json_tree.rb:28: regexp `}$' compilation error: U_REGEX_RULE_SYN
 /macruby-test/test-mri/test/psych/helper.rb:57:in `<main>': no such file to load -- psych (LoadError)
 	from /macruby-test/test-mri/require_relative.rb:4:in `require_relative'
 	from /macruby-test/test-mri/test/psych/test_symbol.rb:1:in `<main>'
+
+----------------------------------------
+/macruby-test/test-mri/test/psych/test_tainted.rb:1:in `<main>': no such file to load -- psych/handler (LoadError)
 
 ----------------------------------------
 /macruby-test/test-mri/test/psych/helper.rb:57:in `<main>': no such file to load -- psych (LoadError)
@@ -2557,7 +2626,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rake/test_fileutils
 Started
-.2011-07-19 03:20:25.904 macruby[94638:903] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
+.2011-07-20 03:20:50.957 macruby[6791:903] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
 F.....................
 
   1) Failure:
@@ -3871,7 +3940,7 @@ Started
 test_add_includes_many(TestRDocRIDriver) [/macruby-test/test-mri/test/rdoc/test_rdoc_ri_driver.rb:148]:
 Expected [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_94811/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_6964/dot_ri)"],
   blankline,
   [para: "Inc"],
   blankline,
@@ -3879,7 +3948,7 @@ Expected [doc: [rule:1],
   blankline,
   [verb: "  ", "Enumerable", "\n"]], not [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_94811/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_6964/dot_ri)"],
   blankline,
   [para: "Inc"],
   blankline,
@@ -3891,10 +3960,10 @@ Expected [doc: [rule:1],
 test_add_includes_many_no_doc(TestRDocRIDriver) [/macruby-test/test-mri/test/rdoc/test_rdoc_ri_driver.rb:169]:
 Expected [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_94811/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_6964/dot_ri)"],
   [verb: "  ", "Inc", "\n", "  ", "Enumerable", "\n"]], not [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_94811/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_6964/dot_ri)"],
   [verb: "Inc", "\n", "Enumerable", "\n"]].
 
   3) Failure:
@@ -4268,6 +4337,16 @@ test_core_03_notify(Rinda::TupleSpaceTest) [/macruby-test/test-mri/test/rinda/te
 test_ruby_talk_264062(Rinda::TupleSpaceTest) [/macruby-test/test-mri/test/rinda/test_rinda.rb:243]:
 [BUG : #???] Timeout, MacRuby don't finish
 
+*** Thread 0xXXXXXXXX exited prematurely because of an uncaught exception:
+/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/monitor.rb:189:in `mon_exit': Attempt to unlock a mutex which is not locked (ThreadError)
+	from /Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/monitor.rb:203:in `synchronize'
+	from /Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/rinda/tuplespace.rb:488:in `move'
+	from /Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/rinda/rinda.rb:229:in `take'
+	from /macruby-test/test-mri/test/rinda/test_rinda.rb:431:in `block'
+
+*** Thread 0xXXXXXXXX exited prematurely because of an uncaught exception:
+unexpected return from Thread (LocalJumpError)
+
 25 tests, 156 assertions, 0 failures, 5 errors, 8 skips
 
 Test run options: --seed 0
@@ -4318,8 +4397,8 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ripper/test_parser_events
 Started
-......E..EEEE..EEE.EEEE../macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse': failed to allocate memory (NoMemoryError)
-	from /macruby-test/test-mri/test/ripper/test_parser_events.rb:1106:in `test_block_variables'
+......E..EEEEF.EEE.EEEE../macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse': failed to allocate memory (NoMemoryError)
+	from /macruby-test/test-mri/test/ripper/test_parser_events.rb:1121:in `test_block_variables'
 	from /Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/minitest/unit.rb:680:in `run'
 	from /Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/minitest/unit.rb:641:in `block'
 	from /Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/minitest/unit.rb:635:in `block'
@@ -4330,35 +4409,40 @@ Started
 ----------------------------------------
 Loaded suite test/ripper/test_scanner_events
 Started
-..................F........FF...................F...
+..................F........FF..................FF...
 
   1) Failure:
-test_heredoc_end(TestRipper::ScannerEvents) [/macruby-test/test-mri/test/ripper/test_scanner_events.rb:648]:
+test_heredoc_end(TestRipper::ScannerEvents) [/macruby-test/test-mri/test/ripper/test_scanner_events.rb:661]:
 <[]> expected but was
 <["EOS \n"]>.
 
   2) Failure:
-test_lex(TestRipper::ScannerEvents) [/macruby-test/test-mri/test/ripper/test_scanner_events.rb:73]:
+test_lex(TestRipper::ScannerEvents) [/macruby-test/test-mri/test/ripper/test_scanner_events.rb:72]:
 <[[[1, 0], :on_regexp_beg, "/"],
- [[1, 1], :on_tstring_content, "foo\n"],
- [[2, 0], :on_tstring_content, "bar"],
+ [[1, 1], :on_tstring_content, "foo\nbar"],
  [[2, 3], :on_regexp_end, "/"]]> expected but was
 <[[[1, 0], :on_regexp_beg, "/"],
  [[1, 1], :on_tstring_content, "foo\n"],
  [[2, 0], :on_regexp_end, "bar/"]]>.
 
   3) Failure:
-test_location(TestRipper::ScannerEvents) [/macruby-test/test-mri/test/ripper/test_scanner_events.rb:105]:
+test_location(TestRipper::ScannerEvents) [/macruby-test/test-mri/test/ripper/test_scanner_events.rb:112]:
 wrong column: "\n" (on_ignored_nl) [7:0].
 <2> expected but was
 <0>.
 
   4) Failure:
-test_tstring_content_HEREDOC(TestRipper::ScannerEvents) [/macruby-test/test-mri/test/ripper/test_scanner_events.rb:635]:
+test_tstring_content(TestRipper::ScannerEvents) [/macruby-test/test-mri/test/ripper/test_scanner_events.rb:549]:
+bug#4544.
+<["a\nb\nc"]> expected but was
+<["a\nb\n"]>.
+
+  5) Failure:
+test_tstring_content_HEREDOC(TestRipper::ScannerEvents) [/macruby-test/test-mri/test/ripper/test_scanner_events.rb:648]:
 <["here\ndoc \nEOS \n"]> expected but was
 <["here\ndoc \n"]>.
 
-52 tests, 356 assertions, 4 failures, 0 errors, 0 skips
+52 tests, 358 assertions, 5 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -5315,7 +5399,7 @@ Started
 .............................FE..............................EF........F......F.E.EFE....EEEE.......F.FF..............E............FF.FF.....
 
   1) Failure:
-test_combination2(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:1951]:
+test_combination2(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:1957]:
 Exception raised:
 <#<RangeError: too big for combination>>.
 
@@ -5351,11 +5435,11 @@ LoadError: continuations are not supported in MacRuby yet
   8) Error:
 test_product(TestArray):
 NotImplementedError: stress=:() function is unimplemented on this machine
-    /macruby-test/test-mri/test/ruby/envutil.rb:118:in `under_gc_stress'
-    /macruby-test/test-mri/test/ruby/test_array.rb:1523:in `test_product'
+    /macruby-test/test-mri/test/ruby/envutil.rb:121:in `under_gc_stress'
+    /macruby-test/test-mri/test/ruby/test_array.rb:1529:in `test_product'
 
   9) Failure:
-test_product2(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:1961]:
+test_product2(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:1967]:
 Exception raised:
 <#<RangeError: too big to product>>.
 
@@ -5367,7 +5451,7 @@ LoadError: continuations are not supported in MacRuby yet
  11) Error:
 test_repeated_combination(TestArray):
 NoMethodError: undefined method `repeated_combination' for [...]:Array
-    /macruby-test/test-mri/test/ruby/test_array.rb:1586:in `test_repeated_combination'
+    /macruby-test/test-mri/test/ruby/test_array.rb:1592:in `test_repeated_combination'
 
  12) Error:
 test_repeated_combination_with_callcc(TestArray):
@@ -5377,7 +5461,7 @@ LoadError: continuations are not supported in MacRuby yet
  13) Error:
 test_repeated_permutation(TestArray):
 NoMethodError: undefined method `repeated_permutation' for [...]:Array
-    /macruby-test/test-mri/test/ruby/test_array.rb:1561:in `test_repeated_permutation'
+    /macruby-test/test-mri/test/ruby/test_array.rb:1567:in `test_repeated_permutation'
 
  14) Error:
 test_repeated_permutation_with_callcc(TestArray):
@@ -5385,16 +5469,16 @@ LoadError: continuations are not supported in MacRuby yet
     /macruby-test/test-mri/test/ruby/test_array.rb:819:in `test_repeated_permutation_with_callcc'
 
  15) Failure:
-test_rindex2(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:1735]:
+test_rindex2(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:1741]:
 <1> expected but was
 <nil>.
 
  16) Failure:
-test_rotate!(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:2071]:
+test_rotate!(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:2077]:
 Expected /can't modify frozen array/ to match "can't modify frozen/immutable array".
 
  17) Failure:
-test_sample(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:1908]:
+test_sample(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:1914]:
 <10> expected but was
 <8>.
 
@@ -5414,7 +5498,7 @@ test_uniq!(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:1446]:
 <nil>.
 
  21) Failure:
-test_uniq_bang_with_block(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:1472]:
+test_uniq_bang_with_block(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:1478]:
 <[1]> expected but was
 <[1, 3]>.
 
@@ -5469,9 +5553,9 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_autoload
 Started
-.
+..
 
-1 tests, 2 assertions, 0 failures, 0 errors, 0 skips
+2 tests, 4 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -5787,7 +5871,7 @@ Encoding::CompatibilityError expected but nothing was raised.
 
   4) Failure:
 test_inspect(TestDir) [/macruby-test/test-mri/test/ruby/test_dir.rb:63]:
-Expected /^#<Dir:\/private\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/__test_dir__20110719\-95258\-1o6inhj>$/ to match "#<Dir:/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/__test_dir__20110719-95258-1o6inhj".
+Expected /^#<Dir:\/private\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/__test_dir__20110720\-7412\-1o6inhj>$/ to match "#<Dir:/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/__test_dir__20110720-7412-1o6inhj".
 
 14 tests, 80 assertions, 2 failures, 1 errors, 1 skips
 
@@ -6624,10 +6708,10 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_float
 Started
-F.........F...F..............F..
+F.........F.F.F..............F..
 
   1) Failure:
-test_Float(TestFloat) [/macruby-test/test-mri/test/ruby/test_float.rb:433]:
+test_Float(TestFloat) [/macruby-test/test-mri/test/ruby/test_float.rb:436]:
 warning message "" is expected to match /malformed value for Float\(\).*?Ruby 1\.9\.3/
 
   2) Failure:
@@ -6636,22 +6720,27 @@ test_float(TestFloat) [/macruby-test/test-mri/test/ruby/test_float.rb:16]:
 <36893488147419103232>.
 
   3) Failure:
-test_invalid_str(TestFloat) [/macruby-test/test-mri/test/ruby/test_float.rb:447]:
+test_floor_ceil_round_truncate(TestFloat) [/macruby-test/test-mri/test/ruby/test_float.rb:299]:
+<1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000> expected but was
+<1000000000000000201206451102982726528510718396098215168041874281451248363566094127380437091120885218560535893448518937156814902254657735621103316739277277761931445311166038382034914278540775484328009936664744486969000697274111361486849523430568151310289152823685865144042626214886587669241994282008576>.
+
+  4) Failure:
+test_invalid_str(TestFloat) [/macruby-test/test-mri/test/ruby/test_float.rb:450]:
 [ruby-core:34820]
 [ArgumentError] exception expected, not
 Class: <NotImplementedError>
 Message: <"stress() function is unimplemented on this machine">
 ---Backtrace---
-/macruby-test/test-mri/test/ruby/test_float.rb:448:in `block'
+/macruby-test/test-mri/test/ruby/test_float.rb:451:in `block'
 ---------------
 
-  4) Failure:
+  5) Failure:
 test_to_s(TestFloat) [/macruby-test/test-mri/test/ruby/test_float.rb:143]:
 [ruby-core:30145].
 <0.21611564636388503> expected but was
 <0.21611564636388492>.
 
-32 tests, 1130 assertions, 4 failures, 0 errors, 0 skips
+32 tests, 1131 assertions, 5 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -6776,7 +6865,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_io
 Started
-..SS.........FSEEESEEE.EEEFEEES....E.......F.SF.........S....S.......S.......F..FF..S.EF.F.S.
+..SS.........FSEEESEEE.EEEFEEES....E.......F.SF.........S....S...F...S.......F..FF..S.EF.F.S.
 
   1) Skipped:
 test_bytes(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1168]:
@@ -6930,53 +7019,686 @@ test_print_separators(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1528]
 test_read_lock(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:945]:
 [BUG : #954] Race condition: assertion fails with IO.pipe, when checks size of String which had read from pipe.
 
- 26) Skipped:
+ 26) Failure:
+test_readline(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1133]:
+EOFError expected but nothing was raised.
+
+ 27) Skipped:
 test_readpartial_lock(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:908]:
 [BUG : #954] Race condition: assertion fails with IO.pipe, when checks size of String which had read from pipe.
 
- 27) Failure:
+ 28) Failure:
 test_set_lineno(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1105]:
 <"0,1,2,2,1001,1001,1001,1,2,3,3"> expected but was
 <"nil,1,2,2,1001,1001,1001,1,2,3,3">.
 
- 28) Failure:
+ 29) Failure:
 test_sysread(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1312]:
 IOError expected but nothing was raised.
 
- 29) Failure:
+ 30) Failure:
 test_sysseek(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1291]:
 IOError expected but nothing was raised.
 
- 30) Skipped:
+ 31) Skipped:
 test_threaded_flush(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1682]:
 [BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
 
- 31) Error:
+ 32) Error:
 test_ungetbyte(TestIO):
 NoMethodError: undefined method `ungetbyte' for #<Tempfile:0xXXXXXXXX>
     /macruby-test/test-mri/test/ruby/test_io.rb:202:in `test_ungetbyte'
 
- 32) Failure:
+ 33) Failure:
 test_ungetc(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:194]:
 [ruby-dev:31650]
 IOError expected but nothing was raised.
 
- 33) Failure:
+ 34) Failure:
 test_uninitialized(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1646]:
 IOError expected but nothing was raised.
 
- 34) Skipped:
+ 35) Skipped:
 test_write_nonblock(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:959]:
 [BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
 
-93 tests, 191 assertions, 9 failures, 14 errors, 11 skips
+93 tests, 191 assertions, 10 failures, 14 errors, 11 skips
 
 Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/ruby/test_io_m17n
 Started
-EFFFFFFF.SS.FSSF.EFSSEEF.FFFFFFEEEFEEEEFFFFEEFEEFSSSSFFEEEEESSFFFFFFEFFFFFFFFFFFFESSSSFSSSSSFF.FFFFE.FFF
+EFFFFFFF.SS..FSSF.EFSSEEF.FFFFFFEEEFEEEEEFFFFEEFEEFSSSSFFEEEEESSFFFFFFEFFFFFFFFFFFFESSSSFSSSSSFF.FFFFE.FFFF.FSFSEEEEEEEE.FSSSSE.F
+
+  1) Error:
+test_binary(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1758:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+
+  2) Failure:
+test_binmode(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1775]:
+<"\n"> expected but was
+<"\r">.
+
+  3) Failure:
+test_binmode2(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1794]:
+<"\n"> expected but was
+<"\r">.
+
+  4) Failure:
+test_binmode3(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1815]:
+"\xE3\x81\x82\r\n".force_encoding("ASCII-8BIT") expected but not equal to
+"あ\r\n".force_encoding("UTF-8")..
+Expected block to return true value.
+
+  5) Failure:
+test_binmode_paragraph_nonasciicompat(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:2075]:
+[ruby-dev:41803].
+<"[ruby-dev:41803]\n\n"> (UTF-32BE) expected but was
+<"[ruby-dev:41803]\n\n"> (UTF-8).
+
+  6) Failure:
+test_binmode_write_ascii_incompat_internal(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1741]:
+<"a\nb\n"> expected but was
+<"\x00a\x00\n\x00b\x00\n">.
+
+  7) Failure:
+test_both_textmode_binmode(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1379]:
+[ArgumentError] exception expected, not
+Class: <TypeError>
+Message: <"can't convert Hash into Integer">
+---Backtrace---
+/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1379:in `block'
+---------------
+
+  8) Failure:
+test_cbuf(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1985]:
+[ruby-dev:40493]
+IOError expected but nothing was raised.
+
+  9) Skipped:
+test_dup(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:329]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+ 10) Skipped:
+test_dup_undef(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:347]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+ 11) Failure:
+test_getc_invalid(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:474]:
+Encoding::InvalidByteSequenceError expected but nothing was raised.
+
+ 12) Skipped:
+test_getc_invalid2(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:858]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+ 13) Skipped:
+test_getc_invalid3(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:881]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+ 14) Failure:
+test_getc_newlineconv(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:499]:
+<true> expected but was
+<false>.
+
+ 15) Error:
+test_getc_stateful_conversion(TestIO_M17N):
+ArgumentError: unknown encoding name - iso-2022-jp
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:482:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+
+ 16) Failure:
+test_gets_invalid(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:851]:
+Encoding::InvalidByteSequenceError expected but nothing was raised.
+
+ 17) Skipped:
+test_gets_limit(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:810]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+ 18) Skipped:
+test_gets_nil(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:796]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+ 19) Error:
+test_invalid_r(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1824:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+
+ 20) Error:
+test_invalid_w(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1864:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+
+ 21) Failure:
+test_io_new_enc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:284]:
+<#<Encoding:Shift_JIS>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 22) Failure:
+test_nonascii_terminator(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:417]:
+ArgumentError expected but nothing was raised.
+
+ 23) Failure:
+test_open_ascii(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:585]:
+<#<Encoding:ASCII-8BIT>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 24) Failure:
+test_open_nonascii(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:598]:
+<#<Encoding:ASCII-8BIT>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 25) Failure:
+test_open_pipe_r_enc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1250]:
+<#<Encoding:ASCII-8BIT>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 26) Failure:
+test_open_r(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:82]:
+<nil> expected but was
+<#<Encoding:UTF-8>>.
+
+ 27) Failure:
+test_open_r_enc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:101]:
+<#<Encoding:EUC-JP>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 28) Error:
+test_open_r_enc_enc(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:150:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+
+ 29) Error:
+test_open_r_enc_enc_in_opt(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:180:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+
+ 30) Error:
+test_open_r_enc_in_opt(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:110:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+
+ 31) Failure:
+test_open_r_encname_encname(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:161]:
+<#<Encoding:EUC-JP>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 32) Error:
+test_open_r_encname_encname_in_opt(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:170:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+
+ 33) Error:
+test_open_r_encname_in_opt(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:120:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+
+ 34) Error:
+test_open_r_ext_enc_in_opt(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:130:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+
+ 35) Error:
+test_open_r_ext_encname_in_opt(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:140:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+
+ 36) Error:
+test_open_r_externalencname_internalencname_in_opt(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:190:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+
+ 37) Failure:
+test_open_rb(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:91]:
+<#<Encoding:ASCII-8BIT>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 38) Failure:
+test_open_w(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:200]:
+<nil> expected but was
+<#<Encoding:UTF-8>>.
+
+ 39) Failure:
+test_open_w_enc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:218]:
+<#<Encoding:EUC-JP>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 40) Failure:
+test_open_w_enc_enc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:245]:
+<#<Encoding:EUC-JP>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 41) Error:
+test_open_w_enc_enc_in_opt(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:253:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+
+ 42) Error:
+test_open_w_enc_enc_in_opt2(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:262:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+
+ 43) Failure:
+test_open_w_enc_enc_perm(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:272]:
+<#<Encoding:EUC-JP>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 44) Error:
+test_open_w_enc_in_opt(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:226:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+
+ 45) Error:
+test_open_w_enc_in_opt2(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:235:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+
+ 46) Failure:
+test_open_wb(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:209]:
+<#<Encoding:ASCII-8BIT>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 47) Skipped:
+test_pipe(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:700]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+ 48) Skipped:
+test_pipe_conversion(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:442]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+ 49) Skipped:
+test_pipe_convert_partial_read(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:454]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+ 50) Skipped:
+test_pipe_terminator_conversion(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:425]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+ 51) Failure:
+test_popen_r_enc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1180]:
+<#<Encoding:ASCII-8BIT>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 52) Failure:
+test_popen_r_enc_enc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1210]:
+<#<Encoding:Shift_JIS>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 53) Error:
+test_popen_r_enc_enc_in_opt(TestIO_M17N):
+ArgumentError: wrong number of arguments (3 for 2)
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1219:in `test_popen_r_enc_enc_in_opt'
+
+ 54) Error:
+test_popen_r_enc_enc_in_opt2(TestIO_M17N):
+ArgumentError: wrong number of arguments (3 for 2)
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1229:in `test_popen_r_enc_enc_in_opt2'
+
+ 55) Error:
+test_popen_r_enc_in_opt(TestIO_M17N):
+ArgumentError: wrong number of arguments (3 for 2)
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1189:in `test_popen_r_enc_in_opt'
+
+ 56) Error:
+test_popen_r_enc_in_opt2(TestIO_M17N):
+ArgumentError: wrong number of arguments (3 for 2)
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1199:in `test_popen_r_enc_in_opt2'
+
+ 57) Error:
+test_popenv_r_enc_enc_in_opt2(TestIO_M17N):
+ArgumentError: wrong number of arguments (3 for 2)
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1239:in `test_popenv_r_enc_enc_in_opt2'
+
+ 58) Skipped:
+test_puts_widechar(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:2082]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+ 59) Skipped:
+test_read_all(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:904]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+ 60) Failure:
+test_read_all_invalid(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:927]:
+Encoding::InvalidByteSequenceError expected but nothing was raised.
+
+ 61) Failure:
+test_read_encoding(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:612]:
+<#<Encoding:ASCII-8BIT>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 62) Failure:
+test_read_mode(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1584]:
+<"a\nb\nc\n¢"> expected but was
+<"a\rb\r\nc\n¢">.
+
+ 63) Failure:
+test_read_newline_conversion_error(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1563]:
+ArgumentError expected but nothing was raised.
+
+ 64) Failure:
+test_read_newline_conversion_with_encoding_conversion(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1531]:
+<"a\r\nb\r\n"> (UTF-16BE) expected but was
+<"a\r\nb\r\n"> (UTF-8).
+
+ 65) Failure:
+test_read_newline_conversion_without_encoding_conversion(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1554]:
+<"a\r\nb\r\n"> expected but was
+<"\x00a\x00\r\x00\n\x00b\x00\r\x00\n">.
+
+ 66) Error:
+test_read_stateful(TestIO_M17N):
+ArgumentError: unknown encoding name - iso-2022-jp
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1155:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:27:in `block'
+
+ 67) Failure:
+test_s_foreach_enc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1262]:
+<#<Encoding:ASCII-8BIT>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 68) Failure:
+test_s_foreach_enc_enc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1292]:
+<#<Encoding:EUC-JP>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 69) Failure:
+test_s_foreach_enc_enc_in_opt(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1302]:
+<#<Encoding:EUC-JP>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 70) Failure:
+test_s_foreach_enc_enc_in_opt2(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1312]:
+<#<Encoding:EUC-JP>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 71) Failure:
+test_s_foreach_enc_in_opt(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1272]:
+<#<Encoding:ASCII-8BIT>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 72) Failure:
+test_s_foreach_enc_in_opt2(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1282]:
+<#<Encoding:ASCII-8BIT>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 73) Failure:
+test_s_foreach_open_args_enc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1322]:
+<#<Encoding:ASCII-8BIT>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 74) Failure:
+test_s_foreach_open_args_enc_enc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1352]:
+<#<Encoding:EUC-JP>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 75) Failure:
+test_s_foreach_open_args_enc_enc_in_opt(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1362]:
+<#<Encoding:EUC-JP>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 76) Failure:
+test_s_foreach_open_args_enc_enc_in_opt2(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1372]:
+<#<Encoding:EUC-JP>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 77) Failure:
+test_s_foreach_open_args_enc_in_opt(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1332]:
+<#<Encoding:ASCII-8BIT>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 78) Failure:
+test_s_foreach_open_args_enc_in_opt2(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1342]:
+<#<Encoding:ASCII-8BIT>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 79) Error:
+test_s_pipe_invalid(TestIO_M17N):
+ArgumentError: wrong number of arguments (3 for 2)
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:24:in `pipe'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:297:in `test_s_pipe_invalid'
+
+ 80) Skipped:
+test_s_pipe_undef(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:303]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+ 81) Skipped:
+test_s_pipe_undef_replace_string(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:316]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+ 82) Skipped:
+test_set_encoding(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:943]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+ 83) Skipped:
+test_set_encoding2(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:960]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+ 84) Failure:
+test_set_encoding_binmode(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1058]:
+ArgumentError expected but nothing was raised.
+
+ 85) Skipped:
+test_set_encoding_enc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:994]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+ 86) Skipped:
+test_set_encoding_invalid(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1011]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+ 87) Skipped:
+test_set_encoding_nil(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:977]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+ 88) Skipped:
+test_set_encoding_undef(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1024]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+ 89) Skipped:
+test_set_encoding_undef_replace(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1037]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+ 90) Failure:
+test_stderr(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:375]:
+<nil> expected but was
+<#<Encoding:UTF-8>>.
+
+ 91) Failure:
+test_stdin(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:366]:
+<nil> expected but was
+<#<Encoding:UTF-8>>.
+
+ 92) Failure:
+test_stdout(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:370]:
+<nil> expected but was
+<#<Encoding:UTF-8>>.
+
+ 93) Failure:
+test_strip_bom(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1970]:
+<"a"> expected but was
+<"\xEF\xBB\xBFa">.
+
+ 94) Failure:
+test_terminator_conversion(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:385]:
+<#<Encoding:ISO-8859-1>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 95) Failure:
+test_terminator_conversion2(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:397]:
+"before 、■ after".force_encoding("UTF-8") expected but not equal to
+"before \xA1\xA2\xA2\xA3 after".force_encoding("UTF-8")..
+Expected block to return true value.
+
+ 96) Error:
+test_terminator_stateful_conversion(TestIO_M17N):
+ArgumentError: unknown encoding name - iso-2022-jp
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:403:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+
+ 97) Failure:
+test_textmode_decode_universal_newline_getc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1406]:
+<"\n"> expected but was
+<"\r">.
+
+ 98) Failure:
+test_textmode_decode_universal_newline_gets(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1442]:
+<"a\n"> expected but was
+<"a\r\n">.
+
+ 99) Failure:
+test_textmode_decode_universal_newline_read(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1385]:
+<"a\nb\nc\n"> expected but was
+<"a\r\nb\r\nc\r\n">.
+
+100) Failure:
+test_textmode_decode_universal_newline_utf16(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1469]:
+<"a\nb\nc\n"> expected but was
+<"\x00a\x00\r\x00\n\x00b\x00\r\x00\n\x00c\x00\r\x00\n">.
+
+101) Failure:
+test_textmode_encode_newline_enc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1522]:
+<"abc\xA4\xA2\ndef\xA4\xA4\n"> expected but was
+<"abcあ\ndefい\n">.
+
+102) Skipped:
+test_textmode_paragraph_binaryread(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:2037]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+103) Failure:
+test_textmode_paragraph_nonasciicompat(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:2059]:
+[ruby-dev:41803].
+<"[ruby-dev:41803]\n\n"> (UTF-32BE) expected but was
+<"[ruby-dev:41803]\n\n"> (UTF-8).
+
+104) Skipped:
+test_textmode_paragraphmode(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:2023]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+105) Error:
+test_undef_r(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1844:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+
+106) Error:
+test_undef_w_stateful(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1906:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+
+107) Error:
+test_undef_w_stateless(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1886:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+
+108) Error:
+test_ungetc_int(TestIO_M17N):
+RangeError: integer 2217845817 too big to convert to `int'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:528:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:527:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+
+109) Error:
+test_ungetc_stateful_conversion(TestIO_M17N):
+ArgumentError: unknown encoding name - iso-2022-jp
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:550:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+
+110) Error:
+test_ungetc_stateful_conversion2(TestIO_M17N):
+ArgumentError: unknown encoding name - iso-2022-jp
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:563:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+
+111) Error:
+test_ungetc_str(TestIO_M17N):
+ArgumentError: unknown encoding name - GB18030
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:540:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:539:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+
+112) Error:
+test_w_xml_attr(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1925:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+
+113) Failure:
+test_write_conversion(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:686]:
+<#<Encoding:EUC-JP>> expected but was
+<#<Encoding:UTF-8>>.
+
+114) Skipped:
+test_write_conversion_anyenc_stateful(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1103]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+115) Skipped:
+test_write_conversion_anyenc_stateful_nosync(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1133]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+116) Skipped:
+test_write_conversion_anyenc_stateless(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1118]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+117) Skipped:
+test_write_conversion_fixenc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1088]:
+[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
+
+118) Error:
+test_write_mode(TestIO_M17N):
+ArgumentError: unknown encoding name - iso-2022-jp
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1644:in `test_write_mode'
+
+119) Failure:
+test_write_noenc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:676]:
+<"\xC2\xA1\n\xC2\xA1\n\xC2\xA1\n\xC2\xA1\n"> expected but was
+<"¡\n¡\n¡\n¡\n">.
+
+129 tests, 78 assertions, 59 failures, 33 errors, 27 skips
+
+Test run options: --seed 0
+
 ----------------------------------------
 Loaded suite test/ruby/test_iterator
 Started
@@ -7048,10 +7770,10 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_m17n
 Started
-F..EFEFE.EFF..EEEE..F.FE.E...EE.FFFF.FF.F...F.EEEF.EE.F.FEFFFEE..E..FFFF.FEEFEEEE.FFEEFF.F.FES.EEEEEE..E..
+F..EFEFE.EFF..EEEE..F.FE.E...EE.FFFF.FF.F...F.EEEF.EE.F.FEFFFEE..E.FFFFF.FEEFEEEE.FFEEFF.F.FES.EEEEEE..E..
 
   1) Failure:
-test_array_to_s(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1201]:
+test_array_to_s(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1211]:
 <#<Encoding:US-ASCII>> expected but was
 <#<Encoding:UTF-8>>.
 
@@ -7062,7 +7784,7 @@ ArgumentError: unknown encoding name - Windows-31J
     /macruby-test/test-mri/test/ruby/test_m17n.rb:569:in `test_begin_end_offset_sjis'
 
   3) Failure:
-test_bignum_to_s(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1196]:
+test_bignum_to_s(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1206]:
 <#<Encoding:US-ASCII>> expected but was
 <#<Encoding:UTF-8>>.
 
@@ -7085,12 +7807,12 @@ Message: <"unknown encoding name - Windows-31J">
   6) Error:
 test_chr(TestM17N):
 ArgumentError: unknown encoding name - GB18030
-    /macruby-test/test-mri/test/ruby/test_m17n.rb:1150:in `test_chr'
+    /macruby-test/test-mri/test/ruby/test_m17n.rb:1160:in `test_chr'
 
   7) Error:
 test_compatible(TestM17N):
 TypeError: can't convert Fixnum into String
-    /macruby-test/test-mri/test/ruby/test_m17n.rb:1337:in `test_compatible'
+    /macruby-test/test-mri/test/ruby/test_m17n.rb:1347:in `test_compatible'
 
   8) Failure:
 test_count(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:941]:
@@ -7127,12 +7849,12 @@ NoMethodError: undefined method `encoding' for //:Regexp
     /macruby-test/test-mri/test/ruby/test_m17n.rb:700:in `test_dynamic_utf8_regexp'
 
  14) Failure:
-test_empty_string(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1168]:
+test_empty_string(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1178]:
 <#<Encoding:US-ASCII>> expected but was
 <#<Encoding:UTF-8>>.
 
  15) Failure:
-test_encoding_to_s(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1222]:
+test_encoding_to_s(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1232]:
 <#<Encoding:US-ASCII>> expected but was
 <#<Encoding:UTF-8>>.
 
@@ -7145,17 +7867,17 @@ ArgumentError: unknown encoding name - Windows-31J
  17) Error:
 test_euc_tw(TestM17N):
 ArgumentError: unknown encoding name - euc-tw
-    /macruby-test/test-mri/test/ruby/test_m17n.rb:1290:in `test_euc_tw'
+    /macruby-test/test-mri/test/ruby/test_m17n.rb:1300:in `test_euc_tw'
 
  18) Error:
 test_force_encoding(TestM17N):
 ArgumentError: receiver encoding `#<Encoding:ASCII-8BIT>' not supported for codepoint insertion
-    /macruby-test/test-mri/test/ruby/test_m17n.rb:1349:in `test_force_encoding'
+    /macruby-test/test-mri/test/ruby/test_m17n.rb:1359:in `test_force_encoding'
 
  19) Error:
 test_gbk(TestM17N):
 ArgumentError: unknown encoding name - GBK
-    /macruby-test/test-mri/test/ruby/test_m17n.rb:1286:in `test_gbk'
+    /macruby-test/test-mri/test/ruby/test_m17n.rb:1296:in `test_gbk'
 
  20) Failure:
 test_gsub(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1069]:
@@ -7163,7 +7885,7 @@ test_gsub(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1069]:
 <"０１２３４">.
 
  21) Failure:
-test_hash_to_s(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1210]:
+test_hash_to_s(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1220]:
 <#<Encoding:US-ASCII>> expected but was
 <#<Encoding:UTF-8>>.
 
@@ -7177,22 +7899,22 @@ test_index(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:963]:
 Expected 1 to be nil.
 
  24) Failure:
-test_magic_comment(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1233]:
+test_magic_comment(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1243]:
 <#<Encoding:US-ASCII>> expected but was
 <#<Encoding:UTF-8>>.
 
  25) Failure:
-test_magic_comment_at_various_positions(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1249]:
+test_magic_comment_at_various_positions(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1259]:
 <#<Encoding:ASCII-8BIT>> expected but was
 <#<Encoding:UTF-8>>.
 
  26) Failure:
-test_marshal(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1156]:
+test_marshal(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1166]:
 <"　"> expected but was
 <"\xA1\xA1">.
 
  27) Failure:
-test_nonascii_method_name(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1126]:
+test_nonascii_method_name(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1136]:
 <"臓"> expected but was
 <"￨ﾇﾓ">.
 
@@ -7259,7 +7981,7 @@ NoMethodError: undefined method `encoding' for /a/:Regexp
     /macruby-test/test-mri/test/ruby/test_m17n.rb:451:in `test_regexp_sjis'
 
  37) Failure:
-test_regexp_source(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1229]:
+test_regexp_source(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1239]:
 [ruby-dev:33377] Regexp.new("あ".force_encoding("EUC-JP")).source.
 <"あ"> (EUC-JP) expected but was
 <"あ"> (UTF-8).
@@ -7278,7 +8000,7 @@ test_regexp_usascii(TestM17N):
 NoMethodError: undefined method `encoding' for //:Regexp
     /macruby-test/test-mri/(eval):2:in `encoding'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:87:in `assert_regexp_usascii_literal'
-    /macruby-test/test-mri/test/ruby/test_m17n.rb:1258:in `test_regexp_usascii'
+    /macruby-test/test-mri/test/ruby/test_m17n.rb:1268:in `test_regexp_usascii'
 
  41) Error:
 test_regexp_windows_31j(TestM17N):
@@ -7291,43 +8013,48 @@ Encoding::UndefinedConversionError: U+FFA3 from UTF-16LE to EUC-JP
     /macruby-test/test-mri/test/ruby/test_m17n.rb:1004:in `test_scan'
 
  43) Failure:
+test_split(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1121]:
+<["abc", "def"]> expected but was
+<["abc", "def", ""]>.
+
+ 44) Failure:
 test_sprintf_c(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:768]:
 <#<Encoding:ASCII-8BIT>> expected but was
 <#<Encoding:UTF-8>>.
 
- 44) Failure:
+ 45) Failure:
 test_sprintf_p(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:788]:
 <"\"\""> expected but was
 <"\xE2\x95\xB0">.
 
- 45) Failure:
+ 46) Failure:
 test_sprintf_s(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:796]:
 <#<Encoding:ASCII-8BIT>> expected but was
 <#<Encoding:UTF-8>>.
 
- 46) Failure:
+ 47) Failure:
 test_squeeze(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:913]:
 <"０１３４"> expected but was
 <"０１１３４">.
 
- 47) Failure:
+ 48) Failure:
 test_str_allocate(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:759]:
 <#<Encoding:ASCII-8BIT>> expected but was
 <#<Encoding:UTF-8>>.
 
- 48) Error:
+ 49) Error:
 test_str_aref(TestM17N):
 ArgumentError: unknown encoding name - Windows-31J
     /macruby-test/test-mri/test/ruby/test_m17n.rb:13:in `s'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:842:in `test_str_aref'
 
- 49) Error:
+ 50) Error:
 test_str_aref_len(TestM17N):
 ArgumentError: unknown encoding name - Windows-31J
     /macruby-test/test-mri/test/ruby/test_m17n.rb:13:in `s'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:874:in `test_str_aref_len'
 
- 50) Failure:
+ 51) Failure:
 test_str_aref_substr(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:886]:
 [Encoding::CompatibilityError] exception expected, not
 Class: <ArgumentError>
@@ -7337,120 +8064,120 @@ Message: <"unknown encoding name - Windows-31J">
 /macruby-test/test-mri/test/ruby/test_m17n.rb:886:in `block'
 ---------------
 
- 51) Error:
+ 52) Error:
 test_str_center(TestM17N):
 Encoding::CompatibilityError: incompatible character encodings: UTF-8 and EUC-JP
     /macruby-test/test-mri/test/ruby/test_m17n.rb:907:in `test_str_center'
 
- 52) Error:
+ 53) Error:
 test_str_concat(TestM17N):
 ArgumentError: unknown encoding name - GB18030
-    /macruby-test/test-mri/test/ruby/test_m17n.rb:1100:in `test_str_concat'
+    /macruby-test/test-mri/test/ruby/test_m17n.rb:1106:in `test_str_concat'
 
- 53) Error:
+ 54) Error:
 test_str_dump(TestM17N):
 ArgumentError: unknown encoding name - Windows-31J
     /macruby-test/test-mri/test/ruby/test_m17n.rb:13:in `s'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:241:in `test_str_dump'
 
- 54) Error:
+ 55) Error:
 test_str_lt(TestM17N):
 ArgumentError: unknown encoding name - Windows-31J
     /macruby-test/test-mri/test/ruby/test_m17n.rb:13:in `s'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:825:in `test_str_lt'
 
- 55) Failure:
+ 56) Failure:
 test_string_ascii_literal(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:150]:
 <#<Encoding:ASCII-8BIT>> expected but was
 <#<Encoding:UTF-8>>.
 
- 56) Failure:
+ 57) Failure:
 test_string_eucjp_literal(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:155]:
 <#<Encoding:EUC-JP>> expected but was
 <#<Encoding:UTF-8>>.
 
- 57) Error:
+ 58) Error:
 test_string_inspect_encoding(TestM17N):
 TypeError: can't convert nil into String
     /macruby-test/test-mri/test/ruby/test_m17n.rb:210:in `test_string_inspect_encoding'
 
- 58) Error:
+ 59) Error:
 test_string_inspect_invalid(TestM17N):
 ArgumentError: unknown encoding name - Windows-31J
     /macruby-test/test-mri/test/ruby/test_m17n.rb:13:in `s'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:185:in `test_string_inspect_invalid'
 
- 59) Failure:
+ 60) Failure:
 test_string_mixed_unicode(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:170]:
 SyntaxError expected but nothing was raised.
 
- 60) Failure:
+ 61) Failure:
 test_sub(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:978]:
 <#<Encoding:EUC-JP>> expected but was
 <#<Encoding:UTF-8>>.
 
- 61) Failure:
+ 62) Failure:
 test_sub3(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:995]:
 Failed assertion, no message given.
 
- 62) Failure:
-test_symbol_op(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1142]:
+ 63) Failure:
+test_symbol_op(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1152]:
 [ruby-dev:33449].
 <#<Encoding:US-ASCII>> expected but was
 <#<Encoding:UTF-8>>.
 
- 63) Error:
+ 64) Error:
 test_tr(TestM17N):
 ArgumentError: unknown encoding name - Windows-31J
     /macruby-test/test-mri/test/ruby/test_m17n.rb:13:in `s'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:917:in `test_tr'
 
- 64) Skipped:
+ 65) Skipped:
 test_tr_s(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:932]:
 [BUG : #???] Assertion
 
- 65) Error:
+ 66) Error:
 test_union_0(TestM17N):
 NoMethodError: undefined method `encoding' for /(?!)/:Regexp
     /macruby-test/test-mri/test/ruby/test_m17n.rb:58:in `assert_regexp_generic_ascii'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:597:in `test_union_0'
 
- 66) Error:
+ 67) Error:
 test_union_1_asciionly_string(TestM17N):
 NoMethodError: undefined method `encoding' for //:Regexp
     /macruby-test/test-mri/test/ruby/test_m17n.rb:58:in `assert_regexp_generic_ascii'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:605:in `test_union_1_asciionly_string'
 
- 67) Error:
+ 68) Error:
 test_union_1_nonascii_string(TestM17N):
 NoMethodError: undefined method `encoding' for /Â¡/:Regexp
     /macruby-test/test-mri/test/ruby/test_m17n.rb:63:in `assert_regexp_fixed_ascii8bit'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:620:in `test_union_1_nonascii_string'
 
- 68) Error:
+ 69) Error:
 test_union_1_regexp(TestM17N):
 NoMethodError: undefined method `encoding' for //:Regexp
     /macruby-test/test-mri/test/ruby/test_m17n.rb:58:in `assert_regexp_generic_ascii'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:627:in `test_union_1_regexp'
 
- 69) Error:
+ 70) Error:
 test_union_2(TestM17N):
 ArgumentError: unknown encoding name - Windows-31J
     /macruby-test/test-mri/test/ruby/test_m17n.rb:13:in `s'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:638:in `test_union_2'
 
- 70) Error:
+ 71) Error:
 test_upto(TestM17N):
 ArgumentError: unknown encoding name - Windows-31J
     /macruby-test/test-mri/test/ruby/test_m17n.rb:13:in `s'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:1023:in `test_upto'
 
- 71) Error:
+ 72) Error:
 test_valid_encoding(TestM17N):
 Encoding::CompatibilityError: incompatible character encodings: UTF-8 and EUC-JP
-    /macruby-test/test-mri/test/ruby/test_m17n.rb:1300:in `test_valid_encoding'
+    /macruby-test/test-mri/test/ruby/test_m17n.rb:1310:in `test_valid_encoding'
 
-106 tests, 513 assertions, 33 failures, 37 errors, 1 skips
+106 tests, 518 assertions, 34 failures, 37 errors, 1 skips
 
 Test run options: --seed 0
 
@@ -7919,30 +8646,30 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_method
 Started
-...EEFESF.....F..F...F..E
+...EEFESF.....E..F.....F..E
 
   1) Error:
 test_bmethod_bound_parameters(TestMethod):
 NoMethodError: undefined method `parameters' for #<Method: TestMethod#pm0>
-    /macruby-test/test-mri/test/ruby/test_method.rb:299:in `test_bmethod_bound_parameters'
+    /macruby-test/test-mri/test/ruby/test_method.rb:325:in `test_bmethod_bound_parameters'
 
   2) Error:
 test_bmethod_unbound_parameters(TestMethod):
 NoMethodError: undefined method `parameters' for #<UnboundMethod: TestMethod#pm0>
-    /macruby-test/test-mri/test/ruby/test_method.rb:313:in `test_bmethod_unbound_parameters'
+    /macruby-test/test-mri/test/ruby/test_method.rb:339:in `test_bmethod_unbound_parameters'
 
   3) Failure:
-test_body(TestMethod) [/macruby-test/test-mri/test/ruby/test_method.rb:84]:
+test_body(TestMethod) [/macruby-test/test-mri/test/ruby/test_method.rb:110]:
 Exception raised:
 <#<NameError: uninitialized constant TestMethod::RubyVM>>.
 
   4) Error:
 test_bound_parameters(TestMethod):
 NoMethodError: undefined method `parameters' for #<Method: TestMethod#m0>
-    /macruby-test/test-mri/test/ruby/test_method.rb:271:in `test_bound_parameters'
+    /macruby-test/test-mri/test/ruby/test_method.rb:297:in `test_bound_parameters'
 
   5) Skipped:
-test_call(TestMethod) [/macruby-test/test-mri/test/ruby/test_method.rb:198]:
+test_call(TestMethod) [/macruby-test/test-mri/test/ruby/test_method.rb:224]:
 [BUG : #842] SecurityError Level 4
 
   6) Failure:
@@ -7950,17 +8677,19 @@ test_callee(TestMethod) [/macruby-test/test-mri/test/ruby/test_method.rb:75]:
 <:m> expected but was
 <nil>.
 
-  7) Failure:
-test_define_method(TestMethod) [/macruby-test/test-mri/test/ruby/test_method.rb:164]:
-TypeError expected but nothing was raised.
+  7) Error:
+test_define_method(TestMethod):
+TypeError: bind argument must be a subclass of #<Class:0xXXXXXXXX>
+    /macruby-test/test-mri/test/ruby/test_method.rb:188:in `block'
+    /macruby-test/test-mri/test/ruby/test_method.rb:188:in `test_define_method'
 
   8) Failure:
-test_inspect(TestMethod) [/macruby-test/test-mri/test/ruby/test_method.rb:212]:
+test_inspect(TestMethod) [/macruby-test/test-mri/test/ruby/test_method.rb:238]:
 <"#<Method: #<NSObject:0xXXXXXXXX>.foo>"> expected but was
 <"#<Method: NSObject#foo>">.
 
   9) Failure:
-test_public_methods_with_extended(TestMethod) [/macruby-test/test-mri/test/ruby/test_method.rb:348]:
+test_public_methods_with_extended(TestMethod) [/macruby-test/test-mri/test/ruby/test_method.rb:374]:
 [ruby-dev:41553].
 <[:m1, :a]> expected but was
 <[:m1]>.
@@ -7968,9 +8697,9 @@ test_public_methods_with_extended(TestMethod) [/macruby-test/test-mri/test/ruby/
  10) Error:
 test_unbound_parameters(TestMethod):
 NoMethodError: undefined method `parameters' for #<UnboundMethod: TestMethod#m0>
-    /macruby-test/test-mri/test/ruby/test_method.rb:285:in `test_unbound_parameters'
+    /macruby-test/test-mri/test/ruby/test_method.rb:311:in `test_unbound_parameters'
 
-25 tests, 59 assertions, 5 failures, 4 errors, 1 skips
+27 tests, 59 assertions, 4 failures, 5 errors, 1 skips
 
 Test run options: --seed 0
 
@@ -8207,7 +8936,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_pack
 Started
-.......FE.FE........FF.F..FFF....FF.....
+.......FE.FE.F......FF.F..FFF....FF.....
 
   1) Failure:
 test_pack_N(TestPack) [/macruby-test/test-mri/test/ruby/test_pack.rb:53]:
@@ -8230,46 +8959,51 @@ ArgumentError: no associated pointer
     /macruby-test/test-mri/test/ruby/test_pack.rb:164:in `test_pack_p'
 
   5) Failure:
+test_pack_unpack_M(TestPack) [/macruby-test/test-mri/test/ruby/test_pack.rb:559]:
+<["\xC6\xF7"]> expected but was
+<["\xC6\xF7"]>.
+
+  6) Failure:
 test_pack_unpack_bB(TestPack) [/macruby-test/test-mri/test/ruby/test_pack.rb:235]:
 <"\xFF\x00"> (UTF-8) expected but was
 <"\xFF\x00"> (ASCII-8BIT).
 
-  6) Failure:
+  7) Failure:
 test_pack_unpack_cC(TestPack) [/macruby-test/test-mri/test/ruby/test_pack.rb:311]:
 <"\x00\x01\xFF"> (UTF-8) expected but was
 <"\x00\x01\xFF"> (ASCII-8BIT).
 
-  7) Failure:
+  8) Failure:
 test_pack_unpack_hH(TestPack) [/macruby-test/test-mri/test/ruby/test_pack.rb:271]:
 <"\x01\xFE"> (UTF-8) expected but was
 <"\x01\xFE"> (ASCII-8BIT).
 
-  8) Failure:
+  9) Failure:
 test_pack_unpack_m(TestPack) [/macruby-test/test-mri/test/ruby/test_pack.rb:510]:
 <["\xFF"]> expected but was
 <["\xFF"]>.
 
-  9) Failure:
+ 10) Failure:
 test_pack_unpack_m0(TestPack) [/macruby-test/test-mri/test/ruby/test_pack.rb:528]:
 <["\xFF"]> expected but was
 <["\xFF"]>.
 
- 10) Failure:
+ 11) Failure:
 test_pack_unpack_nN(TestPack) [/macruby-test/test-mri/test/ruby/test_pack.rb:389]:
 <"\x00\x00\x00\x01\xFF\xFF\x7F\xFF\x80\x00\xFF\xFF"> (UTF-8) expected but was
 <"\x00\x00\x00\x01\xFF\xFF\x7F\xFF\x80\x00\xFF\xFF"> (ASCII-8BIT).
 
- 11) Failure:
+ 12) Failure:
 test_pack_unpack_vV(TestPack) [/macruby-test/test-mri/test/ruby/test_pack.rb:400]:
 <"\x00\x00\x01\x00\xFF\xFF\xFF\x7F\x00\x80\xFF\xFF"> (UTF-8) expected but was
 <"\x00\x00\x01\x00\xFF\xFF\xFF\x7F\x00\x80\xFF\xFF"> (ASCII-8BIT).
 
- 12) Failure:
-test_pack_unpack_w(TestPack) [/macruby-test/test-mri/test/ruby/test_pack.rb:577]:
+ 13) Failure:
+test_pack_unpack_w(TestPack) [/macruby-test/test-mri/test/ruby/test_pack.rb:579]:
 <"\x81\x00"> (UTF-8) expected but was
 <"\x81\x00"> (ASCII-8BIT).
 
-40 tests, 321 assertions, 10 failures, 2 errors, 0 skips
+40 tests, 323 assertions, 11 failures, 2 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -8433,17 +9167,17 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_process
 Started
-..SE..EFFS...EFEEEEEEF........./bin/sh: -c: option requires an argument
+..SE..EFFS...EFFEEEEEF........./bin/sh: -c: option requires an argument
 F...F....................
 
   1) Skipped:
-test_argv0_noarg(TestProcess) [/macruby-test/test-mri/test/ruby/test_process.rb:1021]:
+test_argv0_noarg(TestProcess) [/macruby-test/test-mri/test/ruby/test_process.rb:1025]:
 [BUG : #???] Timeout, MacRuby don't finish
 
   2) Error:
 test_exec_noshell(TestProcess):
 TypeError: can't convert Hash into String
-    /macruby-test/test-mri/test/ruby/test_process.rb:768:in `block'
+    /macruby-test/test-mri/test/ruby/test_process.rb:772:in `block'
     /macruby-test/test-mri/test/ruby/test_process.rb:28:in `block'
     /macruby-test/test-mri/test/ruby/test_process.rb:27:in `block'
 
@@ -8455,12 +9189,12 @@ TypeError: can't convert Array into String
     /macruby-test/test-mri/test/ruby/test_process.rb:27:in `block'
 
   4) Failure:
-test_execopts_close_others(TestProcess) [/macruby-test/test-mri/test/ruby/test_process.rb:648]:
+test_execopts_close_others(TestProcess) [/macruby-test/test-mri/test/ruby/test_process.rb:652]:
 <""> expected but was
 <"ma\n">.
 
   5) Failure:
-test_execopts_duplex_io(TestProcess) [/macruby-test/test-mri/test/ruby/test_process.rb:722]:
+test_execopts_duplex_io(TestProcess) [/macruby-test/test-mri/test/ruby/test_process.rb:726]:
 ArgumentError expected but nothing was raised.
 
   6) Skipped:
@@ -8473,34 +9207,31 @@ TypeError: can't convert Hash into String
     /macruby-test/test-mri/test/ruby/test_process.rb:156:in `test_execopts_pgroup'
 
   8) Failure:
-test_execopts_popen(TestProcess) [/macruby-test/test-mri/test/ruby/test_process.rb:557]:
+test_execopts_popen(TestProcess) [/macruby-test/test-mri/test/ruby/test_process.rb:561]:
 [ArgumentError] exception expected, not
 Class: <TypeError>
 Message: <"can't convert Array into String">
 ---Backtrace---
-/macruby-test/test-mri/test/ruby/test_process.rb:558:in `block'
+/macruby-test/test-mri/test/ruby/test_process.rb:562:in `block'
 ---------------
 
-  9) Error:
-test_execopts_redirect(TestProcess):
-ArgumentError: wrong exec redirect symbol: in
-    /macruby-test/test-mri/test/ruby/test_process.rb:393:in `block'
-    /macruby-test/test-mri/test/ruby/test_process.rb:28:in `block'
-    /macruby-test/test-mri/test/ruby/test_process.rb:27:in `block'
+  9) Failure:
+test_execopts_redirect(TestProcess) [/macruby-test/test-mri/test/ruby/test_process.rb:427]:
+Errno::ENOENT expected but nothing was raised.
 
  10) Error:
 test_execopts_redirect_dup2_child(TestProcess):
 TypeError: can't convert Symbol into String
-    /macruby-test/test-mri/test/ruby/test_process.rb:514:in `block'
+    /macruby-test/test-mri/test/ruby/test_process.rb:518:in `block'
     /macruby-test/test-mri/test/ruby/test_process.rb:28:in `block'
     /macruby-test/test-mri/test/ruby/test_process.rb:27:in `block'
 
  11) Error:
 test_execopts_redirect_self(TestProcess):
 TypeError: can't convert Hash into String
-    /macruby-test/test-mri/test/ruby/test_process.rb:711:in `block'
+    /macruby-test/test-mri/test/ruby/test_process.rb:715:in `block'
     /macruby-test/test-mri/test/ruby/test_process.rb:335:in `with_pipe'
-    /macruby-test/test-mri/test/ruby/test_process.rb:707:in `test_execopts_redirect_self'
+    /macruby-test/test-mri/test/ruby/test_process.rb:711:in `test_execopts_redirect_self'
 
  12) Error:
 test_execopts_rlimit(TestProcess):
@@ -8518,21 +9249,21 @@ TypeError: can't convert Array into String
     /macruby-test/test-mri/test/ruby/test_process.rb:299:in `test_execopts_unsetenv_others'
 
  15) Failure:
-test_fd_inheritance(TestProcess) [/macruby-test/test-mri/test/ruby/test_process.rb:610]:
+test_fd_inheritance(TestProcess) [/macruby-test/test-mri/test/ruby/test_process.rb:614]:
 <""> expected but was
 <"bi\n">.
 
  16) Failure:
-test_popen_fork(TestProcess) [/macruby-test/test-mri/test/ruby/test_process.rb:590]:
+test_popen_fork(TestProcess) [/macruby-test/test-mri/test/ruby/test_process.rb:594]:
 <"fooo\n"> expected but was
 <"">.
 
  17) Failure:
-test_pst_inspect(TestProcess) [/macruby-test/test-mri/test/ruby/test_process.rb:1183]:
+test_pst_inspect(TestProcess) [/macruby-test/test-mri/test/ruby/test_process.rb:1187]:
 Exception raised:
 <#<TypeError: no implicit conversion from nil to integer>>.
 
-56 tests, 146 assertions, 6 failures, 9 errors, 2 skips
+56 tests, 155 assertions, 7 failures, 8 errors, 2 skips
 
 Test run options: --seed 0
 
@@ -8633,7 +9364,7 @@ test_random_bytes(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:345]:
 
  19) Failure:
 test_random_range(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:362]:
-<2011-07-19 03:33:52 +0900> expected but was
+<2011-07-20 03:34:20 +0900> expected but was
 <1.97626258336499e-323>.
 
  20) Failure:
@@ -8658,14 +9389,14 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_range
 Started
-...S.S.....F.F......F.....
+...S.S.....F.F......F......
 
   1) Skipped:
-test_comparison_when_recursive(TestRange) [/macruby-test/test-mri/test/ruby/test_range.rb:310]:
+test_comparison_when_recursive(TestRange) [/macruby-test/test-mri/test/ruby/test_range.rb:319]:
 [BUG : #781] Segfault
 
   2) Skipped:
-test_cyclic_range_inspect(TestRange) [/macruby-test/test-mri/test/ruby/test_range.rb:302]:
+test_cyclic_range_inspect(TestRange) [/macruby-test/test-mri/test/ruby/test_range.rb:311]:
 [BUG : #781] Segfault
 
   3) Failure:
@@ -8675,7 +9406,7 @@ test_evaluation_order(TestRange) [/macruby-test/test-mri/test/ruby/test_range.rb
 <2..1>.
 
   4) Failure:
-test_first_last(TestRange) [/macruby-test/test-mri/test/ruby/test_range.rb:238]:
+test_first_last(TestRange) [/macruby-test/test-mri/test/ruby/test_range.rb:247]:
 <[0, 1, 2]> expected but was
 <[0, 1, 2, 3]>.
 
@@ -8684,7 +9415,7 @@ test_range_numeric_string(TestRange) [/macruby-test/test-mri/test/ruby/test_rang
 <["9", "10"]> expected but was
 <[]>.
 
-26 tests, 96 assertions, 3 failures, 0 errors, 2 skips
+27 tests, 102 assertions, 3 failures, 0 errors, 2 skips
 
 Test run options: --seed 0
 
@@ -8789,7 +9520,7 @@ Started
   1) Failure:
 test_assignment_in_conditional(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:307]:
 [ruby-dev:39363].
-Expected /\A(\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/test_ruby_test_rubyoption20110719\-95550\-1estiet\.rb):1(: warning: found = in conditional, should be ==)\n\1:4\2\Z/ to match "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20110719-95550-1estiet.rb:1: warning: found = in conditional, should be ==\n".
+Expected /\A(\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/test_ruby_test_rubyoption20110720\-7708\-1estiet\.rb):1(: warning: found = in conditional, should be ==)\n\1:4\2\Z/ to match "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20110720-7708-1estiet.rb:1: warning: found = in conditional, should be ==\n".
 
   2) Failure:
 test_autosplit(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:146]:
@@ -8827,7 +9558,7 @@ test_eval(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb
 
   9) Failure:
 test_indentation_check(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:319]:
-<["/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20110719-95550-y3csz2.rb:2: warning: mismatched indentations at 'end' with 'begin' at 1"]> expected but was
+<["/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20110720-7708-y3csz2.rb:2: warning: mismatched indentations at 'end' with 'begin' at 1"]> expected but was
 <[]>.
 
  10) Failure:
@@ -9292,6 +10023,33 @@ test_succ(TestSymbol) [/macruby-test/test-mri/test/ruby/test_symbol.rb:102]:
 Test run options: --seed 0
 
 ----------------------------------------
+Loaded suite test/ruby/test_syntax
+Started
+FFE
+
+  1) Failure:
+test_must_ascii_compatible(TestSyntax) [/macruby-test/test-mri/test/ruby/test_syntax.rb:34]:
+UTF-16BE
+ArgumentError expected but nothing was raised.
+
+  2) Failure:
+test_script_lines(TestSyntax) [/macruby-test/test-mri/test/ruby/test_syntax.rb:49]:
+[ruby-dev:43168].
+<[#<Encoding:ASCII-8BIT>, #<Encoding:ASCII-8BIT>]> expected but was
+<[#<Encoding:UTF-8>, #<Encoding:UTF-8>]>.
+
+  3) Error:
+test_syntax(TestSyntax):
+ArgumentError: wrong number of arguments (0 for 1)
+    /macruby-test/test-mri/test/ruby/test_syntax.rb:10:in `valid_syntax?'
+    /macruby-test/test-mri/test/ruby/test_syntax.rb:18:in `block'
+    /macruby-test/test-mri/test/ruby/test_syntax.rb:17:in `block'
+
+3 tests, 27 assertions, 2 failures, 1 errors, 0 skips
+
+Test run options: --seed 0
+
+----------------------------------------
 Loaded suite test/ruby/test_system
 Started
 ..F
@@ -9308,13 +10066,13 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_thread
 Started
-F....F.FF...........S..objc[95660]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+F....FFFF............S...SF.Sobjc[7825]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-.SF.S...F.EFS.F
+...F.EFS.F
 
   1) Failure:
-test_abort_on_exception(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:377]:
+test_abort_on_exception(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:384]:
 <["true", "2"]> expected but was
 <["true", "1"]>.
 
@@ -9323,6 +10081,11 @@ test_condvar_timed_wait(TestThread) [/macruby-test/test-mri/test/ruby/test_threa
 Failed assertion, no message given.
 
   3) Failure:
+test_condvar_wait_and_broadcast(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:131]:
+<["C1", "C1", "C1", "P1", "P2", "C2", "C2", "C2"]> expected but was
+<["C1", "C1", "C1", "P1", "C2", false, "P2", "C2"]>.
+
+  4) Failure:
 test_condvar_wait_deadlock_2(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:165]:
 [Timeout::Error] exception expected, not
 Class: <NoMethodError>
@@ -9331,54 +10094,54 @@ Message: <"undefined method `reject!' for nil:NilClass">
 /macruby-test/test-mri/test/ruby/test_thread.rb:166:in `block'
 ---------------
 
-  4) Failure:
+  5) Failure:
 test_condvar_wait_exception_handling(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:102]:
 Failed assertion, no message given.
 
-  5) Skipped:
-test_mutex_interrupt(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:517]:
+  6) Skipped:
+test_mutex_interrupt(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:524]:
 [BUG : #???] Timeout, MacRuby don't finish
 
-  6) Skipped:
+  7) Skipped:
 test_priority(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:232]:
 [BUG : #1283] Segfault occurs when gets the busy loop with some threads.
 
-  7) Failure:
-test_recursive_outer(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:584]:
+  8) Failure:
+test_recursive_outer(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:591]:
 Failed assertion, no message given.
 
-  8) Skipped:
-test_select_wait(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:495]:
+  9) Skipped:
+test_select_wait(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:502]:
 [BUG : #1233] Abort occurs when kill a thread waiting with IO.select
 
-  9) Failure:
-test_thread_local_security(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:477]:
+ 10) Failure:
+test_thread_local_security(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:484]:
 SecurityError expected but nothing was raised.
 
- 10) Error:
+ 11) Error:
 test_backtrace(TestThreadGroup):
 NoMethodError: undefined method `backtrace' for #<Thread:0xXXXXXXXX run>
-    /macruby-test/test-mri/test/ruby/test_thread.rb:649:in `block'
+    /macruby-test/test-mri/test/ruby/test_thread.rb:656:in `block'
 
- 11) Failure:
-test_enclosed_thgroup(TestThreadGroup) [/macruby-test/test-mri/test/ruby/test_thread.rb:628]:
+ 12) Failure:
+test_enclosed_thgroup(TestThreadGroup) [/macruby-test/test-mri/test/ruby/test_thread.rb:635]:
 Exception raised:
 <#<ThreadError: can't move from the enclosed thread group>>.
 
- 12) Skipped:
-test_frozen_thgroup(TestThreadGroup) [/macruby-test/test-mri/test/ruby/test_thread.rb:598]:
+ 13) Skipped:
+test_frozen_thgroup(TestThreadGroup) [/macruby-test/test-mri/test/ruby/test_thread.rb:605]:
 [BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
 
- 13) Failure:
-test_uninitialized(TestThreadGroup) [/macruby-test/test-mri/test/ruby/test_thread.rb:644]:
+ 14) Failure:
+test_uninitialized(TestThreadGroup) [/macruby-test/test-mri/test/ruby/test_thread.rb:651]:
 [ThreadError] exception expected, not
 Class: <NoMethodError>
 Message: <"undefined method `start' for #<#<Class:0xXXXXXXXX>:0xXXXXXXXX run>">
 ---Backtrace---
-/macruby-test/test-mri/test/ruby/test_thread.rb:644:in `block'
+/macruby-test/test-mri/test/ruby/test_thread.rb:651:in `block'
 ---------------
 
-38 tests, 74 assertions, 8 failures, 1 errors, 4 skips
+39 tests, 75 assertions, 9 failures, 1 errors, 4 skips
 
 Test run options: --seed 0
 
@@ -9398,7 +10161,7 @@ test_at2(TestTime) [/macruby-test/test-mri/test/ruby/test_time.rb:211]:
 <99>.
 
   3) Failure:
-test_delegate(TestTime) [/macruby-test/test-mri/test/ruby/test_time.rb:645]:
+test_delegate(TestTime) [/macruby-test/test-mri/test/ruby/test_time.rb:647]:
 <-1> expected but was
 <nil>.
 
@@ -9442,10 +10205,10 @@ TypeError expected but nothing was raised.
  11) Error:
 test_round(TestTime):
 NoMethodError: undefined method `round' for 1999-12-31 23:59:59 UTC:Time
-    /macruby-test/test-mri/test/ruby/test_time.rb:656:in `test_round'
+    /macruby-test/test-mri/test/ruby/test_time.rb:658:in `test_round'
 
  12) Failure:
-test_strftime(TestTime) [/macruby-test/test-mri/test/ruby/test_time.rb:528]:
+test_strftime(TestTime) [/macruby-test/test-mri/test/ruby/test_time.rb:530]:
 <"0"> expected but was
 <"-S">.
 
@@ -9466,14 +10229,14 @@ Message: <"Attempt to unlock a mutex which is not locked">
  15) Error:
 test_to_r(TestTime):
 ArgumentError: wrong number of arguments (6 for 0)
-    /macruby-test/test-mri/test/ruby/test_time.rb:650:in `test_to_r'
+    /macruby-test/test-mri/test/ruby/test_time.rb:652:in `test_to_r'
 
  16) Error:
 test_utc_or_local(TestTime):
 TypeError: can't convert NSObject into time interval
     /macruby-test/test-mri/test/ruby/test_time.rb:325:in `test_utc_or_local'
 
-39 tests, 185 assertions, 6 failures, 10 errors, 0 skips
+39 tests, 187 assertions, 6 failures, 10 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -9507,28 +10270,28 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_transcode
 Started
-FEEEEEEEEEEEEEEEEFF..EEEFFE.EFEEEEEFEF.EE.EFEEFEEEE.FE...FEE.EEEEEEEEEEE
+FEEEEEEEEEEEEEEEEFF..EEFFE.EFEEEEEEFEF.EE.EFEEFEEEE.FEE...FEE.EEEEEEEEEEE
 
   1) Failure:
-test_Big5(TestTranscode) [/macruby-test/test-mri/test/ruby/test_transcode.rb:1780]:
+test_Big5(TestTranscode) [/macruby-test/test-mri/test/ruby/test_transcode.rb:1781]:
 [Encoding::UndefinedConversionError] exception expected, not
 Class: <Encoding::InvalidByteSequenceError>
 Message: <"\"\\xC0\" on Big5">
 ---Backtrace---
-/macruby-test/test-mri/test/ruby/test_transcode.rb:1780:in `block'
+/macruby-test/test-mri/test/ruby/test_transcode.rb:1781:in `block'
 ---------------
 
   2) Error:
 test_Big5_Hkscs(TestTranscode):
 ArgumentError: unknown encoding name - Big5-HKSCS
     /macruby-test/test-mri/test/ruby/test_transcode.rb:54:in `check_both_ways'
-    /macruby-test/test-mri/test/ruby/test_transcode.rb:1839:in `test_Big5_Hkscs'
+    /macruby-test/test-mri/test/ruby/test_transcode.rb:1840:in `test_Big5_Hkscs'
 
   3) Error:
 test_Big5_UAO(TestTranscode):
 ArgumentError: unknown encoding name - Big5-UAO
     /macruby-test/test-mri/test/ruby/test_transcode.rb:54:in `check_both_ways'
-    /macruby-test/test-mri/test/ruby/test_transcode.rb:1907:in `test_Big5_UAO'
+    /macruby-test/test-mri/test/ruby/test_transcode.rb:1908:in `test_Big5_UAO'
 
   4) Error:
 test_CP850(TestTranscode):
@@ -9639,17 +10402,12 @@ ArgumentError: unknown encoding name - EUC-KR
     /macruby-test/test-mri/test/ruby/test_transcode.rb:108:in `test_ascii_range'
 
  21) Error:
-test_cp50221(TestTranscode):
-ArgumentError: unknown encoding name - cp50220
-    /macruby-test/test-mri/test/ruby/test_transcode.rb:1380:in `test_cp50221'
-
- 22) Error:
 test_encodings(TestTranscode):
 ArgumentError: unknown encoding name - euc-kr
     /macruby-test/test-mri/test/ruby/test_transcode.rb:54:in `check_both_ways'
     /macruby-test/test-mri/test/ruby/test_transcode.rb:87:in `test_encodings'
 
- 23) Failure:
+ 22) Failure:
 test_errors(TestTranscode) [/macruby-test/test-mri/test/ruby/test_transcode.rb:7]:
 [Encoding::ConverterNotFoundError] exception expected, not
 Class: <ArgumentError>
@@ -9658,7 +10416,7 @@ Message: <"unknown encoding name - foo">
 /macruby-test/test-mri/test/ruby/test_transcode.rb:7:in `block'
 ---------------
 
- 24) Failure:
+ 23) Failure:
 test_euc_jp(TestTranscode) [/macruby-test/test-mri/test/ruby/test_transcode.rb:1228]:
 [Encoding::UndefinedConversionError] exception expected, not
 Class: <Encoding::InvalidByteSequenceError>
@@ -9667,19 +10425,19 @@ Message: <"\"\\xAF\" on EUC-JP">
 /macruby-test/test-mri/test/ruby/test_transcode.rb:1228:in `block'
 ---------------
 
- 25) Error:
+ 24) Error:
 test_eucjp_ms(TestTranscode):
 ArgumentError: unknown encoding name - eucJP-ms
     /macruby-test/test-mri/test/ruby/test_transcode.rb:54:in `check_both_ways'
     /macruby-test/test-mri/test/ruby/test_transcode.rb:1277:in `test_eucjp_ms'
 
- 26) Error:
+ 25) Error:
 test_eucjp_sjis_unassigned(TestTranscode):
 Encoding::InvalidByteSequenceError: "\x40" on Shift_JIS
     /macruby-test/test-mri/test/ruby/test_transcode.rb:59:in `check_both_ways2'
     /macruby-test/test-mri/test/ruby/test_transcode.rb:1317:in `test_eucjp_sjis_unassigned'
 
- 27) Failure:
+ 26) Failure:
 test_eucjp_sjis_undef(TestTranscode) [/macruby-test/test-mri/test/ruby/test_transcode.rb:1328]:
 [Encoding::UndefinedConversionError] exception expected, not
 Class: <Encoding::InvalidByteSequenceError>
@@ -9688,27 +10446,32 @@ Message: <"\"\\x8E\" on EUC-JP">
 /macruby-test/test-mri/test/ruby/test_transcode.rb:1328:in `block'
 ---------------
 
- 28) Error:
+ 27) Error:
 test_fallback(TestTranscode):
 Encoding::UndefinedConversionError: U+20000 from UTF-8 to EUC-JP
-    /macruby-test/test-mri/test/ruby/test_transcode.rb:1929:in `test_fallback'
+    /macruby-test/test-mri/test/ruby/test_transcode.rb:1930:in `test_fallback'
+
+ 28) Error:
+test_from_cp50221(TestTranscode):
+ArgumentError: unknown encoding name - cp50221
+    /macruby-test/test-mri/test/ruby/test_transcode.rb:1361:in `test_from_cp50221'
 
  29) Error:
 test_gb18030(TestTranscode):
 ArgumentError: unknown encoding name - gb18030
-    /macruby-test/test-mri/test/ruby/test_transcode.rb:1614:in `test_gb18030'
+    /macruby-test/test-mri/test/ruby/test_transcode.rb:1615:in `test_gb18030'
 
  30) Error:
 test_gb2312(TestTranscode):
 ArgumentError: unknown encoding name - GB2312
     /macruby-test/test-mri/test/ruby/test_transcode.rb:54:in `check_both_ways'
-    /macruby-test/test-mri/test/ruby/test_transcode.rb:1448:in `test_gb2312'
+    /macruby-test/test-mri/test/ruby/test_transcode.rb:1449:in `test_gb2312'
 
  31) Error:
 test_gbk(TestTranscode):
 ArgumentError: unknown encoding name - GBK
     /macruby-test/test-mri/test/ruby/test_transcode.rb:54:in `check_both_ways'
-    /macruby-test/test-mri/test/ruby/test_transcode.rb:1496:in `test_gbk'
+    /macruby-test/test-mri/test/ruby/test_transcode.rb:1497:in `test_gbk'
 
  32) Error:
 test_invalid_ignore(TestTranscode):
@@ -9810,91 +10573,96 @@ Message: <"\"\\x40\" on Shift_JIS">
 test_tilde_overline(TestTranscode):
 ArgumentError: unknown encoding name - Windows-31J
     /macruby-test/test-mri/test/ruby/test_transcode.rb:54:in `check_both_ways'
-    /macruby-test/test-mri/test/ruby/test_transcode.rb:1431:in `test_tilde_overline'
+    /macruby-test/test-mri/test/ruby/test_transcode.rb:1432:in `test_tilde_overline'
 
- 49) Failure:
-test_unicode_public_review_issue_121(TestTranscode) [/macruby-test/test-mri/test/ruby/test_transcode.rb:1399]:
+ 49) Error:
+test_to_cp50221(TestTranscode):
+ArgumentError: unknown encoding name - cp50220
+    /macruby-test/test-mri/test/ruby/test_transcode.rb:1381:in `test_to_cp50221'
+
+ 50) Failure:
+test_unicode_public_review_issue_121(TestTranscode) [/macruby-test/test-mri/test/ruby/test_transcode.rb:1400]:
 <"����"> expected but was
 <"�">.
 
- 50) Error:
+ 51) Error:
 test_utf8_mac(TestTranscode):
 ArgumentError: unknown encoding name - UTF8-MAC
-    /macruby-test/test-mri/test/ruby/test_transcode.rb:1918:in `test_utf8_mac'
+    /macruby-test/test-mri/test/ruby/test_transcode.rb:1919:in `test_utf8_mac'
 
- 51) Error:
+ 52) Error:
 test_utf_16(TestTranscode):
 TypeError: can't convert nil into String
     /macruby-test/test-mri/test/ruby/test_transcode.rb:971:in `check_utf_16_both_ways'
     /macruby-test/test-mri/test/ruby/test_transcode.rb:1008:in `test_utf_16'
 
- 52) Error:
+ 53) Error:
 test_windows_1250(TestTranscode):
 ArgumentError: unknown encoding name - windows-1250
     /macruby-test/test-mri/test/ruby/test_transcode.rb:54:in `check_both_ways'
     /macruby-test/test-mri/test/ruby/test_transcode.rb:167:in `test_windows_1250'
 
- 53) Error:
+ 54) Error:
 test_windows_1251(TestTranscode):
 ArgumentError: unknown encoding name - windows-1251
     /macruby-test/test-mri/test/ruby/test_transcode.rb:54:in `check_both_ways'
     /macruby-test/test-mri/test/ruby/test_transcode.rb:196:in `test_windows_1251'
 
- 54) Error:
+ 55) Error:
 test_windows_1252(TestTranscode):
 ArgumentError: unknown encoding name - windows-1252
     /macruby-test/test-mri/test/ruby/test_transcode.rb:54:in `check_both_ways'
     /macruby-test/test-mri/test/ruby/test_transcode.rb:217:in `test_windows_1252'
 
- 55) Error:
+ 56) Error:
 test_windows_1253(TestTranscode):
 ArgumentError: unknown encoding name - windows-1253
     /macruby-test/test-mri/test/ruby/test_transcode.rb:54:in `check_both_ways'
     /macruby-test/test-mri/test/ruby/test_transcode.rb:244:in `test_windows_1253'
 
- 56) Error:
+ 57) Error:
 test_windows_1254(TestTranscode):
 ArgumentError: unknown encoding name - windows-1254
     /macruby-test/test-mri/test/ruby/test_transcode.rb:54:in `check_both_ways'
     /macruby-test/test-mri/test/ruby/test_transcode.rb:282:in `test_windows_1254'
 
- 57) Error:
+ 58) Error:
 test_windows_1255(TestTranscode):
 ArgumentError: unknown encoding name - windows-1255
     /macruby-test/test-mri/test/ruby/test_transcode.rb:54:in `check_both_ways'
     /macruby-test/test-mri/test/ruby/test_transcode.rb:309:in `test_windows_1255'
 
- 58) Error:
+ 59) Error:
 test_windows_1256(TestTranscode):
 ArgumentError: unknown encoding name - windows-1256
     /macruby-test/test-mri/test/ruby/test_transcode.rb:54:in `check_both_ways'
     /macruby-test/test-mri/test/ruby/test_transcode.rb:354:in `test_windows_1256'
 
- 59) Error:
+ 60) Error:
 test_windows_1257(TestTranscode):
 ArgumentError: unknown encoding name - windows-1257
     /macruby-test/test-mri/test/ruby/test_transcode.rb:54:in `check_both_ways'
     /macruby-test/test-mri/test/ruby/test_transcode.rb:377:in `test_windows_1257'
 
- 60) Error:
+ 61) Error:
 test_windows_31j(TestTranscode):
 ArgumentError: unknown encoding name - Windows-31J
     /macruby-test/test-mri/test/ruby/test_transcode.rb:54:in `check_both_ways'
     /macruby-test/test-mri/test/ruby/test_transcode.rb:1215:in `test_windows_31j'
 
- 61) Error:
+ 62) Error:
 test_windows_874(TestTranscode):
 ArgumentError: unknown encoding name - windows-874
     /macruby-test/test-mri/test/ruby/test_transcode.rb:54:in `check_both_ways'
     /macruby-test/test-mri/test/ruby/test_transcode.rb:136:in `test_windows_874'
 
- 62) Error:
+ 63) Error:
 test_yen_sign(TestTranscode):
 ArgumentError: unknown encoding name - Windows-31J
     /macruby-test/test-mri/test/ruby/test_transcode.rb:54:in `check_both_ways'
-    /macruby-test/test-mri/test/ruby/test_transcode.rb:1406:in `test_yen_sign'
+    /macruby-test/test-mri/test/ruby/test_transcode.rb:1407:in `test_yen_sign'
 
-72 tests, 485 assertions, 12 failures, 50 errors, 0 skips
+73 tests, 485 assertions, 12 failures, 51 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -10059,19 +10827,19 @@ Message: <"can't find gem a (>= 0) with executable 2">
 
   4) Failure:
 test_self_user_dir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:589]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_95707/userhome/.gem/macruby/1.9.2", not "/Users/watson/.gem/macruby/1.9.2".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_7871/userhome/.gem/macruby/1.9.2", not "/Users/watson/.gem/macruby/1.9.2".
 
   5) Failure:
 test_self_datadir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:147]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_95707/gemhome/gems/foo-2/data/foo", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_95707/gemhome/gems/foo-2/data/foo".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_7871/gemhome/gems/foo-2/data/foo", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_7871/gemhome/gems/foo-2/data/foo".
 
   6) Failure:
 test_self_required_location(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:464]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_95707/gemhome/gems/c-1.2/lib/code.rb", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_95707/gemhome/gems/c-1.2/lib/code.rb".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_7871/gemhome/gems/c-1.2/lib/code.rb", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_7871/gemhome/gems/c-1.2/lib/code.rb".
 
   7) Failure:
 test_self_user_home(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:594]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_95707/userhome", not "/Users/watson".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_7871/userhome", not "/Users/watson".
 
   8) Error:
 test_load_plugins(TestGem):
@@ -10481,7 +11249,7 @@ Gem::RemoteFetcher::FetchError: no data for http://gems.example.com/gems/a-1.gem
 
   6) Failure:
 test_install_domain_both(TestGemDependencyInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_dependency_installer.rb:343]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_95837/gemhome/specifications/a-1.gemspec", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_95837/gemhome/specifications/a-1.gemspec".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_7998/gemhome/specifications/a-1.gemspec", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_7998/gemhome/specifications/a-1.gemspec".
 
 38 tests, 50 assertions, 1 failures, 4 errors, 1 skips
 
@@ -10517,7 +11285,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_ext_ext_conf_builder
 Started
-.../bin/sh: line 1: 95884 Abort trap              /Library/Frameworks/MacRuby.framework/Versions/0.11/usr/bin/macruby extconf.rb 2>&1
+.../bin/sh: line 1:  8045 Abort trap              /Library/Frameworks/MacRuby.framework/Versions/0.11/usr/bin/macruby extconf.rb 2>&1
 .
 
 4 tests, 15 assertions, 0 failures, 0 errors, 0 skips
@@ -10549,7 +11317,7 @@ F.......
 
   1) Failure:
 test_lib_dirs_for(TestGemGemPathSearcher) [/macruby-test/test-mri/test/rubygems/test_gem_gem_path_searcher.rb:53]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_95924/gemhome/gems/foo-0.1/{lib,lib2}", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_95924/gemhome/gems/foo-0.1/{lib,lib2}".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_8088/gemhome/gems/foo-0.1/{lib,lib2}", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_8088/gemhome/gems/foo-0.1/{lib,lib2}".
 
 8 tests, 11 assertions, 1 failures, 0 errors, 0 skips
 
@@ -10623,11 +11391,11 @@ Started
 
   1) Failure:
 test_initialize(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:518]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_95942/gemhome/gems/a-2-x86-mswin32", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_95942/gemhome/gems/a-2-x86-mswin32".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_8106/gemhome/gems/a-2-x86-mswin32", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_8106/gemhome/gems/a-2-x86-mswin32".
 
   2) Failure:
 test_extract_files_relative(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:145]:
-Expected "attempt to install file into \"../thefile\" under \"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_95942/gemhome/gems/a-2\"", not "attempt to install file into \"../thefile\" under \"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_95942/gemhome/gems/a-2\"".
+Expected "attempt to install file into \"../thefile\" under \"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_8106/gemhome/gems/a-2\"", not "attempt to install file into \"../thefile\" under \"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_8106/gemhome/gems/a-2\"".
 
   3) Skipped:
 test_generate_bin_script_wrappers(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:309]:
@@ -10822,11 +11590,11 @@ Started
 
   1) Failure:
 test_yaml(TestGemServer) [/macruby-test/test-mri/test/rubygems/test_gem_server.rb:321]:
-Expected #<Gem::SourceIndex:0xXXXXXXXX @gems={"a-1"=>#<Gem::Specification:0xXXXXXXXX @new_platform="ruby" @name="a" @version=#<Gem::Version "1"> @summary="this is a summary" @email="example@example.com" @homepage="http://example.com" @rubyforge_project=nil @description="This is a test description" @autorequire=nil @default_executable=nil @signing_key=nil @post_install_message=nil @original_platform="ruby" @rubygems_version="1.4.2" @specification_version=3 @date=2011-07-19 00:00:00 +0900 @require_paths=["lib"] @bindir="bin" @has_rdoc=true @required_ruby_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @required_rubygems_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @platform="ruby" @cert_chain=[] @authors=["A User"] @licenses=[] @files=[] @test_files=[] @rdoc_options=[] @extra_rdoc_files=[] @executables=[] @extensions=[] @requirements=[] @dependencies=[] @loaded=false @loaded_from="/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_96000/gemhome/specifications/a-1.gemspec">, "a-2"=>#<Gem::Specification:0xXXXXXXXX @new_platform="ruby" @name="a" @version=#<Gem::Version "2"> @summary="this is a summary" @email="example@example.com" @homepage="http://example.com" @rubyforge_project=nil @description="This is a test description" @autorequire=nil @default_executable=nil @signing_key=nil @post_install_message=nil @original_platform="ruby" @rubygems_version="1.4.2" @specification_version=3 @date=2011-07-19 00:00:00 +0900 @require_paths=["lib"] @bindir="bin" @has_rdoc=true @required_ruby_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @required_rubygems_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @platform="ruby" @cert_chain=[] @authors=["A User"] @licenses=[] @files=[] @test_files=[] @rdoc_options=[] @extra_rdoc_files=[] @executables=[] @extensions=[] @requirements=[] @dependencies=[] @loaded=false @loaded_from="/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_96000/gemhome/specifications/a-2.gemspec">} @spec_dirs=nil>, not #<Gem::SourceIndex:0xXXXXXXXX @gems={"a-1"=>"a-2"} @spec_dirs=["/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_96000/gemhome/specifications"]>.
+Expected #<Gem::SourceIndex:0xXXXXXXXX @gems={"a-1"=>#<Gem::Specification:0xXXXXXXXX @new_platform="ruby" @name="a" @version=#<Gem::Version "1"> @summary="this is a summary" @email="example@example.com" @homepage="http://example.com" @rubyforge_project=nil @description="This is a test description" @autorequire=nil @default_executable=nil @signing_key=nil @post_install_message=nil @original_platform="ruby" @rubygems_version="1.4.2" @specification_version=3 @date=2011-07-20 00:00:00 +0900 @require_paths=["lib"] @bindir="bin" @has_rdoc=true @required_ruby_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @required_rubygems_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @platform="ruby" @cert_chain=[] @authors=["A User"] @licenses=[] @files=[] @test_files=[] @rdoc_options=[] @extra_rdoc_files=[] @executables=[] @extensions=[] @requirements=[] @dependencies=[] @loaded=false @loaded_from="/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_8164/gemhome/specifications/a-1.gemspec">, "a-2"=>#<Gem::Specification:0xXXXXXXXX @new_platform="ruby" @name="a" @version=#<Gem::Version "2"> @summary="this is a summary" @email="example@example.com" @homepage="http://example.com" @rubyforge_project=nil @description="This is a test description" @autorequire=nil @default_executable=nil @signing_key=nil @post_install_message=nil @original_platform="ruby" @rubygems_version="1.4.2" @specification_version=3 @date=2011-07-20 00:00:00 +0900 @require_paths=["lib"] @bindir="bin" @has_rdoc=true @required_ruby_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @required_rubygems_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @platform="ruby" @cert_chain=[] @authors=["A User"] @licenses=[] @files=[] @test_files=[] @rdoc_options=[] @extra_rdoc_files=[] @executables=[] @extensions=[] @requirements=[] @dependencies=[] @loaded=false @loaded_from="/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_8164/gemhome/specifications/a-2.gemspec">} @spec_dirs=nil>, not #<Gem::SourceIndex:0xXXXXXXXX @gems={"a-1"=>"a-2"} @spec_dirs=["/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_8164/gemhome/specifications"]>.
 
   2) Failure:
 test_yaml_Z(TestGemServer) [/macruby-test/test-mri/test/rubygems/test_gem_server.rb:337]:
-Expected #<Gem::SourceIndex:0xXXXXXXXX @gems={"a-1"=>#<Gem::Specification:0xXXXXXXXX @new_platform="ruby" @name="a" @version=#<Gem::Version "1"> @summary="this is a summary" @email="example@example.com" @homepage="http://example.com" @rubyforge_project=nil @description="This is a test description" @autorequire=nil @default_executable=nil @signing_key=nil @post_install_message=nil @original_platform="ruby" @rubygems_version="1.4.2" @specification_version=3 @date=2011-07-19 00:00:00 +0900 @require_paths=["lib"] @bindir="bin" @has_rdoc=true @required_ruby_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @required_rubygems_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @platform="ruby" @cert_chain=[] @authors=["A User"] @licenses=[] @files=[] @test_files=[] @rdoc_options=[] @extra_rdoc_files=[] @executables=[] @extensions=[] @requirements=[] @dependencies=[] @loaded=false @loaded_from="/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_96000/gemhome/specifications/a-1.gemspec">, "a-2"=>#<Gem::Specification:0xXXXXXXXX @new_platform="ruby" @name="a" @version=#<Gem::Version "2"> @summary="this is a summary" @email="example@example.com" @homepage="http://example.com" @rubyforge_project=nil @description="This is a test description" @autorequire=nil @default_executable=nil @signing_key=nil @post_install_message=nil @original_platform="ruby" @rubygems_version="1.4.2" @specification_version=3 @date=2011-07-19 00:00:00 +0900 @require_paths=["lib"] @bindir="bin" @has_rdoc=true @required_ruby_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @required_rubygems_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @platform="ruby" @cert_chain=[] @authors=["A User"] @licenses=[] @files=[] @test_files=[] @rdoc_options=[] @extra_rdoc_files=[] @executables=[] @extensions=[] @requirements=[] @dependencies=[] @loaded=false @loaded_from="/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_96000/gemhome/specifications/a-2.gemspec">} @spec_dirs=nil>, not #<Gem::SourceIndex:0xXXXXXXXX @gems={"a-1"=>"a-2"} @spec_dirs=["/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_96000/gemhome/specifications"]>.
+Expected #<Gem::SourceIndex:0xXXXXXXXX @gems={"a-1"=>#<Gem::Specification:0xXXXXXXXX @new_platform="ruby" @name="a" @version=#<Gem::Version "1"> @summary="this is a summary" @email="example@example.com" @homepage="http://example.com" @rubyforge_project=nil @description="This is a test description" @autorequire=nil @default_executable=nil @signing_key=nil @post_install_message=nil @original_platform="ruby" @rubygems_version="1.4.2" @specification_version=3 @date=2011-07-20 00:00:00 +0900 @require_paths=["lib"] @bindir="bin" @has_rdoc=true @required_ruby_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @required_rubygems_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @platform="ruby" @cert_chain=[] @authors=["A User"] @licenses=[] @files=[] @test_files=[] @rdoc_options=[] @extra_rdoc_files=[] @executables=[] @extensions=[] @requirements=[] @dependencies=[] @loaded=false @loaded_from="/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_8164/gemhome/specifications/a-1.gemspec">, "a-2"=>#<Gem::Specification:0xXXXXXXXX @new_platform="ruby" @name="a" @version=#<Gem::Version "2"> @summary="this is a summary" @email="example@example.com" @homepage="http://example.com" @rubyforge_project=nil @description="This is a test description" @autorequire=nil @default_executable=nil @signing_key=nil @post_install_message=nil @original_platform="ruby" @rubygems_version="1.4.2" @specification_version=3 @date=2011-07-20 00:00:00 +0900 @require_paths=["lib"] @bindir="bin" @has_rdoc=true @required_ruby_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @required_rubygems_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @platform="ruby" @cert_chain=[] @authors=["A User"] @licenses=[] @files=[] @test_files=[] @rdoc_options=[] @extra_rdoc_files=[] @executables=[] @extensions=[] @requirements=[] @dependencies=[] @loaded=false @loaded_from="/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_8164/gemhome/specifications/a-2.gemspec">} @spec_dirs=nil>, not #<Gem::SourceIndex:0xXXXXXXXX @gems={"a-1"=>"a-2"} @spec_dirs=["/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_8164/gemhome/specifications"]>.
 
 23 tests, 105 assertions, 2 failures, 0 errors, 0 skips
 
@@ -10835,13 +11603,13 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_source_index
 Started
-.......Invalid gemspec in [/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_96006/gemhome/specifications/a-1.gemspec]: epic fail
-F.............Invalid gemspec in [/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_96006/gemhome/specifications/a-1.gemspec]: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_96006/gemhome/specifications/a-1.gemspec:1: syntax error, unexpected $end
+.......Invalid gemspec in [/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_8167/gemhome/specifications/a-1.gemspec]: epic fail
+F.............Invalid gemspec in [/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_8167/gemhome/specifications/a-1.gemspec]: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_8167/gemhome/specifications/a-1.gemspec:1: syntax error, unexpected $end
 F......
 
   1) Failure:
 test_self_load_specification_exception(TestGemSourceIndex) [/macruby-test/test-mri/test/rubygems/test_gem_source_index.rb:131]:
-Expected "WARNING:  #<Exception: epic fail>\nraise Exception, \"epic fail\"\nWARNING:  Invalid .gemspec format in '/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_96006/gemhome/specifications/a-1.gemspec'\n", not "".
+Expected "WARNING:  #<Exception: epic fail>\nraise Exception, \"epic fail\"\nWARNING:  Invalid .gemspec format in '/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_8167/gemhome/specifications/a-1.gemspec'\n", not "".
 
   2) Failure:
 test_self_load_specification_syntax_error(TestGemSourceIndex) [/macruby-test/test-mri/test/rubygems/test_gem_source_index.rb:172]:
@@ -10863,12 +11631,12 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_specification
 Started
-...........F.........F.........Invalid gemspec in [/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/testgemspecification20110719-96012-1bxf1bp]: boom
+...........F.........F.........Invalid gemspec in [/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/testgemspecification20110720-8176-1bxf1bp]: boom
 .F.F.............F.............F................................
 
   1) Failure:
 test_to_ruby_fancy(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:855]:
-Expected "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"1\"\n  s.platform = Gem::Platform.new([\"x86\", \"darwin\", \"8\"])\n\n  s.required_rubygems_version = Gem::Requirement.new(\">= 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2011-07-19}\n  s.default_executable = %q{exec}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.executables = [\"exec\"]\n  s.extensions = [\"ext/a/extconf.rb\"]\n  s.files = [\"lib/code.rb\", \"test/suite.rb\", \"bin/exec\", \"ext/a/extconf.rb\"]\n  s.homepage = %q{http://example.com}\n  s.licenses = [\"MIT\"]\n  s.require_paths = [\"lib\"]\n  s.requirements = [\"A working computer\"]\n  s.rubyforge_project = %q{example}\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n  s.test_files = [\"test/suite.rb\"]\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_runtime_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_runtime_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    else\n      s.add_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    end\n  else\n    s.add_dependency(%q<rake>, [\"> 0.4\"])\n    s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n    s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n  end\nend\n", not "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"1\"\n  s.platform = Gem::Platform.new([\"x86\", \"darwin\", \"8\"])\n\n  s.required_rubygems_version = Gem::Requirement.new(\">= 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2011-07-19}\n  s.default_executable = %q{exec}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.executables = [\"exec\"]\n  s.extensions = [\"ext/a/extconf.rb\"]\n  s.files = [\"lib/code.rb\", \"test/suite.rb\", \"bin/exec\", \"ext/a/extconf.rb\"]\n  s.homepage = %q{http://example.com}\n  s.licenses = [\"MIT\"]\n  s.require_paths = [\"lib\"]\n  s.requirements = [\"A working computer\"]\n  s.rubyforge_project = %q{example}\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n  s.test_files = [\"test/suite.rb\"]\n\n  if s.respond_to? :specification_version then\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_runtime_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_runtime_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    else\n      s.add_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    end\n  else\n    s.add_dependency(%q<rake>, [\"> 0.4\"])\n    s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n    s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n  end\nend\n".
+Expected "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"1\"\n  s.platform = Gem::Platform.new([\"x86\", \"darwin\", \"8\"])\n\n  s.required_rubygems_version = Gem::Requirement.new(\">= 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2011-07-20}\n  s.default_executable = %q{exec}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.executables = [\"exec\"]\n  s.extensions = [\"ext/a/extconf.rb\"]\n  s.files = [\"lib/code.rb\", \"test/suite.rb\", \"bin/exec\", \"ext/a/extconf.rb\"]\n  s.homepage = %q{http://example.com}\n  s.licenses = [\"MIT\"]\n  s.require_paths = [\"lib\"]\n  s.requirements = [\"A working computer\"]\n  s.rubyforge_project = %q{example}\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n  s.test_files = [\"test/suite.rb\"]\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_runtime_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_runtime_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    else\n      s.add_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    end\n  else\n    s.add_dependency(%q<rake>, [\"> 0.4\"])\n    s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n    s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n  end\nend\n", not "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"1\"\n  s.platform = Gem::Platform.new([\"x86\", \"darwin\", \"8\"])\n\n  s.required_rubygems_version = Gem::Requirement.new(\">= 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2011-07-20}\n  s.default_executable = %q{exec}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.executables = [\"exec\"]\n  s.extensions = [\"ext/a/extconf.rb\"]\n  s.files = [\"lib/code.rb\", \"test/suite.rb\", \"bin/exec\", \"ext/a/extconf.rb\"]\n  s.homepage = %q{http://example.com}\n  s.licenses = [\"MIT\"]\n  s.require_paths = [\"lib\"]\n  s.requirements = [\"A working computer\"]\n  s.rubyforge_project = %q{example}\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n  s.test_files = [\"test/suite.rb\"]\n\n  if s.respond_to? :specification_version then\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_runtime_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_runtime_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    else\n      s.add_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    end\n  else\n    s.add_dependency(%q<rake>, [\"> 0.4\"])\n    s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n    s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n  end\nend\n".
 
   2) Failure:
 test_validate_rubyforge_project(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:1189]:
@@ -10877,19 +11645,19 @@ Expected "WARNING:  no rubyforge_project specified\n", not "".
 
   3) Failure:
 test_installation_path(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:607]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_96012/gemhome", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_96012/gemhome".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_8176/gemhome", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_8176/gemhome".
 
   4) Failure:
 test_to_ruby(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:794]:
-Expected "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"2\"\n\n  s.required_rubygems_version = Gem::Requirement.new(\"> 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2011-07-19}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.files = [\"lib/code.rb\"]\n  s.homepage = %q{http://example.com}\n  s.require_paths = [\"lib\"]\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<b>, [\"= 1\"])\n    else\n      s.add_dependency(%q<b>, [\"= 1\"])\n    end\n  else\n    s.add_dependency(%q<b>, [\"= 1\"])\n  end\nend\n", not "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"2\"\n\n  s.required_rubygems_version = Gem::Requirement.new(\"> 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2011-07-19}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.files = [\"lib/code.rb\"]\n  s.homepage = %q{http://example.com}\n  s.require_paths = [\"lib\"]\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n\n  if s.respond_to? :specification_version then\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<b>, [\"= 1\"])\n    else\n      s.add_dependency(%q<b>, [\"= 1\"])\n    end\n  else\n    s.add_dependency(%q<b>, [\"= 1\"])\n  end\nend\n".
+Expected "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"2\"\n\n  s.required_rubygems_version = Gem::Requirement.new(\"> 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2011-07-20}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.files = [\"lib/code.rb\"]\n  s.homepage = %q{http://example.com}\n  s.require_paths = [\"lib\"]\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<b>, [\"= 1\"])\n    else\n      s.add_dependency(%q<b>, [\"= 1\"])\n    end\n  else\n    s.add_dependency(%q<b>, [\"= 1\"])\n  end\nend\n", not "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"2\"\n\n  s.required_rubygems_version = Gem::Requirement.new(\"> 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2011-07-20}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.files = [\"lib/code.rb\"]\n  s.homepage = %q{http://example.com}\n  s.require_paths = [\"lib\"]\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n\n  if s.respond_to? :specification_version then\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<b>, [\"= 1\"])\n    else\n      s.add_dependency(%q<b>, [\"= 1\"])\n    end\n  else\n    s.add_dependency(%q<b>, [\"= 1\"])\n  end\nend\n".
 
   5) Failure:
 test_full_gem_path(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:540]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_96012/gemhome/gems/a-1", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_96012/gemhome/gems/a-1".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_8176/gemhome/gems/a-1", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_8176/gemhome/gems/a-1".
 
   6) Failure:
 test_full_gem_path_double_slash(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:553]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_96012/gemhome/gems/a-1", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_96012/gemhome/gems/a-1".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_8176/gemhome/gems/a-1", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_8176/gemhome/gems/a-1".
 
 95 tests, 226 assertions, 6 failures, 0 errors, 0 skips
 
@@ -10995,7 +11763,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/scanf/test_scanf
 Started
-..
+...............
 ----------------------------------------
 Loaded suite test/scanf/test_scanfblocks
 Started
@@ -11764,7 +12532,7 @@ TypeError: can't convert Symbol into Integer
 
  10) Error:
 test_sysaccept(TestSocket):
-NoMethodError: undefined method `to_sockaddr' for "\x10\x02̱\x7F\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00":String
+NoMethodError: undefined method `to_sockaddr' for "\x10\x02ا\x7F\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00":String
     /macruby-test/test-mri/test/socket/test_socket.rb:30:in `test_sysaccept'
 
  11) Error:
@@ -11859,67 +12627,82 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/socket/test_unix
 Started
-.......EE.......F.........E.
+......E.EE.......F.........E.
 
   1) Error:
-test_getcred_xucred(TestSocket_UNIXSocket):
-NoMethodError: undefined method `unix_server_socket' for Socket:Class
-    /macruby-test/test-mri/test/socket/test_unix.rb:393:in `block'
+test_fd_passing_race_condition(TestSocket_UNIXSocket):
+NoMethodError: undefined method `nonblock=' for #<UNIXSocket:fd 8>
+    /macruby-test/test-mri/test/socket/test_unix.rb:110:in `test_fd_passing_race_condition'
 
   2) Error:
+test_getcred_xucred(TestSocket_UNIXSocket):
+NoMethodError: undefined method `unix_server_socket' for Socket:Class
+    /macruby-test/test-mri/test/socket/test_unix.rb:430:in `block'
+
+  3) Error:
 test_getpeereid(TestSocket_UNIXSocket):
 NoMethodError: undefined method `unix_server_socket' for Socket:Class
-    /macruby-test/test-mri/test/socket/test_unix.rb:464:in `block'
+    /macruby-test/test-mri/test/socket/test_unix.rb:501:in `block'
 
-  3) Failure:
-test_nul(TestSocket_UNIXSocket) [/macruby-test/test-mri/test/socket/test_unix.rb:293]:
+  4) Failure:
+test_nul(TestSocket_UNIXSocket) [/macruby-test/test-mri/test/socket/test_unix.rb:330]:
 ArgumentError expected but nothing was raised.
 
-  4) Error:
+  5) Error:
 test_unix_server_socket(TestSocket_UNIXSocket):
 NoMethodError: undefined method `unix_server_socket' for Socket:Class
-    /macruby-test/test-mri/test/socket/test_unix.rb:363:in `block'
+    /macruby-test/test-mri/test/socket/test_unix.rb:400:in `block'
 
-28 tests, 43 assertions, 1 failures, 3 errors, 0 skips
+29 tests, 43 assertions, 1 failures, 4 errors, 0 skips
 
 Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/stringio/test_stringio
 Started
-......F...E....................FF...F.......E....
+......F...E..........F.........FF...F.......E....
 
   1) Failure:
-test_dup(TestStringIO) [/macruby-test/test-mri/test/stringio/test_stringio.rb:230]:
+test_dup(TestStringIO) [/macruby-test/test-mri/test/stringio/test_stringio.rb:232]:
 <"3"> expected but was
 <"2">.
 
   2) Error:
 test_each_codepoint(TestStringIO):
 NoMethodError: undefined method `each_codepoint' for #<StringIO:0xXXXXXXXX ...>
-    /macruby-test/test-mri/test/stringio/test_stringio.rb:364:in `test_each_codepoint'
+    /macruby-test/test-mri/test/stringio/test_stringio.rb:366:in `test_each_codepoint'
 
   3) Failure:
-test_read(TestStringIO) [/macruby-test/test-mri/test/stringio/test_stringio.rb:418]:
-<"\xE3\x81\x82\xE3\x81\x84"> expected but was
-<"あい">.
+test_gets(TestStringIO) [/macruby-test/test-mri/test/stringio/test_stringio.rb:54]:
+[TypeError] exception expected, not
+Class: <NoMethodError>
+Message: <"undefined method `to_str' for 1:Fixnum">
+---Backtrace---
+/macruby-test/test-mri/test/stringio/test_stringio.rb:54:in `block'
+/macruby-test/test-mri/test/stringio/test_stringio.rb:54:in `test_gets'
+---------------
 
   4) Failure:
-test_read_nonblock(TestStringIO) [/macruby-test/test-mri/test/stringio/test_stringio.rb:436]:
+test_read(TestStringIO) [/macruby-test/test-mri/test/stringio/test_stringio.rb:420]:
 <"\xE3\x81\x82\xE3\x81\x84"> expected but was
 <"あい">.
 
   5) Failure:
-test_readpartial(TestStringIO) [/macruby-test/test-mri/test/stringio/test_stringio.rb:427]:
+test_read_nonblock(TestStringIO) [/macruby-test/test-mri/test/stringio/test_stringio.rb:438]:
 <"\xE3\x81\x82\xE3\x81\x84"> expected but was
 <"あい">.
 
-  6) Error:
+  6) Failure:
+test_readpartial(TestStringIO) [/macruby-test/test-mri/test/stringio/test_stringio.rb:429]:
+<"\xE3\x81\x82\xE3\x81\x84"> expected but was
+<"あい">.
+
+  7) Error:
 test_ungetbyte(TestStringIO):
 NoMethodError: undefined method `ungetbyte' for #<StringIO:0xXXXXXXXX ...>
-    /macruby-test/test-mri/test/stringio/test_stringio.rb:314:in `test_ungetbyte'
+    /macruby-test/test-mri/test/stringio/test_stringio.rb:316:in `test_ungetbyte'
 
-49 tests, 300 assertions, 4 failures, 2 errors, 0 skips
+49 tests, 301 assertions, 5 failures, 2 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -12617,9 +13400,15 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/test_pstore
 Started
-.......
+.......E.
 
-7 tests, 9 assertions, 0 failures, 0 errors, 0 skips
+  1) Error:
+test_thread_safe(PStoreTest):
+PStore::Error: nested transaction
+    /macruby-test/test-mri/test/test_pstore.rb:99:in `block'
+    /macruby-test/test-mri/test/test_pstore.rb:88:in `test_thread_safe'
+
+9 tests, 12 assertions, 0 failures, 1 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -12658,9 +13447,20 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/test_singleton
 Started
-.
+.....F....
 
-1 tests, 1 assertions, 0 failures, 0 errors, 0 skips
+  1) Failure:
+test_include_in_module_raises_exception(TestSingleton) [/macruby-test/test-mri/test/test_singleton.rb:57]:
+[TypeError] exception expected, not
+Class: <RuntimeError>
+Message: <"can't change visibility of non Ruby method `new'">
+---Backtrace---
+/macruby-test/test-mri/test/test_singleton.rb:59:in `block'
+/macruby-test/test-mri/test/test_singleton.rb:58:in `block'
+/macruby-test/test-mri/test/test_singleton.rb:57:in `test_include_in_module_raises_exception'
+---------------
+
+10 tests, 13 assertions, 1 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -12707,27 +13507,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/test_time
 Started
-.FFE.................
-
-  1) Failure:
-test_encode_httpdate(TestTimeExtension) [/macruby-test/test-mri/test/test_time.rb:79]:
-<"Mon, 01 Jan 0001 00:00:00 GMT"> expected but was
-<"Mon, 01 Jan 2001 00:00:00 GMT">.
-
-  2) Failure:
-test_encode_rfc2822(TestTimeExtension) [/macruby-test/test-mri/test/test_time.rb:50]:
-<"Mon, 01 Jan 0001 00:00:00 -0000"> expected but was
-<"Mon, 01 Jan 2001 00:00:00 -0000">.
-
-  3) Error:
-test_encode_xmlschema(TestTimeExtension):
-ArgumentError: wrong number of arguments (1 for 0)
-    /macruby-test/test-mri/test/test_time.rb:168:in `test_encode_xmlschema'
-
-21 tests, 195 assertions, 2 failures, 1 errors, 0 skips
-
-Test run options: --seed 0
-
+.FFE
 ----------------------------------------
 Loaded suite test/test_timeout
 Started
@@ -12844,9 +13624,14 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/uri/test_generic
 Started
-......
+....F.
 
-6 tests, 289 assertions, 0 failures, 0 errors, 0 skips
+  1) Failure:
+test_route(URI::TestGeneric) [/macruby-test/test-mri/test/uri/test_generic.rb:236]:
+<"../b"> expected but was
+<"./">.
+
+6 tests, 288 assertions, 1 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -12898,16 +13683,16 @@ FFFF
 
   1) Failure:
 test_bad_header(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:129]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2011-07-19 03:51:01] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2011-07-20 03:54:29] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
 
   2) Failure:
 test_bad_request(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:95]:
 webrick log start:
-  [2011-07-19 03:51:02] INFO  WEBrick 1.3.1
-  [2011-07-19 03:51:02] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
-  [2011-07-19 03:51:02] INFO  WEBrick::HTTPServer#start: pid=96297 port=52413
-  [2011-07-19 03:51:02] WARN  :RequestHandler is deprecated, please use :RequestCallback
-  [2011-07-19 03:51:07] ERROR Errno::EBADF: Bad file descriptor - read() failed
+  [2011-07-20 03:54:30] INFO  WEBrick 1.3.1
+  [2011-07-20 03:54:30] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
+  [2011-07-20 03:54:30] INFO  WEBrick::HTTPServer#start: pid=8472 port=55482
+  [2011-07-20 03:54:30] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2011-07-20 03:54:34] ERROR Errno::EBADF: Bad file descriptor - read() failed
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/cgihandler.rb:65:in `do_POST'
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/abstract.rb:35:in `service'
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/filehandler.rb:236:in `exec_handler'
@@ -12919,20 +13704,20 @@ webrick log start:
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/server.rb:183:in `block'
   
 webrick log end.
-Expected /\AHTTP\/\d.\d 400 Bad Request/ to match "HTTP/1.1 500 Internal Server Error \r\nContent-Type: text/html; charset=utf-8\r\nServer: WEBrick/1.3.1 (Ruby/1.9.2/2008-06-03) OpenSSL/0.9.8l\r\nDate: Mon, 18 Jul 2011 18:51:07 GMT\r\nContent-Length: 331\r\nConnection: close\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\">\n<HTML>\n  <HEAD><TITLE>Internal Server Error</TITLE></HEAD>\n  <BODY>\n    <H1>Internal Server Error</H1>\n    Bad file descriptor - read() failed\n    <HR>\n    <ADDRESS>\n     WEBrick/1.3.1 (Ruby/1.9.2/2008-06-03) OpenSSL/0.9.8l at\n     localhost:52413\n    </ADDRESS>\n  </BODY>\n</HTML>\n".
+Expected /\AHTTP\/\d.\d 400 Bad Request/ to match "HTTP/1.1 500 Internal Server Error \r\nContent-Type: text/html; charset=utf-8\r\nServer: WEBrick/1.3.1 (Ruby/1.9.2/2008-06-03) OpenSSL/0.9.8l\r\nDate: Tue, 19 Jul 2011 18:54:34 GMT\r\nContent-Length: 331\r\nConnection: close\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\">\n<HTML>\n  <HEAD><TITLE>Internal Server Error</TITLE></HEAD>\n  <BODY>\n    <H1>Internal Server Error</H1>\n    Bad file descriptor - read() failed\n    <HR>\n    <ADDRESS>\n     WEBrick/1.3.1 (Ruby/1.9.2/2008-06-03) OpenSSL/0.9.8l at\n     localhost:55482\n    </ADDRESS>\n  </BODY>\n</HTML>\n".
 
   3) Failure:
 test_bad_uri(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:115]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2011-07-19 03:51:07] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2011-07-20 03:54:35] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
 
   4) Failure:
 test_cgi(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:33]:
 webrick log start:
-  [2011-07-19 03:51:07] INFO  WEBrick 1.3.1
-  [2011-07-19 03:51:07] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
-  [2011-07-19 03:51:07] INFO  WEBrick::HTTPServer#start: pid=96297 port=52418
-  [2011-07-19 03:51:07] WARN  :RequestHandler is deprecated, please use :RequestCallback
-  [2011-07-19 03:51:11] ERROR Errno::EBADF: Bad file descriptor - read() failed
+  [2011-07-20 03:54:35] INFO  WEBrick 1.3.1
+  [2011-07-20 03:54:35] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
+  [2011-07-20 03:54:35] INFO  WEBrick::HTTPServer#start: pid=8472 port=55486
+  [2011-07-20 03:54:35] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2011-07-20 03:54:39] ERROR Errno::EBADF: Bad file descriptor - read() failed
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/cgihandler.rb:65:in `do_POST'
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/abstract.rb:35:in `service'
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/filehandler.rb:236:in `exec_handler'
@@ -12945,7 +13730,7 @@ webrick log start:
   
 webrick log end.
 <"/webrick.cgi"> expected but was
-<"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\">\n<HTML>\n  <HEAD><TITLE>Internal Server Error</TITLE></HEAD>\n  <BODY>\n    <H1>Internal Server Error</H1>\n    Bad file descriptor - read() failed\n    <HR>\n    <ADDRESS>\n     WEBrick/1.3.1 (Ruby/1.9.2/2008-06-03) OpenSSL/0.9.8l at\n     127.0.0.1:52418\n    </ADDRESS>\n  </BODY>\n</HTML>\n">.
+<"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\">\n<HTML>\n  <HEAD><TITLE>Internal Server Error</TITLE></HEAD>\n  <BODY>\n    <H1>Internal Server Error</H1>\n    Bad file descriptor - read() failed\n    <HR>\n    <ADDRESS>\n     WEBrick/1.3.1 (Ruby/1.9.2/2008-06-03) OpenSSL/0.9.8l at\n     127.0.0.1:55486\n    </ADDRESS>\n  </BODY>\n</HTML>\n">.
 
 4 tests, 6 assertions, 4 failures, 0 errors, 0 skips
 
@@ -12968,10 +13753,10 @@ Started
   1) Failure:
 test_script_disclosure(WEBrick::TestFileHandler) [/macruby-test/test-mri/test/webrick/test_filehandler.rb:250]:
 webrick log start:
-  [2011-07-19 03:51:24] INFO  WEBrick 1.3.1
-  [2011-07-19 03:51:24] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
-  [2011-07-19 03:51:24] INFO  WEBrick::HTTPServer#start: pid=96308 port=52438
-  [2011-07-19 03:51:28] ERROR Errno::EBADF: Bad file descriptor - read() failed
+  [2011-07-20 03:54:52] INFO  WEBrick 1.3.1
+  [2011-07-20 03:54:52] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
+  [2011-07-20 03:54:52] INFO  WEBrick::HTTPServer#start: pid=8480 port=55507
+  [2011-07-20 03:54:56] ERROR Errno::EBADF: Bad file descriptor - read() failed
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/cgihandler.rb:65:in `do_POST'
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/abstract.rb:35:in `service'
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/filehandler.rb:236:in `exec_handler'
@@ -13081,10 +13866,10 @@ Started
   1) Failure:
 test_server(TestWEBrickServer) [/macruby-test/test-mri/test/webrick/test_server.rb:19]:
 webrick log start:
-  [2011-07-19 03:52:14] INFO  WEBrick 1.3.1
-  [2011-07-19 03:52:14] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
-  [2011-07-19 03:52:14] INFO  TestWEBrickServer::Echo#start: pid=96333 port=52494
-  [2011-07-19 03:52:14] ERROR Errno::EAGAIN: Resource temporarily unavailable - read() failed
+  [2011-07-20 03:55:42] INFO  WEBrick 1.3.1
+  [2011-07-20 03:55:42] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
+  [2011-07-20 03:55:42] INFO  TestWEBrickServer::Echo#start: pid=8505 port=55562
+  [2011-07-20 03:55:42] ERROR Errno::EAGAIN: Resource temporarily unavailable - read() failed
   	/macruby-test/test-mri/test/webrick/test_server.rb:9:in `run'
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/server.rb:183:in `block'
 webrick log end.
@@ -13286,9 +14071,14 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/xmlrpc/test_marshal
 Started
-......
+.....F.
 
-6 tests, 10 assertions, 0 failures, 0 errors, 0 skips
+  1) Failure:
+test_parser_invalid_values(Test_Marshal) [/macruby-test/test-mri/test/xmlrpc/test_marshal.rb:92]:
+-2147483649 shouldn't be dumped, but dumped
+RuntimeError expected but nothing was raised.
+
+7 tests, 11 assertions, 1 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -13322,17 +14112,17 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/zlib/test_zlib
 Started
-.E.E.............E...........E..........E.................E
+.E.E.............E...........E..........E..................E
 
   1) Error:
 test_adler32_combine(TestZlib):
 NoMethodError: undefined method `adler32_combine' for Zlib:Class
-    /macruby-test/test-mri/test/zlib/test_zlib.rb:669:in `test_adler32_combine'
+    /macruby-test/test-mri/test/zlib/test_zlib.rb:697:in `test_adler32_combine'
 
   2) Error:
 test_crc32_combine(TestZlib):
 NoMethodError: undefined method `crc32_combine' for Zlib:Class
-    /macruby-test/test-mri/test/zlib/test_zlib.rb:686:in `test_crc32_combine'
+    /macruby-test/test-mri/test/zlib/test_zlib.rb:714:in `test_crc32_combine'
 
   3) Error:
 test_params(TestZlibDeflate):
@@ -13347,13 +14137,13 @@ NoMethodError: undefined method `path' for #<Zlib::GzipWriter:0xXXXXXXXX>
   5) Error:
 test_read(TestZlibGzipReader):
 ArgumentError: wrong number of arguments (2 for 1)
-    /macruby-test/test-mri/test/zlib/test_zlib.rb:476:in `test_read'
+    /macruby-test/test-mri/test/zlib/test_zlib.rb:504:in `test_read'
 
   6) Error:
 test_sync(TestZlibInflate):
 Zlib::StreamError: stream error
     /macruby-test/test-mri/test/zlib/test_zlib.rb:202:in `test_sync'
 
-59 tests, 387 assertions, 0 failures, 6 errors, 0 skips
+60 tests, 394 assertions, 0 failures, 6 errors, 0 skips
 
 Test run options: --seed 0
