@@ -1,4 +1,4 @@
-Date    : 2011-09-13T03:07:26+09:00
+Date    : 2011-09-14T03:10:46+09:00
 Version : 0.11, git commit 19514ab3772bb743960deaaf18d57dc721fe8dce
 
 ----------------------------------------
@@ -153,9 +153,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/cgi/test_cgi_session
 Started
-FFFmacruby(59087,0xXXXXXXXX) malloc: resurrection error for object 0xXXXXXXXX while assigning {conservative-block}[128](0xXXXXXXXX)[16] = FileStore[32](0xXXXXXXXX)
-garbage pointer stored into reachable memory, break on auto_zone_resurrection_error to debug
-F
+FFFF
 
   1) Failure:
 test_cgi_session_filestore(CGISessionTest) [/macruby-test/test-mri/test/cgi/test_cgi_session.rb:54]:
@@ -579,6 +577,28 @@ Started
 .terminate called after throwing an instance of 'RoxorThreadRaiseException*'
 .terminate called after throwing an instance of 'RoxorThreadRaiseException*'
 Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+terminate called after throwing an instance of 'RoxorThreadRaiseException*'
 
 ----------------------------------------
 /Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/drb/drb.rb:767:in `open_server': can't parse uri:--seed (DRb::DRbBadURI)
@@ -1086,11 +1106,21 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/monitor/test_monitor
 Started
-..F
+..F...
+
+  1) Failure:
+test_killed_thread_in_synchronize(TestMonitor) [/macruby-test/test-mri/test/monitor/test_monitor.rb:80]:
+<[:main]> expected but was
+<[:main, :t1, :t2]>.
+
+6 tests, 18 assertions, 1 failures, 0 errors, 0 skips
+
+Test run options: --seed 0
+
 ----------------------------------------
 Loaded suite test/net/http/test_http
 Started
-F.F..E....F.F.F...E..EF*** Thread 0xXXXXXXXX exited prematurely because of an uncaught exception:
+F.F..EE...F.F.F...E..EF*** Thread 0xXXXXXXXX exited prematurely because of an uncaught exception:
 /Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/minitest/unit.rb:85:in `assert': [Timeout::Error] exception expected, not
 Class: <Errno::ECONNRESET>
 Message: <"Connection reset by peer - read(2) failed.">
@@ -1122,21 +1152,29 @@ EOFError: end of file reached
     /macruby-test/test-mri/test/net/http/utils.rb:11:in `start'
     /macruby-test/test-mri/test/net/http/test_http.rb:131:in `test_post'
 
-  4) Failure:
+  4) Error:
+test_request(TestNetHTTP_v1_2):
+EOFError: end of file reached
+    /macruby-test/test-mri/test/net/http/test_http.rb:249:in `_test_request__HEAD'
+    /macruby-test/test-mri/test/net/http/test_http.rb:205:in `block'
+    /macruby-test/test-mri/test/net/http/utils.rb:11:in `start'
+    /macruby-test/test-mri/test/net/http/test_http.rb:201:in `test_request'
+
+  5) Failure:
 test_timeout_during_HTTP_session(TestNetHTTP_v1_2) [/macruby-test/test-mri/test/net/http/test_http.rb:192]:
 expected the HTTP session to have timed out but have not. c.f. [ruby-core:34203]
 
-  5) Failure:
+  6) Failure:
 test_get(TestNetHTTP_v1_2_chunked) [/macruby-test/test-mri/test/net/http/test_http.rb:49]:
 Exception raised:
 <#<EOFError: end of file reached>>.
 
-  6) Failure:
+  7) Failure:
 test_get__break(TestNetHTTP_v1_2_chunked) [/macruby-test/test-mri/test/net/http/test_http.rb:96]:
 <1> expected but was
 <4097>.
 
-  7) Error:
+  8) Error:
 test_request(TestNetHTTP_v1_2_chunked):
 EOFError: end of file reached
     /macruby-test/test-mri/test/net/http/test_http.rb:227:in `_test_request__file'
@@ -1144,7 +1182,7 @@ EOFError: end of file reached
     /macruby-test/test-mri/test/net/http/utils.rb:11:in `start'
     /macruby-test/test-mri/test/net/http/test_http.rb:201:in `test_request'
 
-  8) Error:
+  9) Error:
 test_send_request(TestNetHTTP_v1_2_chunked):
 Errno::ECONNRESET: Connection reset by peer - read(2) failed.
     /macruby-test/test-mri/test/net/http/test_http.rb:304:in `_test_send_request__POST'
@@ -1152,20 +1190,20 @@ Errno::ECONNRESET: Connection reset by peer - read(2) failed.
     /macruby-test/test-mri/test/net/http/utils.rb:11:in `start'
     /macruby-test/test-mri/test/net/http/test_http.rb:286:in `test_send_request'
 
-  9) Failure:
+ 10) Failure:
 test_timeout_during_HTTP_session(TestNetHTTP_v1_2_chunked) [/macruby-test/test-mri/test/net/http/test_http.rb:192]:
 expected the HTTP session to have timed out but have not. c.f. [ruby-core:34203]
 
- 10) Failure:
+ 11) Failure:
 test_get__break(TestNetHTTP_version_1_1) [/macruby-test/test-mri/test/net/http/test_http.rb:96]:
 <1> expected but was
 <2>.
 
- 11) Failure:
+ 12) Failure:
 test_timeout_during_HTTP_session(TestNetHTTP_version_1_1) [/macruby-test/test-mri/test/net/http/test_http.rb:192]:
 expected the HTTP session to have timed out but have not. c.f. [ruby-core:34203]
 
-32 tests, 175 assertions, 8 failures, 3 errors, 0 skips
+32 tests, 163 assertions, 8 failures, 4 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -1322,7 +1360,7 @@ test_progress(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.r
 
   2) Failure:
 test_proxy(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.rb:205]:
-Expected /http:\/\/127\.0\.0\.1:59836/ to match "`(\x01\x00\x02\x00\x00\x00\x00\b\x00\x00\x00\x00\x00\x00\xE0'\x01\x00\x02\x00\x00\x00\r\x00\x00\x00\x00\x00\x00\x00\r\x00\x00\x00\x00\x00\x00\x00\x00\xCAE".
+Expected /http:\/\/127\.0\.0\.1:63806/ to match "\xA0)\x01\x00\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xA0(\x01\x00\x02\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\xC0\x8A!".
 
   3) Failure:
 test_read_timeout(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.rb:113]:
@@ -1530,6 +1568,20 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/openssl/test_ssl
 Started
+.........F....
+
+  1) Failure:
+test_ssl_read_nonblock(OpenSSL::TestSSL) [/macruby-test/test-mri/test/openssl/test_ssl.rb:175]:
+[IO::WaitReadable] exception expected, not
+Class: <OpenSSL::SSL::SSLError>
+Message: <"read would block">
+---Backtrace---
+/macruby-test/test-mri/test/openssl/test_ssl.rb:175:in `block'
+---------------
+
+14 tests, 2196 assertions, 1 failures, 0 errors, 0 skips
+
+Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/openssl/test_x509cert
@@ -2181,7 +2233,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rake/test_fileutils
 Started
-.2011-09-13 03:20:19.933 macruby[60043:903] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
+.2011-09-14 03:21:23.948 macruby[87254:903] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
 F.....................
 
   1) Failure:
@@ -3495,7 +3547,7 @@ Started
 test_add_includes_many(TestRDocRIDriver) [/macruby-test/test-mri/test/rdoc/test_rdoc_ri_driver.rb:148]:
 Expected [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_60225/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_87436/dot_ri)"],
   blankline,
   [para: "Inc"],
   blankline,
@@ -3503,7 +3555,7 @@ Expected [doc: [rule:1],
   blankline,
   [verb: "  ", "Enumerable", "\n"]], not [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_60225/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_87436/dot_ri)"],
   blankline,
   [para: "Inc"],
   blankline,
@@ -3515,10 +3567,10 @@ Expected [doc: [rule:1],
 test_add_includes_many_no_doc(TestRDocRIDriver) [/macruby-test/test-mri/test/rdoc/test_rdoc_ri_driver.rb:169]:
 Expected [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_60225/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_87436/dot_ri)"],
   [verb: "  ", "Inc", "\n", "  ", "Enumerable", "\n"]], not [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_60225/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_87436/dot_ri)"],
   [verb: "Inc", "\n", "Enumerable", "\n"]].
 
   3) Failure:
@@ -5384,7 +5436,7 @@ Encoding::CompatibilityError expected but nothing was raised.
 
   4) Failure:
 test_inspect(TestDir) [/macruby-test/test-mri/test/ruby/test_dir.rb:63]:
-Expected /^#<Dir:\/private\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/__test_dir__20110913\-60679\-1o6inhj>$/ to match "#<Dir:/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/__test_dir__20110913-60679-1o6inhj".
+Expected /^#<Dir:\/private\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/__test_dir__20110914\-87892\-1o6inhj>$/ to match "#<Dir:/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/__test_dir__20110914-87892-1o6inhj".
 
 14 tests, 80 assertions, 2 failures, 1 errors, 1 skips
 
@@ -5393,52 +5445,52 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_dir_m17n
 Started
-/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110913-60685-12zdlt8/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110913-60685-1estiet/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110913-60685-16tc0n7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110913-60685-12pbsn7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110913-60685-u3bzm1/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110913-60685-19vmgph/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110913-60685-v2yjvo/-:6:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110913-60685-1rcd3ra/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110913-60685-1wg6zq0/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110914-87895-12zdlt8/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110914-87895-1estiet/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110914-87895-16tc0n7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110914-87895-12pbsn7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110914-87895-u3bzm1/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110914-87895-19vmgph/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110914-87895-v2yjvo/-:6:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110914-87895-1rcd3ra/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110914-87895-1wg6zq0/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
 F
 
   1) Failure:
 test_filename_as_bytes_extutf8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:50]:
-ruby exit status is not success: #<Process::Status: pid 60686 exit 1>
+ruby exit status is not success: #<Process::Status: pid 87896 exit 1>
 
   2) Failure:
 test_filename_bytes_euc_jp(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:148]:
-ruby exit status is not success: #<Process::Status: pid 60687 exit 1>
+ruby exit status is not success: #<Process::Status: pid 87897 exit 1>
 
   3) Failure:
 test_filename_euc_jp(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:162]:
-ruby exit status is not success: #<Process::Status: pid 60688 exit 1>
+ruby exit status is not success: #<Process::Status: pid 87898 exit 1>
 
   4) Failure:
 test_filename_ext_euc_jp_and_int_utf_8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:200]:
-ruby exit status is not success: #<Process::Status: pid 60689 exit 1>
+ruby exit status is not success: #<Process::Status: pid 87899 exit 1>
 
   5) Failure:
 test_filename_extutf8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:18]:
-ruby exit status is not success: #<Process::Status: pid 60690 exit 1>
+ruby exit status is not success: #<Process::Status: pid 87900 exit 1>
 
   6) Failure:
 test_filename_extutf8_inteucjp_representable(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:89]:
-ruby exit status is not success: #<Process::Status: pid 60691 exit 1>
+ruby exit status is not success: #<Process::Status: pid 87901 exit 1>
 
   7) Failure:
 test_filename_extutf8_inteucjp_unrepresentable(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:116]:
-ruby exit status is not success: #<Process::Status: pid 60692 exit 1>
+ruby exit status is not success: #<Process::Status: pid 87902 exit 1>
 
   8) Failure:
 test_filename_extutf8_invalid(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:31]:
-ruby exit status is not success: #<Process::Status: pid 60693 exit 1>
+ruby exit status is not success: #<Process::Status: pid 87903 exit 1>
 
   9) Failure:
 test_filename_utf8_raw_name(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:182]:
-ruby exit status is not success: #<Process::Status: pid 60694 exit 1>
+ruby exit status is not success: #<Process::Status: pid 87904 exit 1>
 
 9 tests, 9 assertions, 9 failures, 0 errors, 0 skips
 
@@ -6387,7 +6439,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_io
 Started
-..SS.........FSEEESEEE.EEEFEEES....E...F...FFSF.........S....S...F...S.......F..FF..S.EF.F.S.
+..SS.........FSEEESEEE.EEEFEEES....E.......FFSF.........S....S...F...S.......F..FF..S.EF.F.S.
 
   1) Skipped:
 test_bytes(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1168]:
@@ -6520,80 +6572,75 @@ NoMethodError: undefined method `each_codepoint' for #<File:0xXXXXXXXX>
     /macruby-test/test-mri/test/ruby/test_io.rb:234:in `test_each_codepoint'
 
  21) Failure:
-test_foreach(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1469]:
-<["foo\n", "bar\n", "baz\n"]> expected but was
-<["foo\n", "bar\n", "baz", "\n"]>.
-
- 22) Failure:
 test_initialize(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1598]:
 r [ruby-dev:38571]
 Errno::EINVAL expected but nothing was raised.
 
- 23) Failure:
+ 22) Failure:
 test_inspect(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:888]:
-Expected /^#<IO:fd \d+>$/ to match "#<File::Constants:fd 6>".
+Expected /^#<IO:fd \d+>$/ to match "#<File::Constants:fd 5>".
 
- 24) Skipped:
+ 23) Skipped:
 test_lines(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1151]:
 [BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
 
- 25) Failure:
+ 24) Failure:
 test_new_with_block(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1616]:
 <[]> expected but was
 <["/macruby-test/test-mri/-:1:in `<main>': can't convert NilClass into Integer (TypeError)"]>.
 
- 26) Skipped:
+ 25) Skipped:
 test_print_separators(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1528]:
 [BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
 
- 27) Skipped:
+ 26) Skipped:
 test_read_lock(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:945]:
 [BUG : #954] Race condition: assertion fails with IO.pipe, when checks size of String which had read from pipe.
 
- 28) Failure:
+ 27) Failure:
 test_readline(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1133]:
 EOFError expected but nothing was raised.
 
- 29) Skipped:
+ 28) Skipped:
 test_readpartial_lock(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:908]:
 [BUG : #954] Race condition: assertion fails with IO.pipe, when checks size of String which had read from pipe.
 
- 30) Failure:
+ 29) Failure:
 test_set_lineno(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1105]:
 <"0,1,2,2,1001,1001,1001,1,2,3,3"> expected but was
 <"nil,1,2,2,1001,1001,1001,1,2,3,3">.
 
- 31) Failure:
+ 30) Failure:
 test_sysread(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1312]:
 IOError expected but nothing was raised.
 
- 32) Failure:
+ 31) Failure:
 test_sysseek(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1291]:
 IOError expected but nothing was raised.
 
- 33) Skipped:
+ 32) Skipped:
 test_threaded_flush(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1682]:
 [BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
 
- 34) Error:
+ 33) Error:
 test_ungetbyte(TestIO):
 NoMethodError: undefined method `ungetbyte' for #<Tempfile:0xXXXXXXXX>
     /macruby-test/test-mri/test/ruby/test_io.rb:202:in `test_ungetbyte'
 
- 35) Failure:
+ 34) Failure:
 test_ungetc(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:194]:
 [ruby-dev:31650]
 IOError expected but nothing was raised.
 
- 36) Failure:
+ 35) Failure:
 test_uninitialized(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1646]:
 IOError expected but nothing was raised.
 
- 37) Skipped:
+ 36) Skipped:
 test_write_nonblock(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:959]:
 [BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
 
-93 tests, 183 assertions, 12 failures, 14 errors, 11 skips
+93 tests, 190 assertions, 11 failures, 14 errors, 11 skips
 
 Test run options: --seed 0
 
@@ -8880,7 +8927,7 @@ test_random_bytes(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:345]:
 
  19) Failure:
 test_random_range(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:362]:
-<2011-09-13 03:34:58 +0900> expected but was
+<2011-09-14 03:36:01 +0900> expected but was
 <1.97626258336499e-323>.
 
  20) Failure:
@@ -9036,7 +9083,7 @@ Started
   1) Failure:
 test_assignment_in_conditional(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:307]:
 [ruby-dev:39363].
-Expected /\A(\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/test_ruby_test_rubyoption20110913\-60990\-1estiet\.rb):1(: warning: found = in conditional, should be ==)\n\1:4\2\Z/ to match "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20110913-60990-1estiet.rb:1: warning: found = in conditional, should be ==\n".
+Expected /\A(\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/test_ruby_test_rubyoption20110914\-88201\-1estiet\.rb):1(: warning: found = in conditional, should be ==)\n\1:4\2\Z/ to match "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20110914-88201-1estiet.rb:1: warning: found = in conditional, should be ==\n".
 
   2) Failure:
 test_autosplit(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:146]:
@@ -9074,7 +9121,7 @@ test_eval(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb
 
   9) Failure:
 test_indentation_check(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:319]:
-<["/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20110913-60990-y3csz2.rb:2: warning: mismatched indentations at 'end' with 'begin' at 1"]> expected but was
+<["/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20110914-88201-y3csz2.rb:2: warning: mismatched indentations at 'end' with 'begin' at 1"]> expected but was
 <[]>.
 
  10) Failure:
@@ -9597,7 +9644,7 @@ test_condvar_wait_deadlock_2(TestThread) [/macruby-test/test-mri/test/ruby/test_
 test_local_barrier(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:229]:
 [ruby-dev:30653].
 <"exit."> expected but was
-<"5: cont">.
+<"4: cont">.
 
   4) Skipped:
 test_mutex_interrupt(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:526]:
@@ -9642,10 +9689,10 @@ Message: <"undefined method `start' for #<#<Class:0xXXXXXXXX>:0xXXXXXXXX run>">
 /macruby-test/test-mri/test/ruby/test_thread.rb:653:in `block'
 ---------------
 
-objc[61106]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+objc[88320]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-39 tests, 74 assertions, 6 failures, 1 errors, 5 skips
+39 tests, 70 assertions, 6 failures, 1 errors, 5 skips
 
 Test run options: --seed 0
 
@@ -10972,1194 +11019,1219 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/scanf/test_scanf
 Started
-.....EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE.........................................................................................................................................FFFFFF.F.F.......................................................................................
+EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE.........................................................................................................................................FFFFFF.F.F.......................................................................................
 
   1) Error:
-test_103(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:318:in `block'
+test_1(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
   2) Error:
-test_104(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_10(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
   3) Error:
-test_105(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_100(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
   4) Error:
-test_106(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_101(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
   5) Error:
-test_107(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_102(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
   6) Error:
-test_108(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_103(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
   7) Error:
-test_109(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_104(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
   8) Error:
-test_11(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_105(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
   9) Error:
-test_110(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_106(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  10) Error:
-test_111(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_107(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  11) Error:
-test_112(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_108(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  12) Error:
-test_113(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_109(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  13) Error:
-test_114(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_11(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  14) Error:
-test_115(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_110(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  15) Error:
-test_116(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_111(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  16) Error:
-test_117(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_112(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  17) Error:
-test_118(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_113(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  18) Error:
-test_119(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_114(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  19) Error:
-test_12(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_115(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  20) Error:
-test_120(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_116(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  21) Error:
-test_121(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_117(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  22) Error:
-test_122(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_118(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  23) Error:
-test_123(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_119(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  24) Error:
-test_124(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_12(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  25) Error:
-test_125(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_120(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  26) Error:
-test_126(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_121(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  27) Error:
-test_127(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_122(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  28) Error:
-test_128(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_123(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  29) Error:
-test_129(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_124(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  30) Error:
-test_13(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_125(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  31) Error:
-test_130(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_126(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  32) Error:
-test_131(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_127(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  33) Error:
-test_132(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_128(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  34) Error:
-test_133(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_129(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  35) Error:
-test_134(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_13(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  36) Error:
-test_135(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_130(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  37) Error:
-test_136(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_131(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  38) Error:
-test_137(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_132(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  39) Error:
-test_138(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_133(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  40) Error:
-test_139(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_134(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  41) Error:
-test_14(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_135(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  42) Error:
-test_140(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_136(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  43) Error:
-test_141(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_137(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  44) Error:
-test_142(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_138(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  45) Error:
-test_143(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_139(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  46) Error:
-test_144(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_14(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  47) Error:
-test_145(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_140(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  48) Error:
-test_146(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_141(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  49) Error:
-test_147(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_142(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  50) Error:
-test_148(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_143(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  51) Error:
-test_149(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_144(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  52) Error:
-test_15(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_145(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  53) Error:
-test_150(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_146(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  54) Error:
-test_151(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_147(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  55) Error:
-test_152(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_148(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  56) Error:
-test_153(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_149(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  57) Error:
-test_154(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_15(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  58) Error:
-test_155(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_150(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  59) Error:
-test_156(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_151(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  60) Error:
-test_157(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_152(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  61) Error:
-test_158(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_153(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  62) Error:
-test_159(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_154(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  63) Error:
-test_16(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_155(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  64) Error:
-test_160(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_156(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  65) Error:
-test_161(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_157(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  66) Error:
-test_162(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_158(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  67) Error:
-test_163(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_159(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  68) Error:
-test_164(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_16(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  69) Error:
-test_165(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_160(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  70) Error:
-test_166(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_161(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  71) Error:
-test_167(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_162(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  72) Error:
-test_168(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_163(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  73) Error:
-test_169(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_164(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  74) Error:
-test_17(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_165(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  75) Error:
-test_170(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_166(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  76) Error:
-test_171(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_167(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  77) Error:
-test_172(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_168(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  78) Error:
-test_173(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_169(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  79) Error:
-test_174(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_17(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  80) Error:
-test_175(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_170(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  81) Error:
-test_176(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_171(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  82) Error:
-test_177(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_172(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  83) Error:
-test_178(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_173(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  84) Error:
-test_179(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_174(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  85) Error:
-test_18(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_175(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  86) Error:
-test_180(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_176(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  87) Error:
-test_181(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_177(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  88) Error:
-test_182(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_178(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  89) Error:
-test_183(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_179(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  90) Error:
-test_184(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_18(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  91) Error:
-test_185(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_180(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  92) Error:
-test_186(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_181(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  93) Error:
-test_187(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_182(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  94) Error:
-test_188(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_183(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  95) Error:
-test_189(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_184(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  96) Error:
-test_19(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_185(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  97) Error:
-test_190(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_186(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  98) Error:
-test_191(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_187(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
  99) Error:
-test_192(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_188(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 100) Error:
-test_193(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_189(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 101) Error:
-test_194(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_19(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 102) Error:
-test_195(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_190(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 103) Error:
-test_196(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_191(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 104) Error:
-test_197(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_192(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 105) Error:
-test_198(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_193(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 106) Error:
-test_199(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_194(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 107) Error:
-test_2(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_195(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 108) Error:
-test_20(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_196(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 109) Error:
-test_200(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_197(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 110) Error:
-test_201(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_198(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 111) Error:
-test_202(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_199(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 112) Error:
-test_203(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_2(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 113) Error:
-test_204(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_20(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 114) Error:
-test_205(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_200(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 115) Error:
-test_206(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_201(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 116) Error:
-test_207(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_202(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 117) Error:
-test_208(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_203(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 118) Error:
-test_209(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_204(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 119) Error:
-test_21(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_205(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 120) Error:
-test_210(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_206(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 121) Error:
-test_211(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_207(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 122) Error:
-test_212(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_208(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 123) Error:
-test_213(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_209(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 124) Error:
-test_214(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_21(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 125) Error:
-test_215(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_210(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 126) Error:
-test_216(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_211(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 127) Error:
-test_217(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_212(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 128) Error:
-test_218(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_213(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 129) Error:
-test_219(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_214(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 130) Error:
-test_22(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_215(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 131) Error:
-test_220(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_216(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 132) Error:
-test_221(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_217(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 133) Error:
-test_222(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_218(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 134) Error:
-test_223(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_219(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 135) Error:
-test_224(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_22(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 136) Error:
-test_225(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_220(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 137) Error:
-test_226(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_221(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 138) Error:
-test_227(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_222(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 139) Error:
-test_228(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_223(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 140) Error:
-test_229(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_224(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 141) Error:
-test_23(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_225(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 142) Error:
-test_230(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_226(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 143) Error:
-test_231(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_227(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 144) Error:
-test_232(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_228(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 145) Error:
-test_233(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_229(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 146) Error:
-test_234(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_23(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 147) Error:
-test_24(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_230(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 148) Error:
-test_25(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_231(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 149) Error:
-test_26(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_232(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 150) Error:
-test_27(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_233(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 151) Error:
-test_28(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_234(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 152) Error:
-test_29(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_24(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 153) Error:
-test_3(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_25(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 154) Error:
-test_30(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_26(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 155) Error:
-test_31(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_27(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 156) Error:
-test_32(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_28(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 157) Error:
-test_33(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_29(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 158) Error:
-test_34(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_3(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 159) Error:
-test_35(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_30(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 160) Error:
-test_36(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_31(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 161) Error:
-test_37(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_32(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 162) Error:
-test_38(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_33(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 163) Error:
-test_39(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_34(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 164) Error:
-test_4(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_35(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 165) Error:
-test_40(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_36(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 166) Error:
-test_41(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_37(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 167) Error:
-test_42(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_38(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 168) Error:
-test_43(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_39(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 169) Error:
-test_44(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_4(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 170) Error:
-test_45(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_40(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 171) Error:
-test_46(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_41(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 172) Error:
-test_47(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_42(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 173) Error:
-test_48(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_43(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 174) Error:
-test_49(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_44(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 175) Error:
-test_5(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_45(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 176) Error:
-test_50(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_46(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 177) Error:
-test_51(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_47(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 178) Error:
-test_52(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_48(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 179) Error:
-test_53(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_49(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 180) Error:
-test_54(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_5(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 181) Error:
-test_55(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_50(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 182) Error:
-test_56(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_51(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 183) Error:
-test_57(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_52(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 184) Error:
-test_58(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_53(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 185) Error:
-test_59(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_54(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 186) Error:
-test_6(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_55(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 187) Error:
-test_60(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_56(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 188) Error:
-test_61(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_57(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 189) Error:
-test_62(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_58(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 190) Error:
-test_63(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_59(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 191) Error:
-test_64(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_6(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 192) Error:
-test_65(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_60(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 193) Error:
-test_66(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_61(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 194) Error:
-test_67(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_62(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 195) Error:
-test_68(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_63(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 196) Error:
-test_69(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_64(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 197) Error:
-test_7(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_65(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 198) Error:
-test_70(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_66(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 199) Error:
-test_71(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_67(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 200) Error:
-test_72(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_68(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 201) Error:
-test_73(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_69(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 202) Error:
-test_74(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_7(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 203) Error:
-test_75(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_70(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 204) Error:
-test_76(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_71(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 205) Error:
-test_77(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_72(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 206) Error:
-test_78(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_73(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 207) Error:
-test_79(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_74(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 208) Error:
-test_8(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_75(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 209) Error:
-test_80(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_76(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 210) Error:
-test_81(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_77(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 211) Error:
-test_82(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_78(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 212) Error:
-test_83(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_79(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 213) Error:
-test_84(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_8(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 214) Error:
-test_85(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_80(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 215) Error:
-test_86(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_81(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 216) Error:
-test_87(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_82(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 217) Error:
-test_88(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_83(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 218) Error:
-test_89(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_84(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 219) Error:
-test_9(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_85(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 220) Error:
-test_90(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_86(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 221) Error:
-test_91(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_87(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 222) Error:
-test_92(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_88(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 223) Error:
-test_93(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_89(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 224) Error:
-test_94(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_9(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 225) Error:
-test_95(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_90(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 226) Error:
-test_96(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_91(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 227) Error:
-test_97(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_92(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 228) Error:
-test_98(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_93(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
 229) Error:
-test_99(TestIOScanf):
-TypeError: [1.2, "x\ny"] is not a class/module
+test_94(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
     /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
 
-230) Failure:
+230) Error:
+test_95(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+231) Error:
+test_96(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+232) Error:
+test_97(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+233) Error:
+test_98(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+234) Error:
+test_99(TestIOScanf):
+TypeError: 32008669289688 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+235) Failure:
 test_222(TestStringScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:299]:
 <[]> expected but was
 <[0.0]>.
 
-231) Failure:
+236) Failure:
 test_223(TestStringScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:299]:
 <[1.23e+45]> expected but was
 <[]>.
 
-232) Failure:
+237) Failure:
 test_224(TestStringScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:299]:
 <[3.25]> expected but was
 <[]>.
 
-233) Failure:
+238) Failure:
 test_225(TestStringScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:299]:
 <[3.0]> expected but was
 <[]>.
 
-234) Failure:
+239) Failure:
 test_226(TestStringScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:299]:
 <[3.25]> expected but was
 <[]>.
 
-235) Failure:
+240) Failure:
 test_227(TestStringScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:299]:
 <[325.0]> expected but was
 <[]>.
 
-236) Failure:
+241) Failure:
 test_229(TestStringScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:299]:
 <[1024.0]> expected but was
 <[]>.
 
-237) Failure:
+242) Failure:
 test_230(TestStringScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:299]:
 <[1.1851510441584e+30]> expected but was
 <[]>.
 
-468 tests, 240 assertions, 8 failures, 229 errors, 0 skips
+468 tests, 234 assertions, 8 failures, 234 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -12931,7 +13003,7 @@ TypeError: can't convert Symbol into Integer
 
  10) Error:
 test_sysaccept(TestSocket):
-NoMethodError: undefined method `to_sockaddr' for #<String:0xXXXXXXXX>
+NoMethodError: undefined method `to_sockaddr' for "\x10\x02\xFA/\x7F\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00":String
     /macruby-test/test-mri/test/socket/test_socket.rb:30:in `test_sysaccept'
 
  11) Error:
@@ -14088,16 +14160,16 @@ FFFF
 
   1) Failure:
 test_bad_header(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:129]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2011-09-13 03:48:58] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2011-09-14 03:49:57] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
 
   2) Failure:
 test_bad_request(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:95]:
 webrick log start:
-  [2011-09-13 03:48:59] INFO  WEBrick 1.3.1
-  [2011-09-13 03:48:59] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
-  [2011-09-13 03:48:59] INFO  WEBrick::HTTPServer#start: pid=61619 port=60060
-  [2011-09-13 03:48:59] WARN  :RequestHandler is deprecated, please use :RequestCallback
-  [2011-09-13 03:49:04] ERROR Errno::EBADF: Bad file descriptor - read() failed
+  [2011-09-14 03:49:58] INFO  WEBrick 1.3.1
+  [2011-09-14 03:49:58] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
+  [2011-09-14 03:49:58] INFO  WEBrick::HTTPServer#start: pid=88825 port=64068
+  [2011-09-14 03:49:58] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2011-09-14 03:50:03] ERROR Errno::EBADF: Bad file descriptor - read() failed
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/cgihandler.rb:65:in `do_POST'
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/abstract.rb:35:in `service'
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/filehandler.rb:236:in `exec_handler'
@@ -14109,20 +14181,20 @@ webrick log start:
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/server.rb:183:in `block'
   
 webrick log end.
-Expected /\AHTTP\/\d.\d 400 Bad Request/ to match "HTTP/1.1 500 Internal Server Error \r\nContent-Type: text/html; charset=utf-8\r\nServer: WEBrick/1.3.1 (Ruby/1.9.2/2008-06-03) OpenSSL/0.9.8l\r\nDate: Mon, 12 Sep 2011 18:49:04 GMT\r\nContent-Length: 331\r\nConnection: close\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\">\n<HTML>\n  <HEAD><TITLE>Internal Server Error</TITLE></HEAD>\n  <BODY>\n    <H1>Internal Server Error</H1>\n    Bad file descriptor - read() failed\n    <HR>\n    <ADDRESS>\n     WEBrick/1.3.1 (Ruby/1.9.2/2008-06-03) OpenSSL/0.9.8l at\n     localhost:60060\n    </ADDRESS>\n  </BODY>\n</HTML>\n".
+Expected /\AHTTP\/\d.\d 400 Bad Request/ to match "HTTP/1.1 500 Internal Server Error \r\nContent-Type: text/html; charset=utf-8\r\nServer: WEBrick/1.3.1 (Ruby/1.9.2/2008-06-03) OpenSSL/0.9.8l\r\nDate: Tue, 13 Sep 2011 18:50:03 GMT\r\nContent-Length: 331\r\nConnection: close\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\">\n<HTML>\n  <HEAD><TITLE>Internal Server Error</TITLE></HEAD>\n  <BODY>\n    <H1>Internal Server Error</H1>\n    Bad file descriptor - read() failed\n    <HR>\n    <ADDRESS>\n     WEBrick/1.3.1 (Ruby/1.9.2/2008-06-03) OpenSSL/0.9.8l at\n     localhost:64068\n    </ADDRESS>\n  </BODY>\n</HTML>\n".
 
   3) Failure:
 test_bad_uri(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:115]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2011-09-13 03:49:04] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2011-09-14 03:50:03] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
 
   4) Failure:
 test_cgi(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:33]:
 webrick log start:
-  [2011-09-13 03:49:04] INFO  WEBrick 1.3.1
-  [2011-09-13 03:49:04] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
-  [2011-09-13 03:49:04] INFO  WEBrick::HTTPServer#start: pid=61619 port=60064
-  [2011-09-13 03:49:04] WARN  :RequestHandler is deprecated, please use :RequestCallback
-  [2011-09-13 03:49:08] ERROR Errno::EBADF: Bad file descriptor - read() failed
+  [2011-09-14 03:50:03] INFO  WEBrick 1.3.1
+  [2011-09-14 03:50:03] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
+  [2011-09-14 03:50:03] INFO  WEBrick::HTTPServer#start: pid=88825 port=64072
+  [2011-09-14 03:50:03] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2011-09-14 03:50:07] ERROR Errno::EBADF: Bad file descriptor - read() failed
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/cgihandler.rb:65:in `do_POST'
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/abstract.rb:35:in `service'
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/filehandler.rb:236:in `exec_handler'
@@ -14135,7 +14207,7 @@ webrick log start:
   
 webrick log end.
 <"/webrick.cgi"> expected but was
-<"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\">\n<HTML>\n  <HEAD><TITLE>Internal Server Error</TITLE></HEAD>\n  <BODY>\n    <H1>Internal Server Error</H1>\n    Bad file descriptor - read() failed\n    <HR>\n    <ADDRESS>\n     WEBrick/1.3.1 (Ruby/1.9.2/2008-06-03) OpenSSL/0.9.8l at\n     127.0.0.1:60064\n    </ADDRESS>\n  </BODY>\n</HTML>\n">.
+<"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\">\n<HTML>\n  <HEAD><TITLE>Internal Server Error</TITLE></HEAD>\n  <BODY>\n    <H1>Internal Server Error</H1>\n    Bad file descriptor - read() failed\n    <HR>\n    <ADDRESS>\n     WEBrick/1.3.1 (Ruby/1.9.2/2008-06-03) OpenSSL/0.9.8l at\n     127.0.0.1:64072\n    </ADDRESS>\n  </BODY>\n</HTML>\n">.
 
 4 tests, 6 assertions, 4 failures, 0 errors, 0 skips
 
@@ -14158,10 +14230,10 @@ Started
   1) Failure:
 test_script_disclosure(WEBrick::TestFileHandler) [/macruby-test/test-mri/test/webrick/test_filehandler.rb:250]:
 webrick log start:
-  [2011-09-13 03:49:21] INFO  WEBrick 1.3.1
-  [2011-09-13 03:49:21] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
-  [2011-09-13 03:49:21] INFO  WEBrick::HTTPServer#start: pid=61627 port=60085
-  [2011-09-13 03:49:25] ERROR Errno::EBADF: Bad file descriptor - read() failed
+  [2011-09-14 03:50:19] INFO  WEBrick 1.3.1
+  [2011-09-14 03:50:19] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
+  [2011-09-14 03:50:19] INFO  WEBrick::HTTPServer#start: pid=88836 port=64092
+  [2011-09-14 03:50:24] ERROR Errno::EBADF: Bad file descriptor - read() failed
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/cgihandler.rb:65:in `do_POST'
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/abstract.rb:35:in `service'
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/filehandler.rb:236:in `exec_handler'
