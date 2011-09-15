@@ -1,4 +1,4 @@
-Date    : 2011-09-15T03:10:58+09:00
+Date    : 2011-09-16T03:11:32+09:00
 Version : 0.11, git commit 19514ab3772bb743960deaaf18d57dc721fe8dce
 
 ----------------------------------------
@@ -1084,17 +1084,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/monitor/test_monitor
 Started
-..F...
-
-  1) Failure:
-test_killed_thread_in_synchronize(TestMonitor) [/macruby-test/test-mri/test/monitor/test_monitor.rb:80]:
-<[:main]> expected but was
-<[:main, :t2, :t1]>.
-
-6 tests, 18 assertions, 1 failures, 0 errors, 0 skips
-
-Test run options: --seed 0
-
+..F
 ----------------------------------------
 Loaded suite test/net/http/test_http
 Started
@@ -1110,7 +1100,7 @@ Message: <"Connection reset by peer - read(2) failed.">
 	from /Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/test/unit/assertions.rb:27:in `assert_raise'
 	from /macruby-test/test-mri/test/net/http/test_http.rb:188:in `block'
 
-E.F.....F
+..F.....F
 
   1) Failure:
 test_get(TestNetHTTP_v1_2) [/macruby-test/test-mri/test/net/http/test_http.rb:49]:
@@ -1172,24 +1162,16 @@ Errno::ECONNRESET: Connection reset by peer - read(2) failed.
 test_timeout_during_HTTP_session(TestNetHTTP_v1_2_chunked) [/macruby-test/test-mri/test/net/http/test_http.rb:192]:
 expected the HTTP session to have timed out but have not. c.f. [ruby-core:34203]
 
- 11) Error:
-test_get(TestNetHTTP_version_1_1):
-EOFError: end of file reached
-    /macruby-test/test-mri/test/net/http/test_http.rb:73:in `_test_get__chunked'
-    /macruby-test/test-mri/test/net/http/test_http.rb:30:in `block'
-    /macruby-test/test-mri/test/net/http/utils.rb:11:in `start'
-    /macruby-test/test-mri/test/net/http/test_http.rb:27:in `test_get'
-
- 12) Failure:
+ 11) Failure:
 test_get__break(TestNetHTTP_version_1_1) [/macruby-test/test-mri/test/net/http/test_http.rb:96]:
 <1> expected but was
 <2>.
 
- 13) Failure:
+ 12) Failure:
 test_timeout_during_HTTP_session(TestNetHTTP_version_1_1) [/macruby-test/test-mri/test/net/http/test_http.rb:192]:
 expected the HTTP session to have timed out but have not. c.f. [ruby-core:34203]
 
-32 tests, 157 assertions, 8 failures, 5 errors, 0 skips
+32 tests, 163 assertions, 8 failures, 4 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -1346,7 +1328,7 @@ test_progress(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.r
 
   2) Failure:
 test_proxy(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.rb:205]:
-Expected /http:\/\/127\.0\.0\.1:51306/ to match "_\x04\x00\x00\x00\x00\x00\x00@\xB7,\x00\x02\x00\x00\x00\xC0\xBFK\x00\x02\x00\x00\x00 \xC6\x0F\x00\x02\x00\x00\x00\x80\x9F \x00\x02\x00\x00\x00\xC0\xB3K".
+Expected /http:\/\/127\.0\.0\.1:55503/ to match "\xA0)\x01\x00\x02\x00\x00\x00\x00\b\x00\x00\x00\x00\x00\x00 )\x01\x00\x02\x00\x00\x00\x04\x00\x00\x00\x00\x00\x00\x00\x04\x00\x00\x00\x00\x00\x00\x00\xA0\xA9F".
 
   3) Failure:
 test_read_timeout(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.rb:113]:
@@ -2219,7 +2201,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rake/test_fileutils
 Started
-.2011-09-15 03:20:58.019 macruby[1679:903] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
+.2011-09-16 03:24:32.030 macruby[15839:903] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
 F.....................
 
   1) Failure:
@@ -3533,7 +3515,7 @@ Started
 test_add_includes_many(TestRDocRIDriver) [/macruby-test/test-mri/test/rdoc/test_rdoc_ri_driver.rb:148]:
 Expected [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_1862/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_16022/dot_ri)"],
   blankline,
   [para: "Inc"],
   blankline,
@@ -3541,7 +3523,7 @@ Expected [doc: [rule:1],
   blankline,
   [verb: "  ", "Enumerable", "\n"]], not [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_1862/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_16022/dot_ri)"],
   blankline,
   [para: "Inc"],
   blankline,
@@ -3553,10 +3535,10 @@ Expected [doc: [rule:1],
 test_add_includes_many_no_doc(TestRDocRIDriver) [/macruby-test/test-mri/test/rdoc/test_rdoc_ri_driver.rb:169]:
 Expected [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_1862/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_16022/dot_ri)"],
   [verb: "  ", "Inc", "\n", "  ", "Enumerable", "\n"]], not [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_1862/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_16022/dot_ri)"],
   [verb: "Inc", "\n", "Enumerable", "\n"]].
 
   3) Failure:
@@ -4905,9 +4887,9 @@ Expected /Can't do inplace edit for stdio/ to match "".
 
   4) Failure:
 test_lineno(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:92]:
-[ruby-dev:34445]: line 96.
+[ruby-dev:34445]: line 98.
 <"3"> expected but was
-<"">.
+<"4">.
 
   5) Failure:
 test_lineno2(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:112]:
@@ -4940,14 +4922,14 @@ Message: <"not opened for reading">
 /macruby-test/test-mri/test/ruby/test_argf.rb:708:in `block'
 ---------------
 
-42 tests, 159 assertions, 9 failures, 0 errors, 0 skips
+42 tests, 163 assertions, 9 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/ruby/test_array
 Started
-.............................FE..............................EF........F......FEE.EFE....EEEE.......F.FF..............E............FF.FF.....
+.............................FE..............................EF........F......F.E.EFE....EEEE.......F.FF..............E............FF.FF.....
 
   1) Failure:
 test_combination2(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:1957]:
@@ -4979,91 +4961,86 @@ test_pack(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:968]:
 <"\x86"> (ASCII-8BIT).
 
   7) Error:
-test_permutation(TestArray):
-ArgumentError: comparison of Array with Array failed
-    /macruby-test/test-mri/test/ruby/test_array.rb:1555:in `test_permutation'
-
-  8) Error:
 test_permutation_with_callcc(TestArray):
 LoadError: continuations are not supported in MacRuby yet
     /macruby-test/test-mri/test/ruby/test_array.rb:768:in `test_permutation_with_callcc'
 
-  9) Error:
+  8) Error:
 test_product(TestArray):
 NotImplementedError: stress=:() function is unimplemented on this machine
     /macruby-test/test-mri/test/ruby/envutil.rb:121:in `under_gc_stress'
     /macruby-test/test-mri/test/ruby/test_array.rb:1529:in `test_product'
 
- 10) Failure:
+  9) Failure:
 test_product2(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:1967]:
 Exception raised:
 <#<RangeError: too big to product>>.
 
- 11) Error:
+ 10) Error:
 test_product_with_callcc(TestArray):
 LoadError: continuations are not supported in MacRuby yet
     /macruby-test/test-mri/test/ruby/test_array.rb:785:in `test_product_with_callcc'
 
- 12) Error:
+ 11) Error:
 test_repeated_combination(TestArray):
 NoMethodError: undefined method `repeated_combination' for [...]:Array
     /macruby-test/test-mri/test/ruby/test_array.rb:1592:in `test_repeated_combination'
 
- 13) Error:
+ 12) Error:
 test_repeated_combination_with_callcc(TestArray):
 LoadError: continuations are not supported in MacRuby yet
     /macruby-test/test-mri/test/ruby/test_array.rb:836:in `test_repeated_combination_with_callcc'
 
- 14) Error:
+ 13) Error:
 test_repeated_permutation(TestArray):
 NoMethodError: undefined method `repeated_permutation' for [...]:Array
     /macruby-test/test-mri/test/ruby/test_array.rb:1567:in `test_repeated_permutation'
 
- 15) Error:
+ 14) Error:
 test_repeated_permutation_with_callcc(TestArray):
 LoadError: continuations are not supported in MacRuby yet
     /macruby-test/test-mri/test/ruby/test_array.rb:819:in `test_repeated_permutation_with_callcc'
 
- 16) Failure:
+ 15) Failure:
 test_rindex2(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:1741]:
 <1> expected but was
 <nil>.
 
- 17) Failure:
+ 16) Failure:
 test_rotate!(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:2077]:
 Expected /can't modify frozen array/ to match "can't modify frozen/immutable array".
 
- 18) Failure:
+ 17) Failure:
 test_sample(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:1914]:
 <10> expected but was
 <8>.
 
- 19) Error:
+ 18) Error:
 test_sort_with_callcc(TestArray):
 LoadError: continuations are not supported in MacRuby yet
     /macruby-test/test-mri/test/ruby/test_array.rb:1285:in `test_sort_with_callcc'
 
- 20) Failure:
+ 19) Failure:
 test_uniq(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:1395]:
 <["a:def", "b:abc", "c:jkl"]> expected but was
 <["a:def", "a:xyz", "b:abc", "b:xyz", "c:jkl"]>.
 
- 21) Failure:
+ 20) Failure:
 test_uniq!(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:1446]:
 <["a:def", "b:abc", "c:jkl"]> expected but was
 <nil>.
 
- 22) Failure:
+ 21) Failure:
 test_uniq_bang_with_block(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:1478]:
 <[1]> expected but was
 <[1, 3]>.
 
- 23) Failure:
+ 22) Failure:
 test_uniq_with_block(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:1417]:
 <[1]> expected but was
 <[1, 3]>.
 
-141 tests, 4291 assertions, 12 failures, 11 errors, 0 skips
+141 tests, 4295 assertions, 12 failures, 10 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -5427,7 +5404,7 @@ Encoding::CompatibilityError expected but nothing was raised.
 
   4) Failure:
 test_inspect(TestDir) [/macruby-test/test-mri/test/ruby/test_dir.rb:63]:
-Expected /^#<Dir:\/private\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/__test_dir__20110915\-2318\-1o6inhj>$/ to match "#<Dir:/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/__test_dir__20110915-2318-1o6inhj".
+Expected /^#<Dir:\/private\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/__test_dir__20110916\-16479\-1o6inhj>$/ to match "#<Dir:/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/__test_dir__20110916-16479-1o6inhj".
 
 14 tests, 80 assertions, 2 failures, 1 errors, 1 skips
 
@@ -5436,52 +5413,52 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_dir_m17n
 Started
-/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110915-2321-12zdlt8/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110915-2321-1estiet/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110915-2321-16tc0n7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110915-2321-12pbsn7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110915-2321-u3bzm1/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110915-2321-19vmgph/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110915-2321-v2yjvo/-:6:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110915-2321-1rcd3ra/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110915-2321-1wg6zq0/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110916-16482-12zdlt8/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110916-16482-1estiet/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110916-16482-16tc0n7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110916-16482-12pbsn7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110916-16482-u3bzm1/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110916-16482-19vmgph/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110916-16482-v2yjvo/-:6:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110916-16482-1rcd3ra/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20110916-16482-1wg6zq0/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
 F
 
   1) Failure:
 test_filename_as_bytes_extutf8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:50]:
-ruby exit status is not success: #<Process::Status: pid 2322 exit 1>
+ruby exit status is not success: #<Process::Status: pid 16483 exit 1>
 
   2) Failure:
 test_filename_bytes_euc_jp(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:148]:
-ruby exit status is not success: #<Process::Status: pid 2323 exit 1>
+ruby exit status is not success: #<Process::Status: pid 16484 exit 1>
 
   3) Failure:
 test_filename_euc_jp(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:162]:
-ruby exit status is not success: #<Process::Status: pid 2324 exit 1>
+ruby exit status is not success: #<Process::Status: pid 16485 exit 1>
 
   4) Failure:
 test_filename_ext_euc_jp_and_int_utf_8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:200]:
-ruby exit status is not success: #<Process::Status: pid 2325 exit 1>
+ruby exit status is not success: #<Process::Status: pid 16486 exit 1>
 
   5) Failure:
 test_filename_extutf8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:18]:
-ruby exit status is not success: #<Process::Status: pid 2326 exit 1>
+ruby exit status is not success: #<Process::Status: pid 16487 exit 1>
 
   6) Failure:
 test_filename_extutf8_inteucjp_representable(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:89]:
-ruby exit status is not success: #<Process::Status: pid 2327 exit 1>
+ruby exit status is not success: #<Process::Status: pid 16488 exit 1>
 
   7) Failure:
 test_filename_extutf8_inteucjp_unrepresentable(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:116]:
-ruby exit status is not success: #<Process::Status: pid 2328 exit 1>
+ruby exit status is not success: #<Process::Status: pid 16489 exit 1>
 
   8) Failure:
 test_filename_extutf8_invalid(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:31]:
-ruby exit status is not success: #<Process::Status: pid 2329 exit 1>
+ruby exit status is not success: #<Process::Status: pid 16490 exit 1>
 
   9) Failure:
 test_filename_utf8_raw_name(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:182]:
-ruby exit status is not success: #<Process::Status: pid 2330 exit 1>
+ruby exit status is not success: #<Process::Status: pid 16491 exit 1>
 
 9 tests, 9 assertions, 9 failures, 0 errors, 0 skips
 
@@ -8923,7 +8900,7 @@ test_random_bytes(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:345]:
 
  19) Failure:
 test_random_range(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:362]:
-<2011-09-15 03:35:36 +0900> expected but was
+<2011-09-16 03:39:13 +0900> expected but was
 <1.97626258336499e-323>.
 
  20) Failure:
@@ -9079,7 +9056,7 @@ Started
   1) Failure:
 test_assignment_in_conditional(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:307]:
 [ruby-dev:39363].
-Expected /\A(\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/test_ruby_test_rubyoption20110915\-2626\-1estiet\.rb):1(: warning: found = in conditional, should be ==)\n\1:4\2\Z/ to match "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20110915-2626-1estiet.rb:1: warning: found = in conditional, should be ==\n".
+Expected /\A(\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/test_ruby_test_rubyoption20110916\-16787\-1estiet\.rb):1(: warning: found = in conditional, should be ==)\n\1:4\2\Z/ to match "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20110916-16787-1estiet.rb:1: warning: found = in conditional, should be ==\n".
 
   2) Failure:
 test_autosplit(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:146]:
@@ -9117,7 +9094,7 @@ test_eval(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb
 
   9) Failure:
 test_indentation_check(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:319]:
-<["/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20110915-2626-y3csz2.rb:2: warning: mismatched indentations at 'end' with 'begin' at 1"]> expected but was
+<["/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20110916-16787-y3csz2.rb:2: warning: mismatched indentations at 'end' with 'begin' at 1"]> expected but was
 <[]>.
 
  10) Failure:
@@ -9625,7 +9602,10 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_thread
 Started
-F......S........F....S...SF.S...F.EFS.F
+F......S........F....S..objc[16907]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+	undefined method `message' for false:FalseClass (NoMethodError)
+
+.SF.S...F.EFS.F
 
   1) Failure:
 test_abort_on_exception(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:386]:
@@ -9635,15 +9615,15 @@ test_abort_on_exception(TestThread) [/macruby-test/test-mri/test/ruby/test_threa
   2) Skipped:
 test_condvar_wait_deadlock_2(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:148]:
 [BUG : #???] Timeout, MacRuby don't finish
+objc[16907]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+	undefined method `message' for false:FalseClass (NoMethodError)
+
 
   3) Failure:
 test_local_barrier(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:229]:
 [ruby-dev:30653].
 <"exit."> expected but was
-<"5: cont">.
-objc[2743]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
-	undefined method `message' for false:FalseClass (NoMethodError)
-
+<"7: cont">.
 
   4) Skipped:
 test_mutex_interrupt(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:526]:
@@ -9687,9 +9667,6 @@ Message: <"undefined method `start' for #<#<Class:0xXXXXXXXX>:0xXXXXXXXX run>">
 ---Backtrace---
 /macruby-test/test-mri/test/ruby/test_thread.rb:653:in `block'
 ---------------
-objc[2743]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
-	undefined method `message' for false:FalseClass (NoMethodError)
-
 
 39 tests, 70 assertions, 6 failures, 1 errors, 5 skips
 
@@ -11018,7 +10995,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/scanf/test_scanf
 Started
-....................................................................EEEEEEEEEEEEEEEEEEEEEEEEEE...........................................FFFFFF.F.F.....
+.............
 ----------------------------------------
 Loaded suite test/scanf/test_scanfblocks
 Started
@@ -11787,7 +11764,7 @@ TypeError: can't convert Symbol into Integer
 
  10) Error:
 test_sysaccept(TestSocket):
-NoMethodError: undefined method `to_sockaddr' for "\x10\x02\xC9Z\x7F\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00":String
+NoMethodError: undefined method `to_sockaddr' for #<String:0xXXXXXXXX>
     /macruby-test/test-mri/test/socket/test_socket.rb:30:in `test_sysaccept'
 
  11) Error:
@@ -12944,16 +12921,16 @@ FFFF
 
   1) Failure:
 test_bad_header(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:129]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2011-09-15 03:49:33] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2011-09-16 03:53:13] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
 
   2) Failure:
 test_bad_request(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:95]:
 webrick log start:
-  [2011-09-15 03:49:34] INFO  WEBrick 1.3.1
-  [2011-09-15 03:49:34] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
-  [2011-09-15 03:49:34] INFO  WEBrick::HTTPServer#start: pid=3255 port=51567
-  [2011-09-15 03:49:34] WARN  :RequestHandler is deprecated, please use :RequestCallback
-  [2011-09-15 03:49:38] ERROR Errno::EBADF: Bad file descriptor - read() failed
+  [2011-09-16 03:53:14] INFO  WEBrick 1.3.1
+  [2011-09-16 03:53:14] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
+  [2011-09-16 03:53:14] INFO  WEBrick::HTTPServer#start: pid=17416 port=55765
+  [2011-09-16 03:53:14] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2011-09-16 03:53:18] ERROR Errno::EBADF: Bad file descriptor - read() failed
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/cgihandler.rb:65:in `do_POST'
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/abstract.rb:35:in `service'
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/filehandler.rb:236:in `exec_handler'
@@ -12965,20 +12942,20 @@ webrick log start:
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/server.rb:183:in `block'
   
 webrick log end.
-Expected /\AHTTP\/\d.\d 400 Bad Request/ to match "HTTP/1.1 500 Internal Server Error \r\nContent-Type: text/html; charset=utf-8\r\nServer: WEBrick/1.3.1 (Ruby/1.9.2/2008-06-03) OpenSSL/0.9.8l\r\nDate: Wed, 14 Sep 2011 18:49:38 GMT\r\nContent-Length: 331\r\nConnection: close\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\">\n<HTML>\n  <HEAD><TITLE>Internal Server Error</TITLE></HEAD>\n  <BODY>\n    <H1>Internal Server Error</H1>\n    Bad file descriptor - read() failed\n    <HR>\n    <ADDRESS>\n     WEBrick/1.3.1 (Ruby/1.9.2/2008-06-03) OpenSSL/0.9.8l at\n     localhost:51567\n    </ADDRESS>\n  </BODY>\n</HTML>\n".
+Expected /\AHTTP\/\d.\d 400 Bad Request/ to match "HTTP/1.1 500 Internal Server Error \r\nContent-Type: text/html; charset=utf-8\r\nServer: WEBrick/1.3.1 (Ruby/1.9.2/2008-06-03) OpenSSL/0.9.8l\r\nDate: Thu, 15 Sep 2011 18:53:18 GMT\r\nContent-Length: 331\r\nConnection: close\r\n\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\">\n<HTML>\n  <HEAD><TITLE>Internal Server Error</TITLE></HEAD>\n  <BODY>\n    <H1>Internal Server Error</H1>\n    Bad file descriptor - read() failed\n    <HR>\n    <ADDRESS>\n     WEBrick/1.3.1 (Ruby/1.9.2/2008-06-03) OpenSSL/0.9.8l at\n     localhost:55765\n    </ADDRESS>\n  </BODY>\n</HTML>\n".
 
   3) Failure:
 test_bad_uri(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:115]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2011-09-15 03:49:38] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2011-09-16 03:53:18] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
 
   4) Failure:
 test_cgi(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:33]:
 webrick log start:
-  [2011-09-15 03:49:39] INFO  WEBrick 1.3.1
-  [2011-09-15 03:49:39] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
-  [2011-09-15 03:49:39] INFO  WEBrick::HTTPServer#start: pid=3255 port=51571
-  [2011-09-15 03:49:39] WARN  :RequestHandler is deprecated, please use :RequestCallback
-  [2011-09-15 03:49:43] ERROR Errno::EBADF: Bad file descriptor - read() failed
+  [2011-09-16 03:53:18] INFO  WEBrick 1.3.1
+  [2011-09-16 03:53:18] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
+  [2011-09-16 03:53:18] INFO  WEBrick::HTTPServer#start: pid=17416 port=55769
+  [2011-09-16 03:53:18] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2011-09-16 03:53:23] ERROR Errno::EBADF: Bad file descriptor - read() failed
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/cgihandler.rb:65:in `do_POST'
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/abstract.rb:35:in `service'
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/filehandler.rb:236:in `exec_handler'
@@ -12991,7 +12968,7 @@ webrick log start:
   
 webrick log end.
 <"/webrick.cgi"> expected but was
-<"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\">\n<HTML>\n  <HEAD><TITLE>Internal Server Error</TITLE></HEAD>\n  <BODY>\n    <H1>Internal Server Error</H1>\n    Bad file descriptor - read() failed\n    <HR>\n    <ADDRESS>\n     WEBrick/1.3.1 (Ruby/1.9.2/2008-06-03) OpenSSL/0.9.8l at\n     127.0.0.1:51571\n    </ADDRESS>\n  </BODY>\n</HTML>\n">.
+<"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\">\n<HTML>\n  <HEAD><TITLE>Internal Server Error</TITLE></HEAD>\n  <BODY>\n    <H1>Internal Server Error</H1>\n    Bad file descriptor - read() failed\n    <HR>\n    <ADDRESS>\n     WEBrick/1.3.1 (Ruby/1.9.2/2008-06-03) OpenSSL/0.9.8l at\n     127.0.0.1:55769\n    </ADDRESS>\n  </BODY>\n</HTML>\n">.
 
 4 tests, 6 assertions, 4 failures, 0 errors, 0 skips
 
@@ -13014,10 +12991,10 @@ Started
   1) Failure:
 test_script_disclosure(WEBrick::TestFileHandler) [/macruby-test/test-mri/test/webrick/test_filehandler.rb:250]:
 webrick log start:
-  [2011-09-15 03:49:56] INFO  WEBrick 1.3.1
-  [2011-09-15 03:49:56] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
-  [2011-09-15 03:49:56] INFO  WEBrick::HTTPServer#start: pid=3263 port=51592
-  [2011-09-15 03:50:00] ERROR Errno::EBADF: Bad file descriptor - read() failed
+  [2011-09-16 03:53:35] INFO  WEBrick 1.3.1
+  [2011-09-16 03:53:35] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
+  [2011-09-16 03:53:35] INFO  WEBrick::HTTPServer#start: pid=17424 port=55789
+  [2011-09-16 03:53:40] ERROR Errno::EBADF: Bad file descriptor - read() failed
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/cgihandler.rb:65:in `do_POST'
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/abstract.rb:35:in `service'
   	/Library/Frameworks/MacRuby.framework/Versions/0.11/usr/lib/ruby/1.9.2/webrick/httpservlet/filehandler.rb:236:in `exec_handler'
@@ -13360,38 +13337,6 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/zlib/test_zlib
 Started
-.E.E.............E...........E..........E..................E
-
-  1) Error:
-test_adler32_combine(TestZlib):
-NoMethodError: undefined method `adler32_combine' for Zlib:Class
-    /macruby-test/test-mri/test/zlib/test_zlib.rb:697:in `test_adler32_combine'
-
-  2) Error:
-test_crc32_combine(TestZlib):
-NoMethodError: undefined method `crc32_combine' for Zlib:Class
-    /macruby-test/test-mri/test/zlib/test_zlib.rb:714:in `test_crc32_combine'
-
-  3) Error:
-test_params(TestZlibDeflate):
-Zlib::StreamError: stream error
-    /macruby-test/test-mri/test/zlib/test_zlib.rb:134:in `test_params'
-
-  4) Error:
-test_path(TestZlibGzipFile):
-NoMethodError: undefined method `path' for #<Zlib::GzipWriter:0xXXXXXXXX>
-    /macruby-test/test-mri/test/zlib/test_zlib.rb:373:in `test_path'
-
-  5) Error:
-test_read(TestZlibGzipReader):
-ArgumentError: wrong number of arguments (2 for 1)
-    /macruby-test/test-mri/test/zlib/test_zlib.rb:504:in `test_read'
-
-  6) Error:
-test_sync(TestZlibInflate):
-Zlib::StreamError: stream error
-    /macruby-test/test-mri/test/zlib/test_zlib.rb:202:in `test_sync'
-
-60 tests, 394 assertions, 0 failures, 6 errors, 0 skips
-
-Test run options: --seed 0
+.E.E.....While deleting: i64 %
+Use still stuck around after Def is destroyed:i8* inttoptr (i64 4309364528 to i8*)
+Assertion failed: (use_empty() && "Uses remain when a value is destroyed!"), function ~Value, file Value.cpp, line 76.
