@@ -1,5 +1,5 @@
-Date    : 2011-12-27T03:11:12+09:00
-Version : 0.12, git commit 5c9d8581883a59a5f6bbb8060e0d7f3ca9f29e8f
+Date    : 2011-12-28T03:11:10+09:00
+Version : 0.12, git commit fc9396e9f8057eae2bc0689eaf2a6c7b050b72d1
 
 ----------------------------------------
 /macruby-test/test-mri/test/-ext-/string/test_cstr.rb:2:in `<main>': no such file to load -- -test-/string/string (LoadError)
@@ -562,7 +562,6 @@ Started
 .terminate called after throwing an instance of 'RoxorThreadRaiseException*'
 .terminate called after throwing an instance of 'RoxorThreadRaiseException*'
 Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
-.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
 
 ----------------------------------------
 /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/drb/drb.rb:767:in `open_server': can't parse uri:--seed (DRb::DRbBadURI)
@@ -1080,7 +1079,7 @@ Started
   1) Failure:
 test_killed_thread_in_synchronize(TestMonitor) [/macruby-test/test-mri/test/monitor/test_monitor.rb:80]:
 <[:main]> expected but was
-<[:main, :t2, :t1]>.
+<[:main, :t1, :t2]>.
 
 6 tests, 18 assertions, 1 failures, 0 errors, 0 skips
 
@@ -1112,7 +1111,7 @@ EOFError: end of file reached
   4) Failure:
 test_get(TestNetHTTP_v1_2_chunked) [/macruby-test/test-mri/test/net/http/test_http.rb:49]:
 Exception raised:
-<#<EOFError: end of file reached>>.
+<#<Errno::ECONNRESET: Connection reset by peer - read(2) failed.>>.
 
   5) Failure:
 test_get__break(TestNetHTTP_v1_2_chunked) [/macruby-test/test-mri/test/net/http/test_http.rb:96]:
@@ -1283,13 +1282,18 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/open-uri/test_open-uri
 Started
-.......................F...........
+.....................F.F...........
 
   1) Failure:
-test_proxy(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.rb:205]:
-Expected /http:\/\/127\.0\.0\.1:65339/ to match "Proxy-Connection: close\x00\x00\x00\x00\x00\x00\x00\x00\x00Proxy-Conne".
+test_progress(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.rb:394]:
+<100000> expected but was
+<81508>.
 
-35 tests, 140 assertions, 1 failures, 0 errors, 0 skips
+  2) Failure:
+test_proxy(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.rb:205]:
+Expected /http:\/\/127\.0\.0\.1:52331/ to match "Date: Tue, 27 Dec 2011 18:17:31 GMT\r\n\x00\x00\x00\x00\x00\x00".
+
+35 tests, 139 assertions, 2 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -2138,7 +2142,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rake/test_fileutils
 Started
-.2011-12-27 03:20:47.951 macruby[43007:903] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
+.2011-12-28 03:20:44.983 macruby[55471:903] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
 F.....................
 
   1) Failure:
@@ -3452,7 +3456,7 @@ Started
 test_add_includes_many(TestRDocRIDriver) [/macruby-test/test-mri/test/rdoc/test_rdoc_ri_driver.rb:148]:
 Expected [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_43182/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_55646/dot_ri)"],
   blankline,
   [para: "Inc"],
   blankline,
@@ -3460,7 +3464,7 @@ Expected [doc: [rule:1],
   blankline,
   [verb: "  ", "Enumerable", "\n"]], not [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_43182/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_55646/dot_ri)"],
   blankline,
   [para: "Inc"],
   blankline,
@@ -3472,10 +3476,10 @@ Expected [doc: [rule:1],
 test_add_includes_many_no_doc(TestRDocRIDriver) [/macruby-test/test-mri/test/rdoc/test_rdoc_ri_driver.rb:169]:
 Expected [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_43182/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_55646/dot_ri)"],
   [verb: "  ", "Inc", "\n", "  ", "Enumerable", "\n"]], not [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_43182/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_55646/dot_ri)"],
   [verb: "Inc", "\n", "Enumerable", "\n"]].
 
   3) Failure:
@@ -5117,31 +5121,25 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_bignum
 Started
-....F...........FS...F..........S...........
+....S............S...F..........S...........
 
-  1) Failure:
-test_big_fdiv(TestBignum) [/macruby-test/test-mri/test/ruby/test_bignum.rb:416]:
-<0> expected to be != to
-<0.0>.
-
-  2) Failure:
-test_fix_fdiv(TestBignum) [/macruby-test/test-mri/test/ruby/test_bignum.rb:410]:
-<0> expected to be != to
-<0.0>.
-
-  3) Skipped:
-test_float_fdiv(TestBignum) [/macruby-test/test-mri/test/ruby/test_bignum.rb:424]:
+  1) Skipped:
+test_big_fdiv(TestBignum) [/macruby-test/test-mri/test/ruby/test_bignum.rb:415]:
 [BUG : #???] Timeout, MacRuby don't finish
 
-  4) Failure:
+  2) Skipped:
+test_float_fdiv(TestBignum) [/macruby-test/test-mri/test/ruby/test_bignum.rb:426]:
+[BUG : #???] Timeout, MacRuby don't finish
+
+  3) Failure:
 test_interrupt(TestBignum) [/macruby-test/test-mri/test/ruby/test_bignum.rb:398]:
 Failed assertion, no message given.
 
-  5) Skipped:
+  4) Skipped:
 test_quo(TestBignum) [/macruby-test/test-mri/test/ruby/test_bignum.rb:278]:
 [BUG : #???] Timeout, MacRuby don't finish
 
-44 tests, 311 assertions, 3 failures, 0 errors, 2 skips
+44 tests, 310 assertions, 1 failures, 0 errors, 3 skips
 
 Test run options: --seed 0
 
@@ -5339,7 +5337,7 @@ Encoding::CompatibilityError expected but nothing was raised.
 
   4) Failure:
 test_inspect(TestDir) [/macruby-test/test-mri/test/ruby/test_dir.rb:63]:
-Expected /^#<Dir:\/private\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/__test_dir__20111227\-43630\-1o6inhj>$/ to match "#<Dir:/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/__test_dir__20111227-43630-1o6inhj".
+Expected /^#<Dir:\/private\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/__test_dir__20111228\-56094\-1o6inhj>$/ to match "#<Dir:/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/__test_dir__20111228-56094-1o6inhj".
 
 14 tests, 80 assertions, 2 failures, 1 errors, 1 skips
 
@@ -5348,52 +5346,52 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_dir_m17n
 Started
-/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20111227-43633-12zdlt8/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20111227-43633-1estiet/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20111227-43633-16tc0n7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20111227-43633-12pbsn7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20111227-43633-u3bzm1/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20111227-43633-19vmgph/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20111227-43633-v2yjvo/-:6:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20111227-43633-1rcd3ra/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20111227-43633-1wg6zq0/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20111228-56097-12zdlt8/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20111228-56097-1estiet/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20111228-56097-16tc0n7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20111228-56097-12pbsn7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20111228-56097-u3bzm1/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20111228-56097-19vmgph/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20111228-56097-v2yjvo/-:6:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20111228-56097-1rcd3ra/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20111228-56097-1wg6zq0/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
 F
 
   1) Failure:
 test_filename_as_bytes_extutf8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:50]:
-ruby exit status is not success: #<Process::Status: pid 43634 exit 1>
+ruby exit status is not success: #<Process::Status: pid 56098 exit 1>
 
   2) Failure:
 test_filename_bytes_euc_jp(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:148]:
-ruby exit status is not success: #<Process::Status: pid 43635 exit 1>
+ruby exit status is not success: #<Process::Status: pid 56099 exit 1>
 
   3) Failure:
 test_filename_euc_jp(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:162]:
-ruby exit status is not success: #<Process::Status: pid 43636 exit 1>
+ruby exit status is not success: #<Process::Status: pid 56100 exit 1>
 
   4) Failure:
 test_filename_ext_euc_jp_and_int_utf_8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:200]:
-ruby exit status is not success: #<Process::Status: pid 43637 exit 1>
+ruby exit status is not success: #<Process::Status: pid 56101 exit 1>
 
   5) Failure:
 test_filename_extutf8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:18]:
-ruby exit status is not success: #<Process::Status: pid 43638 exit 1>
+ruby exit status is not success: #<Process::Status: pid 56102 exit 1>
 
   6) Failure:
 test_filename_extutf8_inteucjp_representable(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:89]:
-ruby exit status is not success: #<Process::Status: pid 43639 exit 1>
+ruby exit status is not success: #<Process::Status: pid 56103 exit 1>
 
   7) Failure:
 test_filename_extutf8_inteucjp_unrepresentable(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:116]:
-ruby exit status is not success: #<Process::Status: pid 43640 exit 1>
+ruby exit status is not success: #<Process::Status: pid 56104 exit 1>
 
   8) Failure:
 test_filename_extutf8_invalid(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:31]:
-ruby exit status is not success: #<Process::Status: pid 43641 exit 1>
+ruby exit status is not success: #<Process::Status: pid 56105 exit 1>
 
   9) Failure:
 test_filename_utf8_raw_name(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:182]:
-ruby exit status is not success: #<Process::Status: pid 43642 exit 1>
+ruby exit status is not success: #<Process::Status: pid 56106 exit 1>
 
 9 tests, 9 assertions, 9 failures, 0 errors, 0 skips
 
@@ -7240,7 +7238,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_m17n
 Started
-F..EFEFE.EFF..EEEE..F.FE.E...EE.FFFF.FF.F...F.EEEF.EE.F.FEFFFEE..E.FFFFF.FEEFEEEE.FFEEFFFF.FES.EEEEEE..F..
+F..E.EFE.EFF..EEEE..F.FE.E...EE.FFFF.FF.F...F.EEEF.EE.F.FEFFFEE..E.FFFFF.FEEFEEEE.FFEEFFFF.FES.EEEEEE..F..
 
   1) Failure:
 test_array_to_s(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1211]:
@@ -7253,18 +7251,13 @@ ArgumentError: unknown encoding name - Windows-31J
     /macruby-test/test-mri/test/ruby/test_m17n.rb:13:in `s'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:569:in `test_begin_end_offset_sjis'
 
-  3) Failure:
-test_bignum_to_s(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1206]:
-<#<Encoding:US-ASCII>> expected but was
-<#<Encoding:UTF-8>>.
-
-  4) Error:
+  3) Error:
 test_casecmp(TestM17N):
 ArgumentError: unknown encoding name - Windows-31J
     /macruby-test/test-mri/test/ruby/test_m17n.rb:13:in `s'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:1028:in `test_casecmp'
 
-  5) Failure:
+  4) Failure:
 test_chomp(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1049]:
 [Encoding::CompatibilityError] exception expected, not
 Class: <ArgumentError>
@@ -7274,25 +7267,25 @@ Message: <"unknown encoding name - Windows-31J">
 /macruby-test/test-mri/test/ruby/test_m17n.rb:1049:in `block'
 ---------------
 
-  6) Error:
+  5) Error:
 test_chr(TestM17N):
 ArgumentError: unknown encoding name - GB18030
     /macruby-test/test-mri/test/ruby/test_m17n.rb:1160:in `test_chr'
 
-  7) Error:
+  6) Error:
 test_compatible(TestM17N):
 TypeError: can't convert Fixnum into String
     /macruby-test/test-mri/test/ruby/test_m17n.rb:1347:in `test_compatible'
 
-  8) Failure:
+  7) Failure:
 test_count(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:941]:
 Encoding::CompatibilityError expected but nothing was raised.
 
-  9) Failure:
+  8) Failure:
 test_delete(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:947]:
 Encoding::CompatibilityError expected but nothing was raised.
 
- 10) Error:
+  9) Error:
 test_dynamic_ascii_regexp(TestM17N):
 NoMethodError: undefined method `encoding' for //:Regexp
     /macruby-test/test-mri/test/ruby/test_m17n.rb:58:in `assert_regexp_generic_ascii'
@@ -7300,107 +7293,107 @@ NoMethodError: undefined method `encoding' for //:Regexp
     /macruby-test/test-mri/test/ruby/test_m17n.rb:30:in `assert_warning'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:671:in `test_dynamic_ascii_regexp'
 
- 11) Error:
+ 10) Error:
 test_dynamic_eucjp_regexp(TestM17N):
 NoMethodError: undefined method `encoding' for //:Regexp
     /macruby-test/test-mri/test/ruby/test_m17n.rb:68:in `assert_regexp_fixed_eucjp'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:680:in `test_dynamic_eucjp_regexp'
 
- 12) Error:
+ 11) Error:
 test_dynamic_sjis_regexp(TestM17N):
 NoMethodError: undefined method `encoding' for //:Regexp
     /macruby-test/test-mri/test/ruby/test_m17n.rb:73:in `assert_regexp_fixed_sjis'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:690:in `test_dynamic_sjis_regexp'
 
- 13) Error:
+ 12) Error:
 test_dynamic_utf8_regexp(TestM17N):
 NoMethodError: undefined method `encoding' for //:Regexp
     /macruby-test/test-mri/test/ruby/test_m17n.rb:78:in `assert_regexp_fixed_utf8'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:700:in `test_dynamic_utf8_regexp'
 
- 14) Failure:
+ 13) Failure:
 test_empty_string(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1178]:
 <#<Encoding:US-ASCII>> expected but was
 <#<Encoding:UTF-8>>.
 
- 15) Failure:
+ 14) Failure:
 test_encoding_to_s(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1232]:
 <#<Encoding:US-ASCII>> expected but was
 <#<Encoding:UTF-8>>.
 
- 16) Error:
+ 15) Error:
 test_end_with(TestM17N):
 ArgumentError: unknown encoding name - Windows-31J
     /macruby-test/test-mri/test/ruby/test_m17n.rb:13:in `s'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:1076:in `test_end_with'
 
- 17) Error:
+ 16) Error:
 test_euc_tw(TestM17N):
 ArgumentError: unknown encoding name - euc-tw
     /macruby-test/test-mri/test/ruby/test_m17n.rb:1300:in `test_euc_tw'
 
- 18) Error:
+ 17) Error:
 test_force_encoding(TestM17N):
 ArgumentError: receiver encoding `#<Encoding:ASCII-8BIT>' not supported for codepoint insertion
     /macruby-test/test-mri/test/ruby/test_m17n.rb:1359:in `test_force_encoding'
 
- 19) Error:
+ 18) Error:
 test_gbk(TestM17N):
 ArgumentError: unknown encoding name - GBK
     /macruby-test/test-mri/test/ruby/test_m17n.rb:1296:in `test_gbk'
 
- 20) Failure:
+ 19) Failure:
 test_gsub(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1069]:
 <"０z２３４"> expected but was
 <"０１２３４">.
 
- 21) Failure:
+ 20) Failure:
 test_hash_to_s(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1220]:
 <#<Encoding:US-ASCII>> expected but was
 <#<Encoding:UTF-8>>.
 
- 22) Failure:
+ 21) Failure:
 test_include?(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:955]:
 <false> expected but was
 <true>.
 
- 23) Failure:
+ 22) Failure:
 test_index(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:963]:
 Expected 1 to be nil.
 
- 24) Failure:
+ 23) Failure:
 test_magic_comment(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1243]:
 <#<Encoding:US-ASCII>> expected but was
 <#<Encoding:UTF-8>>.
 
- 25) Failure:
+ 24) Failure:
 test_magic_comment_at_various_positions(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1259]:
 <#<Encoding:ASCII-8BIT>> expected but was
 <#<Encoding:UTF-8>>.
 
- 26) Failure:
+ 25) Failure:
 test_marshal(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1166]:
 <"　"> expected but was
 <"\xA1\xA1">.
 
- 27) Failure:
+ 26) Failure:
 test_nonascii_method_name(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1136]:
 <"臓"> expected but was
 <"￨ﾇﾓ">.
 
- 28) Error:
+ 27) Error:
 test_quote(TestM17N):
 NoMethodError: undefined method `encoding' for /ae/:Regexp
     /macruby-test/test-mri/test/ruby/test_m17n.rb:58:in `assert_regexp_generic_ascii'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:578:in `test_quote'
 
- 29) Error:
+ 28) Error:
 test_regexp_ascii(TestM17N):
 NoMethodError: undefined method `encoding' for /\xc2\xa1/:Regexp
     /macruby-test/test-mri/test/ruby/test_m17n.rb:63:in `assert_regexp_fixed_ascii8bit'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:402:in `test_regexp_ascii'
 
- 30) Error:
+ 29) Error:
 test_regexp_ascii_none(TestM17N):
 NoMethodError: undefined method `encoding' for /a/:Regexp
     /macruby-test/test-mri/test/ruby/test_m17n.rb:58:in `assert_regexp_generic_ascii'
@@ -7408,7 +7401,7 @@ NoMethodError: undefined method `encoding' for /a/:Regexp
     /macruby-test/test-mri/test/ruby/test_m17n.rb:30:in `assert_warning'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:379:in `test_regexp_ascii_none'
 
- 31) Failure:
+ 30) Failure:
 test_regexp_embed(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:468]:
 [RegexpError] exception expected, not
 Class: <ArgumentError>
@@ -7418,19 +7411,19 @@ Message: <"unknown encoding name - Windows-31J">
 /macruby-test/test-mri/test/ruby/test_m17n.rb:468:in `block'
 ---------------
 
- 32) Error:
+ 31) Error:
 test_regexp_euc(TestM17N):
 NoMethodError: undefined method `encoding' for /a/:Regexp
     /macruby-test/test-mri/test/ruby/test_m17n.rb:68:in `assert_regexp_fixed_eucjp'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:422:in `test_regexp_euc'
 
- 33) Error:
+ 32) Error:
 test_regexp_generic(TestM17N):
 NoMethodError: undefined method `encoding' for /a/:Regexp
     /macruby-test/test-mri/test/ruby/test_m17n.rb:58:in `assert_regexp_generic_ascii'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:358:in `test_regexp_generic'
 
- 34) Failure:
+ 33) Failure:
 test_regexp_mixed_unicode(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:722]:
 [SyntaxError] exception expected, not
 Class: <ArgumentError>
@@ -7440,91 +7433,91 @@ Message: <"unknown encoding name - Windows-31J">
 /macruby-test/test-mri/test/ruby/test_m17n.rb:722:in `block'
 ---------------
 
- 35) Failure:
+ 34) Failure:
 test_regexp_property(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:530]:
 Failed assertion, no message given.
 
- 36) Error:
+ 35) Error:
 test_regexp_sjis(TestM17N):
 NoMethodError: undefined method `encoding' for /a/:Regexp
     /macruby-test/test-mri/test/ruby/test_m17n.rb:73:in `assert_regexp_fixed_sjis'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:451:in `test_regexp_sjis'
 
- 37) Failure:
+ 36) Failure:
 test_regexp_source(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1239]:
 [ruby-dev:33377] Regexp.new("あ".force_encoding("EUC-JP")).source.
 <"あ"> (EUC-JP) expected but was
 <"あ"> (UTF-8).
 
- 38) Failure:
+ 37) Failure:
 test_regexp_too_short_multibyte_character(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:336]:
 SyntaxError expected but nothing was raised.
 
- 39) Failure:
+ 38) Failure:
 test_regexp_unicode(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:710]:
 Exception raised:
 <#<SyntaxError: (eval):1: regexp `\u{0}' compilation error: U_REGEX_BAD_ESCAPE_SEQUENCE>>.
 
- 40) Error:
+ 39) Error:
 test_regexp_usascii(TestM17N):
 NoMethodError: undefined method `encoding' for //:Regexp
     /macruby-test/test-mri/(eval):2:in `encoding'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:87:in `assert_regexp_usascii_literal'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:1268:in `test_regexp_usascii'
 
- 41) Error:
+ 40) Error:
 test_regexp_windows_31j(TestM17N):
 ArgumentError: unknown encoding name - windows-31j
     /macruby-test/test-mri/test/ruby/test_m17n.rb:459:in `test_regexp_windows_31j'
 
- 42) Error:
+ 41) Error:
 test_scan(TestM17N):
 Encoding::UndefinedConversionError: U+FFA3 from UTF-16LE to EUC-JP
     /macruby-test/test-mri/test/ruby/test_m17n.rb:1004:in `test_scan'
 
- 43) Failure:
+ 42) Failure:
 test_split(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1121]:
 <["abc", "def"]> expected but was
 <["abc", "def", ""]>.
 
- 44) Failure:
+ 43) Failure:
 test_sprintf_c(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:768]:
 <#<Encoding:ASCII-8BIT>> expected but was
 <#<Encoding:UTF-8>>.
 
- 45) Failure:
+ 44) Failure:
 test_sprintf_p(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:788]:
 <"\"\""> expected but was
 <"\xE2\x95\xB0">.
 
- 46) Failure:
+ 45) Failure:
 test_sprintf_s(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:796]:
 <#<Encoding:ASCII-8BIT>> expected but was
 <#<Encoding:UTF-8>>.
 
- 47) Failure:
+ 46) Failure:
 test_squeeze(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:913]:
 <"０１３４"> expected but was
 <"０１１３４">.
 
- 48) Failure:
+ 47) Failure:
 test_str_allocate(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:759]:
 <#<Encoding:ASCII-8BIT>> expected but was
 <#<Encoding:UTF-8>>.
 
- 49) Error:
+ 48) Error:
 test_str_aref(TestM17N):
 ArgumentError: unknown encoding name - Windows-31J
     /macruby-test/test-mri/test/ruby/test_m17n.rb:13:in `s'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:842:in `test_str_aref'
 
- 50) Error:
+ 49) Error:
 test_str_aref_len(TestM17N):
 ArgumentError: unknown encoding name - Windows-31J
     /macruby-test/test-mri/test/ruby/test_m17n.rb:13:in `s'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:874:in `test_str_aref_len'
 
- 51) Failure:
+ 50) Failure:
 test_str_aref_substr(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:886]:
 [Encoding::CompatibilityError] exception expected, not
 Class: <ArgumentError>
@@ -7534,125 +7527,125 @@ Message: <"unknown encoding name - Windows-31J">
 /macruby-test/test-mri/test/ruby/test_m17n.rb:886:in `block'
 ---------------
 
- 52) Error:
+ 51) Error:
 test_str_center(TestM17N):
 Encoding::CompatibilityError: incompatible character encodings: UTF-8 and EUC-JP
     /macruby-test/test-mri/test/ruby/test_m17n.rb:907:in `test_str_center'
 
- 53) Error:
+ 52) Error:
 test_str_concat(TestM17N):
 ArgumentError: unknown encoding name - GB18030
     /macruby-test/test-mri/test/ruby/test_m17n.rb:1106:in `test_str_concat'
 
- 54) Error:
+ 53) Error:
 test_str_dump(TestM17N):
 ArgumentError: unknown encoding name - Windows-31J
     /macruby-test/test-mri/test/ruby/test_m17n.rb:13:in `s'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:241:in `test_str_dump'
 
- 55) Error:
+ 54) Error:
 test_str_lt(TestM17N):
 ArgumentError: unknown encoding name - Windows-31J
     /macruby-test/test-mri/test/ruby/test_m17n.rb:13:in `s'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:825:in `test_str_lt'
 
- 56) Failure:
+ 55) Failure:
 test_string_ascii_literal(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:150]:
 <#<Encoding:ASCII-8BIT>> expected but was
 <#<Encoding:UTF-8>>.
 
- 57) Failure:
+ 56) Failure:
 test_string_eucjp_literal(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:155]:
 <#<Encoding:EUC-JP>> expected but was
 <#<Encoding:UTF-8>>.
 
- 58) Error:
+ 57) Error:
 test_string_inspect_encoding(TestM17N):
 TypeError: can't convert nil into String
     /macruby-test/test-mri/test/ruby/test_m17n.rb:210:in `test_string_inspect_encoding'
 
- 59) Error:
+ 58) Error:
 test_string_inspect_invalid(TestM17N):
 ArgumentError: unknown encoding name - Windows-31J
     /macruby-test/test-mri/test/ruby/test_m17n.rb:13:in `s'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:185:in `test_string_inspect_invalid'
 
- 60) Failure:
+ 59) Failure:
 test_string_mixed_unicode(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:170]:
 SyntaxError expected but nothing was raised.
 
- 61) Failure:
+ 60) Failure:
 test_sub(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:978]:
 <#<Encoding:EUC-JP>> expected but was
 <#<Encoding:UTF-8>>.
 
- 62) Failure:
+ 61) Failure:
 test_sub2(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:988]:
 Failed assertion, no message given.
 
- 63) Failure:
+ 62) Failure:
 test_sub3(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:995]:
 Failed assertion, no message given.
 
- 64) Failure:
+ 63) Failure:
 test_symbol_op(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1152]:
 [ruby-dev:33449].
 <#<Encoding:US-ASCII>> expected but was
 <#<Encoding:UTF-8>>.
 
- 65) Error:
+ 64) Error:
 test_tr(TestM17N):
 ArgumentError: unknown encoding name - Windows-31J
     /macruby-test/test-mri/test/ruby/test_m17n.rb:13:in `s'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:917:in `test_tr'
 
- 66) Skipped:
+ 65) Skipped:
 test_tr_s(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:932]:
 [BUG : #???] Assertion
 
- 67) Error:
+ 66) Error:
 test_union_0(TestM17N):
 NoMethodError: undefined method `encoding' for /(?!)/:Regexp
     /macruby-test/test-mri/test/ruby/test_m17n.rb:58:in `assert_regexp_generic_ascii'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:597:in `test_union_0'
 
- 68) Error:
+ 67) Error:
 test_union_1_asciionly_string(TestM17N):
 NoMethodError: undefined method `encoding' for //:Regexp
     /macruby-test/test-mri/test/ruby/test_m17n.rb:58:in `assert_regexp_generic_ascii'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:605:in `test_union_1_asciionly_string'
 
- 69) Error:
+ 68) Error:
 test_union_1_nonascii_string(TestM17N):
 NoMethodError: undefined method `encoding' for /Â¡/:Regexp
     /macruby-test/test-mri/test/ruby/test_m17n.rb:63:in `assert_regexp_fixed_ascii8bit'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:620:in `test_union_1_nonascii_string'
 
- 70) Error:
+ 69) Error:
 test_union_1_regexp(TestM17N):
 NoMethodError: undefined method `encoding' for //:Regexp
     /macruby-test/test-mri/test/ruby/test_m17n.rb:58:in `assert_regexp_generic_ascii'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:627:in `test_union_1_regexp'
 
- 71) Error:
+ 70) Error:
 test_union_2(TestM17N):
 ArgumentError: unknown encoding name - Windows-31J
     /macruby-test/test-mri/test/ruby/test_m17n.rb:13:in `s'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:638:in `test_union_2'
 
- 72) Error:
+ 71) Error:
 test_upto(TestM17N):
 ArgumentError: unknown encoding name - Windows-31J
     /macruby-test/test-mri/test/ruby/test_m17n.rb:13:in `s'
     /macruby-test/test-mri/test/ruby/test_m17n.rb:1023:in `test_upto'
 
- 73) Failure:
+ 72) Failure:
 test_valid_encoding(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:1306]:
 [ruby-dev:33826].
 <true> expected but was
 <false>.
 
-106 tests, 515 assertions, 36 failures, 36 errors, 1 skips
+106 tests, 515 assertions, 35 failures, 36 errors, 1 skips
 
 Test run options: --seed 0
 
@@ -8330,8 +8323,9 @@ test_redefine_method_which_may_case_serious_problem(TestObject) [/macruby-test/t
 Expected /warning: redefining `object_id' may cause serious problems$/ to match "".
 
   6) Failure:
-test_remove_method(TestObject) [/macruby-test/test-mri/test/ruby/test_object.rb:289]:
-Expected /warning: removing `object_id' may cause serious problems$/ to match "unknown: warning: removing `object_id' may cause serious problem\n".
+test_remove_method(TestObject) [/macruby-test/test-mri/test/ruby/test_object.rb:286]:
+[ruby-core:26074]
+NoMethodError expected but nothing was raised.
 
   7) Error:
 test_respond_to_missing(TestObject):
@@ -8357,7 +8351,7 @@ RuntimeError expected but nothing was raised.
 test_untrusted(TestObject) [/macruby-test/test-mri/test/ruby/test_object.rb:452]:
 [BUG : #842] SecurityError Level 4
 
-40 tests, 103 assertions, 7 failures, 2 errors, 2 skips
+40 tests, 101 assertions, 7 failures, 2 errors, 2 skips
 
 Test run options: --seed 0
 
@@ -8825,7 +8819,7 @@ test_random_bytes(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:345]:
 
  19) Failure:
 test_random_range(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:362]:
-<2011-12-27 03:34:21 +0900> expected but was
+<2011-12-28 03:34:19 +0900> expected but was
 <1.97626258336499e-323>.
 
  20) Failure:
@@ -8981,7 +8975,7 @@ Started
   1) Failure:
 test_assignment_in_conditional(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:307]:
 [ruby-dev:39363].
-Expected /\A(\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/test_ruby_test_rubyoption20111227\-43940\-1estiet\.rb):1(: warning: found = in conditional, should be ==)\n\1:4\2\Z/ to match "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20111227-43940-1estiet.rb:1: warning: found = in conditional, should be ==\n".
+Expected /\A(\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/test_ruby_test_rubyoption20111228\-56401\-1estiet\.rb):1(: warning: found = in conditional, should be ==)\n\1:4\2\Z/ to match "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20111228-56401-1estiet.rb:1: warning: found = in conditional, should be ==\n".
 
   2) Failure:
 test_autosplit(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:146]:
@@ -9019,7 +9013,7 @@ test_eval(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb
 
   9) Failure:
 test_indentation_check(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:319]:
-<["/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20111227-43940-y3csz2.rb:2: warning: mismatched indentations at 'end' with 'begin' at 1"]> expected but was
+<["/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20111228-56401-y3csz2.rb:2: warning: mismatched indentations at 'end' with 'begin' at 1"]> expected but was
 <[]>.
 
  10) Failure:
@@ -9527,7 +9521,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_thread
 Started
-F....................S...SF.S.objc[44057]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+F....................S...SF.S.objc[56518]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
 ..F.EFS.F
@@ -10257,19 +10251,19 @@ Message: <"can't find gem a (>= 0) with executable 2">
 
   4) Failure:
 test_self_user_dir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:589]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44103/userhome/.gem/macruby/1.9.2", not "/Users/watson/.gem/macruby/1.9.2".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56564/userhome/.gem/macruby/1.9.2", not "/Users/watson/.gem/macruby/1.9.2".
 
   5) Failure:
 test_self_datadir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:147]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44103/gemhome/gems/foo-2/data/foo", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44103/gemhome/gems/foo-2/data/foo".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56564/gemhome/gems/foo-2/data/foo", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56564/gemhome/gems/foo-2/data/foo".
 
   6) Failure:
 test_self_required_location(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:464]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44103/gemhome/gems/c-1.2/lib/code.rb", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44103/gemhome/gems/c-1.2/lib/code.rb".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56564/gemhome/gems/c-1.2/lib/code.rb", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56564/gemhome/gems/c-1.2/lib/code.rb".
 
   7) Failure:
 test_self_user_home(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:594]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44103/userhome", not "/Users/watson".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56564/userhome", not "/Users/watson".
 
   8) Error:
 test_load_plugins(TestGem):
@@ -10679,7 +10673,7 @@ Gem::RemoteFetcher::FetchError: no data for http://gems.example.com/gems/a-1.gem
 
   6) Failure:
 test_install_domain_both(TestGemDependencyInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_dependency_installer.rb:343]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44234/gemhome/specifications/a-1.gemspec", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44234/gemhome/specifications/a-1.gemspec".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56693/gemhome/specifications/a-1.gemspec", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56693/gemhome/specifications/a-1.gemspec".
 
 38 tests, 50 assertions, 1 failures, 4 errors, 1 skips
 
@@ -10715,7 +10709,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_ext_ext_conf_builder
 Started
-.../bin/sh: line 1: 44281 Abort trap              /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/bin/macruby extconf.rb 2>&1
+.../bin/sh: line 1: 56740 Abort trap              /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/bin/macruby extconf.rb 2>&1
 .
 
 4 tests, 15 assertions, 0 failures, 0 errors, 0 skips
@@ -10747,7 +10741,7 @@ F.......
 
   1) Failure:
 test_lib_dirs_for(TestGemGemPathSearcher) [/macruby-test/test-mri/test/rubygems/test_gem_gem_path_searcher.rb:53]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44326/gemhome/gems/foo-0.1/{lib,lib2}", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44326/gemhome/gems/foo-0.1/{lib,lib2}".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56785/gemhome/gems/foo-0.1/{lib,lib2}", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56785/gemhome/gems/foo-0.1/{lib,lib2}".
 
 8 tests, 11 assertions, 1 failures, 0 errors, 0 skips
 
@@ -10821,11 +10815,11 @@ Started
 
   1) Failure:
 test_initialize(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:518]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44344/gemhome/gems/a-2-x86-mswin32", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44344/gemhome/gems/a-2-x86-mswin32".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56803/gemhome/gems/a-2-x86-mswin32", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56803/gemhome/gems/a-2-x86-mswin32".
 
   2) Failure:
 test_extract_files_relative(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:145]:
-Expected "attempt to install file into \"../thefile\" under \"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44344/gemhome/gems/a-2\"", not "attempt to install file into \"../thefile\" under \"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44344/gemhome/gems/a-2\"".
+Expected "attempt to install file into \"../thefile\" under \"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56803/gemhome/gems/a-2\"", not "attempt to install file into \"../thefile\" under \"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56803/gemhome/gems/a-2\"".
 
   3) Skipped:
 test_generate_bin_script_wrappers(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:309]:
@@ -11016,11 +11010,11 @@ Started
 
   1) Failure:
 test_yaml(TestGemServer) [/macruby-test/test-mri/test/rubygems/test_gem_server.rb:321]:
-Expected #<Gem::SourceIndex:0xXXXXXXXX @gems={"a-1"=>#<Gem::Specification:0xXXXXXXXX @new_platform="ruby" @name="a" @version=#<Gem::Version "1"> @summary="this is a summary" @email="example@example.com" @homepage="http://example.com" @rubyforge_project=nil @description="This is a test description" @autorequire=nil @default_executable=nil @signing_key=nil @post_install_message=nil @original_platform="ruby" @rubygems_version="1.4.2" @specification_version=3 @date=2011-12-27 00:00:00 +0900 @require_paths=["lib"] @bindir="bin" @has_rdoc=true @required_ruby_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @required_rubygems_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @platform="ruby" @cert_chain=[] @authors=["A User"] @licenses=[] @files=[] @test_files=[] @rdoc_options=[] @extra_rdoc_files=[] @executables=[] @extensions=[] @requirements=[] @dependencies=[] @loaded=false @loaded_from="/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44401/gemhome/specifications/a-1.gemspec">, "a-2"=>#<Gem::Specification:0xXXXXXXXX @new_platform="ruby" @name="a" @version=#<Gem::Version "2"> @summary="this is a summary" @email="example@example.com" @homepage="http://example.com" @rubyforge_project=nil @description="This is a test description" @autorequire=nil @default_executable=nil @signing_key=nil @post_install_message=nil @original_platform="ruby" @rubygems_version="1.4.2" @specification_version=3 @date=2011-12-27 00:00:00 +0900 @require_paths=["lib"] @bindir="bin" @has_rdoc=true @required_ruby_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @required_rubygems_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @platform="ruby" @cert_chain=[] @authors=["A User"] @licenses=[] @files=[] @test_files=[] @rdoc_options=[] @extra_rdoc_files=[] @executables=[] @extensions=[] @requirements=[] @dependencies=[] @loaded=false @loaded_from="/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44401/gemhome/specifications/a-2.gemspec">} @spec_dirs=nil>, not #<Gem::SourceIndex:0xXXXXXXXX @gems={"a-1"=>"a-2"} @spec_dirs=["/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44401/gemhome/specifications"]>.
+Expected #<Gem::SourceIndex:0xXXXXXXXX @gems={"a-1"=>#<Gem::Specification:0xXXXXXXXX @new_platform="ruby" @name="a" @version=#<Gem::Version "1"> @summary="this is a summary" @email="example@example.com" @homepage="http://example.com" @rubyforge_project=nil @description="This is a test description" @autorequire=nil @default_executable=nil @signing_key=nil @post_install_message=nil @original_platform="ruby" @rubygems_version="1.4.2" @specification_version=3 @date=2011-12-28 00:00:00 +0900 @require_paths=["lib"] @bindir="bin" @has_rdoc=true @required_ruby_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @required_rubygems_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @platform="ruby" @cert_chain=[] @authors=["A User"] @licenses=[] @files=[] @test_files=[] @rdoc_options=[] @extra_rdoc_files=[] @executables=[] @extensions=[] @requirements=[] @dependencies=[] @loaded=false @loaded_from="/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56859/gemhome/specifications/a-1.gemspec">, "a-2"=>#<Gem::Specification:0xXXXXXXXX @new_platform="ruby" @name="a" @version=#<Gem::Version "2"> @summary="this is a summary" @email="example@example.com" @homepage="http://example.com" @rubyforge_project=nil @description="This is a test description" @autorequire=nil @default_executable=nil @signing_key=nil @post_install_message=nil @original_platform="ruby" @rubygems_version="1.4.2" @specification_version=3 @date=2011-12-28 00:00:00 +0900 @require_paths=["lib"] @bindir="bin" @has_rdoc=true @required_ruby_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @required_rubygems_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @platform="ruby" @cert_chain=[] @authors=["A User"] @licenses=[] @files=[] @test_files=[] @rdoc_options=[] @extra_rdoc_files=[] @executables=[] @extensions=[] @requirements=[] @dependencies=[] @loaded=false @loaded_from="/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56859/gemhome/specifications/a-2.gemspec">} @spec_dirs=nil>, not #<Gem::SourceIndex:0xXXXXXXXX @gems={"a-1"=>"a-2"} @spec_dirs=["/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56859/gemhome/specifications"]>.
 
   2) Failure:
 test_yaml_Z(TestGemServer) [/macruby-test/test-mri/test/rubygems/test_gem_server.rb:337]:
-Expected #<Gem::SourceIndex:0xXXXXXXXX @gems={"a-1"=>#<Gem::Specification:0xXXXXXXXX @new_platform="ruby" @name="a" @version=#<Gem::Version "1"> @summary="this is a summary" @email="example@example.com" @homepage="http://example.com" @rubyforge_project=nil @description="This is a test description" @autorequire=nil @default_executable=nil @signing_key=nil @post_install_message=nil @original_platform="ruby" @rubygems_version="1.4.2" @specification_version=3 @date=2011-12-27 00:00:00 +0900 @require_paths=["lib"] @bindir="bin" @has_rdoc=true @required_ruby_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @required_rubygems_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @platform="ruby" @cert_chain=[] @authors=["A User"] @licenses=[] @files=[] @test_files=[] @rdoc_options=[] @extra_rdoc_files=[] @executables=[] @extensions=[] @requirements=[] @dependencies=[] @loaded=false @loaded_from="/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44401/gemhome/specifications/a-1.gemspec">, "a-2"=>#<Gem::Specification:0xXXXXXXXX @new_platform="ruby" @name="a" @version=#<Gem::Version "2"> @summary="this is a summary" @email="example@example.com" @homepage="http://example.com" @rubyforge_project=nil @description="This is a test description" @autorequire=nil @default_executable=nil @signing_key=nil @post_install_message=nil @original_platform="ruby" @rubygems_version="1.4.2" @specification_version=3 @date=2011-12-27 00:00:00 +0900 @require_paths=["lib"] @bindir="bin" @has_rdoc=true @required_ruby_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @required_rubygems_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @platform="ruby" @cert_chain=[] @authors=["A User"] @licenses=[] @files=[] @test_files=[] @rdoc_options=[] @extra_rdoc_files=[] @executables=[] @extensions=[] @requirements=[] @dependencies=[] @loaded=false @loaded_from="/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44401/gemhome/specifications/a-2.gemspec">} @spec_dirs=nil>, not #<Gem::SourceIndex:0xXXXXXXXX @gems={"a-1"=>"a-2"} @spec_dirs=["/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44401/gemhome/specifications"]>.
+Expected #<Gem::SourceIndex:0xXXXXXXXX @gems={"a-1"=>#<Gem::Specification:0xXXXXXXXX @new_platform="ruby" @name="a" @version=#<Gem::Version "1"> @summary="this is a summary" @email="example@example.com" @homepage="http://example.com" @rubyforge_project=nil @description="This is a test description" @autorequire=nil @default_executable=nil @signing_key=nil @post_install_message=nil @original_platform="ruby" @rubygems_version="1.4.2" @specification_version=3 @date=2011-12-28 00:00:00 +0900 @require_paths=["lib"] @bindir="bin" @has_rdoc=true @required_ruby_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @required_rubygems_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @platform="ruby" @cert_chain=[] @authors=["A User"] @licenses=[] @files=[] @test_files=[] @rdoc_options=[] @extra_rdoc_files=[] @executables=[] @extensions=[] @requirements=[] @dependencies=[] @loaded=false @loaded_from="/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56859/gemhome/specifications/a-1.gemspec">, "a-2"=>#<Gem::Specification:0xXXXXXXXX @new_platform="ruby" @name="a" @version=#<Gem::Version "2"> @summary="this is a summary" @email="example@example.com" @homepage="http://example.com" @rubyforge_project=nil @description="This is a test description" @autorequire=nil @default_executable=nil @signing_key=nil @post_install_message=nil @original_platform="ruby" @rubygems_version="1.4.2" @specification_version=3 @date=2011-12-28 00:00:00 +0900 @require_paths=["lib"] @bindir="bin" @has_rdoc=true @required_ruby_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @required_rubygems_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @platform="ruby" @cert_chain=[] @authors=["A User"] @licenses=[] @files=[] @test_files=[] @rdoc_options=[] @extra_rdoc_files=[] @executables=[] @extensions=[] @requirements=[] @dependencies=[] @loaded=false @loaded_from="/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56859/gemhome/specifications/a-2.gemspec">} @spec_dirs=nil>, not #<Gem::SourceIndex:0xXXXXXXXX @gems={"a-1"=>"a-2"} @spec_dirs=["/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56859/gemhome/specifications"]>.
 
 23 tests, 105 assertions, 2 failures, 0 errors, 0 skips
 
@@ -11029,13 +11023,13 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_source_index
 Started
-.......Invalid gemspec in [/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44404/gemhome/specifications/a-1.gemspec]: epic fail
-F.............Invalid gemspec in [/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44404/gemhome/specifications/a-1.gemspec]: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44404/gemhome/specifications/a-1.gemspec:1: syntax error, unexpected $end
+.......Invalid gemspec in [/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56862/gemhome/specifications/a-1.gemspec]: epic fail
+F.............Invalid gemspec in [/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56862/gemhome/specifications/a-1.gemspec]: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56862/gemhome/specifications/a-1.gemspec:1: syntax error, unexpected $end
 F......
 
   1) Failure:
 test_self_load_specification_exception(TestGemSourceIndex) [/macruby-test/test-mri/test/rubygems/test_gem_source_index.rb:131]:
-Expected "WARNING:  #<Exception: epic fail>\nraise Exception, \"epic fail\"\nWARNING:  Invalid .gemspec format in '/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44404/gemhome/specifications/a-1.gemspec'\n", not "".
+Expected "WARNING:  #<Exception: epic fail>\nraise Exception, \"epic fail\"\nWARNING:  Invalid .gemspec format in '/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56862/gemhome/specifications/a-1.gemspec'\n", not "".
 
   2) Failure:
 test_self_load_specification_syntax_error(TestGemSourceIndex) [/macruby-test/test-mri/test/rubygems/test_gem_source_index.rb:172]:
@@ -11057,12 +11051,12 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_specification
 Started
-...........F.........F.........Invalid gemspec in [/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/testgemspecification20111227-44413-1bxf1bp]: boom
+...........F.........F.........Invalid gemspec in [/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/testgemspecification20111228-56871-1bxf1bp]: boom
 .F.F.............F.............F................................
 
   1) Failure:
 test_to_ruby_fancy(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:855]:
-Expected "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"1\"\n  s.platform = Gem::Platform.new([\"x86\", \"darwin\", \"8\"])\n\n  s.required_rubygems_version = Gem::Requirement.new(\">= 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2011-12-27}\n  s.default_executable = %q{exec}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.executables = [\"exec\"]\n  s.extensions = [\"ext/a/extconf.rb\"]\n  s.files = [\"lib/code.rb\", \"test/suite.rb\", \"bin/exec\", \"ext/a/extconf.rb\"]\n  s.homepage = %q{http://example.com}\n  s.licenses = [\"MIT\"]\n  s.require_paths = [\"lib\"]\n  s.requirements = [\"A working computer\"]\n  s.rubyforge_project = %q{example}\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n  s.test_files = [\"test/suite.rb\"]\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_runtime_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_runtime_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    else\n      s.add_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    end\n  else\n    s.add_dependency(%q<rake>, [\"> 0.4\"])\n    s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n    s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n  end\nend\n", not "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"1\"\n  s.platform = Gem::Platform.new([\"x86\", \"darwin\", \"8\"])\n\n  s.required_rubygems_version = Gem::Requirement.new(\">= 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2011-12-27}\n  s.default_executable = %q{exec}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.executables = [\"exec\"]\n  s.extensions = [\"ext/a/extconf.rb\"]\n  s.files = [\"lib/code.rb\", \"test/suite.rb\", \"bin/exec\", \"ext/a/extconf.rb\"]\n  s.homepage = %q{http://example.com}\n  s.licenses = [\"MIT\"]\n  s.require_paths = [\"lib\"]\n  s.requirements = [\"A working computer\"]\n  s.rubyforge_project = %q{example}\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n  s.test_files = [\"test/suite.rb\"]\n\n  if s.respond_to? :specification_version then\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_runtime_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_runtime_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    else\n      s.add_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    end\n  else\n    s.add_dependency(%q<rake>, [\"> 0.4\"])\n    s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n    s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n  end\nend\n".
+Expected "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"1\"\n  s.platform = Gem::Platform.new([\"x86\", \"darwin\", \"8\"])\n\n  s.required_rubygems_version = Gem::Requirement.new(\">= 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2011-12-28}\n  s.default_executable = %q{exec}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.executables = [\"exec\"]\n  s.extensions = [\"ext/a/extconf.rb\"]\n  s.files = [\"lib/code.rb\", \"test/suite.rb\", \"bin/exec\", \"ext/a/extconf.rb\"]\n  s.homepage = %q{http://example.com}\n  s.licenses = [\"MIT\"]\n  s.require_paths = [\"lib\"]\n  s.requirements = [\"A working computer\"]\n  s.rubyforge_project = %q{example}\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n  s.test_files = [\"test/suite.rb\"]\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_runtime_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_runtime_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    else\n      s.add_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    end\n  else\n    s.add_dependency(%q<rake>, [\"> 0.4\"])\n    s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n    s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n  end\nend\n", not "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"1\"\n  s.platform = Gem::Platform.new([\"x86\", \"darwin\", \"8\"])\n\n  s.required_rubygems_version = Gem::Requirement.new(\">= 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2011-12-28}\n  s.default_executable = %q{exec}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.executables = [\"exec\"]\n  s.extensions = [\"ext/a/extconf.rb\"]\n  s.files = [\"lib/code.rb\", \"test/suite.rb\", \"bin/exec\", \"ext/a/extconf.rb\"]\n  s.homepage = %q{http://example.com}\n  s.licenses = [\"MIT\"]\n  s.require_paths = [\"lib\"]\n  s.requirements = [\"A working computer\"]\n  s.rubyforge_project = %q{example}\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n  s.test_files = [\"test/suite.rb\"]\n\n  if s.respond_to? :specification_version then\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_runtime_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_runtime_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    else\n      s.add_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    end\n  else\n    s.add_dependency(%q<rake>, [\"> 0.4\"])\n    s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n    s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n  end\nend\n".
 
   2) Failure:
 test_validate_rubyforge_project(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:1189]:
@@ -11071,19 +11065,19 @@ Expected "WARNING:  no rubyforge_project specified\n", not "".
 
   3) Failure:
 test_installation_path(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:607]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44413/gemhome", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44413/gemhome".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56871/gemhome", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56871/gemhome".
 
   4) Failure:
 test_to_ruby(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:794]:
-Expected "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"2\"\n\n  s.required_rubygems_version = Gem::Requirement.new(\"> 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2011-12-27}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.files = [\"lib/code.rb\"]\n  s.homepage = %q{http://example.com}\n  s.require_paths = [\"lib\"]\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<b>, [\"= 1\"])\n    else\n      s.add_dependency(%q<b>, [\"= 1\"])\n    end\n  else\n    s.add_dependency(%q<b>, [\"= 1\"])\n  end\nend\n", not "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"2\"\n\n  s.required_rubygems_version = Gem::Requirement.new(\"> 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2011-12-27}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.files = [\"lib/code.rb\"]\n  s.homepage = %q{http://example.com}\n  s.require_paths = [\"lib\"]\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n\n  if s.respond_to? :specification_version then\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<b>, [\"= 1\"])\n    else\n      s.add_dependency(%q<b>, [\"= 1\"])\n    end\n  else\n    s.add_dependency(%q<b>, [\"= 1\"])\n  end\nend\n".
+Expected "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"2\"\n\n  s.required_rubygems_version = Gem::Requirement.new(\"> 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2011-12-28}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.files = [\"lib/code.rb\"]\n  s.homepage = %q{http://example.com}\n  s.require_paths = [\"lib\"]\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<b>, [\"= 1\"])\n    else\n      s.add_dependency(%q<b>, [\"= 1\"])\n    end\n  else\n    s.add_dependency(%q<b>, [\"= 1\"])\n  end\nend\n", not "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"2\"\n\n  s.required_rubygems_version = Gem::Requirement.new(\"> 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2011-12-28}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.files = [\"lib/code.rb\"]\n  s.homepage = %q{http://example.com}\n  s.require_paths = [\"lib\"]\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n\n  if s.respond_to? :specification_version then\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<b>, [\"= 1\"])\n    else\n      s.add_dependency(%q<b>, [\"= 1\"])\n    end\n  else\n    s.add_dependency(%q<b>, [\"= 1\"])\n  end\nend\n".
 
   5) Failure:
 test_full_gem_path(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:540]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44413/gemhome/gems/a-1", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44413/gemhome/gems/a-1".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56871/gemhome/gems/a-1", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56871/gemhome/gems/a-1".
 
   6) Failure:
 test_full_gem_path_double_slash(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:553]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44413/gemhome/gems/a-1", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_44413/gemhome/gems/a-1".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56871/gemhome/gems/a-1", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_56871/gemhome/gems/a-1".
 
 95 tests, 226 assertions, 6 failures, 0 errors, 0 skips
 
@@ -11189,7 +11183,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/scanf/test_scanf
 Started
-........
+
 ----------------------------------------
 Loaded suite test/scanf/test_scanfblocks
 Started
@@ -12732,7 +12726,12 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/thread/test_queue
 Started
-.
+..
+
+2 tests, 4 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 0
+
 ----------------------------------------
 Loaded suite test/uri/test_common
 Started
@@ -12837,25 +12836,25 @@ F.FF
 
   1) Failure:
 test_bad_header(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:129]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2011-12-27 03:54:29] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2011-12-28 03:51:34] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
 
   2) Failure:
 test_bad_uri(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:115]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2011-12-27 03:54:34] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2011-12-28 03:51:39] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
 
   3) Failure:
 test_cgi(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:40]:
 webrick log start:
-  [2011-12-27 03:54:35] INFO  WEBrick 1.3.1
-  [2011-12-27 03:54:35] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
-  [2011-12-27 03:54:35] INFO  WEBrick::HTTPServer#start: pid=44710 port=49254
-  [2011-12-27 03:54:35] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2011-12-28 03:51:39] INFO  WEBrick 1.3.1
+  [2011-12-28 03:51:39] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
+  [2011-12-28 03:51:39] INFO  WEBrick::HTTPServer#start: pid=57158 port=52610
+  [2011-12-28 03:51:39] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
-  [2011-12-27 03:54:39] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2011-12-28 03:51:43] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
-  [2011-12-27 03:54:43] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2011-12-28 03:51:47] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
-  [2011-12-27 03:54:47] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2011-12-28 03:51:52] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
 webrick log end.
 <"/\xA4ۤ\xB2/\xA4ۤ\xB2"> expected but was
