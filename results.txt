@@ -1,5 +1,5 @@
-Date    : 2012-02-10T03:10:49+09:00
-Version : 0.12, git commit 08bc1749805141ae0de29a14f63047389b8c644f
+Date    : 2012-02-11T03:11:30+09:00
+Version : 0.12, git commit c8a0a139e929e7550226b4763a93a72cdc1a79ab
 
 ----------------------------------------
 /macruby-test/test-mri/test/-ext-/string/test_cstr.rb:2:in `<main>': no such file to load -- -test-/string/string (LoadError)
@@ -553,10 +553,32 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/drb/test_drb
 Started
+terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+..terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
 .terminate called after throwing an instance of 'RoxorThreadRaiseException*'
 .terminate called after throwing an instance of 'RoxorThreadRaiseException*'
 .terminate called after throwing an instance of 'RoxorThreadRaiseException*'
 Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+terminate called after throwing an instance of 'RoxorThreadRaiseException*'
 
 ----------------------------------------
 /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/drb/drb.rb:767:in `open_server': can't parse uri:--seed (DRb::DRbBadURI)
@@ -1074,7 +1096,7 @@ Started
   1) Failure:
 test_killed_thread_in_synchronize(TestMonitor) [/macruby-test/test-mri/test/monitor/test_monitor.rb:80]:
 <[:main]> expected but was
-<[:main, :t1, :t2]>.
+<[:main, :t2, :t1]>.
 
 6 tests, 18 assertions, 1 failures, 0 errors, 0 skips
 
@@ -1083,7 +1105,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/net/http/test_http
 Started
-F.F..E......F.F...E..E...F......
+F.F..EE.....F.F...E..E...F......
 
   1) Failure:
 test_get(TestNetHTTP_v1_2) [/macruby-test/test-mri/test/net/http/test_http.rb:49]:
@@ -1103,25 +1125,33 @@ EOFError: end of file reached
     /macruby-test/test-mri/test/net/http/utils.rb:11:in `start'
     /macruby-test/test-mri/test/net/http/test_http.rb:131:in `test_post'
 
-  4) Failure:
-test_get(TestNetHTTP_v1_2_chunked) [/macruby-test/test-mri/test/net/http/test_http.rb:49]:
-Exception raised:
-<#<Errno::ECONNRESET: Connection reset by peer - read(2) failed.>>.
-
-  5) Failure:
-test_get__break(TestNetHTTP_v1_2_chunked) [/macruby-test/test-mri/test/net/http/test_http.rb:96]:
-<1> expected but was
-<4097>.
-
-  6) Error:
-test_request(TestNetHTTP_v1_2_chunked):
-Errno::ECONNRESET: Connection reset by peer - read(2) failed.
+  4) Error:
+test_request(TestNetHTTP_v1_2):
+EOFError: end of file reached
     /macruby-test/test-mri/test/net/http/test_http.rb:227:in `_test_request__file'
     /macruby-test/test-mri/test/net/http/test_http.rb:203:in `block'
     /macruby-test/test-mri/test/net/http/utils.rb:11:in `start'
     /macruby-test/test-mri/test/net/http/test_http.rb:201:in `test_request'
 
+  5) Failure:
+test_get(TestNetHTTP_v1_2_chunked) [/macruby-test/test-mri/test/net/http/test_http.rb:49]:
+Exception raised:
+<#<Errno::ECONNRESET: Connection reset by peer - read(2) failed.>>.
+
+  6) Failure:
+test_get__break(TestNetHTTP_v1_2_chunked) [/macruby-test/test-mri/test/net/http/test_http.rb:96]:
+<1> expected but was
+<4097>.
+
   7) Error:
+test_request(TestNetHTTP_v1_2_chunked):
+EOFError: end of file reached
+    /macruby-test/test-mri/test/net/http/test_http.rb:227:in `_test_request__file'
+    /macruby-test/test-mri/test/net/http/test_http.rb:203:in `block'
+    /macruby-test/test-mri/test/net/http/utils.rb:11:in `start'
+    /macruby-test/test-mri/test/net/http/test_http.rb:201:in `test_request'
+
+  8) Error:
 test_send_request(TestNetHTTP_v1_2_chunked):
 Errno::ECONNRESET: Connection reset by peer - read(2) failed.
     /macruby-test/test-mri/test/net/http/test_http.rb:304:in `_test_send_request__POST'
@@ -1129,12 +1159,12 @@ Errno::ECONNRESET: Connection reset by peer - read(2) failed.
     /macruby-test/test-mri/test/net/http/utils.rb:11:in `start'
     /macruby-test/test-mri/test/net/http/test_http.rb:286:in `test_send_request'
 
-  8) Failure:
+  9) Failure:
 test_get__break(TestNetHTTP_version_1_1) [/macruby-test/test-mri/test/net/http/test_http.rb:96]:
 <1> expected but was
 <2>.
 
-32 tests, 178 assertions, 5 failures, 3 errors, 0 skips
+32 tests, 160 assertions, 5 failures, 4 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -1282,7 +1312,7 @@ Started
   1) Failure:
 test_progress(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.rb:394]:
 <100000> expected but was
-<81660>.
+<81508>.
 
 35 tests, 150 assertions, 1 failures, 0 errors, 0 skips
 
@@ -2133,7 +2163,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rake/test_fileutils
 Started
-.2012-02-10 03:20:32.108 macruby[34457:903] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
+.2012-02-11 03:21:52.237 macruby[60630:903] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
 F.....................
 
   1) Failure:
@@ -2361,7 +2391,7 @@ Started
 F..FF.....
 
   1) Failure:
-test_document_children_equals(TestRDocCodeObject) [/Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:695]:
+test_document_children_equals(TestRDocCodeObject) [/macruby-test/test-mri/test/rdoc/test_rdoc_code_object.rb:37]:
 Expected [<RDoc::NormalClass:0xXXXXXXXX class C2::C3 < Object includes: [] attributes: [] methods: [#<RDoc::AnyMethod:0xXXXXXXXX C2::C3#m (public)>] aliases: []>] to be empty.
 
   2) Failure:
@@ -2431,7 +2461,7 @@ Started
 F
 
   1) Failure:
-test_module(TestRDocInclude) [/Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:695]:
+test_module(TestRDocInclude) [/macruby-test/test-mri/test/rdoc/test_rdoc_include.rb:12]:
 Expected #<RDoc::NormalModule:0xXXXXXXXX module M1 includes: [] attributes: [] methods: [] aliases: []>, not "M1".
 
 1 tests, 1 assertions, 1 failures, 0 errors, 0 skips
@@ -3260,7 +3290,7 @@ Started
 F
 
   1) Failure:
-test_ancestors_class(TestRDocNormalClass) [/Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:695]:
+test_ancestors_class(TestRDocNormalClass) [/macruby-test/test-mri/test/rdoc/test_rdoc_normal_class.rb:13]:
 Expected [#<RDoc::Include:0xXXXXXXXX Klass::SubClass.include Incl>, <RDoc::NormalClass:0xXXXXXXXX class Klass < Object includes: [] attributes: [] methods: [] aliases: []>], not ["Incl", <RDoc::NormalClass:0xXXXXXXXX class Klass < Object includes: [] attributes: [] methods: [] aliases: []>].
 
 1 tests, 1 assertions, 1 failures, 0 errors, 0 skips
@@ -3273,7 +3303,7 @@ Started
 F.
 
   1) Failure:
-test_ancestors_module(TestRDocNormalModule) [/Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:695]:
+test_ancestors_module(TestRDocNormalModule) [/macruby-test/test-mri/test/rdoc/test_rdoc_normal_module.rb:18]:
 Expected [#<RDoc::Include:0xXXXXXXXX Mod.include Incl>], not ["Incl"].
 
 2 tests, 2 assertions, 1 failures, 0 errors, 0 skips
@@ -3447,7 +3477,7 @@ Started
 test_add_includes_many(TestRDocRIDriver) [/macruby-test/test-mri/test/rdoc/test_rdoc_ri_driver.rb:148]:
 Expected [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_34649/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_60821/dot_ri)"],
   blankline,
   [para: "Inc"],
   blankline,
@@ -3455,7 +3485,7 @@ Expected [doc: [rule:1],
   blankline,
   [verb: "  ", "Enumerable", "\n"]], not [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_34649/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_60821/dot_ri)"],
   blankline,
   [para: "Inc"],
   blankline,
@@ -3467,10 +3497,10 @@ Expected [doc: [rule:1],
 test_add_includes_many_no_doc(TestRDocRIDriver) [/macruby-test/test-mri/test/rdoc/test_rdoc_ri_driver.rb:169]:
 Expected [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_34649/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_60821/dot_ri)"],
   [verb: "  ", "Inc", "\n", "  ", "Enumerable", "\n"]], not [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_34649/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_60821/dot_ri)"],
   [verb: "Inc", "\n", "Enumerable", "\n"]].
 
   3) Failure:
@@ -5585,7 +5615,7 @@ test_lineno(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:92]:
 test_lineno2(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:112]:
 [ruby-dev:34445]: line 116.
 <"1"> expected but was
-<"3">.
+<"">.
 
   6) Failure:
 test_lineno3(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:131]:
@@ -6030,7 +6060,7 @@ Encoding::CompatibilityError expected but nothing was raised.
 
   4) Failure:
 test_inspect(TestDir) [/macruby-test/test-mri/test/ruby/test_dir.rb:63]:
-Expected /^#<Dir:\/private\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/__test_dir__20120210\-35129\-1o6inhj>$/ to match "#<Dir:/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/__test_dir__20120210-35129-1o6inhj".
+Expected /^#<Dir:\/private\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/__test_dir__20120211\-61301\-1o6inhj>$/ to match "#<Dir:/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/__test_dir__20120211-61301-1o6inhj".
 
 14 tests, 80 assertions, 2 failures, 1 errors, 1 skips
 
@@ -6039,52 +6069,52 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_dir_m17n
 Started
-/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120210-35132-12zdlt8/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120210-35132-1estiet/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120210-35132-16tc0n7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120210-35132-12pbsn7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120210-35132-u3bzm1/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120210-35132-19vmgph/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120210-35132-v2yjvo/-:6:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120210-35132-1rcd3ra/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120210-35132-1wg6zq0/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120211-61304-12zdlt8/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120211-61304-1estiet/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120211-61304-16tc0n7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120211-61304-12pbsn7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120211-61304-u3bzm1/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120211-61304-19vmgph/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120211-61304-v2yjvo/-:6:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120211-61304-1rcd3ra/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120211-61304-1wg6zq0/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
 F
 
   1) Failure:
 test_filename_as_bytes_extutf8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:50]:
-ruby exit status is not success: #<Process::Status: pid 35133 exit 1>
+ruby exit status is not success: #<Process::Status: pid 61305 exit 1>
 
   2) Failure:
 test_filename_bytes_euc_jp(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:148]:
-ruby exit status is not success: #<Process::Status: pid 35134 exit 1>
+ruby exit status is not success: #<Process::Status: pid 61306 exit 1>
 
   3) Failure:
 test_filename_euc_jp(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:162]:
-ruby exit status is not success: #<Process::Status: pid 35135 exit 1>
+ruby exit status is not success: #<Process::Status: pid 61307 exit 1>
 
   4) Failure:
 test_filename_ext_euc_jp_and_int_utf_8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:200]:
-ruby exit status is not success: #<Process::Status: pid 35136 exit 1>
+ruby exit status is not success: #<Process::Status: pid 61308 exit 1>
 
   5) Failure:
 test_filename_extutf8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:18]:
-ruby exit status is not success: #<Process::Status: pid 35137 exit 1>
+ruby exit status is not success: #<Process::Status: pid 61309 exit 1>
 
   6) Failure:
 test_filename_extutf8_inteucjp_representable(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:89]:
-ruby exit status is not success: #<Process::Status: pid 35138 exit 1>
+ruby exit status is not success: #<Process::Status: pid 61310 exit 1>
 
   7) Failure:
 test_filename_extutf8_inteucjp_unrepresentable(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:116]:
-ruby exit status is not success: #<Process::Status: pid 35139 exit 1>
+ruby exit status is not success: #<Process::Status: pid 61311 exit 1>
 
   8) Failure:
 test_filename_extutf8_invalid(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:31]:
-ruby exit status is not success: #<Process::Status: pid 35140 exit 1>
+ruby exit status is not success: #<Process::Status: pid 61312 exit 1>
 
   9) Failure:
 test_filename_utf8_raw_name(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:182]:
-ruby exit status is not success: #<Process::Status: pid 35141 exit 1>
+ruby exit status is not success: #<Process::Status: pid 61313 exit 1>
 
 9 tests, 9 assertions, 9 failures, 0 errors, 0 skips
 
@@ -9462,7 +9492,7 @@ test_rand_0xXXXXXXXX(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:65
 
  17) Failure:
 test_random_range(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:362]:
-<2012-02-10 03:38:06 +0900> expected but was
+<2012-02-11 03:39:20 +0900> expected but was
 <1.97626258336499e-323>.
 
  18) Failure:
@@ -9651,7 +9681,7 @@ test_eval(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb
 
   8) Failure:
 test_indentation_check(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:319]:
-<["/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20120210-35449-14cjxw8.rb:2: warning: mismatched indentations at 'end' with 'begin' at 1"]> expected but was
+<["/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20120211-61620-14cjxw8.rb:2: warning: mismatched indentations at 'end' with 'begin' at 1"]> expected but was
 <[]>.
 
   9) Failure:
@@ -10145,7 +10175,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_thread
 Started
-F........................SF.Sobjc[35571]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+F........................SF.Sobjc[61742]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
 F..F.EFS.F
@@ -10154,6 +10184,9 @@ F..F.EFS.F
 test_abort_on_exception(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:384]:
 <["true", "2"]> expected but was
 <["true", "1"]>.
+objc[61742]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+	undefined method `message' for false:FalseClass (NoMethodError)
+
 
   2) Skipped:
 test_priority(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:232]:
@@ -10837,978 +10870,1069 @@ NoMethodError: undefined method `expand' for nil:NilClass
 Test run options: --seed 0
 
 ----------------------------------------
-Loaded suite test/rubygems/test_config
-Started
+Run options: --seed 0
+
+# Running tests:
+
 .
 
-1 tests, 1 assertions, 0 failures, 0 errors, 0 skips
+Finished tests in 0.421882s, 2.3703 tests/s, 7.1110 assertions/s.
 
-Test run options: --seed 0
+1 tests, 3 assertions, 0 failures, 0 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem
-Started
-........E............F...F.F..F...F...F.........E........
+Run options: --seed 0
 
-  1) Error:
-test_self_find_files(TestGem):
-NameError: uninitialized constant Gem::MUTEX
-    /macruby-test/test-mri/test/rubygems/gemutilities.rb:30:in `searcher='
-    /macruby-test/test-mri/test/rubygems/test_gem.rb:285:in `test_self_find_files'
+# Running tests:
+
+.....................F.....................................F.............F.......
+
+Finished tests in 4.979003s, 16.2683 tests/s, 29.5240 assertions/s.
+
+  1) Failure:
+test_self_user_dir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:1011]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_61787/userhome/.gem/macruby/1.9.2"
++"/Users/watson/.gem/macruby/1.9.2"
+
 
   2) Failure:
-test_self_bin_path_no_bin_file(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:78]:
-[Gem::Exception] exception expected, not
-Class: <Gem::GemNotFoundException>
-Message: <"can't find gem a (>= 0) with executable 1">
----Backtrace---
-/macruby-test/test-mri/test/rubygems/test_gem.rb:79:in `block'
----------------
+test_self_user_home(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:1016]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_61787/userhome"
++"/Users/watson"
+
 
   3) Failure:
-test_self_bin_path_no_default_bin(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:71]:
-[Gem::Exception] exception expected, not
-Class: <Gem::GemNotFoundException>
-Message: <"can't find gem a (>= 0) with executable 2">
----Backtrace---
-/macruby-test/test-mri/test/rubygems/test_gem.rb:72:in `block'
----------------
+test_self_datadir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:569]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_61787/gemhome/gems/foo-2/data/foo"
++"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_61787/gemhome/gems/foo-2/data/foo"
 
-  4) Failure:
-test_self_user_dir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:589]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35619/userhome/.gem/macruby/1.9.2", not "/Users/watson/.gem/macruby/1.9.2".
 
-  5) Failure:
-test_self_datadir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:147]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35619/gemhome/gems/foo-2/data/foo", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35619/gemhome/gems/foo-2/data/foo".
-
-  6) Failure:
-test_self_required_location(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:464]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35619/gemhome/gems/c-1.2/lib/code.rb", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35619/gemhome/gems/c-1.2/lib/code.rb".
-
-  7) Failure:
-test_self_user_home(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:594]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35619/userhome", not "/Users/watson".
-
-  8) Error:
-test_load_plugins(TestGem):
-NameError: uninitialized constant TestGem::TEST_PLUGIN_LOAD
-    /macruby-test/test-mri/test/rubygems/test_gem.rb:624:in `test_load_plugins'
-
-57 tests, 82 assertions, 6 failures, 2 errors, 0 skips
-
-Test run options: --seed 0
+81 tests, 147 assertions, 3 failures, 0 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_activation
-Started
+Run options: --seed 0
 
+# Running tests:
 
-0 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+...
 
-Test run options: --seed 0
+Finished tests in 0.947400s, 3.1666 tests/s, 4.2221 assertions/s.
 
-----------------------------------------
-Loaded suite test/rubygems/test_gem_builder
-Started
-..
-
-2 tests, 3 assertions, 0 failures, 0 errors, 0 skips
-
-Test run options: --seed 0
+3 tests, 4 assertions, 0 failures, 0 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_command
-Started
+Run options: --seed 0
+
+# Running tests:
+
 ...........
+
+Finished tests in 0.888614s, 12.3788 tests/s, 54.0167 assertions/s.
 
 11 tests, 48 assertions, 0 failures, 0 errors, 0 skips
 
-Test run options: --seed 0
-
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_command_manager
-Started
-.F.F.F...
+Run options: --seed 0
+
+# Running tests:
+
+...F...F.
+
+Finished tests in 1.552827s, 5.7959 tests/s, 27.0474 assertions/s.
 
   1) Failure:
-test_run_crash_command(TestGemCommandManager) [/macruby-test/test-mri/test/rubygems/test_gem_command_manager.rb:32]:
-Expected "ERROR:  Loading command: crash (RuntimeError)", not "ERROR:  Loading command: crash (LoadError)".
+test_process_args_install(TestGemCommandManager) [/macruby-test/test-mri/test/rubygems/test_gem_command_manager.rb:85]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_61806"
++"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_61806"
+
 
   2) Failure:
-test_process_args_install(TestGemCommandManager) [/macruby-test/test-mri/test/rubygems/test_gem_command_manager.rb:57]:
-Expected false, not nil.
+test_process_args_update(TestGemCommandManager) [/macruby-test/test-mri/test/rubygems/test_gem_command_manager.rb:211]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_61806"
++"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_61806"
 
-  3) Failure:
-test_run_interrupt(TestGemCommandManager) [/macruby-test/test-mri/test/rubygems/test_gem_command_manager.rb:20]:
-Expected "ERROR:  Interrupted\n", not "ERROR:  While executing gem ... (RuntimeError)\n    Unknown command interrupt\n".
 
-9 tests, 30 assertions, 3 failures, 0 errors, 0 skips
-
-Test run options: --seed 0
-
-----------------------------------------
-Loaded suite test/rubygems/test_gem_commands_build_command
-Started
-...
-
-3 tests, 20 assertions, 0 failures, 0 errors, 0 skips
-
-Test run options: --seed 0
+9 tests, 42 assertions, 2 failures, 0 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_commands_cert_command
-Started
-F..F...
+Run options: --seed 0
 
-  1) Failure:
-test_execute_certificate(TestGemCommandsCertCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_cert_command.rb:76]:
-Expected "-----BEGIN CERTIFICATE-----\nMIIDNjCCAh6gAwIBAgIBADANBgkqhkiG9w0BAQUFADBBMREwDwYDVQQDDAhydWJ5\nZ2VtczEXMBUGCgmSJomT8ixkARkWB2V4YW1wbGUxEzARBgoJkiaJk/IsZAEZFgNj\nb20wHhcNMDcwODAyMDMyNTQyWhcNMDgwODAxMDMyNTQyWjBBMREwDwYDVQQDDAhy\ndWJ5Z2VtczEXMBUGCgmSJomT8ixkARkWB2V4YW1wbGUxEzARBgoJkiaJk/IsZAEZ\nFgNjb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDPS1M62wm4cMoA\nRetDHR/oNQTMERRNItHV+TSIQexj2sMJDGazDkF/ZSdWF0PTcHj9fMgr6lq3YIxB\nzfv+8sgG5WBLuD9/Nq0aIzSbmsAe3JyvRdTwSTrOPHiJK/vQ4uPJtj7+60cIRzzf\nxrAYMwIVHbWNjGABM9XCoAjJqy/BsqH9WHC4SsU+pP0bwEpMexpf4f4AMhEfTTU6\nZaSMHoTKMXTnXXiQ0xrT7YLt1pX2GgEveZ2EK3rM4ZxqmX/0uQbGFw0RQH9KjXpX\nVlCV2D2ZpwbJaS3I1NJ9y2UX5/yiQCaJwbdcjBpbxROaMUKa8Oz+HVH+4ql7Yg4f\nPzufb13ZAgMBAAGjOTA3MAkGA1UdEwQCMAAwCwYDVR0PBAQDAgSwMB0GA1UdDgQW\nBBRYTAoj4cn8CWZMHFnHGQgoO5jyFTANBgkqhkiG9w0BAQUFAAOCAQEATRrJC05l\ndOmx67Sy3bU+AVXkOr7B9nn2Myqo9uSIAncPoElN6aHr/Q8wOOjtok4r0JcHPe1e\neotDCZUE1Jkl13Tpv26rOfOOUHtGlyAIAtpsUGOraaJkSut4WKLr1/KckyAAEtgP\nc13A0s0mEiWFRuYxIdEi54561pTT2qQBE/DUPGoYD5rUg9XYAlSovMMwG99Oca7L\ncI6vCymr1bzzddExoywBNOy0fbBT62I3ICBGbH5yOVVKVmlxeo2Zp10FCj0kDrnq\nOuMJSDr5I2XPYqoC+W4YSbwn55o2jGIUX1lOq2Hvj4tFgSxlnJZn0tUhBfR3gSOn\nIFnrqu8PlZsLFw==\n-----END CERTIFICATE-----\n", not "".
+# Running tests:
 
-  2) Failure:
-test_execute_private_key(TestGemCommandsCertCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_cert_command.rb:97]:
-Expected "-----BEGIN RSA PRIVATE KEY-----\nMIIEpQIBAAKCAQEAz0tTOtsJuHDKAEXrQx0f6DUEzBEUTSLR1fk0iEHsY9rDCQxm\nsw5Bf2UnVhdD03B4/XzIK+pat2CMQc37/vLIBuVgS7g/fzatGiM0m5rAHtycr0XU\n8Ek6zjx4iSv70OLjybY+/utHCEc838awGDMCFR21jYxgATPVwqAIyasvwbKh/Vhw\nuErFPqT9G8BKTHsaX+H+ADIRH001OmWkjB6EyjF05114kNMa0+2C7daV9hoBL3md\nhCt6zOGcapl/9LkGxhcNEUB/So16V1ZQldg9macGyWktyNTSfctlF+f8okAmicG3\nXIwaW8UTmjFCmvDs/h1R/uKpe2IOHz87n29d2QIDAQABAoIBAQCR6n/nyg+JmTtX\n/d+hGns/RTLfQpZ7xarXZ9gmoeD4WSE42VXhbIOGXXnXDAFecKl6Jb/xycGZm4if\nOZPM3rEWyZeDNWrc7WvkHiwF7GSYVMqmRg2iJqoSSla+mAtl+pBFiNfHMW6K0Tp0\nerOyFRW+L2+A9/MMZaRun6AP9URkn0jz2kwmMFf+6szmzVn6fPFzZDRI+hEeaDmi\nLBzSrfrddrIBX+xGEoBj6RmfnKBCSUVSSxOauYjd4mVjVYxvMH4SV1hXDUS5GPl5\nMbCiBb7bpNIg/8ljMoRrQiqk0XwwS7MaCqPtMhUtpSmC/zSjAfmoN7AOc/Xh69cQ\nOCMNZH9BAoGBAPBlsuuU6fg0gVTKDdR12jHx03uRRt8/nPxHnpJkZCIh9XKh1LtY\nbkumi9HZpp3mzDiaGg/rwfCwNckKx8NLhICLgkric6ClrKftxTu6C8tBAb5YDi6u\n74KYnV8lMY/unzBtIloPgM3uluS292POmrWZpKwhvHLD71MewzMor5HFAoGBANy/\nmwsBs8i3Gzk8Twjq8effhPpE7kpxhC7bhwmjX3q41EjQWDT8M6xb1P9dRSsCIebi\nkqP1yhl27dJpA8r5WqE/z89xhBvObAGRv41eXxOI0LaH2k5lJQrUeSC+51dy+BEB\nT3GXD4C5ezZHQ8Wz/oL73uikrfhD+AqOZT2YbMEFAoGBAJvWEWpOGm3f+4bvhI+Z\n5lxCG4oa3wqRvj58XvsfQRovUWGCLtlTtgwsZq8enLf3iaOXohV4Czzvva4Z4u1i\n4v5BcbEBo1scixRBOn5BWKvl9C9j/a2dkX3jWQD4p2xaj69gz8f6DNFyPTb+tNhq\ncjgO5YUASZ1MDrSfWIKteULRAoGAZkZv8x2KyofrmQ0UITGZerDYz4t4TA1kDMGx\nQwnqhtVzpXjCJWpkFotFmDsCfPaz9mErR8PtKvcrIL1/AF+fWe5Sve3+I1P0PpXk\nhf8fVdGhwbAXuRKrouTmagGI9b9Sp65PvHUcvasyJufFwqeuV8mScX87CzeSiHGI\n/ozMdnECgYEAq4+losrhe0DEmiC9zVPvwRXjbSixDsSJxHfOcqIsZqhUgBiZ4TJD\nSrkuukrMZib6BAD+PtCJS1TBbJyyvL3QecizhHSIh3ZnT0HnaRPatLEYmU65+3kE\nkTqL4ik92bJnnWowy677sydl1lzBJDVa9ZlTs7BFSd8y/0DZaUxGg2I=\n-----END RSA PRIVATE KEY-----\n", not "".
+....
 
-7 tests, 22 assertions, 2 failures, 0 errors, 0 skips
+Finished tests in 0.899983s, 4.4445 tests/s, 30.0006 assertions/s.
 
-Test run options: --seed 0
+4 tests, 27 assertions, 0 failures, 0 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_commands_check_command
-Started
+Run options: --seed 0
+
+# Running tests:
+
+.......
+
+Finished tests in 1.294070s, 5.4093 tests/s, 17.0006 assertions/s.
+
+7 tests, 22 assertions, 0 failures, 0 errors, 0 skips
+
+----------------------------------------
+Run options: --seed 0
+
+# Running tests:
+
 .
+
+Finished tests in 0.323290s, 3.0932 tests/s, 12.3728 assertions/s.
 
 1 tests, 4 assertions, 0 failures, 0 errors, 0 skips
 
-Test run options: --seed 0
+----------------------------------------
+Run options: --seed 0
+
+# Running tests:
+
+.....
+
+Finished tests in 2.639217s, 1.8945 tests/s, 4.5468 assertions/s.
+
+5 tests, 12 assertions, 0 failures, 0 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_commands_contents_command
-Started
+Run options: --seed 0
+
+# Running tests:
+
 ........
+
+Finished tests in 1.100076s, 7.2722 tests/s, 41.8153 assertions/s.
 
 8 tests, 46 assertions, 0 failures, 0 errors, 0 skips
 
-Test run options: --seed 0
-
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_commands_dependency_command
-Started
-.......F.
+Run options: --seed 0
+
+# Running tests:
+
+..F.......
+
+Finished tests in 4.898692s, 2.0414 tests/s, 4.2869 assertions/s.
 
   1) Failure:
-test_execute_remote(TestGemCommandsDependencyCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_dependency_command.rb:191]:
-Expected "Gem foo-2\n  bar (> 1, runtime)\n\n", not "Gem foo-2\n\n".
+test_execute_remote(TestGemCommandsDependencyCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_dependency_command.rb:184]:
+--- expected
++++ actual
+@@ -1,4 +1,3 @@
+ "Gem foo-2
+-  bar (> 1)
+ 
+ "
 
-9 tests, 19 assertions, 1 failures, 0 errors, 0 skips
 
-Test run options: --seed 0
-
-----------------------------------------
-Loaded suite test/rubygems/test_gem_commands_environment_command
-Started
-........
-
-8 tests, 44 assertions, 0 failures, 0 errors, 0 skips
-
-Test run options: --seed 0
+10 tests, 21 assertions, 1 failures, 0 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_commands_fetch_command
-Started
+Run options: --seed 0
+
+# Running tests:
+
+.........
+
+Finished tests in 0.899158s, 10.0094 tests/s, 51.1590 assertions/s.
+
+9 tests, 46 assertions, 0 failures, 0 errors, 0 skips
+
+----------------------------------------
+Run options: --seed 0
+
+# Running tests:
+
 ...
+
+Finished tests in 1.431582s, 2.0956 tests/s, 2.0956 assertions/s.
 
 3 tests, 3 assertions, 0 failures, 0 errors, 0 skips
 
-Test run options: --seed 0
-
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_commands_generate_index_command
-Started
+Run options: --seed 0
 
+# Running tests:
+
+
+
+Finished tests in 0.086903s, 0.0000 tests/s, 0.0000 assertions/s.
 
 0 tests, 0 assertions, 0 failures, 0 errors, 0 skips
 
-Test run options: --seed 0
+----------------------------------------
+Run options: --seed 0
+
+# Running tests:
+
+....
+
+Finished tests in 3.813413s, 1.0489 tests/s, 17.8318 assertions/s.
+
+4 tests, 68 assertions, 0 failures, 0 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_commands_install_command
-Started
-FF.........
+Run options: --seed 0
+
+# Running tests:
+
+.F..........E
+
+Finished tests in 14.851713s, 0.8753 tests/s, 3.2993 assertions/s.
 
   1) Failure:
-test_execute_explicit_version_includes_prerelease(TestGemCommandsInstallCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_install_command.rb:50]:
+test_execute_remote(TestGemCommandsInstallCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_install_command.rb:241]:
 [Gem::SystemExitException] exception expected, not
-Class: <TypeError>
-Message: <"can't dup NilClass">
+Class: <Gem::MockGemUi::TermError>
+Message: <1>
 ---Backtrace---
-/macruby-test/test-mri/test/rubygems/test_gem_commands_install_command.rb:51:in `block'
-/macruby-test/test-mri/test/rubygems/test_gem_commands_install_command.rb:50:in `block'
-/macruby-test/test-mri/test/rubygems/test_gem_commands_install_command.rb:49:in `test_execute_explicit_version_includes_prerelease'
+/macruby-test/test-mri/test/rubygems/test_gem_commands_install_command.rb:243:in `block'
 ---------------
 
-  2) Failure:
-test_execute_remote(TestGemCommandsInstallCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_install_command.rb:211]:
-[Gem::SystemExitException] exception expected, not
-Class: <TypeError>
-Message: <"can't dup NilClass">
----Backtrace---
-/macruby-test/test-mri/test/rubygems/test_gem_commands_install_command.rb:213:in `block'
-/macruby-test/test-mri/test/rubygems/test_gem_commands_install_command.rb:212:in `block'
-/macruby-test/test-mri/test/rubygems/test_gem_commands_install_command.rb:211:in `block'
-/macruby-test/test-mri/test/rubygems/test_gem_commands_install_command.rb:210:in `test_execute_remote'
----------------
+  2) Error:
+test_execute_conservative(TestGemCommandsInstallCommand):
+NoMethodError: undefined method `>=' for nil:NilClass
+    /macruby-test/test-mri/test/rubygems/test_gem_commands_install_command.rb:296:in `test_execute_conservative'
 
-11 tests, 41 assertions, 2 failures, 0 errors, 0 skips
-
-Test run options: --seed 0
+13 tests, 49 assertions, 1 failures, 1 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_commands_list_command
-Started
+Run options: --seed 0
+
+# Running tests:
+
 .
 
-1 tests, 4 assertions, 0 failures, 0 errors, 0 skips
+Finished tests in 1.023829s, 0.9767 tests/s, 2.9302 assertions/s.
 
-Test run options: --seed 0
+1 tests, 3 assertions, 0 failures, 0 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_commands_lock_command
-Started
+Run options: --seed 0
+
+# Running tests:
+
 ...
+
+Finished tests in 0.836346s, 3.5870 tests/s, 7.1741 assertions/s.
 
 3 tests, 6 assertions, 0 failures, 0 errors, 0 skips
 
-Test run options: --seed 0
-
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_commands_mirror_command
-Started
+Run options: --seed 0
 
+# Running tests:
 
-0 tests, 0 assertions, 0 failures, 0 errors, 0 skips
-
-Test run options: --seed 0
-
-----------------------------------------
-Loaded suite test/rubygems/test_gem_commands_outdated_command
-Started
 ..
+
+Finished tests in 0.481462s, 4.1540 tests/s, 6.2310 assertions/s.
 
 2 tests, 3 assertions, 0 failures, 0 errors, 0 skips
 
-Test run options: --seed 0
+----------------------------------------
+Run options: --seed 0
+
+# Running tests:
+
+.........
+
+Finished tests in 1.006390s, 8.9429 tests/s, 29.8095 assertions/s.
+
+9 tests, 30 assertions, 0 failures, 0 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_commands_owner_command
-Started
-......
+Run options: --seed 0
 
-6 tests, 27 assertions, 0 failures, 0 errors, 0 skips
+# Running tests:
 
-Test run options: --seed 0
+.......
 
-----------------------------------------
-Loaded suite test/rubygems/test_gem_commands_pristine_command
-Started
-....
+Finished tests in 3.092686s, 2.2634 tests/s, 12.6104 assertions/s.
 
-4 tests, 17 assertions, 0 failures, 0 errors, 0 skips
-
-Test run options: --seed 0
+7 tests, 39 assertions, 0 failures, 0 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_commands_push_command
-Started
-..F
+Run options: --seed 0
+
+# Running tests:
+
+F.F..F
+
+Finished tests in 1.254672s, 4.7821 tests/s, 15.9404 assertions/s.
 
   1) Failure:
-test_sending_gem(TestGemCommandsPushCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_push_command.rb:29]:
-Expected /Pushing gem to RubyGems.org.../ to match "Pushing gem to https://rubygems.org...\nSuccessfully registered gem: freewill (1.0.0)\n".
+test_sending_gem_default(TestGemCommandsPushCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_push_command.rb:42]:
+Expected: 3072
+  Actual: 3060
 
-3 tests, 6 assertions, 1 failures, 0 errors, 0 skips
+  2) Failure:
+test_sending_gem_host(TestGemCommandsPushCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_push_command.rb:42]:
+Expected: 3072
+  Actual: 3060
 
-Test run options: --seed 0
+  3) Failure:
+test_sending_gem_ENV(TestGemCommandsPushCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_push_command.rb:42]:
+Expected: 3072
+  Actual: 3060
+
+6 tests, 20 assertions, 3 failures, 0 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_commands_query_command
-Started
-..F..............
+Run options: --seed 0
+
+# Running tests:
+
+F...............
+
+Finished tests in 4.813011s, 3.3243 tests/s, 8.1030 assertions/s.
 
   1) Failure:
-test_execute_details(TestGemCommandsQueryCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_query_command.rb:144]:
-Expected "\n*** REMOTE GEMS ***\n\na (2)\n    Authors: Abraham Lincoln, Hirohito\n    Rubyforge: http://rubyforge.org/projects/rubygems\n    Homepage: http://a.example.com/\n\n    This is a lot of text. This is a lot of text. This is a lot of text.\n    This is a lot of text.\n\npl (1)\n    Platform: i386-linux\n    Author: A User\n    Homepage: http://example.com\n\n    this is a summary\n", not "\n*** REMOTE GEMS ***\n\na (2)\n    Author: A User\n    Homepage: http://example.com\n\n    this is a summary\n\npl (1)\n    Platform: i386-linux\n    Author: A User\n    Homepage: http://example.com\n\n    this is a summary\n".
+test_execute_details(TestGemCommandsQueryCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_query_command.rb:140]:
+--- expected
++++ actual
+@@ -2,12 +2,10 @@
+ *** REMOTE GEMS ***
+ 
+ a (2)
+-    Authors: Abraham Lincoln, Hirohito
+-    Rubyforge: http://rubyforge.org/projects/rubygems
+-    Homepage: http://a.example.com/
++    Author: A User
++    Homepage: http://example.com
+ 
+-    This is a lot of text. This is a lot of text. This is a lot of text.
+-    This is a lot of text.
++    this is a summary
+ 
+ pl (1)
+     Platform: i386-linux
 
-17 tests, 43 assertions, 1 failures, 0 errors, 0 skips
 
-Test run options: --seed 0
+16 tests, 39 assertions, 1 failures, 0 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_commands_server_command
-Started
+Run options: --seed 0
+
+# Running tests:
+
 ...
+
+Finished tests in 0.672353s, 4.4619 tests/s, 20.8224 assertions/s.
 
 3 tests, 14 assertions, 0 failures, 0 errors, 0 skips
 
-Test run options: --seed 0
+----------------------------------------
+Run options: --seed 0
+
+# Running tests:
+
+...F.....
+
+Finished tests in 4.989887s, 1.8036 tests/s, 4.0081 assertions/s.
+
+  1) Failure:
+test_execute_add_nonexistent_source(TestGemCommandsSourcesCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_sources_command.rb:88]:
+Gem::MockGemUi::TermError expected but nothing was raised.
+
+9 tests, 20 assertions, 1 failures, 0 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_commands_sources_command
-Started
-.........
+Run options: --seed 0
 
-9 tests, 20 assertions, 0 failures, 0 errors, 0 skips
+# Running tests:
 
-Test run options: --seed 0
-
-----------------------------------------
-Loaded suite test/rubygems/test_gem_commands_specification_command
-Started
 ........
+
+Finished tests in 0.911226s, 8.7794 tests/s, 37.3124 assertions/s.
 
 8 tests, 34 assertions, 0 failures, 0 errors, 0 skips
 
-Test run options: --seed 0
-
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_commands_stale_command
-Started
+Run options: --seed 0
+
+# Running tests:
+
 .
+
+Finished tests in 0.368718s, 2.7121 tests/s, 5.4242 assertions/s.
 
 1 tests, 2 assertions, 0 failures, 0 errors, 0 skips
 
-Test run options: --seed 0
-
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_commands_uninstall_command
-Started
-.E.
+Run options: --seed 0
+
+# Running tests:
+
+..E.E
+
+Finished tests in 2.780281s, 1.7984 tests/s, 2.8774 assertions/s.
 
   1) Error:
 test_execute_removes_executable(TestGemCommandsUninstallCommand):
 NoMethodError: undefined method `>=' for nil:NilClass
-    /macruby-test/test-mri/test/rubygems/test_gem_commands_uninstall_command.rb:37:in `block'
-    /macruby-test/test-mri/test/rubygems/test_gem_commands_uninstall_command.rb:36:in `test_execute_removes_executable'
-
-3 tests, 8 assertions, 0 failures, 1 errors, 0 skips
-
-Test run options: --seed 0
-
-----------------------------------------
-Loaded suite test/rubygems/test_gem_commands_unpack_command
-Started
-.......
-
-7 tests, 8 assertions, 0 failures, 0 errors, 0 skips
-
-Test run options: --seed 0
-
-----------------------------------------
-Loaded suite test/rubygems/test_gem_commands_update_command
-Started
-F...E
-
-  1) Failure:
-test_execute_dependencies(TestGemCommandsUpdateCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_update_command.rb:105]:
-Expected "Successfully installed c-2", not "Updating c".
+    /macruby-test/test-mri/test/rubygems/test_gem_commands_uninstall_command.rb:84:in `block'
+    /macruby-test/test-mri/test/rubygems/test_gem_commands_uninstall_command.rb:83:in `test_execute_removes_executable'
 
   2) Error:
-test_execute(TestGemCommandsUpdateCommand):
-TypeError: can't dup NilClass
-    /macruby-test/test-mri/test/rubygems/test_gem_commands_update_command.rb:37:in `block'
-    /macruby-test/test-mri/test/rubygems/test_gem_commands_update_command.rb:36:in `test_execute'
+test_execute_mulitple(TestGemCommandsUninstallCommand):
+NoMethodError: undefined method `>=' for nil:NilClass
+    /macruby-test/test-mri/test/rubygems/test_gem_commands_uninstall_command.rb:39:in `block'
+    /macruby-test/test-mri/test/rubygems/test_gem_commands_uninstall_command.rb:38:in `test_execute_mulitple'
 
-5 tests, 17 assertions, 1 failures, 1 errors, 0 skips
-
-Test run options: --seed 0
+5 tests, 8 assertions, 0 failures, 2 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_commands_which_command
-Started
-...
+Run options: --seed 0
 
-3 tests, 9 assertions, 0 failures, 0 errors, 0 skips
+# Running tests:
 
-Test run options: --seed 0
+...........
+
+Finished tests in 3.534606s, 3.1121 tests/s, 4.2438 assertions/s.
+
+11 tests, 15 assertions, 0 failures, 0 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_config_file
-Started
-...........F...E.
+Run options: --seed 0
+
+# Running tests:
+
+..F.E.FF.E.EE.
+
+Finished tests in 5.188898s, 2.6981 tests/s, 5.3961 assertions/s.
 
   1) Failure:
-test_initialize(TestGemConfigFile) [/macruby-test/test-mri/test/rubygems/test_gem_config_file.rb:65]:
-Expected "701229f217cdf23b1344c7b4b54ca97", not "ed244fbf2b1a52e012da8616c512fa47f9aa5250".
+test_execute_system_at_latest(TestGemCommandsUpdateCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_update_command.rb:121]:
+[Gem::MockGemUi::SystemExitException] exception expected, not
+Class: <RuntimeError>
+Message: <"This version of RubyGems cannot be self-updated.">
+---Backtrace---
+/macruby-test/test-mri/test/rubygems/test_gem_commands_update_command.rb:123:in `block'
+/macruby-test/test-mri/test/rubygems/test_gem_commands_update_command.rb:122:in `block'
+---------------
+
+  2) Error:
+test_execute_system_specifically_to_latest_version(TestGemCommandsUpdateCommand):
+RuntimeError: This version of RubyGems cannot be self-updated.
+    /macruby-test/test-mri/test/rubygems/test_gem_commands_update_command.rb:195:in `block'
+    /macruby-test/test-mri/test/rubygems/test_gem_commands_update_command.rb:194:in `test_execute_system_specifically_to_latest_version'
+
+  3) Failure:
+test_execute_dependencies(TestGemCommandsUpdateCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_update_command.rb:273]:
+Expected: "Successfully installed c-2"
+  Actual: "Updating c"
+
+  4) Failure:
+test_execute_system_with_gems(TestGemCommandsUpdateCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_update_command.rb:213]:
+[Gem::MockGemUi::TermError] exception expected, not
+Class: <RuntimeError>
+Message: <"This version of RubyGems cannot be self-updated.">
+---Backtrace---
+/macruby-test/test-mri/test/rubygems/test_gem_commands_update_command.rb:215:in `block'
+/macruby-test/test-mri/test/rubygems/test_gem_commands_update_command.rb:214:in `block'
+---------------
+
+  5) Error:
+test_execute_system_multiple(TestGemCommandsUpdateCommand):
+RuntimeError: This version of RubyGems cannot be self-updated.
+    /macruby-test/test-mri/test/rubygems/test_gem_commands_update_command.rb:145:in `block'
+    /macruby-test/test-mri/test/rubygems/test_gem_commands_update_command.rb:144:in `test_execute_system_multiple'
+
+  6) Error:
+test_execute_system_specific(TestGemCommandsUpdateCommand):
+RuntimeError: This version of RubyGems cannot be self-updated.
+    /macruby-test/test-mri/test/rubygems/test_gem_commands_update_command.rb:170:in `block'
+    /macruby-test/test-mri/test/rubygems/test_gem_commands_update_command.rb:169:in `test_execute_system_specific'
+
+  7) Error:
+test_execute_system(TestGemCommandsUpdateCommand):
+RuntimeError: This version of RubyGems cannot be self-updated.
+    /macruby-test/test-mri/test/rubygems/test_gem_commands_update_command.rb:98:in `block'
+    /macruby-test/test-mri/test/rubygems/test_gem_commands_update_command.rb:97:in `test_execute_system'
+
+14 tests, 28 assertions, 3 failures, 4 errors, 0 skips
+
+----------------------------------------
+Run options: --seed 0
+
+# Running tests:
+
+....
+
+Finished tests in 0.724382s, 5.5219 tests/s, 17.9463 assertions/s.
+
+4 tests, 13 assertions, 0 failures, 0 errors, 0 skips
+
+----------------------------------------
+Run options: --seed 0
+
+# Running tests:
+
+...............E.E
+
+Finished tests in 0.745716s, 24.1379 tests/s, 68.3906 assertions/s.
+
+  1) Error:
+test_load_api_keys_from_config(TestGemConfigFile):
+Errno::EEXIST: File exists - /Users/watson/.gem
+    /macruby-test/test-mri/test/rubygems/test_gem_config_file.rb:282:in `test_load_api_keys_from_config'
 
   2) Error:
 test_load_rubygems_api_key_from_credentials(TestGemConfigFile):
 Errno::EEXIST: File exists - /Users/watson/.gem
-    /macruby-test/test-mri/test/rubygems/test_gem_config_file.rb:272:in `test_load_rubygems_api_key_from_credentials'
+    /macruby-test/test-mri/test/rubygems/test_gem_config_file.rb:270:in `test_load_rubygems_api_key_from_credentials'
 
-17 tests, 49 assertions, 1 failures, 1 errors, 0 skips
-
-Test run options: --seed 0
+18 tests, 51 assertions, 0 failures, 2 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_dependency
-Started
-.........F.....
+Run options: --seed 0
+
+# Running tests:
+
+...........F......
+
+Finished tests in 0.945733s, 19.0329 tests/s, 65.5576 assertions/s.
 
   1) Failure:
-test_hash(TestGemDependency) [/macruby-test/test-mri/test/rubygems/test_gem_dependency.rb:110]:
+test_hash(TestGemDependency) [/macruby-test/test-mri/test/rubygems/test_gem_dependency.rb:104]:
 requirement.
 Expected 5289015114286989031 to not be equal to 5289015114286989031.
 
-15 tests, 61 assertions, 1 failures, 0 errors, 0 skips
-
-Test run options: --seed 0
+18 tests, 62 assertions, 1 failures, 0 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_dependency_installer
-Started
-............EES..........E..E.F.......
+Run options: --seed 0
+
+# Running tests:
+
+............E.S....F.......E........E.....
+
+Finished tests in 8.764291s, 4.7922 tests/s, 6.6178 assertions/s.
 
   1) Error:
-test_install_cache_dir(TestGemDependencyInstaller):
-Gem::RemoteFetcher::FetchError: no data for http://gems.example.com/gems/a-1.gem (http://gems.example.com/gems/a-1.gem)
-    /macruby-test/test-mri/test/rubygems/test_gem_dependency_installer.rb:112:in `block'
-    /macruby-test/test-mri/test/rubygems/test_gem_dependency_installer.rb:110:in `test_install_cache_dir'
+test_gather_dependencies_under(TestGemDependencyInstaller):
+Gem::DependencyError: Unable to resolve dependencies: a requires b (~> 1.0); c requires b (= 2.0)
+    /macruby-test/test-mri/test/rubygems/test_gem_dependency_installer.rb:640:in `assert_resolve'
+    /macruby-test/test-mri/test/rubygems/test_gem_dependency_installer.rb:743:in `test_gather_dependencies_under'
 
-  2) Error:
-test_install_domain_both_no_network(TestGemDependencyInstaller):
-Gem::RemoteFetcher::FetchError: no data for http://gems.example.com/gems/a-1.gem (http://gems.example.com/gems/a-1.gem)
-    /macruby-test/test-mri/test/rubygems/test_gem_dependency_installer.rb:359:in `block'
-    /macruby-test/test-mri/test/rubygems/test_gem_dependency_installer.rb:357:in `test_install_domain_both_no_network'
+  2) Failure:
+test_gather_dependencies_dropped(TestGemDependencyInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_dependency_installer.rb:687]:
+Expected: ["b-2", "a-1"]
+  Actual: ["a-1"]
 
-  3) Skipped:
-test_install_reinstall(TestGemDependencyInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_dependency_installer.rb:486]:
-[BUG : #???] Timeout, MacRuby don't finish
+  3) Error:
+test_gather_dependencies_raggi_the_edgecase_generator(TestGemDependencyInstaller):
+Gem::DependencyError: Unable to resolve dependencies: a requires b (~> 1.0); c requires b (= 2.0)
+    /macruby-test/test-mri/test/rubygems/test_gem_dependency_installer.rb:640:in `assert_resolve'
+    /macruby-test/test-mri/test/rubygems/test_gem_dependency_installer.rb:706:in `test_gather_dependencies_raggi_the_edgecase_generator'
 
   4) Error:
-test_install_dependency(TestGemDependencyInstaller):
-Gem::RemoteFetcher::FetchError: no data for http://gems.example.com/gems/a-1.gem (http://gems.example.com/gems/a-1.gem)
-    /macruby-test/test-mri/test/rubygems/test_gem_dependency_installer.rb:158:in `block'
-    /macruby-test/test-mri/test/rubygems/test_gem_dependency_installer.rb:156:in `test_install_dependency'
+test_gather_dependencies_over(TestGemDependencyInstaller):
+Gem::DependencyError: Unable to resolve dependencies: a requires b (~> 1.0); c requires b (= 2.0)
+    /macruby-test/test-mri/test/rubygems/test_gem_dependency_installer.rb:640:in `assert_resolve'
+    /macruby-test/test-mri/test/rubygems/test_gem_dependency_installer.rb:723:in `test_gather_dependencies_over'
 
-  5) Error:
-test_install_dependency_development(TestGemDependencyInstaller):
-Gem::RemoteFetcher::FetchError: no data for http://gems.example.com/gems/a-1.gem (http://gems.example.com/gems/a-1.gem)
-    /macruby-test/test-mri/test/rubygems/test_gem_dependency_installer.rb:172:in `block'
-    /macruby-test/test-mri/test/rubygems/test_gem_dependency_installer.rb:170:in `test_install_dependency_development'
-
-  6) Failure:
-test_install_domain_both(TestGemDependencyInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_dependency_installer.rb:343]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35771/gemhome/specifications/a-1.gemspec", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35771/gemhome/specifications/a-1.gemspec".
-
-38 tests, 50 assertions, 1 failures, 4 errors, 1 skips
-
-Test run options: --seed 0
+42 tests, 58 assertions, 1 failures, 3 errors, 1 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_dependency_list
-Started
-.................
+Run options: --seed 0
 
-17 tests, 39 assertions, 0 failures, 0 errors, 0 skips
+# Running tests:
 
-Test run options: --seed 0
+...................
+
+Finished tests in 1.158396s, 16.4020 tests/s, 36.2570 assertions/s.
+
+19 tests, 42 assertions, 0 failures, 0 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_doc_manager
-Started
+Run options: --seed 0
+
+# Running tests:
+
 .
+
+Finished tests in 0.554489s, 1.8035 tests/s, 1.8035 assertions/s.
 
 1 tests, 1 assertions, 0 failures, 0 errors, 0 skips
 
-Test run options: --seed 0
-
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_ext_configure_builder
-Started
+Run options: --seed 0
+
+# Running tests:
+
 ...
+
+Finished tests in 0.724001s, 4.1436 tests/s, 23.4806 assertions/s.
 
 3 tests, 17 assertions, 0 failures, 0 errors, 0 skips
 
-Test run options: --seed 0
+----------------------------------------
+Run options: --seed 0
+
+# Running tests:
+
+/bin/sh: line 1: 61977 Abort trap              /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/bin/macruby extconf.rb 2>&1
+......
+
+Finished tests in 11.649534s, 0.5150 tests/s, 1.8026 assertions/s.
+
+6 tests, 21 assertions, 0 failures, 0 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_ext_ext_conf_builder
-Started
-.../bin/sh: line 1: 35825 Abort trap              /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/bin/macruby extconf.rb 2>&1
-.
+Run options: --seed 0
 
-4 tests, 15 assertions, 0 failures, 0 errors, 0 skips
+# Running tests:
 
-Test run options: --seed 0
-
-----------------------------------------
-Loaded suite test/rubygems/test_gem_ext_rake_builder
-Started
 ..
+
+Finished tests in 1.569920s, 1.2740 tests/s, 8.2807 assertions/s.
 
 2 tests, 13 assertions, 0 failures, 0 errors, 0 skips
 
-Test run options: --seed 0
+----------------------------------------
+/macruby-test/test-mri/test/rubygems/test_gem_format.rb:2:in `<main>': no such file to load -- rubygems/simple_gem (LoadError)
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_format
-Started
-....
+Run options: --seed 0
 
-4 tests, 15 assertions, 0 failures, 0 errors, 0 skips
+# Running tests:
 
-Test run options: --seed 0
-
-----------------------------------------
-Loaded suite test/rubygems/test_gem_gem_path_searcher
-Started
 F.......
 
+Finished tests in 3.944394s, 2.0282 tests/s, 2.7888 assertions/s.
+
   1) Failure:
-test_lib_dirs_for(TestGemGemPathSearcher) [/macruby-test/test-mri/test/rubygems/test_gem_gem_path_searcher.rb:53]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35865/gemhome/gems/foo-0.1/{lib,lib2}", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35865/gemhome/gems/foo-0.1/{lib,lib2}".
+test_lib_dirs_for(TestGemGemPathSearcher) [/macruby-test/test-mri/test/rubygems/test_gem_gem_path_searcher.rb:62]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_62042/gemhome/gems/foo-0.1/{lib,lib2}"
++"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_62042/gemhome/gems/foo-0.1/{lib,lib2}"
+
 
 8 tests, 11 assertions, 1 failures, 0 errors, 0 skips
 
-Test run options: --seed 0
-
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_gem_runner
-Started
+Run options: --seed 0
+
+# Running tests:
+
 ..
 
-2 tests, 5 assertions, 0 failures, 0 errors, 0 skips
+Finished tests in 0.376159s, 5.3169 tests/s, 10.6338 assertions/s.
 
-Test run options: --seed 0
-
-----------------------------------------
-Loaded suite test/rubygems/test_gem_gemcutter_utilities
-Started
-EEEEE
-
-  1) Error:
-test_sign_in_skips_with_existing_credentials(TestGemGemcutterUtilities):
-NameError: uninitialized constant Gem::Command
-    /macruby-test/test-mri/test/rubygems/test_gem_gemcutter_utilities.rb:13:in `setup'
-
-  2) Error:
-test_sign_in_with_bad_credentials(TestGemGemcutterUtilities):
-NameError: uninitialized constant Gem::Command
-    /macruby-test/test-mri/test/rubygems/test_gem_gemcutter_utilities.rb:13:in `setup'
-
-  3) Error:
-test_sign_in_with_host(TestGemGemcutterUtilities):
-NameError: uninitialized constant Gem::Command
-    /macruby-test/test-mri/test/rubygems/test_gem_gemcutter_utilities.rb:13:in `setup'
-
-  4) Error:
-test_sign_in_with_other_credentials_doesnt_overwrite_other_keys(TestGemGemcutterUtilities):
-NameError: uninitialized constant Gem::Command
-    /macruby-test/test-mri/test/rubygems/test_gem_gemcutter_utilities.rb:13:in `setup'
-
-  5) Error:
-test_sign_in(TestGemGemcutterUtilities):
-NameError: uninitialized constant Gem::Command
-    /macruby-test/test-mri/test/rubygems/test_gem_gemcutter_utilities.rb:13:in `setup'
-
-5 tests, 0 assertions, 0 failures, 5 errors, 0 skips
-
-Test run options: --seed 0
+2 tests, 4 assertions, 0 failures, 0 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_indexer
-Started
+Run options: --seed 0
 
+# Running tests:
+
+..stty: stdin isn't a terminal
+stty: stdin isn't a terminal
+..stty: stdin isn't a terminal
+stty: stdin isn't a terminal
+...stty: stdin isn't a terminal
+stty: stdin isn't a terminal
+.stty: stdin isn't a terminal
+stty: stdin isn't a terminal
+.
+
+Finished tests in 1.120059s, 8.0353 tests/s, 24.9987 assertions/s.
+
+9 tests, 28 assertions, 0 failures, 0 errors, 0 skips
+
+----------------------------------------
+Run options: --seed 0
+
+# Running tests:
+
+
+
+Finished tests in 0.088531s, 0.0000 tests/s, 0.0000 assertions/s.
 
 0 tests, 0 assertions, 0 failures, 0 errors, 0 skips
 
-Test run options: --seed 0
-
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_install_update_options
-Started
+Run options: --seed 0
+
+# Running tests:
+
 .....
+
+Finished tests in 1.531707s, 3.2643 tests/s, 5.2229 assertions/s.
 
 5 tests, 8 assertions, 0 failures, 0 errors, 0 skips
 
-Test run options: --seed 0
-
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_installer
-Started
-........F...............F..............S......F.....
+Run options: --seed 0
+
+# Running tests:
+
+.FS............F.F...............................F..........
+
+Finished tests in 11.617236s, 5.1647 tests/s, 12.9979 assertions/s.
 
   1) Failure:
-test_initialize(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:518]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35887/gemhome/gems/a-2-x86-mswin32", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35887/gemhome/gems/a-2-x86-mswin32".
+test_install_pre_install_false(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:828]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-"pre-install hook at test/rubygems/test_gem_installer.rb:817 failed for a-2"
++"pre-install hook failed for a-2"
+
 
   2) Failure:
-test_extract_files_relative(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:145]:
-Expected "attempt to install file into \"../thefile\" under \"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35887/gemhome/gems/a-2\"", not "attempt to install file into \"../thefile\" under \"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35887/gemhome/gems/a-2\"".
+test_initialize(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:565]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_62070/installer/gems/a-2-x86-mswin32"
++"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_62070/installer/gems/a-2-x86-mswin32"
 
-  3) Skipped:
-test_generate_bin_script_wrappers(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:309]:
-[BUG : #???] Timeout, MacRuby don't finish
+
+  3) Failure:
+test_install_post_build_false(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:786]:
+--- expected
++++ actual
+@@ -1 +1 @@
+-"post-build hook at test/rubygems/test_gem_installer.rb:775 failed for a-2"
++"post-build hook failed for a-2"
+
 
   4) Failure:
-test_build_extensions_extconf_bad(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:69]:
+test_build_extensions_extconf_bad(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:85]:
 Expected /\/Library\/Frameworks\/MacRuby\.framework\/Versions\/0\.12\/usr\/bin\/macruby: No such file/ to match "/Library/Frameworks/MacRuby.framework/Versions/0.12/usr/bin/macruby extconf.rb\nNo such file or directory -- extconf.rb (LoadError)\n".
 
-52 tests, 127 assertions, 3 failures, 0 errors, 1 skips
-
-Test run options: --seed 0
+60 tests, 151 assertions, 4 failures, 0 errors, 1 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_local_remote_options
-Started
-...F...
+Run options: --seed 0
 
-  1) Failure:
-test_source_option(TestGemLocalRemoteOptions) [/macruby-test/test-mri/test/rubygems/test_gem_local_remote_options.rb:67]:
-Expected ["http://more-gems.example.com/",
- "http://even-more-gems.example.com/",
- "http://other-gems.example.com/some_subdir/"], not ["http://gems.example.com/",
- "http://more-gems.example.com/",
- "http://even-more-gems.example.com/",
- "http://other-gems.example.com/some_subdir/"].
+# Running tests:
 
-7 tests, 15 assertions, 1 failures, 0 errors, 0 skips
+.........
 
-Test run options: --seed 0
+Finished tests in 0.740238s, 12.1583 tests/s, 22.9656 assertions/s.
+
+9 tests, 17 assertions, 0 failures, 0 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_package_tar_header
-Started
+Run options: --seed 0
+
+# Running tests:
+
 .......
+
+Finished tests in 0.826564s, 8.4688 tests/s, 75.0093 assertions/s.
 
 7 tests, 62 assertions, 0 failures, 0 errors, 0 skips
 
-Test run options: --seed 0
-
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_package_tar_input
-Started
-EE
+Run options: --seed 0
+
+# Running tests:
+
+E.E
+
+Finished tests in 0.784722s, 3.8230 tests/s, 44.6018 assertions/s.
 
   1) Error:
-test_each_works(TestGemPackageTarInput):
-Gem::Package::FormatError: No metadata found!
-    /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:58:in `block'
-    /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:57:in `test_each_works'
+test_each(TestGemPackageTarInput):
+Gem::Package::FormatError: no metadata found in /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_62111/bla.tar
+    /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:75:in `block'
+    /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:74:in `test_each'
 
   2) Error:
-test_extract_entry_works(TestGemPackageTarInput):
-Gem::Package::FormatError: No metadata found!
-    /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:78:in `block'
-    /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:77:in `test_extract_entry_works'
+test_extract_entry(TestGemPackageTarInput):
+Gem::Package::FormatError: no metadata found in /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_62111/bla.tar
+    /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:95:in `block'
+    /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:94:in `test_extract_entry'
 
-2 tests, 20 assertions, 0 failures, 2 errors, 0 skips
-
-Test run options: --seed 0
+3 tests, 35 assertions, 0 failures, 2 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_package_tar_output
-Started
+Run options: --seed 0
+
+# Running tests:
+
 ..
+
+Finished tests in 0.614210s, 3.2562 tests/s, 21.1654 assertions/s.
 
 2 tests, 13 assertions, 0 failures, 0 errors, 0 skips
 
-Test run options: --seed 0
-
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_package_tar_reader
-Started
+Run options: --seed 0
+
+# Running tests:
+
 ..
+
+Finished tests in 0.463926s, 4.3110 tests/s, 32.3327 assertions/s.
 
 2 tests, 15 assertions, 0 failures, 0 errors, 0 skips
 
-Test run options: --seed 0
+----------------------------------------
+Run options: --seed 0
+
+# Running tests:
+
+...........F..
+
+Finished tests in 0.925744s, 15.1230 tests/s, 65.8929 assertions/s.
+
+  1) Failure:
+test_full_name_null(TestGemPackageTarReaderEntry) [/macruby-test/test-mri/test/rubygems/test_gem_package_tar_reader_entry.rb:67]:
+Gem::Package::TarInvalidError expected but nothing was raised.
+
+14 tests, 61 assertions, 1 failures, 0 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_package_tar_reader_entry
-Started
-.............
+Run options: --seed 0
 
-13 tests, 58 assertions, 0 failures, 0 errors, 0 skips
+# Running tests:
 
-Test run options: --seed 0
-
-----------------------------------------
-Loaded suite test/rubygems/test_gem_package_tar_writer
-Started
 ............
+
+Finished tests in 0.948834s, 12.6471 tests/s, 104.3386 assertions/s.
 
 12 tests, 99 assertions, 0 failures, 0 errors, 0 skips
 
-Test run options: --seed 0
+----------------------------------------
+Run options: --seed 0
+
+# Running tests:
+
+....
+
+Finished tests in 0.658939s, 6.0704 tests/s, 6.0704 assertions/s.
+
+4 tests, 4 assertions, 0 failures, 0 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_package_task
-Started
-...
+Run options: --seed 0
 
-3 tests, 3 assertions, 0 failures, 0 errors, 0 skips
+# Running tests:
 
-Test run options: --seed 0
-
-----------------------------------------
-Loaded suite test/rubygems/test_gem_platform
-Started
-...............
-
-15 tests, 154 assertions, 0 failures, 0 errors, 0 skips
-
-Test run options: --seed 0
-
-----------------------------------------
-Loaded suite test/rubygems/test_gem_remote_fetcher
-Started
-F.F......F..F......F..F....F.F.E...F.
-
-  1) Failure:
-test_implicit_proxy(TestGemRemoteFetcher) [/macruby-test/test-mri/test/rubygems/test_gem_remote_fetcher.rb:528]:
-Expected block to return true value.
-
-  2) Failure:
-test_explicit_proxy_with_user_auth_in_env(TestGemRemoteFetcher) [/macruby-test/test-mri/test/rubygems/test_gem_remote_fetcher.rb:400]:
-Expected block to return true value.
-
-  3) Failure:
-test_fetch_size_bad_uri(TestGemRemoteFetcher) [/macruby-test/test-mri/test/rubygems/test_gem_remote_fetcher.rb:144]:
-[ArgumentError] exception expected, not
-Class: <Gem::RemoteFetcher::FetchError>
-Message: <"error when fetching data (gems.example.com/yaml)">
----Backtrace---
-/macruby-test/test-mri/test/rubygems/test_gem_remote_fetcher.rb:145:in `block'
----------------
-
-  4) Failure:
-test_explicit_proxy_with_user_auth(TestGemRemoteFetcher) [/macruby-test/test-mri/test/rubygems/test_gem_remote_fetcher.rb:367]:
-Expected block to return true value.
-
-  5) Failure:
-test_open_uri_or_path_limited_redirects(TestGemRemoteFetcher) [/macruby-test/test-mri/test/rubygems/test_gem_remote_fetcher.rb:592]:
-Expected "too many redirects (http://gems.example.com/redirect)", not "error when fetching data (http://gems.example.com/redirect)".
-
-  6) Failure:
-test_fetch_size_socket_error(TestGemRemoteFetcher) [/macruby-test/test-mri/test/rubygems/test_gem_remote_fetcher.rb:162]:
-Expected "SocketError: tarded (http://gems.example.com/yaml)", not "error when fetching data (http://gems.example.com/yaml)".
-
-  7) Failure:
-test_explicit_proxy(TestGemRemoteFetcher) [/macruby-test/test-mri/test/rubygems/test_gem_remote_fetcher.rb:354]:
-Expected 1045, not 0.
-
-  8) Failure:
-test_no_proxy(TestGemRemoteFetcher) [/macruby-test/test-mri/test/rubygems/test_gem_remote_fetcher.rb:168]:
-Expected 1048, not 0.
-
-  9) Error:
-test_open_uri_or_path(TestGemRemoteFetcher):
-Gem::RemoteFetcher::FetchError: error when fetching data (http://gems.example.com/redirect)
-    /macruby-test/test-mri/test/rubygems/test_gem_remote_fetcher.rb:568:in `test_open_uri_or_path'
-
- 10) Failure:
-test_implicit_upper_case_proxy(TestGemRemoteFetcher) [/macruby-test/test-mri/test/rubygems/test_gem_remote_fetcher.rb:536]:
-Expected block to return true value.
-
-37 tests, 66 assertions, 9 failures, 1 errors, 0 skips
-
-Test run options: --seed 0
-
-----------------------------------------
-Loaded suite test/rubygems/test_gem_requirement
-Started
-.............F.......
-
-  1) Failure:
-test_satisfied_by_eh_boxed(TestGemRequirement) [/macruby-test/test-mri/test/rubygems/test_gem_requirement.rb:219]:
-~> 1.1 is satisfied by 1.1.pre
-
-21 tests, 130 assertions, 1 failures, 0 errors, 0 skips
-
-Test run options: --seed 0
-
-----------------------------------------
-Loaded suite test/rubygems/test_gem_server
-Started
-..........FF...........
-
-  1) Failure:
-test_yaml(TestGemServer) [/macruby-test/test-mri/test/rubygems/test_gem_server.rb:321]:
-Expected #<Gem::SourceIndex:0xXXXXXXXX @gems={"a-1"=>#<Gem::Specification:0xXXXXXXXX @new_platform="ruby" @name="a" @version=#<Gem::Version "1"> @summary="this is a summary" @email="example@example.com" @homepage="http://example.com" @rubyforge_project=nil @description="This is a test description" @autorequire=nil @default_executable=nil @signing_key=nil @post_install_message=nil @original_platform="ruby" @rubygems_version="1.4.2" @specification_version=3 @date=2012-02-10 00:00:00 +0900 @require_paths=["lib"] @bindir="bin" @has_rdoc=true @required_ruby_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @required_rubygems_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @platform="ruby" @cert_chain=[] @authors=["A User"] @licenses=[] @files=[] @test_files=[] @rdoc_options=[] @extra_rdoc_files=[] @executables=[] @extensions=[] @requirements=[] @dependencies=[] @loaded=false @loaded_from="/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35956/gemhome/specifications/a-1.gemspec">, "a-2"=>#<Gem::Specification:0xXXXXXXXX @new_platform="ruby" @name="a" @version=#<Gem::Version "2"> @summary="this is a summary" @email="example@example.com" @homepage="http://example.com" @rubyforge_project=nil @description="This is a test description" @autorequire=nil @default_executable=nil @signing_key=nil @post_install_message=nil @original_platform="ruby" @rubygems_version="1.4.2" @specification_version=3 @date=2012-02-10 00:00:00 +0900 @require_paths=["lib"] @bindir="bin" @has_rdoc=true @required_ruby_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @required_rubygems_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @platform="ruby" @cert_chain=[] @authors=["A User"] @licenses=[] @files=[] @test_files=[] @rdoc_options=[] @extra_rdoc_files=[] @executables=[] @extensions=[] @requirements=[] @dependencies=[] @loaded=false @loaded_from="/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35956/gemhome/specifications/a-2.gemspec">} @spec_dirs=nil>, not #<Gem::SourceIndex:0xXXXXXXXX @gems={"a-1"=>"a-2"} @spec_dirs=["/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35956/gemhome/specifications"]>.
-
-  2) Failure:
-test_yaml_Z(TestGemServer) [/macruby-test/test-mri/test/rubygems/test_gem_server.rb:337]:
-Expected #<Gem::SourceIndex:0xXXXXXXXX @gems={"a-1"=>#<Gem::Specification:0xXXXXXXXX @new_platform="ruby" @name="a" @version=#<Gem::Version "1"> @summary="this is a summary" @email="example@example.com" @homepage="http://example.com" @rubyforge_project=nil @description="This is a test description" @autorequire=nil @default_executable=nil @signing_key=nil @post_install_message=nil @original_platform="ruby" @rubygems_version="1.4.2" @specification_version=3 @date=2012-02-10 00:00:00 +0900 @require_paths=["lib"] @bindir="bin" @has_rdoc=true @required_ruby_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @required_rubygems_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @platform="ruby" @cert_chain=[] @authors=["A User"] @licenses=[] @files=[] @test_files=[] @rdoc_options=[] @extra_rdoc_files=[] @executables=[] @extensions=[] @requirements=[] @dependencies=[] @loaded=false @loaded_from="/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35956/gemhome/specifications/a-1.gemspec">, "a-2"=>#<Gem::Specification:0xXXXXXXXX @new_platform="ruby" @name="a" @version=#<Gem::Version "2"> @summary="this is a summary" @email="example@example.com" @homepage="http://example.com" @rubyforge_project=nil @description="This is a test description" @autorequire=nil @default_executable=nil @signing_key=nil @post_install_message=nil @original_platform="ruby" @rubygems_version="1.4.2" @specification_version=3 @date=2012-02-10 00:00:00 +0900 @require_paths=["lib"] @bindir="bin" @has_rdoc=true @required_ruby_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @required_rubygems_version=#<Gem::Requirement:0xXXXXXXXX @none=false @requirements=[[">=", #<Gem::Version "0">]]> @platform="ruby" @cert_chain=[] @authors=["A User"] @licenses=[] @files=[] @test_files=[] @rdoc_options=[] @extra_rdoc_files=[] @executables=[] @extensions=[] @requirements=[] @dependencies=[] @loaded=false @loaded_from="/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35956/gemhome/specifications/a-2.gemspec">} @spec_dirs=nil>, not #<Gem::SourceIndex:0xXXXXXXXX @gems={"a-1"=>"a-2"} @spec_dirs=["/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35956/gemhome/specifications"]>.
-
-23 tests, 105 assertions, 2 failures, 0 errors, 0 skips
-
-Test run options: --seed 0
-
-----------------------------------------
-Loaded suite test/rubygems/test_gem_source_index
-Started
-.......Invalid gemspec in [/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35961/gemhome/specifications/a-1.gemspec]: epic fail
-F.............Invalid gemspec in [/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35961/gemhome/specifications/a-1.gemspec]: /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35961/gemhome/specifications/a-1.gemspec:1: syntax error, unexpected $end
-F......
-
-  1) Failure:
-test_self_load_specification_exception(TestGemSourceIndex) [/macruby-test/test-mri/test/rubygems/test_gem_source_index.rb:131]:
-Expected "WARNING:  #<Exception: epic fail>\nraise Exception, \"epic fail\"\nWARNING:  Invalid .gemspec format in '/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35961/gemhome/specifications/a-1.gemspec'\n", not "".
-
-  2) Failure:
-test_self_load_specification_syntax_error(TestGemSourceIndex) [/macruby-test/test-mri/test/rubygems/test_gem_source_index.rb:172]:
-Expected /syntax error/ to match "".
-
-28 tests, 55 assertions, 2 failures, 0 errors, 0 skips
-
-Test run options: --seed 0
-
-----------------------------------------
-Loaded suite test/rubygems/test_gem_spec_fetcher
-Started
-.........................
-
-25 tests, 41 assertions, 0 failures, 0 errors, 0 skips
-
-Test run options: --seed 0
-
-----------------------------------------
-Loaded suite test/rubygems/test_gem_specification
-Started
-...........F.........F.........Invalid gemspec in [/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/testgemspecification20120210-35972-1bxf1bp]: boom
-.F.F.............F.............F................................
-
-  1) Failure:
-test_to_ruby_fancy(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:855]:
-Expected "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"1\"\n  s.platform = Gem::Platform.new([\"x86\", \"darwin\", \"8\"])\n\n  s.required_rubygems_version = Gem::Requirement.new(\">= 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2012-02-10}\n  s.default_executable = %q{exec}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.executables = [\"exec\"]\n  s.extensions = [\"ext/a/extconf.rb\"]\n  s.files = [\"lib/code.rb\", \"test/suite.rb\", \"bin/exec\", \"ext/a/extconf.rb\"]\n  s.homepage = %q{http://example.com}\n  s.licenses = [\"MIT\"]\n  s.require_paths = [\"lib\"]\n  s.requirements = [\"A working computer\"]\n  s.rubyforge_project = %q{example}\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n  s.test_files = [\"test/suite.rb\"]\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_runtime_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_runtime_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    else\n      s.add_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    end\n  else\n    s.add_dependency(%q<rake>, [\"> 0.4\"])\n    s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n    s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n  end\nend\n", not "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"1\"\n  s.platform = Gem::Platform.new([\"x86\", \"darwin\", \"8\"])\n\n  s.required_rubygems_version = Gem::Requirement.new(\">= 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2012-02-10}\n  s.default_executable = %q{exec}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.executables = [\"exec\"]\n  s.extensions = [\"ext/a/extconf.rb\"]\n  s.files = [\"lib/code.rb\", \"test/suite.rb\", \"bin/exec\", \"ext/a/extconf.rb\"]\n  s.homepage = %q{http://example.com}\n  s.licenses = [\"MIT\"]\n  s.require_paths = [\"lib\"]\n  s.requirements = [\"A working computer\"]\n  s.rubyforge_project = %q{example}\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n  s.test_files = [\"test/suite.rb\"]\n\n  if s.respond_to? :specification_version then\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_runtime_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_runtime_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    else\n      s.add_dependency(%q<rake>, [\"> 0.4\"])\n      s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n      s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n    end\n  else\n    s.add_dependency(%q<rake>, [\"> 0.4\"])\n    s.add_dependency(%q<jabber4r>, [\"> 0.0.0\"])\n    s.add_dependency(%q<pqa>, [\"> 0.4\", \"<= 0.6\"])\n  end\nend\n".
-
-  2) Failure:
-test_validate_rubyforge_project(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:1189]:
-error.
-Expected "WARNING:  no rubyforge_project specified\n", not "".
-
-  3) Failure:
-test_installation_path(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:607]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35972/gemhome", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35972/gemhome".
-
-  4) Failure:
-test_to_ruby(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:794]:
-Expected "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"2\"\n\n  s.required_rubygems_version = Gem::Requirement.new(\"> 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2012-02-10}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.files = [\"lib/code.rb\"]\n  s.homepage = %q{http://example.com}\n  s.require_paths = [\"lib\"]\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n\n  if s.respond_to? :specification_version then\n    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<b>, [\"= 1\"])\n    else\n      s.add_dependency(%q<b>, [\"= 1\"])\n    end\n  else\n    s.add_dependency(%q<b>, [\"= 1\"])\n  end\nend\n", not "# -*- encoding: utf-8 -*-\n\nGem::Specification.new do |s|\n  s.name = %q{a}\n  s.version = \"2\"\n\n  s.required_rubygems_version = Gem::Requirement.new(\"> 0\") if s.respond_to? :required_rubygems_version=\n  s.authors = [\"A User\"]\n  s.date = %q{2012-02-10}\n  s.description = %q{This is a test description}\n  s.email = %q{example@example.com}\n  s.files = [\"lib/code.rb\"]\n  s.homepage = %q{http://example.com}\n  s.require_paths = [\"lib\"]\n  s.rubygems_version = %q{1.4.2}\n  s.summary = %q{this is a summary}\n\n  if s.respond_to? :specification_version then\n    s.specification_version = 3\n\n    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then\n      s.add_runtime_dependency(%q<b>, [\"= 1\"])\n    else\n      s.add_dependency(%q<b>, [\"= 1\"])\n    end\n  else\n    s.add_dependency(%q<b>, [\"= 1\"])\n  end\nend\n".
-
-  5) Failure:
-test_full_gem_path(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:540]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35972/gemhome/gems/a-1", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35972/gemhome/gems/a-1".
-
-  6) Failure:
-test_full_gem_path_double_slash(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:553]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35972/gemhome/gems/a-1", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_35972/gemhome/gems/a-1".
-
-95 tests, 226 assertions, 6 failures, 0 errors, 0 skips
-
-Test run options: --seed 0
-
-----------------------------------------
-Loaded suite test/rubygems/test_gem_stream_ui
-Started
-E.E.E.E..E.E
-
-  1) Error:
-test_ask_for_password(TestGemStreamUI):
-NoMethodError: undefined method `timeout' for #<TestGemStreamUI:0xXXXXXXXX ...>
-    /macruby-test/test-mri/test/rubygems/test_gem_stream_ui.rb:52:in `test_ask_for_password'
-
-  2) Error:
-test_ask_yes_no_no_tty_with_default(TestGemStreamUI):
-NoMethodError: undefined method `timeout' for #<TestGemStreamUI:0xXXXXXXXX ...>
-    /macruby-test/test-mri/test/rubygems/test_gem_stream_ui.rb:72:in `test_ask_yes_no_no_tty_with_default'
-
-  3) Error:
-test_ask_for_password_no_tty(TestGemStreamUI):
-NoMethodError: undefined method `timeout' for #<TestGemStreamUI:0xXXXXXXXX ...>
-    /macruby-test/test-mri/test/rubygems/test_gem_stream_ui.rb:63:in `test_ask_for_password_no_tty'
-
-  4) Error:
-test_ask(TestGemStreamUI):
-NoMethodError: undefined method `timeout' for #<TestGemStreamUI:0xXXXXXXXX ...>
-    /macruby-test/test-mri/test/rubygems/test_gem_stream_ui.rb:32:in `test_ask'
-
-  5) Error:
-test_ask_yes_no_no_tty_without_default(TestGemStreamUI):
-NoMethodError: undefined method `timeout' for #<TestGemStreamUI:0xXXXXXXXX ...>
-    /macruby-test/test-mri/test/rubygems/test_gem_stream_ui.rb:84:in `test_ask_yes_no_no_tty_without_default'
-
-  6) Error:
-test_ask_no_tty(TestGemStreamUI):
-NoMethodError: undefined method `timeout' for #<TestGemStreamUI:0xXXXXXXXX ...>
-    /macruby-test/test-mri/test/rubygems/test_gem_stream_ui.rb:43:in `test_ask_no_tty'
-
-12 tests, 11 assertions, 0 failures, 6 errors, 0 skips
-
-Test run options: --seed 0
-
-----------------------------------------
-Loaded suite test/rubygems/test_gem_uninstaller
-Started
-F.F......
-
-  1) Failure:
-test_path_ok_eh(TestGemUninstaller) [/macruby-test/test-mri/test/rubygems/test_gem_uninstaller.rb:84]:
-Expected true, not false.
-
-  2) Failure:
-test_path_ok_eh_legacy(TestGemUninstaller) [/macruby-test/test-mri/test/rubygems/test_gem_uninstaller.rb:93]:
-Expected true, not false.
-
-9 tests, 21 assertions, 2 failures, 0 errors, 0 skips
-
-Test run options: --seed 0
-
-----------------------------------------
-Loaded suite test/rubygems/test_gem_validator
-Started
 .......
+
+Finished tests in 0.409631s, 17.0886 tests/s, 26.8534 assertions/s.
 
 7 tests, 11 assertions, 0 failures, 0 errors, 0 skips
 
-Test run options: --seed 0
+----------------------------------------
+Run options: --seed 0
+
+# Running tests:
+
+...............
+
+Finished tests in 0.810906s, 18.4978 tests/s, 189.9110 assertions/s.
+
+15 tests, 154 assertions, 0 failures, 0 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_version
-Started
-............F..
+Run options: --seed 0
+
+# Running tests:
+
+.............................................
+
+Finished tests in 6.115260s, 7.3586 tests/s, 16.8431 assertions/s.
+
+45 tests, 103 assertions, 0 failures, 0 errors, 0 skips
+
+----------------------------------------
+Run options: --seed 0
+
+# Running tests:
+
+......................
+
+Finished tests in 1.046875s, 21.0149 tests/s, 134.6866 assertions/s.
+
+22 tests, 141 assertions, 0 failures, 0 errors, 0 skips
+
+----------------------------------------
+Run options: --seed 0
+
+# Running tests:
+
+....
+
+Finished tests in 0.475557s, 8.4112 tests/s, 44.1587 assertions/s.
+
+4 tests, 21 assertions, 0 failures, 0 errors, 0 skips
+
+----------------------------------------
+Run options: --seed 0
+
+# Running tests:
+
+..............
+
+Finished tests in 2.468541s, 5.6714 tests/s, 23.9008 assertions/s.
+
+14 tests, 59 assertions, 0 failures, 0 errors, 0 skips
+
+----------------------------------------
+Run options: --seed 0
+
+# Running tests:
+
+......
+
+Finished tests in 0.733123s, 8.1842 tests/s, 51.8330 assertions/s.
+
+6 tests, 38 assertions, 0 failures, 0 errors, 0 skips
+
+----------------------------------------
+Run options: --seed 0
+
+# Running tests:
+
+.............
+
+Finished tests in 6.461937s, 2.0118 tests/s, 5.5711 assertions/s.
+
+13 tests, 36 assertions, 0 failures, 0 errors, 0 skips
+
+----------------------------------------
+Run options: --seed 0
+
+# Running tests:
+
+..........................
+
+Finished tests in 10.038167s, 2.5901 tests/s, 4.1840 assertions/s.
+
+26 tests, 42 assertions, 0 failures, 0 errors, 0 skips
+
+----------------------------------------
+Run options: --seed 0
+
+# Running tests:
+
+..............................................................................................F.........
+
+Finished tests in 4.753816s, 21.8772 tests/s, 63.7383 assertions/s.
 
   1) Failure:
-test_hash(TestGemVersion) [/macruby-test/test-mri/test/rubygems/test_gem_version.rb:48]:
-Expected 2 to not be equal to 2.
+test_initialize_copy_broken(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:454]:
+Gem::FormatException expected but nothing was raised.
 
-15 tests, 53 assertions, 1 failures, 0 errors, 0 skips
-
-Test run options: --seed 0
+104 tests, 303 assertions, 1 failures, 0 errors, 0 skips
 
 ----------------------------------------
-Loaded suite test/rubygems/test_gem_version_option
-Started
+Run options: --seed 0
+
+# Running tests:
+
+...S............stty: stdin isn't a terminal
+stty: stdin isn't a terminal
+......
+
+Finished tests in 0.887098s, 24.8000 tests/s, 32.6909 assertions/s.
+
+22 tests, 29 assertions, 0 failures, 0 errors, 1 skips
+
+----------------------------------------
+Run options: --seed 0
+
+# Running tests:
+
+.........
+
+Finished tests in 0.384056s, 23.4341 tests/s, 36.4530 assertions/s.
+
+9 tests, 14 assertions, 0 failures, 0 errors, 0 skips
+
+----------------------------------------
+Run options: --seed 0
+
+# Running tests:
+
+......F.F......
+
+Finished tests in 5.973882s, 2.5109 tests/s, 6.0262 assertions/s.
+
+  1) Failure:
+test_path_ok_eh(TestGemUninstaller) [/macruby-test/test-mri/test/rubygems/test_gem_uninstaller.rb:122]:
+Expected: true
+  Actual: false
+
+  2) Failure:
+test_uninstall_selection_greater_than_one(TestGemUninstaller) [/macruby-test/test-mri/test/rubygems/test_gem_uninstaller.rb:233]:
+Expected: 3
+  Actual: 2
+
+15 tests, 36 assertions, 2 failures, 0 errors, 0 skips
+
+----------------------------------------
+/macruby-test/test-mri/test/rubygems/test_gem_validator.rb:2:in `<main>': no such file to load -- rubygems/simple_gem (LoadError)
+
+----------------------------------------
+Run options: --seed 0
+
+# Running tests:
+
+............F...
+
+Finished tests in 0.886860s, 18.0412 tests/s, 66.5268 assertions/s.
+
+  1) Failure:
+test_hash(TestGemVersion) [/macruby-test/test-mri/test/rubygems/test_gem_version.rb:54]:
+Expected 2 to not be equal to 2.
+
+16 tests, 59 assertions, 1 failures, 0 errors, 0 skips
+
+----------------------------------------
+Run options: --seed 0
+
+# Running tests:
+
 .......
+
+Finished tests in 0.450968s, 15.5222 tests/s, 19.9571 assertions/s.
 
 7 tests, 9 assertions, 0 failures, 0 errors, 0 skips
 
-Test run options: --seed 0
-
 ----------------------------------------
-Loaded suite test/rubygems/test_kernel
-Started
-.../Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:656:Warning: Gem::LoadError#version_requirement is deprecated and will be removed on or after January 2011. Use #requirement.
-.
+Run options: --seed 0
 
-4 tests, 23 assertions, 0 failures, 0 errors, 0 skips
+# Running tests:
 
-Test run options: --seed 0
+.....
+
+Finished tests in 1.646544s, 3.0367 tests/s, 10.9320 assertions/s.
+
+5 tests, 18 assertions, 0 failures, 0 errors, 0 skips
 
 ----------------------------------------
 Loaded suite test/scanf/test_scanf
 Started
-
+...................
 ----------------------------------------
 Loaded suite test/scanf/test_scanfblocks
 Started
@@ -13456,25 +13580,25 @@ F.FF
 
   1) Failure:
 test_bad_header(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:129]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2012-02-10 04:00:23] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2012-02-11 03:56:19] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
 
   2) Failure:
 test_bad_uri(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:115]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2012-02-10 04:00:29] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2012-02-11 03:56:25] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
 
   3) Failure:
 test_cgi(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:40]:
 webrick log start:
-  [2012-02-10 04:00:29] INFO  WEBrick 1.3.1
-  [2012-02-10 04:00:29] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
-  [2012-02-10 04:00:29] INFO  WEBrick::HTTPServer#start: pid=36283 port=58549
-  [2012-02-10 04:00:29] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2012-02-11 03:56:25] INFO  WEBrick 1.3.1
+  [2012-02-11 03:56:25] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
+  [2012-02-11 03:56:25] INFO  WEBrick::HTTPServer#start: pid=62447 port=62009
+  [2012-02-11 03:56:25] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
-  [2012-02-10 04:00:33] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2012-02-11 03:56:29] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
-  [2012-02-10 04:00:38] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2012-02-11 03:56:33] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
-  [2012-02-10 04:00:42] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2012-02-11 03:56:37] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
 webrick log end.
 <"/\xA4ۤ\xB2/\xA4ۤ\xB2"> expected but was
@@ -13788,8 +13912,8 @@ F
   1) Failure:
 test_client_server(Test_Webrick) [/macruby-test/test-mri/test/xmlrpc/test_webrick_server.rb:71]:
 [XMLRPC::FaultException] exception expected, not
-Class: <Errno::ECONNRESET>
-Message: <"Connection reset by peer - read(2) failed.">
+Class: <EOFError>
+Message: <"end of file reached">
 ---Backtrace---
 /macruby-test/test-mri/test/xmlrpc/test_webrick_server.rb:71:in `block'
 ---------------
