@@ -1,5 +1,5 @@
-Date    : 2012-02-12T03:11:14+09:00
-Version : 0.12, git commit c8a0a139e929e7550226b4763a93a72cdc1a79ab
+Date    : 2012-02-13T03:11:26+09:00
+Version : 0.12, git commit bd22a73b88209c7bc84696b2a93ce61fa95875a9
 
 ----------------------------------------
 /macruby-test/test-mri/test/-ext-/string/test_cstr.rb:2:in `<main>': no such file to load -- -test-/string/string (LoadError)
@@ -554,31 +554,9 @@ Test run options: --seed 0
 Loaded suite test/drb/test_drb
 Started
 .terminate called after throwing an instance of 'RoxorThreadRaiseException*'
-.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
-.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
-Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
-.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
-Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
-.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
-.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
-.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
-.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
-Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
-.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
-.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
-Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
-.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
-.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
-.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
-.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
-.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
-.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
-.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
-.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
-.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
-Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
-.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
 terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+..terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
 
 ----------------------------------------
 /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/drb/drb.rb:767:in `open_server': can't parse uri:--seed (DRb::DRbBadURI)
@@ -1096,7 +1074,7 @@ Started
   1) Failure:
 test_killed_thread_in_synchronize(TestMonitor) [/macruby-test/test-mri/test/monitor/test_monitor.rb:80]:
 <[:main]> expected but was
-<[:main, :t2, :t1]>.
+<[:main, :t1, :t2]>.
 
 6 tests, 18 assertions, 1 failures, 0 errors, 0 skips
 
@@ -1110,7 +1088,7 @@ F.F..E......F.F...E..E...F......
   1) Failure:
 test_get(TestNetHTTP_v1_2) [/macruby-test/test-mri/test/net/http/test_http.rb:49]:
 Exception raised:
-<#<Errno::ECONNRESET: Connection reset by peer - read(2) failed.>>.
+<#<EOFError: end of file reached>>.
 
   2) Failure:
 test_get__break(TestNetHTTP_v1_2) [/macruby-test/test-mri/test/net/http/test_http.rb:96]:
@@ -1133,7 +1111,7 @@ Exception raised:
   5) Failure:
 test_get__break(TestNetHTTP_v1_2_chunked) [/macruby-test/test-mri/test/net/http/test_http.rb:96]:
 <1> expected but was
-<4096>.
+<4097>.
 
   6) Error:
 test_request(TestNetHTTP_v1_2_chunked):
@@ -1299,7 +1277,21 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/open-uri/test_open-uri
 Started
-.....................F.
+.....................F.F...........
+
+  1) Failure:
+test_progress(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.rb:394]:
+<100000> expected but was
+<81508>.
+
+  2) Failure:
+test_proxy(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.rb:205]:
+Expected /http:\/\/127\.0\.0\.1:63336/ to match "\xA0)\x01\x00\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xA0(\x01\x00\x02\x00\x00\x00\f\x00\x00\x00\x00\x00\x00\x00\n\x00\x00\x00\x00\x00\x00\x00\xE0\xA2R".
+
+35 tests, 139 assertions, 2 failures, 0 errors, 0 skips
+
+Test run options: --seed 0
+
 ----------------------------------------
 Loaded suite test/open-uri/test_ssl
 Started
@@ -2145,7 +2137,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rake/test_fileutils
 Started
-.2012-02-12 03:21:35.132 macruby[72744:903] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
+.2012-02-13 03:21:12.155 macruby[84930:903] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
 F.....................
 
   1) Failure:
@@ -3459,7 +3451,7 @@ Started
 test_add_includes_many(TestRDocRIDriver) [/macruby-test/test-mri/test/rdoc/test_rdoc_ri_driver.rb:148]:
 Expected [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_72935/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_85124/dot_ri)"],
   blankline,
   [para: "Inc"],
   blankline,
@@ -3467,7 +3459,7 @@ Expected [doc: [rule:1],
   blankline,
   [verb: "  ", "Enumerable", "\n"]], not [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_72935/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_85124/dot_ri)"],
   blankline,
   [para: "Inc"],
   blankline,
@@ -3479,10 +3471,10 @@ Expected [doc: [rule:1],
 test_add_includes_many_no_doc(TestRDocRIDriver) [/macruby-test/test-mri/test/rdoc/test_rdoc_ri_driver.rb:169]:
 Expected [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_72935/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_85124/dot_ri)"],
   [verb: "  ", "Inc", "\n", "  ", "Enumerable", "\n"]], not [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_72935/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_85124/dot_ri)"],
   [verb: "Inc", "\n", "Enumerable", "\n"]].
 
   3) Failure:
@@ -5589,9 +5581,9 @@ Expected /Can't do inplace edit for stdio/ to match "".
 
   4) Failure:
 test_lineno(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:92]:
-[ruby-dev:34445]: line 98.
+[ruby-dev:34445]: line 96.
 <"3"> expected but was
-<"4">.
+<"">.
 
   5) Failure:
 test_lineno2(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:112]:
@@ -5624,7 +5616,7 @@ Message: <"not opened for reading">
 /macruby-test/test-mri/test/ruby/test_argf.rb:708:in `block'
 ---------------
 
-42 tests, 163 assertions, 9 failures, 0 errors, 0 skips
+42 tests, 159 assertions, 9 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -6042,7 +6034,7 @@ Encoding::CompatibilityError expected but nothing was raised.
 
   4) Failure:
 test_inspect(TestDir) [/macruby-test/test-mri/test/ruby/test_dir.rb:63]:
-Expected /^#<Dir:\/private\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/__test_dir__20120212\-73415\-1o6inhj>$/ to match "#<Dir:/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/__test_dir__20120212-73415-1o6inhj".
+Expected /^#<Dir:\/private\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/__test_dir__20120213\-85601\-1o6inhj>$/ to match "#<Dir:/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/__test_dir__20120213-85601-1o6inhj".
 
 14 tests, 80 assertions, 2 failures, 1 errors, 1 skips
 
@@ -6051,52 +6043,52 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_dir_m17n
 Started
-/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120212-73418-12zdlt8/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120212-73418-1estiet/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120212-73418-16tc0n7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120212-73418-12pbsn7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120212-73418-u3bzm1/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120212-73418-19vmgph/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120212-73418-v2yjvo/-:6:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120212-73418-1rcd3ra/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120212-73418-1wg6zq0/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120213-85604-12zdlt8/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120213-85604-1estiet/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120213-85604-16tc0n7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120213-85604-12pbsn7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120213-85604-u3bzm1/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120213-85604-19vmgph/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120213-85604-v2yjvo/-:6:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120213-85604-1rcd3ra/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120213-85604-1wg6zq0/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
 F
 
   1) Failure:
 test_filename_as_bytes_extutf8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:50]:
-ruby exit status is not success: #<Process::Status: pid 73419 exit 1>
+ruby exit status is not success: #<Process::Status: pid 85605 exit 1>
 
   2) Failure:
 test_filename_bytes_euc_jp(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:148]:
-ruby exit status is not success: #<Process::Status: pid 73420 exit 1>
+ruby exit status is not success: #<Process::Status: pid 85606 exit 1>
 
   3) Failure:
 test_filename_euc_jp(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:162]:
-ruby exit status is not success: #<Process::Status: pid 73421 exit 1>
+ruby exit status is not success: #<Process::Status: pid 85607 exit 1>
 
   4) Failure:
 test_filename_ext_euc_jp_and_int_utf_8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:200]:
-ruby exit status is not success: #<Process::Status: pid 73422 exit 1>
+ruby exit status is not success: #<Process::Status: pid 85608 exit 1>
 
   5) Failure:
 test_filename_extutf8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:18]:
-ruby exit status is not success: #<Process::Status: pid 73423 exit 1>
+ruby exit status is not success: #<Process::Status: pid 85609 exit 1>
 
   6) Failure:
 test_filename_extutf8_inteucjp_representable(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:89]:
-ruby exit status is not success: #<Process::Status: pid 73424 exit 1>
+ruby exit status is not success: #<Process::Status: pid 85610 exit 1>
 
   7) Failure:
 test_filename_extutf8_inteucjp_unrepresentable(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:116]:
-ruby exit status is not success: #<Process::Status: pid 73425 exit 1>
+ruby exit status is not success: #<Process::Status: pid 85611 exit 1>
 
   8) Failure:
 test_filename_extutf8_invalid(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:31]:
-ruby exit status is not success: #<Process::Status: pid 73426 exit 1>
+ruby exit status is not success: #<Process::Status: pid 85612 exit 1>
 
   9) Failure:
 test_filename_utf8_raw_name(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:182]:
-ruby exit status is not success: #<Process::Status: pid 73427 exit 1>
+ruby exit status is not success: #<Process::Status: pid 85613 exit 1>
 
 9 tests, 9 assertions, 9 failures, 0 errors, 0 skips
 
@@ -7161,7 +7153,7 @@ NoMethodError: undefined method `each_codepoint' for #<File:0xXXXXXXXX>
  21) Failure:
 test_foreach(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1469]:
 <["foo\n", "bar\n", "baz\n"]> expected but was
-<["foo\n", "bar", "\n", "baz\n"]>.
+<["foo\n", "bar", "\n", "baz", "\n"]>.
 
  22) Failure:
 test_initialize(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1598]:
@@ -9479,7 +9471,7 @@ test_rand_0xXXXXXXXX(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:65
 
  17) Failure:
 test_random_range(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:362]:
-<2012-02-12 03:39:02 +0900> expected but was
+<2012-02-13 03:38:41 +0900> expected but was
 <1.97626258336499e-323>.
 
  18) Failure:
@@ -9668,7 +9660,7 @@ test_eval(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb
 
   8) Failure:
 test_indentation_check(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:319]:
-<["/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20120212-73734-14cjxw8.rb:2: warning: mismatched indentations at 'end' with 'begin' at 1"]> expected but was
+<["/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20120213-85920-14cjxw8.rb:2: warning: mismatched indentations at 'end' with 'begin' at 1"]> expected but was
 <[]>.
 
   9) Failure:
@@ -10162,10 +10154,10 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_thread
 Started
-F........................SF.Sobjc[73853]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
+F........................SF.Sobjc[86042]: GC: -finalize resulted in an exception (0xXXXXXXXX) being thrown, break on objc_exception_during_finalize_error to debug
 	undefined method `message' for false:FalseClass (NoMethodError)
 
-...F.EFS.F
+F..F.EFS.F
 
   1) Failure:
 test_abort_on_exception(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:384]:
@@ -10185,24 +10177,29 @@ test_select_wait(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:50
 [BUG : #1233] Abort occurs when kill a thread waiting with IO.select
 
   5) Failure:
+test_status_and_stop_p(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:440]:
+<["aborting", false]> expected but was
+<[false, true]>.
+
+  6) Failure:
 test_thread_local_security(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:484]:
 SecurityError expected but nothing was raised.
 
-  6) Error:
+  7) Error:
 test_backtrace(TestThreadGroup):
 NoMethodError: undefined method `backtrace' for #<Thread:0xXXXXXXXX run>
     /macruby-test/test-mri/test/ruby/test_thread.rb:654:in `block'
 
-  7) Failure:
+  8) Failure:
 test_enclosed_thgroup(TestThreadGroup) [/macruby-test/test-mri/test/ruby/test_thread.rb:633]:
 Exception raised:
 <#<ThreadError: can't move from the enclosed thread group>>.
 
-  8) Skipped:
+  9) Skipped:
 test_frozen_thgroup(TestThreadGroup) [/macruby-test/test-mri/test/ruby/test_thread.rb:603]:
 [BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
 
-  9) Failure:
+ 10) Failure:
 test_uninitialized(TestThreadGroup) [/macruby-test/test-mri/test/ruby/test_thread.rb:649]:
 [ThreadError] exception expected, not
 Class: <NoMethodError>
@@ -10211,7 +10208,7 @@ Message: <"undefined method `start' for #<#<Class:0xXXXXXXXX>:0xXXXXXXXX run>">
 /macruby-test/test-mri/test/ruby/test_thread.rb:649:in `block'
 ---------------
 
-39 tests, 76 assertions, 5 failures, 1 errors, 3 skips
+39 tests, 75 assertions, 6 failures, 1 errors, 3 skips
 
 Test run options: --seed 0
 
@@ -10855,7 +10852,6 @@ Run options: --seed 0
 
 .
 
-Finished tests in 0.425623s, 2.3495 tests/s, 7.0485 assertions/s.
 
 1 tests, 3 assertions, 0 failures, 0 errors, 0 skips
 
@@ -10866,14 +10862,13 @@ Run options: --seed 0
 
 .....................F.....................................F.............F.......
 
-Finished tests in 4.835939s, 16.7496 tests/s, 30.3974 assertions/s.
 
   1) Failure:
 test_self_user_dir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:1011]:
 --- expected
 +++ actual
 @@ -1 +1 @@
--"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_73901/userhome/.gem/macruby/1.9.2"
+-"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_86090/userhome/.gem/macruby/1.9.2"
 +"/Users/watson/.gem/macruby/1.9.2"
 
 
@@ -10882,7 +10877,7 @@ test_self_user_home(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:1
 --- expected
 +++ actual
 @@ -1 +1 @@
--"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_73901/userhome"
+-"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_86090/userhome"
 +"/Users/watson"
 
 
@@ -10891,8 +10886,8 @@ test_self_datadir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:569
 --- expected
 +++ actual
 @@ -1 +1 @@
--"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_73901/gemhome/gems/foo-2/data/foo"
-+"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_73901/gemhome/gems/foo-2/data/foo"
+-"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_86090/gemhome/gems/foo-2/data/foo"
++"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_86090/gemhome/gems/foo-2/data/foo"
 
 
 81 tests, 147 assertions, 3 failures, 0 errors, 0 skips
@@ -10904,7 +10899,6 @@ Run options: --seed 0
 
 ...
 
-Finished tests in 0.947588s, 3.1659 tests/s, 4.2212 assertions/s.
 
 3 tests, 4 assertions, 0 failures, 0 errors, 0 skips
 
@@ -10915,7 +10909,6 @@ Run options: --seed 0
 
 ...........
 
-Finished tests in 0.893843s, 12.3064 tests/s, 53.7007 assertions/s.
 
 11 tests, 48 assertions, 0 failures, 0 errors, 0 skips
 
@@ -10926,15 +10919,14 @@ Run options: --seed 0
 
 ...F...F.
 
-Finished tests in 1.503978s, 5.9841 tests/s, 27.9259 assertions/s.
 
   1) Failure:
 test_process_args_install(TestGemCommandManager) [/macruby-test/test-mri/test/rubygems/test_gem_command_manager.rb:85]:
 --- expected
 +++ actual
 @@ -1 +1 @@
--"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_73920"
-+"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_73920"
+-"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_86106"
++"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_86106"
 
 
   2) Failure:
@@ -10942,8 +10934,8 @@ test_process_args_update(TestGemCommandManager) [/macruby-test/test-mri/test/rub
 --- expected
 +++ actual
 @@ -1 +1 @@
--"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_73920"
-+"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_73920"
+-"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_86106"
++"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_86106"
 
 
 9 tests, 42 assertions, 2 failures, 0 errors, 0 skips
@@ -10955,7 +10947,6 @@ Run options: --seed 0
 
 ....
 
-Finished tests in 0.901287s, 4.4381 tests/s, 29.9572 assertions/s.
 
 4 tests, 27 assertions, 0 failures, 0 errors, 0 skips
 
@@ -10966,7 +10957,6 @@ Run options: --seed 0
 
 .......
 
-Finished tests in 2.043921s, 3.4248 tests/s, 10.7636 assertions/s.
 
 7 tests, 22 assertions, 0 failures, 0 errors, 0 skips
 
@@ -10977,7 +10967,6 @@ Run options: --seed 0
 
 .
 
-Finished tests in 0.314290s, 3.1818 tests/s, 12.7271 assertions/s.
 
 1 tests, 4 assertions, 0 failures, 0 errors, 0 skips
 
@@ -10988,7 +10977,6 @@ Run options: --seed 0
 
 .....
 
-Finished tests in 2.628078s, 1.9025 tests/s, 4.5661 assertions/s.
 
 5 tests, 12 assertions, 0 failures, 0 errors, 0 skips
 
@@ -10999,7 +10987,6 @@ Run options: --seed 0
 
 ........
 
-Finished tests in 1.101975s, 7.2597 tests/s, 41.7432 assertions/s.
 
 8 tests, 46 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11010,7 +10997,6 @@ Run options: --seed 0
 
 ..F.......
 
-Finished tests in 4.881792s, 2.0484 tests/s, 4.3017 assertions/s.
 
   1) Failure:
 test_execute_remote(TestGemCommandsDependencyCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_dependency_command.rb:184]:
@@ -11032,7 +11018,6 @@ Run options: --seed 0
 
 .........
 
-Finished tests in 0.906349s, 9.9299 tests/s, 50.7531 assertions/s.
 
 9 tests, 46 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11043,7 +11028,6 @@ Run options: --seed 0
 
 ...
 
-Finished tests in 1.434271s, 2.0917 tests/s, 2.0917 assertions/s.
 
 3 tests, 3 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11054,7 +11038,6 @@ Run options: --seed 0
 
 
 
-Finished tests in 0.086820s, 0.0000 tests/s, 0.0000 assertions/s.
 
 0 tests, 0 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11065,7 +11048,6 @@ Run options: --seed 0
 
 ....
 
-Finished tests in 3.702403s, 1.0804 tests/s, 18.3665 assertions/s.
 
 4 tests, 68 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11076,7 +11058,6 @@ Run options: --seed 0
 
 .F..........E
 
-Finished tests in 14.893241s, 0.8729 tests/s, 3.2901 assertions/s.
 
   1) Failure:
 test_execute_remote(TestGemCommandsInstallCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_install_command.rb:241]:
@@ -11101,7 +11082,6 @@ Run options: --seed 0
 
 .
 
-Finished tests in 1.031480s, 0.9695 tests/s, 2.9084 assertions/s.
 
 1 tests, 3 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11112,7 +11092,6 @@ Run options: --seed 0
 
 ...
 
-Finished tests in 0.835816s, 3.5893 tests/s, 7.1786 assertions/s.
 
 3 tests, 6 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11123,7 +11102,6 @@ Run options: --seed 0
 
 ..
 
-Finished tests in 0.476384s, 4.1983 tests/s, 6.2974 assertions/s.
 
 2 tests, 3 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11134,7 +11112,6 @@ Run options: --seed 0
 
 .........
 
-Finished tests in 1.004678s, 8.9581 tests/s, 29.8603 assertions/s.
 
 9 tests, 30 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11145,7 +11122,6 @@ Run options: --seed 0
 
 .......
 
-Finished tests in 3.081383s, 2.2717 tests/s, 12.6567 assertions/s.
 
 7 tests, 39 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11156,22 +11132,21 @@ Run options: --seed 0
 
 F.F..F
 
-Finished tests in 1.266746s, 4.7365 tests/s, 15.7885 assertions/s.
 
   1) Failure:
 test_sending_gem_default(TestGemCommandsPushCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_push_command.rb:42]:
 Expected: 3072
-  Actual: 3058
+  Actual: 3061
 
   2) Failure:
 test_sending_gem_host(TestGemCommandsPushCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_push_command.rb:42]:
 Expected: 3072
-  Actual: 3058
+  Actual: 3061
 
   3) Failure:
 test_sending_gem_ENV(TestGemCommandsPushCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_push_command.rb:42]:
 Expected: 3072
-  Actual: 3058
+  Actual: 3061
 
 6 tests, 20 assertions, 3 failures, 0 errors, 0 skips
 
@@ -11182,7 +11157,6 @@ Run options: --seed 0
 
 F...............
 
-Finished tests in 4.865678s, 3.2883 tests/s, 8.0153 assertions/s.
 
   1) Failure:
 test_execute_details(TestGemCommandsQueryCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_query_command.rb:140]:
@@ -11215,7 +11189,6 @@ Run options: --seed 0
 
 ...
 
-Finished tests in 0.649902s, 4.6161 tests/s, 21.5417 assertions/s.
 
 3 tests, 14 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11226,7 +11199,6 @@ Run options: --seed 0
 
 ...F.....
 
-Finished tests in 4.996212s, 1.8014 tests/s, 4.0030 assertions/s.
 
   1) Failure:
 test_execute_add_nonexistent_source(TestGemCommandsSourcesCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_sources_command.rb:88]:
@@ -11241,7 +11213,6 @@ Run options: --seed 0
 
 ........
 
-Finished tests in 0.942241s, 8.4904 tests/s, 36.0842 assertions/s.
 
 8 tests, 34 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11252,7 +11223,6 @@ Run options: --seed 0
 
 .
 
-Finished tests in 0.355921s, 2.8096 tests/s, 5.6192 assertions/s.
 
 1 tests, 2 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11263,7 +11233,6 @@ Run options: --seed 0
 
 ..E.E
 
-Finished tests in 2.779815s, 1.7987 tests/s, 2.8779 assertions/s.
 
   1) Error:
 test_execute_removes_executable(TestGemCommandsUninstallCommand):
@@ -11286,7 +11255,6 @@ Run options: --seed 0
 
 ...........
 
-Finished tests in 3.551697s, 3.0971 tests/s, 4.2233 assertions/s.
 
 11 tests, 15 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11297,7 +11265,6 @@ Run options: --seed 0
 
 ..F.E.FF.E.EE.
 
-Finished tests in 5.181883s, 2.7017 tests/s, 5.4034 assertions/s.
 
   1) Failure:
 test_execute_system_at_latest(TestGemCommandsUpdateCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_update_command.rb:121]:
@@ -11357,7 +11324,6 @@ Run options: --seed 0
 
 ....
 
-Finished tests in 0.715228s, 5.5926 tests/s, 18.1760 assertions/s.
 
 4 tests, 13 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11368,7 +11334,6 @@ Run options: --seed 0
 
 ...............E.E
 
-Finished tests in 0.755338s, 23.8304 tests/s, 67.5194 assertions/s.
 
   1) Error:
 test_load_api_keys_from_config(TestGemConfigFile):
@@ -11389,7 +11354,6 @@ Run options: --seed 0
 
 ...........F......
 
-Finished tests in 0.945964s, 19.0282 tests/s, 65.5416 assertions/s.
 
   1) Failure:
 test_hash(TestGemDependency) [/macruby-test/test-mri/test/rubygems/test_gem_dependency.rb:104]:
@@ -11405,7 +11369,6 @@ Run options: --seed 0
 
 ............E.S....F.......E........E.....
 
-Finished tests in 8.778426s, 4.7845 tests/s, 6.6071 assertions/s.
 
   1) Error:
 test_gather_dependencies_under(TestGemDependencyInstaller):
@@ -11439,7 +11402,6 @@ Run options: --seed 0
 
 ...................
 
-Finished tests in 1.113133s, 17.0689 tests/s, 37.7313 assertions/s.
 
 19 tests, 42 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11450,7 +11412,6 @@ Run options: --seed 0
 
 .
 
-Finished tests in 0.550390s, 1.8169 tests/s, 1.8169 assertions/s.
 
 1 tests, 1 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11461,7 +11422,6 @@ Run options: --seed 0
 
 ...
 
-Finished tests in 0.737992s, 4.0651 tests/s, 23.0355 assertions/s.
 
 3 tests, 17 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11470,10 +11430,9 @@ Run options: --seed 0
 
 # Running tests:
 
-/bin/sh: line 1: 74091 Abort trap              /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/bin/macruby extconf.rb 2>&1
+/bin/sh: line 1: 86280 Abort trap              /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/bin/macruby extconf.rb 2>&1
 ......
 
-Finished tests in 12.303616s, 0.4877 tests/s, 1.7068 assertions/s.
 
 6 tests, 21 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11484,7 +11443,6 @@ Run options: --seed 0
 
 ..
 
-Finished tests in 0.993419s, 2.0132 tests/s, 13.0861 assertions/s.
 
 2 tests, 13 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11498,15 +11456,14 @@ Run options: --seed 0
 
 F.......
 
-Finished tests in 4.282491s, 1.8681 tests/s, 2.5686 assertions/s.
 
   1) Failure:
 test_lib_dirs_for(TestGemGemPathSearcher) [/macruby-test/test-mri/test/rubygems/test_gem_gem_path_searcher.rb:62]:
 --- expected
 +++ actual
 @@ -1 +1 @@
--"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_74153/gemhome/gems/foo-0.1/{lib,lib2}"
-+"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_74153/gemhome/gems/foo-0.1/{lib,lib2}"
+-"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_86342/gemhome/gems/foo-0.1/{lib,lib2}"
++"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_86342/gemhome/gems/foo-0.1/{lib,lib2}"
 
 
 8 tests, 11 assertions, 1 failures, 0 errors, 0 skips
@@ -11518,7 +11475,6 @@ Run options: --seed 0
 
 ..
 
-Finished tests in 0.374708s, 5.3375 tests/s, 10.6750 assertions/s.
 
 2 tests, 4 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11537,7 +11493,6 @@ stty: stdin isn't a terminal
 stty: stdin isn't a terminal
 .
 
-Finished tests in 1.180533s, 7.6237 tests/s, 23.7181 assertions/s.
 
 9 tests, 28 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11548,7 +11503,6 @@ Run options: --seed 0
 
 
 
-Finished tests in 0.085994s, 0.0000 tests/s, 0.0000 assertions/s.
 
 0 tests, 0 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11559,7 +11513,6 @@ Run options: --seed 0
 
 .....
 
-Finished tests in 1.509692s, 3.3119 tests/s, 5.2991 assertions/s.
 
 5 tests, 8 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11570,7 +11523,6 @@ Run options: --seed 0
 
 .FS............F.F...............................F..........
 
-Finished tests in 11.649544s, 5.1504 tests/s, 12.9619 assertions/s.
 
   1) Failure:
 test_install_pre_install_false(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:828]:
@@ -11586,8 +11538,8 @@ test_initialize(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem
 --- expected
 +++ actual
 @@ -1 +1 @@
--"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_74184/installer/gems/a-2-x86-mswin32"
-+"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_74184/installer/gems/a-2-x86-mswin32"
+-"/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_86373/installer/gems/a-2-x86-mswin32"
++"/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_86373/installer/gems/a-2-x86-mswin32"
 
 
   3) Failure:
@@ -11612,7 +11564,6 @@ Run options: --seed 0
 
 .........
 
-Finished tests in 0.736723s, 12.2163 tests/s, 23.0752 assertions/s.
 
 9 tests, 17 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11623,7 +11574,6 @@ Run options: --seed 0
 
 .......
 
-Finished tests in 0.825353s, 8.4812 tests/s, 75.1194 assertions/s.
 
 7 tests, 62 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11640,7 +11590,6 @@ Run options: --seed 0
 
 ..
 
-Finished tests in 0.648253s, 3.0852 tests/s, 20.0539 assertions/s.
 
 2 tests, 13 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11651,7 +11600,6 @@ Run options: --seed 0
 
 ..
 
-Finished tests in 0.460007s, 4.3478 tests/s, 32.6082 assertions/s.
 
 2 tests, 15 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11662,7 +11610,6 @@ Run options: --seed 0
 
 ...........F..
 
-Finished tests in 0.915844s, 15.2864 tests/s, 66.6052 assertions/s.
 
   1) Failure:
 test_full_name_null(TestGemPackageTarReaderEntry) [/macruby-test/test-mri/test/rubygems/test_gem_package_tar_reader_entry.rb:67]:
@@ -11677,7 +11624,6 @@ Run options: --seed 0
 
 ............
 
-Finished tests in 0.958973s, 12.5134 tests/s, 103.2354 assertions/s.
 
 12 tests, 99 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11688,7 +11634,6 @@ Run options: --seed 0
 
 ....
 
-Finished tests in 0.659651s, 6.0638 tests/s, 6.0638 assertions/s.
 
 4 tests, 4 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11699,7 +11644,6 @@ Run options: --seed 0
 
 .......
 
-Finished tests in 0.403661s, 17.3413 tests/s, 27.2506 assertions/s.
 
 7 tests, 11 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11710,7 +11654,6 @@ Run options: --seed 0
 
 ...............
 
-Finished tests in 0.829906s, 18.0743 tests/s, 185.5632 assertions/s.
 
 15 tests, 154 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11721,7 +11664,6 @@ Run options: --seed 0
 
 .............................................
 
-Finished tests in 6.201648s, 7.2561 tests/s, 16.6085 assertions/s.
 
 45 tests, 103 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11732,7 +11674,6 @@ Run options: --seed 0
 
 ......................
 
-Finished tests in 1.039808s, 21.1578 tests/s, 135.6020 assertions/s.
 
 22 tests, 141 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11743,7 +11684,6 @@ Run options: --seed 0
 
 ....
 
-Finished tests in 0.480712s, 8.3210 tests/s, 43.6852 assertions/s.
 
 4 tests, 21 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11754,7 +11694,6 @@ Run options: --seed 0
 
 ..............
 
-Finished tests in 2.446073s, 5.7235 tests/s, 24.1203 assertions/s.
 
 14 tests, 59 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11765,7 +11704,6 @@ Run options: --seed 0
 
 ......
 
-Finished tests in 0.730828s, 8.2099 tests/s, 51.9958 assertions/s.
 
 6 tests, 38 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11776,7 +11714,6 @@ Run options: --seed 0
 
 .............
 
-Finished tests in 6.418090s, 2.0255 tests/s, 5.6091 assertions/s.
 
 13 tests, 36 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11787,7 +11724,6 @@ Run options: --seed 0
 
 ..........................
 
-Finished tests in 10.170384s, 2.5564 tests/s, 4.1296 assertions/s.
 
 26 tests, 42 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11798,7 +11734,6 @@ Run options: --seed 0
 
 ..............................................................................................F.........
 
-Finished tests in 4.752291s, 21.8842 tests/s, 63.7587 assertions/s.
 
   1) Failure:
 test_initialize_copy_broken(TestGemSpecification) [/macruby-test/test-mri/test/rubygems/test_gem_specification.rb:454]:
@@ -11815,7 +11750,6 @@ Run options: --seed 0
 stty: stdin isn't a terminal
 ......
 
-Finished tests in 0.887123s, 24.7993 tests/s, 32.6899 assertions/s.
 
 22 tests, 29 assertions, 0 failures, 0 errors, 1 skips
 
@@ -11826,7 +11760,6 @@ Run options: --seed 0
 
 .........
 
-Finished tests in 0.381998s, 23.5603 tests/s, 36.6494 assertions/s.
 
 9 tests, 14 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11837,7 +11770,6 @@ Run options: --seed 0
 
 ......F.F......
 
-Finished tests in 6.025005s, 2.4896 tests/s, 5.9751 assertions/s.
 
   1) Failure:
 test_path_ok_eh(TestGemUninstaller) [/macruby-test/test-mri/test/rubygems/test_gem_uninstaller.rb:122]:
@@ -11861,7 +11793,6 @@ Run options: --seed 0
 
 ............F...
 
-Finished tests in 0.892805s, 17.9210 tests/s, 66.0839 assertions/s.
 
   1) Failure:
 test_hash(TestGemVersion) [/macruby-test/test-mri/test/rubygems/test_gem_version.rb:54]:
@@ -11876,7 +11807,6 @@ Run options: --seed 0
 
 .......
 
-Finished tests in 0.454193s, 15.4120 tests/s, 19.8154 assertions/s.
 
 7 tests, 9 assertions, 0 failures, 0 errors, 0 skips
 
@@ -11887,14 +11817,1133 @@ Run options: --seed 0
 
 .....
 
-Finished tests in 1.767475s, 2.8289 tests/s, 10.1840 assertions/s.
 
 5 tests, 18 assertions, 0 failures, 0 errors, 0 skips
 
 ----------------------------------------
 Loaded suite test/scanf/test_scanf
 Started
-...................
+...................EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE.........................................................................................................................................FFFFFF.F.F.......................................................................................
+
+  1) Error:
+test_116(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:318:in `block'
+
+  2) Error:
+test_117(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+  3) Error:
+test_118(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+  4) Error:
+test_119(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+  5) Error:
+test_12(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+  6) Error:
+test_120(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+  7) Error:
+test_121(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+  8) Error:
+test_122(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+  9) Error:
+test_123(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 10) Error:
+test_124(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 11) Error:
+test_125(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 12) Error:
+test_126(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 13) Error:
+test_127(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 14) Error:
+test_128(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 15) Error:
+test_129(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 16) Error:
+test_13(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 17) Error:
+test_130(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 18) Error:
+test_131(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 19) Error:
+test_132(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 20) Error:
+test_133(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 21) Error:
+test_134(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 22) Error:
+test_135(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 23) Error:
+test_136(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 24) Error:
+test_137(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 25) Error:
+test_138(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 26) Error:
+test_139(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 27) Error:
+test_14(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 28) Error:
+test_140(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 29) Error:
+test_141(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 30) Error:
+test_142(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 31) Error:
+test_143(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 32) Error:
+test_144(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 33) Error:
+test_145(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 34) Error:
+test_146(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 35) Error:
+test_147(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 36) Error:
+test_148(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 37) Error:
+test_149(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 38) Error:
+test_15(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 39) Error:
+test_150(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 40) Error:
+test_151(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 41) Error:
+test_152(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 42) Error:
+test_153(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 43) Error:
+test_154(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 44) Error:
+test_155(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 45) Error:
+test_156(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 46) Error:
+test_157(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 47) Error:
+test_158(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 48) Error:
+test_159(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 49) Error:
+test_16(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 50) Error:
+test_160(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 51) Error:
+test_161(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 52) Error:
+test_162(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 53) Error:
+test_163(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 54) Error:
+test_164(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 55) Error:
+test_165(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 56) Error:
+test_166(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 57) Error:
+test_167(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 58) Error:
+test_168(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 59) Error:
+test_169(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 60) Error:
+test_17(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 61) Error:
+test_170(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 62) Error:
+test_171(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 63) Error:
+test_172(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 64) Error:
+test_173(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 65) Error:
+test_174(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 66) Error:
+test_175(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 67) Error:
+test_176(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 68) Error:
+test_177(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 69) Error:
+test_178(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 70) Error:
+test_179(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 71) Error:
+test_18(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 72) Error:
+test_180(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 73) Error:
+test_181(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 74) Error:
+test_182(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 75) Error:
+test_183(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 76) Error:
+test_184(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 77) Error:
+test_185(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 78) Error:
+test_186(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 79) Error:
+test_187(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 80) Error:
+test_188(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 81) Error:
+test_189(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 82) Error:
+test_19(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 83) Error:
+test_190(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 84) Error:
+test_191(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 85) Error:
+test_192(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 86) Error:
+test_193(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 87) Error:
+test_194(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 88) Error:
+test_195(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 89) Error:
+test_196(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 90) Error:
+test_197(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 91) Error:
+test_198(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 92) Error:
+test_199(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 93) Error:
+test_2(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 94) Error:
+test_20(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 95) Error:
+test_200(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 96) Error:
+test_201(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 97) Error:
+test_202(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 98) Error:
+test_203(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+ 99) Error:
+test_204(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+100) Error:
+test_205(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+101) Error:
+test_206(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+102) Error:
+test_207(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+103) Error:
+test_208(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+104) Error:
+test_209(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+105) Error:
+test_21(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+106) Error:
+test_210(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+107) Error:
+test_211(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+108) Error:
+test_212(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+109) Error:
+test_213(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+110) Error:
+test_214(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+111) Error:
+test_215(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+112) Error:
+test_216(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+113) Error:
+test_217(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+114) Error:
+test_218(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+115) Error:
+test_219(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+116) Error:
+test_22(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+117) Error:
+test_220(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+118) Error:
+test_221(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+119) Error:
+test_222(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+120) Error:
+test_223(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+121) Error:
+test_224(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+122) Error:
+test_225(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+123) Error:
+test_226(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+124) Error:
+test_227(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+125) Error:
+test_228(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+126) Error:
+test_229(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+127) Error:
+test_23(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+128) Error:
+test_230(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+129) Error:
+test_231(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+130) Error:
+test_232(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+131) Error:
+test_233(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+132) Error:
+test_234(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+133) Error:
+test_24(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+134) Error:
+test_25(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+135) Error:
+test_26(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+136) Error:
+test_27(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+137) Error:
+test_28(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+138) Error:
+test_29(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+139) Error:
+test_3(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+140) Error:
+test_30(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+141) Error:
+test_31(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+142) Error:
+test_32(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+143) Error:
+test_33(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+144) Error:
+test_34(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+145) Error:
+test_35(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+146) Error:
+test_36(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+147) Error:
+test_37(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+148) Error:
+test_38(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+149) Error:
+test_39(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+150) Error:
+test_4(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+151) Error:
+test_40(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+152) Error:
+test_41(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+153) Error:
+test_42(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+154) Error:
+test_43(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+155) Error:
+test_44(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+156) Error:
+test_45(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+157) Error:
+test_46(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+158) Error:
+test_47(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+159) Error:
+test_48(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+160) Error:
+test_49(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+161) Error:
+test_5(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+162) Error:
+test_50(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+163) Error:
+test_51(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+164) Error:
+test_52(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+165) Error:
+test_53(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+166) Error:
+test_54(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+167) Error:
+test_55(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+168) Error:
+test_56(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+169) Error:
+test_57(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+170) Error:
+test_58(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+171) Error:
+test_59(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+172) Error:
+test_6(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+173) Error:
+test_60(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+174) Error:
+test_61(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+175) Error:
+test_62(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+176) Error:
+test_63(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+177) Error:
+test_64(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+178) Error:
+test_65(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+179) Error:
+test_66(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+180) Error:
+test_67(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+181) Error:
+test_68(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+182) Error:
+test_69(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+183) Error:
+test_7(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+184) Error:
+test_70(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+185) Error:
+test_71(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+186) Error:
+test_72(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+187) Error:
+test_73(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+188) Error:
+test_74(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+189) Error:
+test_75(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+190) Error:
+test_76(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+191) Error:
+test_77(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+192) Error:
+test_78(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+193) Error:
+test_79(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+194) Error:
+test_8(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+195) Error:
+test_80(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+196) Error:
+test_81(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+197) Error:
+test_82(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+198) Error:
+test_83(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+199) Error:
+test_84(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+200) Error:
+test_85(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+201) Error:
+test_86(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+202) Error:
+test_87(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+203) Error:
+test_88(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+204) Error:
+test_89(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+205) Error:
+test_9(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+206) Error:
+test_90(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+207) Error:
+test_91(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+208) Error:
+test_92(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+209) Error:
+test_93(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+210) Error:
+test_94(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+211) Error:
+test_95(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+212) Error:
+test_96(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+213) Error:
+test_97(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+214) Error:
+test_98(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+215) Error:
+test_99(TestIOScanf):
+TypeError: 4.74303020007597e-322 is not a class/module
+    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
+
+216) Failure:
+test_222(TestStringScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:299]:
+<[]> expected but was
+<[0.0]>.
+
+217) Failure:
+test_223(TestStringScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:299]:
+<[1.23e+45]> expected but was
+<[]>.
+
+218) Failure:
+test_224(TestStringScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:299]:
+<[3.25]> expected but was
+<[]>.
+
+219) Failure:
+test_225(TestStringScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:299]:
+<[3.0]> expected but was
+<[]>.
+
+220) Failure:
+test_226(TestStringScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:299]:
+<[3.25]> expected but was
+<[]>.
+
+221) Failure:
+test_227(TestStringScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:299]:
+<[325.0]> expected but was
+<[]>.
+
+222) Failure:
+test_229(TestStringScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:299]:
+<[1024.0]> expected but was
+<[]>.
+
+223) Failure:
+test_230(TestStringScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:299]:
+<[1.1851510441584e+30]> expected but was
+<[]>.
+
+468 tests, 254 assertions, 8 failures, 215 errors, 0 skips
+
+Test run options: --seed 0
+
 ----------------------------------------
 Loaded suite test/scanf/test_scanfblocks
 Started
@@ -13538,7 +14587,38 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/webrick/test_cgi
 Started
-F.F
+F.FF
+
+  1) Failure:
+test_bad_header(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:129]:
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2012-02-13 03:55:41] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
+
+  2) Failure:
+test_bad_uri(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:115]:
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2012-02-13 03:55:47] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
+
+  3) Failure:
+test_cgi(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:40]:
+webrick log start:
+  [2012-02-13 03:55:47] INFO  WEBrick 1.3.1
+  [2012-02-13 03:55:47] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
+  [2012-02-13 03:55:47] INFO  WEBrick::HTTPServer#start: pid=86750 port=63562
+  [2012-02-13 03:55:47] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  
+  [2012-02-13 03:55:51] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  
+  [2012-02-13 03:55:55] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  
+  [2012-02-13 03:56:00] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  
+webrick log end.
+<"/\xA4ۤ\xB2/\xA4ۤ\xB2"> expected but was
+<"/\xC2\xA4U\xCC\x82\xC2\xA4\xC2\xB2/\xC2\xA4U\xCC\x82\xC2\xA4\xC2\xB2">.
+
+4 tests, 9 assertions, 3 failures, 0 errors, 0 skips
+
+Test run options: --seed 0
+
 ----------------------------------------
 Loaded suite test/webrick/test_cookie
 Started
@@ -13551,37 +14631,6 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/webrick/test_filehandler
 Started
-F
-
-  1) Failure:
-test_bad_header(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:129]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2012-02-12 03:57:40] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
-
-  2) Failure:
-test_bad_uri(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:115]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2012-02-12 03:58:18] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
-
-  3) Failure:
-test_cgi(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:40]:
-webrick log start:
-  [2012-02-12 03:58:18] INFO  WEBrick 1.3.1
-  [2012-02-12 03:58:18] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
-  [2012-02-12 03:58:18] INFO  WEBrick::HTTPServer#start: pid=74569 port=63016
-  [2012-02-12 03:58:18] WARN  :RequestHandler is deprecated, please use :RequestCallback
-  
-  [2012-02-12 03:58:54] WARN  :RequestHandler is deprecated, please use :RequestCallback
-  
-  [2012-02-12 03:59:30] WARN  :RequestHandler is deprecated, please use :RequestCallback
-  
-  [2012-02-12 04:00:07] WARN  :RequestHandler is deprecated, please use :RequestCallback
-  
-webrick log end.
-<"/\xA4ۤ\xB2/\xA4ۤ\xB2"> expected but was
-<"/\xC2\xA4U\xCC\x82\xC2\xA4\xC2\xB2/\xC2\xA4U\xCC\x82\xC2\xA4\xC2\xB2">.
-
-4 tests, 9 assertions, 3 failures, 0 errors, 0 skips
-
-Test run options: --seed 0
 .......
 
 7 tests, 68 assertions, 0 failures, 0 errors, 0 skips
