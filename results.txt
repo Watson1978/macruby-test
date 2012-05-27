@@ -1,4 +1,4 @@
-Date    : 2012-05-27T03:09:19+09:00
+Date    : 2012-05-28T03:09:13+09:00
 Version : 0.12, git commit 69434c940c75c66020d68da1cea93ce9ceb3a672
 
 ----------------------------------------
@@ -558,6 +558,28 @@ Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
 .terminate called after throwing an instance of 'RoxorThreadRaiseException*'
 .terminate called after throwing an instance of 'RoxorThreadRaiseException*'
 Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
+terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+..terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+terminate called after throwing an instance of 'RoxorThreadRaiseException*'
 
 ----------------------------------------
 /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/drb/drb.rb:767:in `open_server': can't parse uri:--seed (DRb::DRbBadURI)
@@ -1050,7 +1072,7 @@ Started
   1) Failure:
 test_killed_thread_in_synchronize(TestMonitor) [/macruby-test/test-mri/test/monitor/test_monitor.rb:80]:
 <[:main]> expected but was
-<[:main, :t1, :t2]>.
+<[:main, :t2, :t1]>.
 
 6 tests, 18 assertions, 1 failures, 0 errors, 0 skips
 
@@ -1059,7 +1081,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/net/http/test_http
 Started
-F.F..EE.....F.F...E..E...F......
+F.F..E......F.F...E..E...F......
 
   1) Failure:
 test_get(TestNetHTTP_v1_2) [/macruby-test/test-mri/test/net/http/test_http.rb:49]:
@@ -1079,25 +1101,17 @@ EOFError: end of file reached
     /macruby-test/test-mri/test/net/http/utils.rb:11:in `start'
     /macruby-test/test-mri/test/net/http/test_http.rb:131:in `test_post'
 
-  4) Error:
-test_request(TestNetHTTP_v1_2):
-EOFError: end of file reached
-    /macruby-test/test-mri/test/net/http/test_http.rb:227:in `_test_request__file'
-    /macruby-test/test-mri/test/net/http/test_http.rb:203:in `block'
-    /macruby-test/test-mri/test/net/http/utils.rb:11:in `start'
-    /macruby-test/test-mri/test/net/http/test_http.rb:201:in `test_request'
-
-  5) Failure:
+  4) Failure:
 test_get(TestNetHTTP_v1_2_chunked) [/macruby-test/test-mri/test/net/http/test_http.rb:49]:
 Exception raised:
 <#<Errno::ECONNRESET: Connection reset by peer - read(2) failed.>>.
 
-  6) Failure:
+  5) Failure:
 test_get__break(TestNetHTTP_v1_2_chunked) [/macruby-test/test-mri/test/net/http/test_http.rb:96]:
 <1> expected but was
-<4096>.
+<4097>.
 
-  7) Error:
+  6) Error:
 test_request(TestNetHTTP_v1_2_chunked):
 Errno::ECONNRESET: Connection reset by peer - read(2) failed.
     /macruby-test/test-mri/test/net/http/test_http.rb:227:in `_test_request__file'
@@ -1105,20 +1119,20 @@ Errno::ECONNRESET: Connection reset by peer - read(2) failed.
     /macruby-test/test-mri/test/net/http/utils.rb:11:in `start'
     /macruby-test/test-mri/test/net/http/test_http.rb:201:in `test_request'
 
-  8) Error:
+  7) Error:
 test_send_request(TestNetHTTP_v1_2_chunked):
-Errno::ECONNRESET: Connection reset by peer - read(2) failed.
+Errno::EPIPE: Broken pipe - write() failed
     /macruby-test/test-mri/test/net/http/test_http.rb:304:in `_test_send_request__POST'
     /macruby-test/test-mri/test/net/http/test_http.rb:288:in `block'
     /macruby-test/test-mri/test/net/http/utils.rb:11:in `start'
     /macruby-test/test-mri/test/net/http/test_http.rb:286:in `test_send_request'
 
-  9) Failure:
+  8) Failure:
 test_get__break(TestNetHTTP_version_1_1) [/macruby-test/test-mri/test/net/http/test_http.rb:96]:
 <1> expected but was
 <2>.
 
-32 tests, 160 assertions, 5 failures, 4 errors, 0 skips
+32 tests, 178 assertions, 5 failures, 3 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -1261,7 +1275,11 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/open-uri/test_open-uri
 Started
-.......................F..terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+...................................
+
+35 tests, 151 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/open-uri/test_ssl
@@ -2140,7 +2158,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rake/test_rake_file_utils
 Started
-...............E2012-05-27 03:19:32.826 macruby[402:903] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
+...............E2012-05-28 03:20:03.777 macruby[14053:903] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
 F.......
 
   1) Error:
@@ -3866,7 +3884,7 @@ Started
 test_add_includes_many(TestRDocRIDriver) [/macruby-test/test-mri/test/rdoc/test_rdoc_ri_driver.rb:148]:
 Expected [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_667/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_14319/dot_ri)"],
   blankline,
   [para: "Inc"],
   blankline,
@@ -3874,7 +3892,7 @@ Expected [doc: [rule:1],
   blankline,
   [verb: "  ", "Enumerable", "\n"]], not [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_667/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_14319/dot_ri)"],
   blankline,
   [para: "Inc"],
   blankline,
@@ -3886,10 +3904,10 @@ Expected [doc: [rule:1],
 test_add_includes_many_no_doc(TestRDocRIDriver) [/macruby-test/test-mri/test/rdoc/test_rdoc_ri_driver.rb:169]:
 Expected [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_667/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_14319/dot_ri)"],
   [verb: "  ", "Inc", "\n", "  ", "Enumerable", "\n"]], not [doc: [rule:1],
   [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_667/dot_ri)"],
+  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_14319/dot_ri)"],
   [verb: "Inc", "\n", "Enumerable", "\n"]].
 
   3) Failure:
@@ -4273,7 +4291,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ripper/test_parser_events
 Started
-......E..EEEE..EEE.EEEE..FEEEEFEEEEEEEEEEEEEEEEEEFEEEEEEEEEEFEEEEEEEEEEEEEEEEFEEEEEEEEEEEEEEEEEE..EEEEEEEEEEEEEEEEEE.E..EEEEEEEEEEEEE
+......E..EEEE..EEE.EEEE...EEEEFEEEEEEEEEEEEEEEEEEFEEEEEEEEEEFEEEEEEEEEEEEEEEEFEEEEEEEEEEEEEEEEEE..EEEEEEEEEEEEEEEEEE.E..EEEEEEEEEEEEE
 
   1) Error:
 test_arg_ambiguous(TestRipper::ParserEvents):
@@ -4361,721 +4379,715 @@ LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:265:in `test_block_var'
 
- 13) Failure:
-test_block_variables(TestRipper::ParserEvents) [/macruby-test/test-mri/test/ripper/test_parser_events.rb:1125]:
-[ruby-dev:39423].
-<["[fcall(proc,[],&block([],[void()]))]"]> expected but was
-<[]>.
-
- 14) Error:
+ 13) Error:
 test_blockarg(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:230:in `test_blockarg'
 
- 15) Error:
+ 14) Error:
 test_bodystmt(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:307:in `test_bodystmt'
 
- 16) Error:
+ 15) Error:
 test_brace_block(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:414:in `test_brace_block'
 
- 17) Error:
+ 16) Error:
 test_break(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:420:in `test_break'
 
- 18) Failure:
+ 17) Failure:
 test_call(TestRipper::ParserEvents) [/macruby-test/test-mri/test/ripper/test_parser_events.rb:316]:
 Exception raised:
 <#<LocalJumpError: no block given>>.
 
- 19) Error:
+ 18) Error:
 test_case(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:426:in `test_case'
 
- 20) Error:
+ 19) Error:
 test_class(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:432:in `test_class'
 
- 21) Error:
+ 20) Error:
 test_class_name_error(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:438:in `test_class_name_error'
 
- 22) Error:
+ 21) Error:
 test_command(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:444:in `test_command'
 
- 23) Error:
+ 22) Error:
 test_command_call(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:450:in `test_command_call'
 
- 24) Error:
+ 23) Error:
 test_const_path_field(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:465:in `test_const_path_field'
 
- 25) Error:
+ 24) Error:
 test_const_path_ref(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:471:in `test_const_path_ref'
 
- 26) Error:
+ 25) Error:
 test_const_ref(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:456:in `test_const_ref'
 
- 27) Error:
+ 26) Error:
 test_def(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:477:in `test_def'
 
- 28) Error:
+ 27) Error:
 test_defined(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:486:in `test_defined'
 
- 29) Error:
+ 28) Error:
 test_defs(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:492:in `test_defs'
 
- 30) Error:
+ 29) Error:
 test_do_block(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:498:in `test_do_block'
 
- 31) Error:
+ 30) Error:
 test_dot2(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:504:in `test_dot2'
 
- 32) Error:
+ 31) Error:
 test_dot3(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:510:in `test_dot3'
 
- 33) Error:
+ 32) Error:
 test_dyna_symbol(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:516:in `test_dyna_symbol'
 
- 34) Error:
+ 33) Error:
 test_else(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:522:in `test_else'
 
- 35) Error:
+ 34) Error:
 test_elsif(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:528:in `test_elsif'
 
- 36) Error:
+ 35) Error:
 test_ensure(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:534:in `test_ensure'
 
- 37) Failure:
+ 36) Failure:
 test_event_coverage(TestRipper::ParserEvents) [/macruby-test/test-mri/test/ripper/test_parser_events.rb:17]:
 event not tested: :args_prepend.
 <true> expected but was
 <false>.
 
- 38) Error:
+ 37) Error:
 test_excessed_comma(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:331:in `test_excessed_comma'
 
- 39) Error:
+ 38) Error:
 test_fcall(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:540:in `test_fcall'
 
- 40) Error:
+ 39) Error:
 test_field(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:546:in `test_field'
 
- 41) Error:
+ 40) Error:
 test_for(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:552:in `test_for'
 
- 42) Error:
+ 41) Error:
 test_hash(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:558:in `test_hash'
 
- 43) Error:
+ 42) Error:
 test_heredoc(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:348:in `test_heredoc'
 
- 44) Error:
+ 43) Error:
 test_if(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:567:in `test_if'
 
- 45) Error:
+ 44) Error:
 test_if_mod(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:573:in `test_if_mod'
 
- 46) Error:
+ 45) Error:
 test_ifop(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:579:in `test_ifop'
 
- 47) Error:
+ 46) Error:
 test_lambda(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:585:in `test_lambda'
 
- 48) Failure:
+ 47) Failure:
 test_local_variables(TestRipper::ParserEvents) [/macruby-test/test-mri/test/ripper/test_parser_events.rb:1115]:
 [ruby-core:24923].
 <"[assign(var_field(w),1),binary(ref(w),/,25)]"> expected but was
 <"[assign(var_field(w),1),command(w,[regexp_literal(regexp_add(regexp_new(),25 # ),/)])]">.
 
- 49) Error:
+ 48) Error:
 test_magic_comment(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:591:in `test_magic_comment'
 
- 50) Error:
+ 49) Error:
 test_massign(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:361:in `test_massign'
 
- 51) Error:
+ 50) Error:
 test_method_add_arg(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:606:in `test_method_add_arg'
 
- 52) Error:
+ 51) Error:
 test_method_add_block(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:597:in `test_method_add_block'
 
- 53) Error:
+ 52) Error:
 test_mlhs_add(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:367:in `test_mlhs_add'
 
- 54) Error:
+ 53) Error:
 test_mlhs_add_star(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:376:in `test_mlhs_add_star'
 
- 55) Error:
+ 54) Error:
 test_mlhs_new(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:399:in `test_mlhs_new'
 
- 56) Error:
+ 55) Error:
 test_mlhs_paren(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:408:in `test_mlhs_paren'
 
- 57) Error:
+ 56) Error:
 test_module(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:621:in `test_module'
 
- 58) Error:
+ 57) Error:
 test_mrhs_add(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:627:in `test_mrhs_add'
 
- 59) Error:
+ 58) Error:
 test_mrhs_add_star(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:633:in `test_mrhs_add_star'
 
- 60) Error:
+ 59) Error:
 test_mrhs_new(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:639:in `test_mrhs_new'
 
- 61) Error:
+ 60) Error:
 test_mrhs_new_from_args(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:645:in `test_mrhs_new_from_args'
 
- 62) Error:
+ 61) Error:
 test_next(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:651:in `test_next'
 
- 63) Error:
+ 62) Error:
 test_opassign(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:657:in `test_opassign'
 
- 64) Error:
+ 63) Error:
 test_opassign_error(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:697:in `test_opassign_error'
 
- 65) Failure:
+ 64) Failure:
 test_operator_ambiguous(TestRipper::ParserEvents) [/macruby-test/test-mri/test/ripper/test_parser_events.rb:158]:
 <true> expected but was
 <false>.
 
- 66) Error:
+ 65) Error:
 test_param_error(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:705:in `test_param_error'
 
- 67) Error:
+ 66) Error:
 test_params(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:720:in `test_params'
 
- 68) Error:
+ 67) Error:
 test_paren(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:732:in `test_paren'
 
- 69) Error:
+ 68) Error:
 test_parse_error(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:738:in `test_parse_error'
 
- 70) Error:
+ 69) Error:
 test_program(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:29:in `test_program'
 
- 71) Error:
+ 70) Error:
 test_qwords_add(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:744:in `test_qwords_add'
 
- 72) Error:
+ 71) Error:
 test_qwords_new(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:750:in `test_qwords_new'
 
- 73) Error:
+ 72) Error:
 test_redo(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:756:in `test_redo'
 
- 74) Error:
+ 73) Error:
 test_regexp_add(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:762:in `test_regexp_add'
 
- 75) Error:
+ 74) Error:
 test_regexp_literal(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:768:in `test_regexp_literal'
 
- 76) Error:
+ 75) Error:
 test_regexp_new(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:774:in `test_regexp_new'
 
- 77) Error:
+ 76) Error:
 test_rescue(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:780:in `test_rescue'
 
- 78) Error:
+ 77) Error:
 test_rescue_mod(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:786:in `test_rescue_mod'
 
- 79) Error:
+ 78) Error:
 test_rest_param(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:792:in `test_rest_param'
 
- 80) Error:
+ 79) Error:
 test_retry(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:801:in `test_retry'
 
- 81) Error:
+ 80) Error:
 test_return(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:807:in `test_return'
 
- 82) Error:
+ 81) Error:
 test_return0(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:813:in `test_return0'
 
- 83) Error:
+ 82) Error:
 test_sclass(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:819:in `test_sclass'
 
- 84) Error:
+ 83) Error:
 test_string_add(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:825:in `test_string_add'
 
- 85) Error:
+ 84) Error:
 test_string_concat(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:831:in `test_string_concat'
 
- 86) Error:
+ 85) Error:
 test_string_content(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:837:in `test_string_content'
 
- 87) Error:
+ 86) Error:
 test_string_dvar(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:864:in `test_string_dvar'
 
- 88) Error:
+ 87) Error:
 test_string_embexpr(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:891:in `test_string_embexpr'
 
- 89) Error:
+ 88) Error:
 test_string_literal(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:900:in `test_string_literal'
 
- 90) Error:
+ 89) Error:
 test_super(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:906:in `test_super'
 
- 91) Error:
+ 90) Error:
 test_symbol(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:912:in `test_symbol'
 
- 92) Error:
+ 91) Error:
 test_symbol_literal(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:930:in `test_symbol_literal'
 
- 93) Error:
+ 92) Error:
 test_top_const_field(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:936:in `test_top_const_field'
 
- 94) Error:
+ 93) Error:
 test_top_const_ref(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:942:in `test_top_const_ref'
 
- 95) Error:
+ 94) Error:
 test_unary(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:948:in `test_unary'
 
- 96) Error:
+ 95) Error:
 test_undef(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:984:in `test_undef'
 
- 97) Error:
+ 96) Error:
 test_unless(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:996:in `test_unless'
 
- 98) Error:
+ 97) Error:
 test_unless_mod(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:1002:in `test_unless_mod'
 
- 99) Error:
+ 98) Error:
 test_unterminated_regexp(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:1131:in `test_unterminated_regexp'
 
-100) Error:
+ 99) Error:
 test_until(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:1008:in `test_until'
 
-101) Error:
+100) Error:
 test_until_mod(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:1014:in `test_until_mod'
 
-102) Error:
+101) Error:
 test_var_field(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:1020:in `test_var_field'
 
-103) Error:
+102) Error:
 test_when(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:1029:in `test_when'
 
-104) Error:
+103) Error:
 test_while(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:1038:in `test_while'
 
-105) Error:
+104) Error:
 test_while_mod(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:1044:in `test_while_mod'
 
-106) Error:
+105) Error:
 test_word_add(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:1050:in `test_word_add'
 
-107) Error:
+106) Error:
 test_word_new(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:1056:in `test_word_new'
 
-108) Error:
+107) Error:
 test_words_add(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:1062:in `test_words_add'
 
-109) Error:
+108) Error:
 test_words_new(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:1068:in `test_words_new'
 
-110) Error:
+109) Error:
 test_xstring_add(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:1074:in `test_xstring_add'
 
-111) Error:
+110) Error:
 test_xstring_literal(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:1080:in `test_xstring_literal'
 
-112) Error:
+111) Error:
 test_xstring_new(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:1086:in `test_xstring_new'
 
-113) Error:
+112) Error:
 test_yield(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:1092:in `test_yield'
 
-114) Error:
+113) Error:
 test_yield0(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:1098:in `test_yield0'
 
-115) Error:
+114) Error:
 test_zsuper(TestRipper::ParserEvents):
 LocalJumpError: no block given
     /macruby-test/test-mri/test/ripper/dummyparser.rb:55:in `block'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:24:in `parse'
     /macruby-test/test-mri/test/ripper/test_parser_events.rb:1104:in `test_zsuper'
 
-133 tests, 58 assertions, 5 failures, 110 errors, 0 skips
+133 tests, 59 assertions, 4 failures, 110 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -6026,7 +6038,7 @@ test_readpartial2(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:499]:
 
   9) Failure:
 test_unreadable(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:709]:
-Expected /- \/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/bug4274\-20120527\-1009\-10760bu\z/ to match "No such file or directory - open() failed".
+Expected /- \/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/bug4274\-20120528\-14662\-10760bu\z/ to match "No such file or directory - open() failed".
 
 42 tests, 164 assertions, 9 failures, 0 errors, 0 skips
 
@@ -6464,7 +6476,7 @@ Encoding::CompatibilityError expected but nothing was raised.
 
   4) Failure:
 test_inspect(TestDir) [/macruby-test/test-mri/test/ruby/test_dir.rb:63]:
-Expected /^#<Dir:\/private\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/__test_dir__20120527\-1136\-1o6inhj>$/ to match "#<Dir:/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/__test_dir__20120527-1136-1o6inhj".
+Expected /^#<Dir:\/private\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/__test_dir__20120528\-14784\-1o6inhj>$/ to match "#<Dir:/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/__test_dir__20120528-14784-1o6inhj".
 
 14 tests, 80 assertions, 2 failures, 1 errors, 1 skips
 
@@ -6473,52 +6485,52 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_dir_m17n
 Started
-/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120527-1139-12zdlt8/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120527-1139-1estiet/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120527-1139-16tc0n7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120527-1139-12pbsn7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120527-1139-u3bzm1/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120527-1139-19vmgph/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120527-1139-v2yjvo/-:6:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120527-1139-1rcd3ra/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120527-1139-1wg6zq0/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120528-14787-12zdlt8/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120528-14787-1estiet/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120528-14787-16tc0n7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120528-14787-12pbsn7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120528-14787-u3bzm1/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120528-14787-19vmgph/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120528-14787-v2yjvo/-:6:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120528-14787-1rcd3ra/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120528-14787-1wg6zq0/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
 F
 
   1) Failure:
 test_filename_as_bytes_extutf8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:50]:
-ruby exit status is not success: #<Process::Status: pid 1140 exit 1>
+ruby exit status is not success: #<Process::Status: pid 14788 exit 1>
 
   2) Failure:
 test_filename_bytes_euc_jp(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:148]:
-ruby exit status is not success: #<Process::Status: pid 1141 exit 1>
+ruby exit status is not success: #<Process::Status: pid 14789 exit 1>
 
   3) Failure:
 test_filename_euc_jp(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:162]:
-ruby exit status is not success: #<Process::Status: pid 1142 exit 1>
+ruby exit status is not success: #<Process::Status: pid 14790 exit 1>
 
   4) Failure:
 test_filename_ext_euc_jp_and_int_utf_8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:200]:
-ruby exit status is not success: #<Process::Status: pid 1143 exit 1>
+ruby exit status is not success: #<Process::Status: pid 14791 exit 1>
 
   5) Failure:
 test_filename_extutf8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:18]:
-ruby exit status is not success: #<Process::Status: pid 1144 exit 1>
+ruby exit status is not success: #<Process::Status: pid 14792 exit 1>
 
   6) Failure:
 test_filename_extutf8_inteucjp_representable(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:89]:
-ruby exit status is not success: #<Process::Status: pid 1145 exit 1>
+ruby exit status is not success: #<Process::Status: pid 14793 exit 1>
 
   7) Failure:
 test_filename_extutf8_inteucjp_unrepresentable(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:116]:
-ruby exit status is not success: #<Process::Status: pid 1146 exit 1>
+ruby exit status is not success: #<Process::Status: pid 14794 exit 1>
 
   8) Failure:
 test_filename_extutf8_invalid(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:31]:
-ruby exit status is not success: #<Process::Status: pid 1147 exit 1>
+ruby exit status is not success: #<Process::Status: pid 14795 exit 1>
 
   9) Failure:
 test_filename_utf8_raw_name(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:182]:
-ruby exit status is not success: #<Process::Status: pid 1148 exit 1>
+ruby exit status is not success: #<Process::Status: pid 14796 exit 1>
 
 9 tests, 9 assertions, 9 failures, 0 errors, 0 skips
 
@@ -7421,198 +7433,67 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_io
 Started
-..SS.........FSEEESEEE.EEEFEEES.F..E.........SF.........S....S...F...S.......F..FF....FF.F...
-
-  1) Skipped:
-test_bytes(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1166]:
-[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
-
-  2) Skipped:
-test_chars(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1184]:
-[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
-
-  3) Failure:
-test_copy_stream(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:274]:
-<2> expected but was
-<3>.
-
-  4) Skipped:
-test_copy_stream_dst_rbuf(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:787]:
-[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
-
-  5) Error:
-test_copy_stream_fname_to_strio(TestIO):
-TypeError: can't convert StringIO into String
-    /macruby-test/test-mri/test/ruby/test_io.rb:635:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:76:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:75:in `block'
-
-  6) Error:
-test_copy_stream_io_to_rot13(TestIO):
-TypeError: can't convert TestIO::Rot13IO into String
-    /macruby-test/test-mri/test/ruby/test_io.rb:705:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:703:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:702:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:76:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:75:in `block'
-
-  7) Error:
-test_copy_stream_io_to_strio(TestIO):
-TypeError: can't convert StringIO into String
-    /macruby-test/test-mri/test/ruby/test_io.rb:658:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:656:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:76:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:75:in `block'
-
-  8) Skipped:
-test_copy_stream_rbuf(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:490]:
-[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
-
-  9) Error:
-test_copy_stream_rot13_to_io(TestIO):
-TypeError: can't convert TestIO::Rot13IO into String
-    /macruby-test/test-mri/test/ruby/test_io.rb:719:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:718:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:716:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:76:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:75:in `block'
-
- 10) Error:
-test_copy_stream_rot13_to_rot13(TestIO):
-TypeError: can't convert TestIO::Rot13IO into String
-    /macruby-test/test-mri/test/ruby/test_io.rb:734:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:732:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:730:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:76:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:75:in `block'
-
- 11) Error:
-test_copy_stream_socket(TestIO):
-TypeError: can't convert false into Integer
-    /macruby-test/test-mri/test/ruby/test_io.rb:559:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:513:in `with_socketpair'
-    /macruby-test/test-mri/test/ruby/test_io.rb:557:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:555:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:76:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:75:in `block'
-
- 12) Error:
-test_copy_stream_strio(TestIO):
-TypeError: can't convert StringIO into String
-    /macruby-test/test-mri/test/ruby/test_io.rb:606:in `test_copy_stream_strio'
-
- 13) Error:
-test_copy_stream_strio_flush(TestIO):
-TypeError: can't convert StringIO into String
-    /macruby-test/test-mri/test/ruby/test_io.rb:747:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:57:in `with_pipe'
-    /macruby-test/test-mri/test/ruby/test_io.rb:743:in `test_copy_stream_strio_flush'
-
- 14) Error:
-test_copy_stream_strio_len(TestIO):
-TypeError: can't convert StringIO into String
-    /macruby-test/test-mri/test/ruby/test_io.rb:615:in `test_copy_stream_strio_len'
-
- 15) Failure:
-test_copy_stream_strio_off(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:624]:
-[ArgumentError] exception expected, not
-Class: <TypeError>
-Message: <"can't convert StringIO into String">
----Backtrace---
-/macruby-test/test-mri/test/ruby/test_io.rb:625:in `block'
----------------
-
- 16) Error:
-test_copy_stream_strio_rbuf(TestIO):
-TypeError: can't convert StringIO into String
-    /macruby-test/test-mri/test/ruby/test_io.rb:763:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:30:in `block'
-
- 17) Error:
-test_copy_stream_strio_to_fname(TestIO):
-TypeError: can't convert StringIO into String
-    /macruby-test/test-mri/test/ruby/test_io.rb:645:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:76:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:75:in `block'
-
- 18) Error:
-test_copy_stream_strio_to_io(TestIO):
-TypeError: can't convert StringIO into String
-    /macruby-test/test-mri/test/ruby/test_io.rb:671:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:670:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:76:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:75:in `block'
-
- 19) Skipped:
-test_display(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1570]:
-[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
-
- 20) Failure:
-test_dup_many(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:882]:
-<"ok"> expected but was
-<"-e:4:in `block': Operation timed out - pipe() failed (Errno::ETIMEDOUT)\n\tfrom -e:4:in `<main>'\n">.
-
- 21) Error:
-test_each_codepoint(TestIO):
-NoMethodError: undefined method `each_codepoint' for #<File:0xXXXXXXXX>
-    /macruby-test/test-mri/test/ruby/test_io.rb:235:in `block'
-    /macruby-test/test-mri/test/ruby/test_io.rb:234:in `test_each_codepoint'
-
- 22) Skipped:
-test_lines(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1149]:
-[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
-
- 23) Failure:
-test_new_with_block(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1614]:
-<[]> expected but was
-<["/macruby-test/test-mri/-:1:in `<main>': can't convert IO into Integer (TypeError)"]>.
-
- 24) Skipped:
-test_print_separators(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1526]:
-[BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
-
- 25) Skipped:
-test_read_lock(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:945]:
-[BUG : #954] Race condition: assertion fails with IO.pipe, when checks size of String which had read from pipe.
-
- 26) Failure:
-test_readline(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1131]:
-EOFError expected but nothing was raised.
-
- 27) Skipped:
-test_readpartial_lock(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:908]:
-[BUG : #954] Race condition: assertion fails with IO.pipe, when checks size of String which had read from pipe.
-
- 28) Failure:
-test_set_lineno(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1103]:
-<"0,1,2,2,1001,1001,1001,1,2,3,3"> expected but was
-<"nil,1,2,2,1001,1001,1001,1,2,3,3">.
-
- 29) Failure:
-test_sysread(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1310]:
-IOError expected but nothing was raised.
-
- 30) Failure:
-test_sysseek(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1289]:
-IOError expected but nothing was raised.
-
- 31) Failure:
-test_ungetbyte(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:203]:
-<-1> expected but was
-<0>.
-
- 32) Failure:
-test_ungetc(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:194]:
-[ruby-dev:31650]
-IOError expected but nothing was raised.
-
- 33) Failure:
-test_uninitialized(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1644]:
-IOError expected but nothing was raised.
-
-93 tests, 219 assertions, 11 failures, 13 errors, 9 skips
-
-Test run options: --seed 0
+..SS.........FSEEESEEE.EEEFEEES.F..E...F.....SF.........S....S2012-05-28 03:32:28.758 macruby[14870:903] *** Terminating app due to uncaught exception 'Errno::EAGAIN', reason: '/macruby-test/test-mri/test/ruby/test_io.rb:973:in `block': Resource temporarily unavailable - read would block (Errno::EAGAIN)
+	from /macruby-test/test-mri/test/ruby/test_io.rb:57:in `with_pipe'
+	from /macruby-test/test-mri/test/ruby/test_io.rb:971:in `test_read_nonblock_error'
+	from /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:695:in `run'
+	from /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:656:in `block'
+	from /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:650:in `block'
+	from /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:649:in `run_test_suites'
+	from /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:609:in `run'
+	from /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:508:in `block'
+'
+*** Call stack at first throw:
+(
+	0   CoreFoundation                      0xXXXXXXXX __exceptionPreprocess + 180
+	1   libobjc.A.dylib                     0xXXXXXXXX objc_exception_throw + 45
+	2   libmacruby.dylib                    0xXXXXXXXX rb_vm_raise + 430
+	3   libmacruby.dylib                    0xXXXXXXXX rb_exc_raise + 44
+	4   libmacruby.dylib                    0xXXXXXXXX rb_mod_sys_fail + 49
+	5   libmacruby.dylib                    0xXXXXXXXX rb_io_ungetbyte + 875
+	6   libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 7844
+	7   ???                                 0xXXXXXXXX 0x0 + 4348445860
+	8   ???                                 0xXXXXXXXX 0x0 + 4348968328
+	9   libmacruby.dylib                    0xXXXXXXXX rb_vm_yield_args + 1863
+	10  ???                                 0xXXXXXXXX 0x0 + 4348493586
+	11  ???                                 0xXXXXXXXX 0x0 + 4348807154
+	12  libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 9220
+	13  ???                                 0xXXXXXXXX 0x0 + 4348445860
+	14  ???                                 0xXXXXXXXX 0x0 + 4348967431
+	15  libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 9220
+	16  libmacruby.dylib                    0xXXXXXXXX rb_each + 961
+	17  libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 7844
+	18  ???                                 0xXXXXXXXX 0x0 + 4348445860
+	19  ???                                 0xXXXXXXXX 0x0 + 4348749849
+	20  libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 9193
+	21  ???                                 0xXXXXXXXX 0x0 + 4348445860
+	22  ???                                 0xXXXXXXXX 0x0 + 4348747952
+	23  libmacruby.dylib                    0xXXXXXXXX rb_vm_yield_args + 1895
+	24  libmacruby.dylib                    0xXXXXXXXX rb_yield + 40
+	25  libmacruby.dylib                    0xXXXXXXXX rary_reserve + 909
+	26  libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 9220
+	27  ???                                 0xXXXXXXXX 0x0 + 4348445860
+	28  ???                                 0xXXXXXXXX 0x0 + 4348745136
+	29  libmacruby.dylib                    0xXXXXXXXX rb_vm_yield_args + 1895
+	30  libmacruby.dylib                    0xXXXXXXXX rb_yield + 40
+	31  libmacruby.dylib                    0xXXXXXXXX rary_reserve + 909
+	32  libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 9220
+	33  ???                                 0xXXXXXXXX 0x0 + 4348445860
+	34  ???                                 0xXXXXXXXX 0x0 + 4348743173
+	35  libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 9193
+	36  ???                                 0xXXXXXXXX 0x0 + 4348445860
+	37  ???                                 0xXXXXXXXX 0x0 + 4348733650
+	38  libmacruby.dylib                    0xXXXXXXXX rb_vm_dispatch + 9193
+	39  ???                                 0xXXXXXXXX 0x0 + 4348445860
+	40  ???                                 0xXXXXXXXX 0x0 + 4348568508
+	41  libmacruby.dylib                    0xXXXXXXXX rb_vm_block_eval + 1401
+	42  libmacruby.dylib                    0xXXXXXXXX rb_rescue2 + 58
+	43  libmacruby.dylib                    0xXXXXXXXX ruby_finalize + 96
+	44  libmacruby.dylib                    0xXXXXXXXX rb_exit + 16
+	45  macruby                             0xXXXXXXXX main + 159
+	46  macruby                             0xXXXXXXXX start + 52
+)
+terminate called after throwing an instance of 'NSException'
 
 ----------------------------------------
 Loaded suite test/ruby/test_io_m17n
@@ -9060,7 +8941,7 @@ Test run options: --seed 0
 Loaded suite test/ruby/test_process
 Started
 ..SE..EFFS...EFFEEEEEF........./bin/sh: -c: option requires an argument
-F...F../private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120527-1356-1rcd3ra/s:9:in `<main>': Operation timed out - pipe() failed (Errno::ETIMEDOUT)
+F...F../private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120528-14990-1rcd3ra/s:9:in `<main>': Operation timed out - pipe() failed (Errno::ETIMEDOUT)
 F.................
 
   1) Skipped:
@@ -9158,7 +9039,7 @@ Exception raised:
 
  18) Failure:
 test_rlimit_nofile(TestProcess) [/macruby-test/test-mri/test/ruby/test_process.rb:78]:
-pid 1420 exit 1.
+pid 15054 exit 1.
 <0> expected but was
 <256>.
 
@@ -9253,7 +9134,7 @@ test_rand_0xXXXXXXXX(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:65
 
  17) Failure:
 test_random_range(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:362]:
-<2012-05-27 03:34:04 +0900> expected but was
+<2012-05-28 03:34:33 +0900> expected but was
 <1.97626258336499e-323>.
 
  18) Failure:
@@ -9423,7 +9304,7 @@ test_eval(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb
 
   8) Failure:
 test_indentation_check(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:319]:
-<["/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20120527-1468-14cjxw8.rb:2: warning: mismatched indentations at 'end' with 'begin' at 1"]> expected but was
+<["/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20120528-15099-14cjxw8.rb:2: warning: mismatched indentations at 'end' with 'begin' at 1"]> expected but was
 <[]>.
 
   9) Failure:
@@ -10621,7 +10502,7 @@ Expected 0, not 16.
 
   2) Failure:
 test_self_user_dir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:1011]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_1636/userhome/.gem/macruby/1.9.2", not "/Users/watson/.gem/macruby/1.9.2".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15270/userhome/.gem/macruby/1.9.2", not "/Users/watson/.gem/macruby/1.9.2".
 
   3) Failure:
 test_self_default_dir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:577]:
@@ -10629,7 +10510,7 @@ Expected /\/.*?[Rr]uby.*?\/[Gg]ems\/[0-9.]+/ to match "/Library/Ruby/Gems/MacRub
 
   4) Failure:
 test_self_user_home(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:1016]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_1636/userhome", not "/Users/watson".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15270/userhome", not "/Users/watson".
 
   5) Failure:
 test_self_bindir_default_dir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:532]:
@@ -10637,7 +10518,7 @@ Expected "/Library/Frameworks/MacRuby.framework/Versions/0.12/usr/bin", not "/us
 
   6) Failure:
 test_self_datadir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:569]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_1636/gemhome/gems/foo-2/data/foo", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_1636/gemhome/gems/foo-2/data/foo".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15270/gemhome/gems/foo-2/data/foo", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15270/gemhome/gems/foo-2/data/foo".
 
 81 tests, 145 assertions, 6 failures, 0 errors, 0 skips
 
@@ -10668,11 +10549,11 @@ Started
 
   1) Failure:
 test_process_args_install(TestGemCommandManager) [/macruby-test/test-mri/test/rubygems/test_gem_command_manager.rb:85]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_1650", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_1650".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15281", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15281".
 
   2) Failure:
 test_process_args_update(TestGemCommandManager) [/macruby-test/test-mri/test/rubygems/test_gem_command_manager.rb:211]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_1650", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_1650".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15281", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15281".
 
 9 tests, 42 assertions, 2 failures, 0 errors, 0 skips
 
@@ -10842,15 +10723,15 @@ F.F..F
 
   1) Failure:
 test_sending_gem_default(TestGemCommandsPushCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_push_command.rb:42]:
-Expected 3072, not 3060.
+Expected 3072, not 3059.
 
   2) Failure:
 test_sending_gem_host(TestGemCommandsPushCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_push_command.rb:42]:
-Expected 3072, not 3060.
+Expected 3072, not 3059.
 
   3) Failure:
 test_sending_gem_ENV(TestGemCommandsPushCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_push_command.rb:42]:
-Expected 3072, not 3060.
+Expected 3072, not 3059.
 
 6 tests, 20 assertions, 3 failures, 0 errors, 0 skips
 
@@ -11095,7 +10976,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_ext_ext_conf_builder
 Started
-/bin/sh: line 1:  1798 Abort trap              /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/bin/macruby extconf.rb 2>&1
+/bin/sh: line 1: 15431 Abort trap              /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/bin/macruby extconf.rb 2>&1
 ......
 
 6 tests, 21 assertions, 0 failures, 0 errors, 0 skips
@@ -11121,7 +11002,7 @@ F.......
 
   1) Failure:
 test_lib_dirs_for(TestGemGemPathSearcher) [/macruby-test/test-mri/test/rubygems/test_gem_gem_path_searcher.rb:62]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_1860/gemhome/gems/foo-0.1/{lib,lib2}", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_1860/gemhome/gems/foo-0.1/{lib,lib2}".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15494/gemhome/gems/foo-0.1/{lib,lib2}", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15494/gemhome/gems/foo-0.1/{lib,lib2}".
 
 8 tests, 11 assertions, 1 failures, 0 errors, 0 skips
 
@@ -11186,7 +11067,7 @@ test_generate_bin_script_wrappers(TestGemInstaller) [/macruby-test/test-mri/test
 
   3) Failure:
 test_initialize(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:565]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_1886/installer/gems/a-2-x86-mswin32", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_1886/installer/gems/a-2-x86-mswin32".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15519/installer/gems/a-2-x86-mswin32", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15519/installer/gems/a-2-x86-mswin32".
 
   4) Failure:
 test_install_post_build_false(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:786]:
@@ -11225,13 +11106,13 @@ E.E
 
   1) Error:
 test_each(TestGemPackageTarInput):
-Gem::Package::FormatError: no metadata found in /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_1919/bla.tar
+Gem::Package::FormatError: no metadata found in /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15552/bla.tar
     /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:75:in `block'
     /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:74:in `test_each'
 
   2) Error:
 test_extract_entry(TestGemPackageTarInput):
-Gem::Package::FormatError: no metadata found in /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_1919/bla.tar
+Gem::Package::FormatError: no metadata found in /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15552/bla.tar
     /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:95:in `block'
     /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:94:in `test_extract_entry'
 
@@ -11456,7 +11337,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/scanf/test_scanf
 Started
-..........
+...........
 ----------------------------------------
 Loaded suite test/scanf/test_scanfblocks
 Started
@@ -13084,25 +12965,25 @@ F.FF
 
   1) Failure:
 test_bad_header(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:129]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2012-05-27 03:48:23] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2012-05-28 03:48:53] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
 
   2) Failure:
 test_bad_uri(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:115]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2012-05-27 03:48:28] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2012-05-28 03:48:58] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
 
   3) Failure:
 test_cgi(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:40]:
 webrick log start:
-  [2012-05-27 03:48:28] INFO  WEBrick 1.3.1
-  [2012-05-27 03:48:28] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
-  [2012-05-27 03:48:28] INFO  WEBrick::HTTPServer#start: pid=2251 port=64430
-  [2012-05-27 03:48:28] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2012-05-28 03:48:58] INFO  WEBrick 1.3.1
+  [2012-05-28 03:48:58] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
+  [2012-05-28 03:48:58] INFO  WEBrick::HTTPServer#start: pid=15882 port=65150
+  [2012-05-28 03:48:58] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
-  [2012-05-27 03:48:33] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2012-05-28 03:49:03] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
-  [2012-05-27 03:48:37] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2012-05-28 03:49:07] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
-  [2012-05-27 03:48:41] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2012-05-28 03:49:11] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
 webrick log end.
 <"/\xA4ۤ\xB2/\xA4ۤ\xB2"> expected but was
