@@ -1,5 +1,5 @@
-Date    : 2012-05-28T03:09:13+09:00
-Version : 0.12, git commit 69434c940c75c66020d68da1cea93ce9ceb3a672
+Date    : 2012-05-29T03:09:27+09:00
+Version : 0.12, git commit a0f7c507a77f2e0ed17b8693654504f5119be9cf
 
 ----------------------------------------
 /macruby-test/test-mri/test/-ext-/string/test_cstr.rb:2:in `<main>': no such file to load -- -test-/string/string (LoadError)
@@ -1072,7 +1072,7 @@ Started
   1) Failure:
 test_killed_thread_in_synchronize(TestMonitor) [/macruby-test/test-mri/test/monitor/test_monitor.rb:80]:
 <[:main]> expected but was
-<[:main, :t2, :t1]>.
+<[:main, :t1, :t2]>.
 
 6 tests, 18 assertions, 1 failures, 0 errors, 0 skips
 
@@ -1081,12 +1081,15 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/net/http/test_http
 Started
-F.F..E......F.F...E..E...F......
+E.F..E......F.F...E..E...F......
 
-  1) Failure:
-test_get(TestNetHTTP_v1_2) [/macruby-test/test-mri/test/net/http/test_http.rb:49]:
-Exception raised:
-<#<EOFError: end of file reached>>.
+  1) Error:
+test_get(TestNetHTTP_v1_2):
+EOFError: end of file reached
+    /macruby-test/test-mri/test/net/http/test_http.rb:35:in `_test_get__get'
+    /macruby-test/test-mri/test/net/http/test_http.rb:28:in `block'
+    /macruby-test/test-mri/test/net/http/utils.rb:11:in `start'
+    /macruby-test/test-mri/test/net/http/test_http.rb:27:in `test_get'
 
   2) Failure:
 test_get__break(TestNetHTTP_v1_2) [/macruby-test/test-mri/test/net/http/test_http.rb:96]:
@@ -1121,7 +1124,7 @@ Errno::ECONNRESET: Connection reset by peer - read(2) failed.
 
   7) Error:
 test_send_request(TestNetHTTP_v1_2_chunked):
-Errno::EPIPE: Broken pipe - write() failed
+Errno::ECONNRESET: Connection reset by peer - read(2) failed.
     /macruby-test/test-mri/test/net/http/test_http.rb:304:in `_test_send_request__POST'
     /macruby-test/test-mri/test/net/http/test_http.rb:288:in `block'
     /macruby-test/test-mri/test/net/http/utils.rb:11:in `start'
@@ -1132,7 +1135,7 @@ test_get__break(TestNetHTTP_version_1_1) [/macruby-test/test-mri/test/net/http/t
 <1> expected but was
 <2>.
 
-32 tests, 178 assertions, 5 failures, 3 errors, 0 skips
+32 tests, 167 assertions, 4 failures, 4 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -1275,9 +1278,18 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/open-uri/test_open-uri
 Started
-...................................
+.....................F.F...........
 
-35 tests, 151 assertions, 0 failures, 0 errors, 0 skips
+  1) Failure:
+test_progress(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.rb:394]:
+<100000> expected but was
+<81508>.
+
+  2) Failure:
+test_proxy(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.rb:205]:
+Expected /http:\/\/127\.0\.0\.1:50213/ to match "ߢ\xAB\xFF\xFD\xFF\xFF\xFF\xFFƪ\xFF\xFD\xFF\xFF\xFF@\x01\x00\x00\x00\x00\x00\x0013/proxy HTTP/1.1\r\n".
+
+35 tests, 139 assertions, 2 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -2158,7 +2170,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rake/test_rake_file_utils
 Started
-...............E2012-05-28 03:20:03.777 macruby[14053:903] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
+...............E2012-05-29 03:20:14.529 macruby[11719:903] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
 F.......
 
   1) Error:
@@ -2751,65 +2763,64 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rdoc/test_attribute_manager
 Started
-.......
+............
 
-7 tests, 13 assertions, 0 failures, 0 errors, 0 skips
+12 tests, 38 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 0
+
+----------------------------------------
+Loaded suite test/rdoc/test_rdoc_alias
+Started
+.
+
+1 tests, 1 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_any_method
 Started
-.....F.
+...............
 
-  1) Failure:
-test_aref(RDocAnyMethodTest) [/macruby-test/test-mri/test/rdoc/test_rdoc_any_method.rb:8]:
-Expected "method-i-method%3F", not "method-i-method-3F".
-
-7 tests, 18 assertions, 1 failures, 0 errors, 0 skips
+15 tests, 30 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_attr
 Started
-.F.....
+.........
 
-  1) Failure:
-test_type(TestRDocAttr) [/macruby-test/test-mri/test/rdoc/test_rdoc_attr.rb:36]:
-Expected "attr_accessor", not "instance".
-
-7 tests, 7 assertions, 1 failures, 0 errors, 0 skips
+9 tests, 12 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_class_module
 Started
-....
+..........
 
-4 tests, 10 assertions, 0 failures, 0 errors, 0 skips
+10 tests, 49 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_code_object
 Started
-F..FF.....
+F...............F.
 
   1) Failure:
-test_document_children_equals(TestRDocCodeObject) [/macruby-test/test-mri/test/rdoc/test_rdoc_code_object.rb:37]:
-Expected [<RDoc::NormalClass:0xXXXXXXXX class C2::C3 < Object includes: [] attributes: [] methods: [#<RDoc::AnyMethod:0xXXXXXXXX C2::C3#m (public)>] aliases: []>] to be empty.
+test_comment_equals_encoding_blank(TestRDocCodeObject) [/macruby-test/test-mri/test/rdoc/test_rdoc_code_object.rb:50]:
+Encoding sanity check.
+Expected #<Encoding:UTF-8> to not be equal to #<Encoding:UTF-8>.
 
   2) Failure:
-test_document_self_equals(TestRDocCodeObject) [/macruby-test/test-mri/test/rdoc/test_rdoc_code_object.rb:45]:
-Expected [#<RDoc::AnyMethod:0xXXXXXXXX C1::m (public)>, #<RDoc::AnyMethod:0xXXXXXXXX C1#m (public)>] to be empty.
+test_comment_equals_encoding(TestRDocCodeObject) [/macruby-test/test-mri/test/rdoc/test_rdoc_code_object.rb:36]:
+Encoding sanity check.
+Expected #<Encoding:UTF-8> to not be equal to #<Encoding:UTF-8>.
 
-  3) Failure:
-test_documented_eh(TestRDocCodeObject) [/macruby-test/test-mri/test/rdoc/test_rdoc_code_object.rb:61]:
-Failed assertion, no message given.
-
-10 tests, 30 assertions, 3 failures, 0 errors, 0 skips
+18 tests, 43 assertions, 2 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -2825,53 +2836,84 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_context
 Started
-.FE.FE....................F.......
+.......................................
+
+39 tests, 146 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 0
+
+----------------------------------------
+Loaded suite test/rdoc/test_rdoc_context_section
+Started
+....
+
+4 tests, 13 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 0
+
+----------------------------------------
+Loaded suite test/rdoc/test_rdoc_encoding
+Started
+...F....F...
 
   1) Failure:
-test_add_alias(TestRDocContext) [/macruby-test/test-mri/test/rdoc/test_rdoc_context.rb:37]:
-Expected [#<RDoc::Alias:0xXXXXXXXX unknown.alias_method old_name, new_name>], not [].
+test_class_read_file_encoding_with_signature(TestRDocEncoding) [/macruby-test/test-mri/test/rdoc/test_rdoc_encoding.rb:122]:
+[ruby-dev:41452].
+Expected "hi everybody", not "\xEF\xBB\xBFhi everybody".
+
+  2) Failure:
+test_sanity(TestRDocEncoding) [/macruby-test/test-mri/test/rdoc/test_rdoc_encoding.rb:197]:
+If this file is not ASCII tests may incorrectly pass.
+Expected #<Encoding:US-ASCII>, not #<Encoding:UTF-8>.
+
+12 tests, 26 assertions, 2 failures, 0 errors, 0 skips
+
+Test run options: --seed 0
+
+----------------------------------------
+Loaded suite test/rdoc/test_rdoc_generator_darkfish
+Started
+EEEE
+
+  1) Error:
+test_generate(TestRDocGeneratorDarkfish):
+TypeError: can't dup NilClass
+    /macruby-test/test-mri/test/rdoc/test_rdoc_generator_darkfish.rb:35:in `setup'
 
   2) Error:
-test_add_module_alias(TestRDocContext):
-ArgumentError: wrong number of arguments (2 for 3)
-    /macruby-test/test-mri/test/rdoc/test_rdoc_context.rb:152:in `test_add_module_alias'
+test_template_for_dry_run(TestRDocGeneratorDarkfish):
+TypeError: can't dup NilClass
+    /macruby-test/test-mri/test/rdoc/test_rdoc_generator_darkfish.rb:35:in `setup'
 
-  3) Failure:
-test_add_alias_method(TestRDocContext) [/macruby-test/test-mri/test/rdoc/test_rdoc_context.rb:50]:
-Expected {"#old_name"=>[#<RDoc::Alias:0xXXXXXXXX unknown.alias_method old_name, new_name>]} to be empty.
+  3) Error:
+test_template_for(TestRDocGeneratorDarkfish):
+TypeError: can't dup NilClass
+    /macruby-test/test-mri/test/rdoc/test_rdoc_generator_darkfish.rb:35:in `setup'
 
   4) Error:
-test_add_alias_impl(TestRDocContext):
-NoMethodError: undefined method `add_alias_impl' for #<RDoc::Context:0xXXXXXXXX ...>
-    /macruby-test/test-mri/test/rdoc/test_rdoc_context.rb:62:in `test_add_alias_impl'
+test_generate_dry_run(TestRDocGeneratorDarkfish):
+TypeError: can't dup NilClass
+    /macruby-test/test-mri/test/rdoc/test_rdoc_generator_darkfish.rb:35:in `setup'
 
-  5) Failure:
-test_add_method_alias(TestRDocContext) [/macruby-test/test-mri/test/rdoc/test_rdoc_context.rb:136]:
-Expected [] to not be empty.
-
-34 tests, 111 assertions, 3 failures, 2 errors, 0 skips
+4 tests, 0 assertions, 0 failures, 4 errors, 0 skips
 
 Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_generator_ri
 Started
-.
+..
 
-1 tests, 5 assertions, 0 failures, 0 errors, 0 skips
+2 tests, 7 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_include
 Started
-F
+..
 
-  1) Failure:
-test_module(TestRDocInclude) [/macruby-test/test-mri/test/rdoc/test_rdoc_include.rb:12]:
-Expected #<RDoc::NormalModule:0xXXXXXXXX module M1 includes: [] attributes: [] methods: [] aliases: []>, not "M1".
-
-1 tests, 1 assertions, 1 failures, 0 errors, 0 skips
+2 tests, 10 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -2914,367 +2956,32 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_markup_parser
 Started
-.FFFFFFF.F.FFFFF..F..F.....F.F...FF.F..F..FFF.F..F...F.F..F.F..F.....F...FFFF
+.............S...................................F.....................S...........
 
-  1) Failure:
-test_parse_verbatim_label(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:651]:
-Expected [[verb: "  ", "[blah]", " ", "blah", "\n"]], not [[verb: "[blah] blah\n"]].
+  1) Skipped:
+test_parse_bullet_utf_8(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:58]:
+[BUG : #???] Timeout, MacRuby doesn't finish
 
   2) Failure:
-test_parse_verbatim_lalpha(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:662]:
-Expected [[verb: "  ", "b.", " ", "blah", "\n"]], not [[verb: "b. blah\n"]].
+test_parse_lalpha_utf_8(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:428]:
+Expected [[list: LALPHA [item: [para: "新しい機能"]]]], not [[list: LALPHA [item: [para: ". 新しい機能"]]]].
 
-  3) Failure:
-test_parse_verbatim_trim(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:832]:
-Expected [[para: "now is"],
- [verb: "   ", "code", "\n", "\n", "   ", "code1", "\n"],
- [para: "the time"]], not [[para: "now is"], [verb: "code\n", "\n", "code1\n"], [para: "the time"]].
+  3) Skipped:
+test_parse_trailing_cr(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:647]:
+[BUG : #???] Timeout, MacRuby doesn't finish
 
-  4) Failure:
-test_tokenize_number_period(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:1183]:
-Expected [[:NUMBER, "1", 0, 0],
- [:SPACE, 3, 0, 0],
- [:TEXT, "blah blah blah", 3, 0],
- [:NEWLINE, "\n", 17, 0],
- [:INDENT, 3, 0, 1],
- [:TEXT, "l.", 3, 1],
- [:NEWLINE, "\n", 5, 1],
- [:NUMBER, "2", 0, 2],
- [:SPACE, 3, 0, 2],
- [:TEXT, "blah blah blah blah", 3, 2],
- [:NEWLINE, "\n", 22, 2],
- [:INDENT, 3, 0, 3],
- [:TEXT, "d.", 3, 3],
- [:NEWLINE, "\n", 5, 3]], not [[:NUMBER, "1", 0, 0],
- [:TEXT, "blah blah blah", 3, 0],
- [:NEWLINE, "\n", 17, 0],
- [:TEXT, "l.", 3, 1],
- [:NEWLINE, "\n", 5, 1],
- [:NUMBER, "2", 0, 2],
- [:TEXT, "blah blah blah blah", 3, 2],
- [:NEWLINE, "\n", 22, 2],
- [:TEXT, "d.", 3, 3],
- [:NEWLINE, "\n", 5, 3]].
-
-  5) Failure:
-test_parse_verbatim_note(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:768]:
-Expected [[verb: "  ", "blah::", " ", "blah", "\n"]], not [[verb: "blah:: blah\n"]].
-
-  6) Failure:
-test_parse_verbatim_merge2(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:721]:
-Expected [[para: "now is"],
- [verb: "   ",
-   "code",
-   "\n",
-   "\n",
-   "   ",
-   "code1",
-   "\n",
-   "\n",
-   "   ",
-   "code2",
-   "\n"],
- [para: "the time"]], not [[para: "now is"],
- [verb: "code\n", "\n", "code1\n", "\n", "code2\n"],
- [para: "the time"]].
-
-  7) Failure:
-test_tokenize_note_empty(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:1119]:
-Expected [[:NOTE, "cat", 0, 0],
- [:SPACE, 5, 0, 0],
- [:NEWLINE, "\n", 5, 0],
- [:NOTE, "dog", 0, 1],
- [:SPACE, 5, 0, 1],
- [:NEWLINE, "\n", 5, 1]], not [[:NOTE, "cat", 0, 0],
- [:NEWLINE, "\n", 5, 0],
- [:NOTE, "dog", 0, 1],
- [:NEWLINE, "\n", 5, 1]].
-
-  8) Failure:
-test_parse_bullet_indent_verbatim(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:192]:
-Expected [[list: BULLET [item: [para: "l1"],
-     [list: BULLET [item: [para: "l1.1", "text"],
-         [verb: "  ", "code", "\n", "    ", "code", "\n"],
-         [para: "text"]]]],
-   [item: [para: "l2"]]]], not [[list: BULLET [item: [para: "l1"],
-     [list: BULLET [item: [para: "l1.1", "text"],
-         [verb: "code\n", "  code\n"],
-         [para: "text"]]]],
-   [item: [para: "l2"]]]].
-
-  9) Failure:
-test_tokenize_bullet(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:951]:
-Expected [[:BULLET, :BULLET, 0, 0],
- [:SPACE, 2, 0, 0],
- [:TEXT, "l1", 2, 0],
- [:NEWLINE, "\n", 4, 0]], not [[:BULLET, "*", 0, 0], [:TEXT, "l1", 2, 0], [:NEWLINE, "\n", 4, 0]].
-
- 10) Failure:
-test_parse_bullet_verbatim_heading(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:71]:
-Expected [[list: BULLET [item: [para: "l1"], [verb: "  ", "v", "\n"]]], [head: 1 "H"]], not [[list: BULLET [item: [para: "l1"], [verb: "v\n"]]], [head: 1 "H"]].
-
- 11) Failure:
-test_tokenize_label(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:1042]:
-Expected [[:LABEL, "cat", 0, 0],
- [:SPACE, 6, 0, 0],
- [:TEXT, "l1", 6, 0],
- [:NEWLINE, "\n", 8, 0],
- [:LABEL, "dog", 0, 1],
- [:SPACE, 6, 0, 1],
- [:TEXT, "l1.1", 6, 1],
- [:NEWLINE, "\n", 10, 1]], not [[:LABEL, "cat", 0, 0],
- [:TEXT, "l1", 6, 0],
- [:NEWLINE, "\n", 8, 0],
- [:LABEL, "dog", 0, 1],
- [:TEXT, "l1.1", 6, 1],
- [:NEWLINE, "\n", 10, 1]].
-
- 12) Failure:
-test_verbatim_normalize(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:1306]:
-Expected ["  ", "foo", "\n", "\n", "  ", "bar", "\n"], not ["  ", "foo", "\n", "  ", "bar"].
-
- 13) Failure:
-test_parse_list_verbatim(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:420]:
-Expected [[list: BULLET [item: [para: "one"],
-     [verb: "  ", "verb1", "\n", "  ", "verb2", "\n"]],
-   [item: [para: "two"]]]], not [[list: BULLET [item: [para: "one"], [verb: "verb1\n", "verb2\n"]],
-   [item: [para: "two"]]]].
-
- 14) Failure:
-test_parse_verbatim_multiline(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:739]:
-Expected [[para: "now is"],
- [verb: "   ", "code", "\n", "   ", "code1", "\n"],
- [para: "the time"]], not [[para: "now is"], [verb: "code\n", "code1\n"], [para: "the time"]].
-
- 15) Failure:
-test_tokenize_ualpha(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:1277]:
-Expected [[:UALPHA, "A", 0, 0],
- [:SPACE, 3, 0, 0],
- [:TEXT, "l1", 3, 0],
- [:NEWLINE, "\n", 5, 0],
- [:UALPHA, "B", 0, 1],
- [:SPACE, 3, 0, 1],
- [:TEXT, "l1.1", 3, 1],
- [:NEWLINE, "\n", 7, 1]], not [[:UALPHA, "A", 0, 0],
- [:TEXT, "l1", 3, 0],
- [:NEWLINE, "\n", 5, 0],
- [:UALPHA, "B", 0, 1],
- [:TEXT, "l1.1", 3, 1],
- [:NEWLINE, "\n", 7, 1]].
-
- 16) Failure:
-test_parse_verbatim_heading(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:629]:
-Expected [[para: "text"], [verb: "   ", "===", "   ", "heading three", "\n"]], not [[para: "text"], [verb: "===   heading three\n"]].
-
- 17) Failure:
-test_parse_verbatim_rule2(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:811]:
-Expected [[para: "text"], blankline, [verb: "  ", "---", ""]], not [[para: "text"], blankline, [verb: "---"]].
-
- 18) Failure:
-test_parse_verbatim_heading2(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:640]:
-Expected [[para: "text"], [verb: "   ", "code", "\n"], [head: 3 "heading three"]], not [[para: "text"], [verb: "code\n"], [head: 3 "heading three"]].
-
- 19) Failure:
-test_parse_verbatim(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:583]:
-Expected [[para: "now is"], [verb: "   ", "code", "\n"], [para: "the time"]], not [[para: "now is"], [verb: "code\n"], [para: "the time"]].
-
- 20) Failure:
-test_parse_verbatim_markup_example(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:677]:
-Expected [[para: "text"],
- [verb: "   ", "code", "\n", "   ", "===", " ", "heading three", "\n"]], not [[para: "text"], [verb: "code\n", "=== heading three\n"]].
-
- 21) Failure:
-test_parse_verbatim_multilevel(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:757]:
-Expected [[para: "now is the time"],
- [verb: "  ", "code", "\n", " ", "more code", "\n"],
- [para: "for all good men"]], not [[para: "now is the time"],
- [verb: " code\n", "more code\n"],
- [para: "for all good men"]].
-
- 22) Failure:
-test_parse_whitespace(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:857]:
-Expected [[verb: " ", "hello "]], not [[verb: "hello "]].
-
- 23) Failure:
-test_parse_verbatim_number(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:779]:
-Expected [[verb: "  ", "2.", " ", "blah", "\n"]], not [[verb: "2. blah\n"]].
-
- 24) Failure:
-test_tokenize_label_note(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:1061]:
-Expected [[:LABEL, "label", 0, 0],
- [:SPACE, 7, 0, 0],
- [:NEWLINE, "\n", 7, 0],
- [:INDENT, 2, 0, 1],
- [:NOTE, "note", 2, 1],
- [:SPACE, 6, 2, 1],
- [:NEWLINE, "\n", 8, 1]], not [[:LABEL, "label", 0, 0],
- [:NEWLINE, "\n", 7, 0],
- [:NOTE, "note", 2, 1],
- [:NEWLINE, "\n", 8, 1]].
-
- 25) Failure:
-test_tokenize_bullet_indent(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:972]:
-Expected [[:BULLET, :BULLET, 0, 0],
- [:SPACE, 2, 0, 0],
- [:TEXT, "l1", 2, 0],
- [:NEWLINE, "\n", 4, 0],
- [:INDENT, 2, 0, 1],
- [:BULLET, :BULLET, 2, 1],
- [:SPACE, 2, 2, 1],
- [:TEXT, "l1.1", 4, 1],
- [:NEWLINE, "\n", 8, 1]], not [[:BULLET, "*", 0, 0],
- [:TEXT, "l1", 2, 0],
- [:NEWLINE, "\n", 4, 0],
- [:BULLET, "*", 2, 1],
- [:TEXT, "l1.1", 4, 1],
- [:NEWLINE, "\n", 8, 1]].
-
- 26) Failure:
-test_tokenize_number(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:1152]:
-Expected [[:NUMBER, "1", 0, 0],
- [:SPACE, 3, 0, 0],
- [:TEXT, "l1", 3, 0],
- [:NEWLINE, "\n", 5, 0],
- [:NUMBER, "2", 0, 1],
- [:SPACE, 3, 0, 1],
- [:TEXT, "l1.1", 3, 1],
- [:NEWLINE, "\n", 7, 1]], not [[:NUMBER, "1", 0, 0],
- [:TEXT, "l1", 3, 0],
- [:NEWLINE, "\n", 5, 0],
- [:NUMBER, "2", 0, 1],
- [:TEXT, "l1.1", 3, 1],
- [:NEWLINE, "\n", 7, 1]].
-
- 27) Failure:
-test_parse_verbatim_merge(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:697]:
-Expected [[para: "now is"],
- [verb: "   ", "code", "\n", "\n", "   ", "code1", "\n"],
- [para: "the time"]], not [[para: "now is"], [verb: "code\n", "\n", "code1\n"], [para: "the time"]].
-
- 28) Failure:
-test_parse_verbatim_fold(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:616]:
-Expected [[para: "now is"],
- [verb: "   ", "code", "\n", "\n", "   ", "code1", "\n"],
- [para: "the time"]], not [[para: "now is"], [verb: "code\n", "\n", "code1\n"], [para: "the time"]].
-
- 29) Failure:
-test_parse_verbatim_rule(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:796]:
-Expected [[para: "text"],
- blankline,
- [verb: "  ",
-   "---",
-   " ",
-   "lib/blah.rb.orig",
-   "\n",
-   "  ",
-   "+++",
-   " ",
-   "lib/blah.rb",
-   "\n"]], not [[para: "text"],
- blankline,
- [verb: "--- lib/blah.rb.orig\n", "+++ lib/blah.rb\n"]].
-
- 30) Failure:
-test_tokenize_verbatim_heading(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:1297]:
-Expected [[:TEXT, "Example heading:", 0, 0],
- [:NEWLINE, "\n", 16, 0],
- [:NEWLINE, "\n", 0, 1],
- [:INDENT, 3, 0, 2],
- [:HEADER, 3, 3, 2],
- [:TEXT, "heading three", 7, 2],
- [:NEWLINE, "\n", 20, 2]], not [[:TEXT, "Example heading:", 0, 0],
- [:NEWLINE, "\n", 16, 0],
- [:NEWLINE, "\n", 0, 1],
- [:HEADER, 3, 3, 2],
- [:TEXT, "heading three", 7, 2],
- [:NEWLINE, "\n", 20, 2]].
-
- 31) Failure:
-test_parse_verbatim_ualpha(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:843]:
-Expected [[verb: "  ", "B.", " ", "blah", "\n"]], not [[verb: "B. blah\n"]].
-
- 32) Failure:
-test_tokenize_note(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:1101]:
-Expected [[:NOTE, "cat", 0, 0],
- [:SPACE, 6, 0, 0],
- [:TEXT, "l1", 6, 0],
- [:NEWLINE, "\n", 8, 0],
- [:NOTE, "dog", 0, 1],
- [:SPACE, 6, 0, 1],
- [:TEXT, "l1.1", 6, 1],
- [:NEWLINE, "\n", 10, 1]], not [[:NOTE, "cat", 0, 0],
- [:TEXT, "l1", 6, 0],
- [:NEWLINE, "\n", 8, 0],
- [:NOTE, "dog", 0, 1],
- [:TEXT, "l1.1", 6, 1],
- [:NEWLINE, "\n", 10, 1]].
-
- 33) Failure:
-test_parse_paragraph_verbatim(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:551]:
-Expected [[para: "now is the time"],
- [verb: "  ", "code _line_ here", "\n"],
- [para: "for all good men"]], not [[para: "now is the time"],
- [verb: "code _line_ here\n"],
- [para: "for all good men"]].
-
- 34) Failure:
-test_tokenize_lalpha(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:1081]:
-Expected [[:LALPHA, "a", 0, 0],
- [:SPACE, 3, 0, 0],
- [:TEXT, "l1", 3, 0],
- [:NEWLINE, "\n", 5, 0],
- [:LALPHA, "b", 0, 1],
- [:SPACE, 3, 0, 1],
- [:TEXT, "l1.1", 3, 1],
- [:NEWLINE, "\n", 7, 1]], not [[:LALPHA, "a", 0, 0],
- [:TEXT, "l1", 3, 0],
- [:NEWLINE, "\n", 5, 0],
- [:LALPHA, "b", 0, 1],
- [:TEXT, "l1.1", 3, 1],
- [:NEWLINE, "\n", 7, 1]].
-
- 35) Failure:
-test_parse_verbatim_bullet(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:594]:
-Expected [[verb: "  ", "*", " ", "blah", "\n"]], not [[verb: "* blah\n"]].
-
- 36) Failure:
-test_tokenize_number_period_continue(TestRDocMarkupParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_parser.rb:1218]:
-Expected [[:NUMBER, "1", 0, 0],
- [:SPACE, 3, 0, 0],
- [:TEXT, "blah blah blah", 3, 0],
- [:NEWLINE, "\n", 17, 0],
- [:INDENT, 3, 0, 1],
- [:LALPHA, "l", 3, 1],
- [:SPACE, 4, 3, 1],
- [:TEXT, "more stuff", 7, 1],
- [:NEWLINE, "\n", 17, 1],
- [:NUMBER, "2", 0, 2],
- [:SPACE, 3, 0, 2],
- [:TEXT, "blah blah blah blah", 3, 2],
- [:NEWLINE, "\n", 22, 2],
- [:INDENT, 3, 0, 3],
- [:LALPHA, "d", 3, 3],
- [:SPACE, 3, 3, 3],
- [:TEXT, "other stuff", 6, 3],
- [:NEWLINE, "\n", 17, 3]], not [[:NUMBER, "1", 0, 0],
- [:TEXT, "blah blah blah", 3, 0],
- [:NEWLINE, "\n", 17, 0],
- [:LALPHA, "l", 3, 1],
- [:TEXT, "more stuff", 7, 1],
- [:NEWLINE, "\n", 17, 1],
- [:NUMBER, "2", 0, 2],
- [:TEXT, "blah blah blah blah", 3, 2],
- [:NEWLINE, "\n", 22, 2],
- [:LALPHA, "d", 3, 3],
- [:TEXT, "other stuff", 6, 3],
- [:NEWLINE, "\n", 17, 3]].
-
-77 tests, 88 assertions, 36 failures, 0 errors, 0 skips
+83 tests, 99 assertions, 1 failures, 0 errors, 2 skips
 
 Test run options: --seed 0
 
 ----------------------------------------
-/macruby-test/test-mri/test/rdoc/test_rdoc_markup_pre_process.rb:4:in `<main>': no such file to load -- rdoc/markup/preprocess (LoadError)
+Loaded suite test/rdoc/test_rdoc_markup_pre_process
+Started
+.........
+
+9 tests, 32 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_markup_raw
@@ -3288,499 +2995,137 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_markup_to_ansi
 Started
-..FF........F...........E.........F.....F.F..........
+.....................................................
 
-  1) Failure:
-test_accept_list_item_end_label(TestRDocMarkupToAnsi) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_ansi.rb:65]:
-Expected "\e[0m\n", not "\e[0m".
-
-  2) Failure:
-test_accept_verbatim_indent(TestRDocMarkupToAnsi) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_ansi.rb:357]:
-Expected "\e[0m    hi\n     world\n\n", not "\e[0m            hi\n             world\n\n".
-
-  3) Failure:
-test_list_verbatim(TestRDocMarkupToAnsi) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_ansi.rb:434]:
-Expected "\e[0m* list stuff\n\n    * list\n      with\n\n      second\n\n      1. indented\n      2. numbered\n\n      third\n\n    * second\n\n", not "\e[0m* list stuff\n\n           *         list\n             with\n\n             second\n\n             1.         indented\n             2.         numbered\n\n             third\n\n           *         second\n\n".
-
-  4) Error:
-test_accept_heading_suppressed_crossref(TestRDocMarkupToAnsi):
-NameError: undefined local variable or method `accept_heading_suppressed_crossref' for #<TestRDocMarkupToAnsi:0xXXXXXXXX ...>
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/rdoc/markup/formatter_test_case.rb:200:in `test_accept_heading_suppressed_crossref'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:695:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:656:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:650:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:649:in `run_test_suites'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:609:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:508:in `block'
-
-  5) Failure:
-test_accept_verbatim_big_indent(TestRDocMarkupToAnsi) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_ansi.rb:368]:
-Expected "\e[0m    hi\n    world\n\n", not "\e[0m            hi\n            world\n\n".
-
-  6) Failure:
-test_accept_verbatim(TestRDocMarkupToAnsi) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_ansi.rb:195]:
-Expected "\e[0m  hi\n  world\n\n", not "\e[0m  hi\n    world\n\n".
-
-  7) Failure:
-test_accept_list_item_end_note(TestRDocMarkupToAnsi) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_ansi.rb:75]:
-Expected "\e[0m\n", not "\e[0m".
-
-53 tests, 124 assertions, 6 failures, 1 errors, 0 skips
+53 tests, 127 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_markup_to_bs
 Started
-...F........F.....................F.....F............
+.....................................................
 
-  1) Failure:
-test_accept_verbatim_indent(TestRDocMarkupToBs) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_bs.rb:374]:
-Expected "    hi\n     world\n\n", not "            hi\n             world\n\n".
-
-  2) Failure:
-test_list_verbatim(TestRDocMarkupToBs) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_bs.rb:451]:
-Expected "* list stuff\n\n    * list\n      with\n\n      second\n\n      1. indented\n      2. numbered\n\n      third\n\n    * second\n\n", not "* list stuff\n\n           *         list\n             with\n\n             second\n\n             1.         indented\n             2.         numbered\n\n             third\n\n           *         second\n\n".
-
-  3) Failure:
-test_accept_verbatim_big_indent(TestRDocMarkupToBs) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_bs.rb:385]:
-Expected "    hi\n    world\n\n", not "            hi\n            world\n\n".
-
-  4) Failure:
-test_accept_verbatim(TestRDocMarkupToBs) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_bs.rb:194]:
-Expected "  hi\n  world\n\n", not "  hi\n    world\n\n".
-
-53 tests, 125 assertions, 4 failures, 0 errors, 0 skips
+53 tests, 127 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_markup_to_html
 Started
-EF..EEFFFEFFF.E.FFFFEEEFF..FFFFEFEEF.EFFF.F.E..FF
+...................................................
 
-  1) Error:
-test_accept_heading_1(TestRDocMarkupToHtml):
-NameError: undefined local variable or method `accept_heading_1' for #<TestRDocMarkupToHtml:0xXXXXXXXX ...>
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/rdoc/markup/formatter_test_case.rb:141:in `test_accept_heading_1'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:695:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:656:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:650:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:649:in `run_test_suites'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:609:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:508:in `block'
-
-  2) Failure:
-test_accept_list_start_ualpha(TestRDocMarkupToHtml) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html.rb:166]:
-Expected "<ol style=\"display: upper-alpha\">\n", not "<ol style=\"display: upper-alpha\">".
-
-  3) Error:
-test_accept_heading_3(TestRDocMarkupToHtml):
-NameError: undefined local variable or method `accept_heading_3' for #<TestRDocMarkupToHtml:0xXXXXXXXX ...>
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/rdoc/markup/formatter_test_case.rb:166:in `test_accept_heading_3'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:695:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:656:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:650:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:649:in `run_test_suites'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:609:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:508:in `block'
-
-  4) Error:
-test_accept_heading_2(TestRDocMarkupToHtml):
-NameError: undefined local variable or method `accept_heading_2' for #<TestRDocMarkupToHtml:0xXXXXXXXX ...>
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/rdoc/markup/formatter_test_case.rb:152:in `test_accept_heading_2'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:695:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:656:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:650:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:649:in `run_test_suites'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:609:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:508:in `block'
-
-  5) Failure:
-test_accept_list_start_lalpha(TestRDocMarkupToHtml) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html.rb:145]:
-Expected "<ol style=\"display: lower-alpha\">\n", not "<ol style=\"display: lower-alpha\">".
-
-  6) Failure:
-test_accept_list_end_note(TestRDocMarkupToHtml) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html.rb:69]:
-Expected "<table>\n</table>\n", not "<table class=\"rdoc-list\"></table>\n".
-
-  7) Failure:
-test_accept_list_item_start_number(TestRDocMarkupToHtml) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html.rb:120]:
-Expected "<ol>\n<li>", not "<ol><li>".
-
-  8) Error:
-test_accept_heading_b(TestRDocMarkupToHtml):
-NameError: undefined local variable or method `accept_heading_b' for #<TestRDocMarkupToHtml:0xXXXXXXXX ...>
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/rdoc/markup/formatter_test_case.rb:188:in `test_accept_heading_b'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:695:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:656:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:650:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:649:in `run_test_suites'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:609:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:508:in `block'
-
-  9) Failure:
-test_convert_string_fancy(TestRDocMarkupToHtml) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html.rb:240]:
-Expected "<p>\n&#8220;cats&#8221;.\n</p>\n", not "\n<p>“cats”.</p>\n".
-
- 10) Failure:
-test_accept_list_item_start_ualpha(TestRDocMarkupToHtml) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html.rb:124]:
-Expected "<ol style=\"display: upper-alpha\">\n<li>", not "<ol style=\"display: upper-alpha\"><li>".
-
- 11) Failure:
-test_list_verbatim(TestRDocMarkupToHtml) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html.rb:223]:
-Expected "<ul>\n<li><p>\none\n</p>\n<pre>\n  verb1\n  verb2\n</pre>\n</li>\n<li><p>\ntwo\n</p>\n</li>\n</ul>\n", not "<ul><li>\n<p>one</p>\n\n<pre>verb1\nverb2</pre>\n</li><li>\n<p>two</p>\n</li></ul>\n".
-
- 12) Error:
-test_accept_list_item_start_note_2(TestRDocMarkupToHtml):
-NameError: undefined local variable or method `accept_list_item_start_note_2' for #<TestRDocMarkupToHtml:0xXXXXXXXX ...>
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/rdoc/markup/formatter_test_case.rb:377:in `test_accept_list_item_start_note_2'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:695:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:656:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:650:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:649:in `run_test_suites'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:609:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:508:in `block'
-
- 13) Failure:
-test_accept_list_start_note(TestRDocMarkupToHtml) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html.rb:152]:
-Expected "<table>\n", not "<table class=\"rdoc-list\">".
-
- 14) Failure:
-test_accept_list_start_label(TestRDocMarkupToHtml) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html.rb:138]:
-Expected "<dl>\n", not "<dl>".
-
- 15) Failure:
-test_accept_list_item_start_label(TestRDocMarkupToHtml) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html.rb:108]:
-Expected "<dl>\n<dt>cat</dt><dd>", not "<dl><dt>cat</dt>\n<dd>".
-
- 16) Failure:
-test_accept_paragraph(TestRDocMarkupToHtml) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html.rb:170]:
-Expected "<p>\nhi\n</p>\n", not "\n<p>hi</p>\n".
-
- 17) Error:
-test_accept_heading_suppressed_crossref(TestRDocMarkupToHtml):
-NameError: undefined local variable or method `accept_heading_suppressed_crossref' for #<TestRDocMarkupToHtml:0xXXXXXXXX ...>
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/rdoc/markup/formatter_test_case.rb:200:in `test_accept_heading_suppressed_crossref'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:695:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:656:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:650:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:649:in `run_test_suites'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:609:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:508:in `block'
-
- 18) Error:
-test_accept_paragraph_star(TestRDocMarkupToHtml):
-NameError: undefined local variable or method `accept_paragraph_star' for #<TestRDocMarkupToHtml:0xXXXXXXXX ...>
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/rdoc/markup/formatter_test_case.rb:259:in `test_accept_paragraph_star'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:695:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:656:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:650:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:649:in `run_test_suites'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:609:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:508:in `block'
-
- 19) Error:
-test_accept_paragraph_underscore(TestRDocMarkupToHtml):
-NameError: undefined local variable or method `accept_paragraph_underscore' for #<TestRDocMarkupToHtml:0xXXXXXXXX ...>
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/rdoc/markup/formatter_test_case.rb:271:in `test_accept_paragraph_underscore'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:695:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:656:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:650:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:649:in `run_test_suites'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:609:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:508:in `block'
-
- 20) Failure:
-test_accept_list_start_bullet(TestRDocMarkupToHtml) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html.rb:131]:
-Expected "<ul>\n", not "<ul>".
-
- 21) Failure:
-test_accept_list_end_bullet(TestRDocMarkupToHtml) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html.rb:41]:
-Expected "<ul>\n</ul>\n", not "<ul></ul>\n".
-
- 22) Failure:
-test_accept_list_end_lalpha(TestRDocMarkupToHtml) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html.rb:55]:
-Expected "<ol style=\"display: lower-alpha\">\n</ol>\n", not "<ol style=\"display: lower-alpha\"></ol>\n".
-
- 23) Failure:
-test_accept_list_end_number(TestRDocMarkupToHtml) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html.rb:62]:
-Expected "<ol>\n</ol>\n", not "<ol></ol>\n".
-
- 24) Failure:
-test_accept_list_end_ualpha(TestRDocMarkupToHtml) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html.rb:76]:
-Expected "<ol style=\"display: upper-alpha\">\n</ol>\n", not "<ol style=\"display: upper-alpha\"></ol>\n".
-
- 25) Failure:
-test_accept_list_item_start_bullet(TestRDocMarkupToHtml) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html.rb:104]:
-Expected "<ul>\n<li>", not "<ul><li>".
-
- 26) Error:
-test_accept_paragraph_i(TestRDocMarkupToHtml):
-NameError: undefined local variable or method `accept_paragraph_i' for #<TestRDocMarkupToHtml:0xXXXXXXXX ...>
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/rdoc/markup/formatter_test_case.rb:235:in `test_accept_paragraph_i'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:695:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:656:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:650:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:649:in `run_test_suites'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:609:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:508:in `block'
-
- 27) Failure:
-test_accept_list_item_start_note(TestRDocMarkupToHtml) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html.rb:116]:
-Expected "<table>\n<tr><td valign=\"top\">cat</td><td>", not "<table class=\"rdoc-list\"><tr><td class=\"rdoc-term\"><p>cat</p></td>\n<td>".
-
- 28) Error:
-test_accept_paragraph_plus(TestRDocMarkupToHtml):
-NameError: undefined local variable or method `accept_paragraph_plus' for #<TestRDocMarkupToHtml:0xXXXXXXXX ...>
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/rdoc/markup/formatter_test_case.rb:247:in `test_accept_paragraph_plus'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:695:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:656:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:650:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:649:in `run_test_suites'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:609:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:508:in `block'
-
- 29) Error:
-test_list_nested(TestRDocMarkupToHtml):
-NameError: undefined local variable or method `list_nested' for #<TestRDocMarkupToHtml:0xXXXXXXXX ...>
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/rdoc/markup/formatter_test_case.rb:656:in `test_list_nested'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:695:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:656:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:650:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:649:in `run_test_suites'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:609:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:508:in `block'
-
- 30) Failure:
-test_accept_verbatim(TestRDocMarkupToHtml) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html.rb:190]:
-Expected "<pre>\n  hi\n  world\n</pre>\n", not "\n<pre>hi\n  world</pre>\n".
-
- 31) Error:
-test_accept_paragraph_b(TestRDocMarkupToHtml):
-NameError: undefined local variable or method `accept_paragraph_b' for #<TestRDocMarkupToHtml:0xXXXXXXXX ...>
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/rdoc/markup/formatter_test_case.rb:223:in `test_accept_paragraph_b'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:695:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:656:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:650:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:649:in `run_test_suites'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:609:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:508:in `block'
-
- 32) Failure:
-test_tt_formatting(TestRDocMarkupToHtml) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html.rb:228]:
-Expected "<p>\n<tt>--</tt> &#8212; <tt>cats'</tt> cats&#8217;\n</p>\n", not "\n<p><tt>--</tt> – <tt>cats'</tt> cats’</p>\n".
-
- 33) Failure:
-test_accept_list_end_label(TestRDocMarkupToHtml) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html.rb:48]:
-Expected "<dl>\n</dl>\n", not "<dl></dl>\n".
-
- 34) Failure:
-test_accept_list_item_start_lalpha(TestRDocMarkupToHtml) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html.rb:112]:
-Expected "<ol style=\"display: lower-alpha\">\n<li>", not "<ol style=\"display: lower-alpha\"><li>".
-
- 35) Failure:
-test_accept_rule(TestRDocMarkupToHtml) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html.rb:186]:
-Expected "<hr style=\"height: 4px\"></hr>", not "<hr style=\"height: 4px\">\n".
-
- 36) Error:
-test_accept_heading_4(TestRDocMarkupToHtml):
-NameError: undefined local variable or method `accept_heading_4' for #<TestRDocMarkupToHtml:0xXXXXXXXX ...>
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/rdoc/markup/formatter_test_case.rb:177:in `test_accept_heading_4'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:695:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:656:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:650:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:649:in `run_test_suites'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:609:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:508:in `block'
-
- 37) Failure:
-test_accept_list_start_number(TestRDocMarkupToHtml) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html.rb:159]:
-Expected "<ol>\n", not "<ol>".
-
- 38) Failure:
-test_accept_heading(TestRDocMarkupToHtml) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html.rb:34]:
-Expected "<h5>Hello</h5>\n", not "\n<h5>Hello</h5>\n".
-
-49 tests, 67 assertions, 25 failures, 13 errors, 0 skips
+51 tests, 82 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_markup_to_html_crossref
 Started
-FFFFFFFFFF
+...........
 
-  1) Failure:
-test_handle_special_CROSSREF_C2_C3(TestRDocMarkupToHtmlCrossref) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html_crossref.rb:43]:
-Expected "<p>\n<a href=\"../../C2/C3.html#method-i-m\">#m</a>\n</p>\n", not "\n<p><a href=\"../../C2/C3.html#method-i-m\">#m</a></p>\n".
-
-  2) Failure:
-test_handle_special_CROSSREF_no_ref(TestRDocMarkupToHtmlCrossref) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html_crossref.rb:140]:
-Expected "<p>\nbogus\n</p>\n", not "\n<p>bogus</p>\n".
-
-  3) Failure:
-test_handle_special_CROSSREF_file(TestRDocMarkupToHtmlCrossref) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html_crossref.rb:102]:
-Expected "<p>\n<a href=\"xref_data_rb.html\">xref_data.rb</a>\n</p>\n", not "\n<p><a href=\"xref_data_rb.html\">xref_data.rb</a></p>\n".
-
-  4) Failure:
-test_handle_special_CROSSREF_C3(TestRDocMarkupToHtmlCrossref) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html_crossref.rb:59]:
-Expected "<p>\n<a href=\"../C3.html\">C3</a>\n</p>\n", not "\n<p><a href=\"../C3.html\">C3</a></p>\n".
-
-  5) Failure:
-test_handle_special_CROSSREF_C4(TestRDocMarkupToHtmlCrossref) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html_crossref.rb:76]:
-Expected "<p>\n<a href=\"../C4/C4.html\">C4</a>\n</p>\n", not "\n<p><a href=\"../C4/C4.html\">C4</a></p>\n".
-
-  6) Failure:
-test_handle_special_CROSSREF_special(TestRDocMarkupToHtmlCrossref) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html_crossref.rb:158]:
-Expected "<p>\n<a href=\"C2/C3.html\">C2::C3</a>;method(*)\n</p>\n", not "\n<p><a href=\"C2/C3.html\">C2::C3</a>;method(*)</p>\n".
-
-  7) Failure:
-test_handle_special_CROSSREF_C2(TestRDocMarkupToHtmlCrossref) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html_crossref.rb:28]:
-Expected "<p>\n#m\n</p>\n", not "\n<p>#m</p>\n".
-
-  8) Failure:
-test_handle_special_CROSSREF_method(TestRDocMarkupToHtmlCrossref) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html_crossref.rb:106]:
-Expected "<p>\nm\n</p>\n", not "\n<p>m</p>\n".
-
-  9) Failure:
-test_handle_special_CROSSREF_C4_C4(TestRDocMarkupToHtmlCrossref) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html_crossref.rb:84]:
-Expected "<p>\n<a href=\"../../C4/C4.html\">C4</a>\n</p>\n", not "\n<p><a href=\"../../C4/C4.html\">C4</a></p>\n".
-
- 10) Failure:
-test_handle_special_CROSSREF_class(TestRDocMarkupToHtmlCrossref) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_html_crossref.rb:88]:
-Expected "<p>\n<a href=\"C1.html\">C1</a>\n</p>\n", not "\n<p><a href=\"C1.html\">C1</a></p>\n".
-
-10 tests, 11 assertions, 10 failures, 0 errors, 0 skips
+11 tests, 68 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_markup_to_rdoc
 Started
-...F........F...........E.........F.....F............
+.....................................................
 
-  1) Failure:
-test_accept_verbatim_indent(TestRDocMarkupToRdoc) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_rdoc.rb:357]:
-Expected "    hi\n     world\n\n", not "            hi\n             world\n\n".
+53 tests, 127 assertions, 0 failures, 0 errors, 0 skips
 
-  2) Failure:
-test_list_verbatim(TestRDocMarkupToRdoc) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_rdoc.rb:434]:
-Expected "* list stuff\n\n    * list\n      with\n\n      second\n\n      1. indented\n      2. numbered\n\n      third\n\n    * second\n\n", not "* list stuff\n\n           *         list\n             with\n\n             second\n\n             1.         indented\n             2.         numbered\n\n             third\n\n           *         second\n\n".
+Test run options: --seed 0
 
-  3) Error:
-test_accept_heading_suppressed_crossref(TestRDocMarkupToRdoc):
-NameError: undefined local variable or method `accept_heading_suppressed_crossref' for #<TestRDocMarkupToRdoc:0xXXXXXXXX ...>
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/rdoc/markup/formatter_test_case.rb:200:in `test_accept_heading_suppressed_crossref'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:695:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:656:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:650:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:649:in `run_test_suites'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:609:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:508:in `block'
+----------------------------------------
+Loaded suite test/rdoc/test_rdoc_markup_to_tt_only
+Started
+..............................................
 
-  4) Failure:
-test_accept_verbatim_big_indent(TestRDocMarkupToRdoc) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_rdoc.rb:368]:
-Expected "    hi\n    world\n\n", not "            hi\n            world\n\n".
+46 tests, 89 assertions, 0 failures, 0 errors, 0 skips
 
-  5) Failure:
-test_accept_verbatim(TestRDocMarkupToRdoc) [/macruby-test/test-mri/test/rdoc/test_rdoc_markup_to_rdoc.rb:195]:
-Expected "  hi\n  world\n\n", not "  hi\n    world\n\n".
+Test run options: --seed 0
 
-53 tests, 126 assertions, 4 failures, 1 errors, 0 skips
+----------------------------------------
+Loaded suite test/rdoc/test_rdoc_method_attr
+Started
+...
+
+3 tests, 36 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_normal_class
 Started
-F
+..
 
-  1) Failure:
-test_ancestors_class(TestRDocNormalClass) [/macruby-test/test-mri/test/rdoc/test_rdoc_normal_class.rb:13]:
-Expected [#<RDoc::Include:0xXXXXXXXX Klass::SubClass.include Incl>, <RDoc::NormalClass:0xXXXXXXXX class Klass < Object includes: [] attributes: [] methods: [] aliases: []>], not ["Incl", <RDoc::NormalClass:0xXXXXXXXX class Klass < Object includes: [] attributes: [] methods: [] aliases: []>].
-
-1 tests, 1 assertions, 1 failures, 0 errors, 0 skips
+2 tests, 2 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_normal_module
 Started
-F.
+...
 
-  1) Failure:
-test_ancestors_module(TestRDocNormalModule) [/macruby-test/test-mri/test/rdoc/test_rdoc_normal_module.rb:18]:
-Expected [#<RDoc::Include:0xXXXXXXXX Mod.include Incl>], not ["Incl"].
-
-2 tests, 2 assertions, 1 failures, 0 errors, 0 skips
+3 tests, 4 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_options
 Started
-..
+.........
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_parser
 Started
-....F
+.......
 
-  1) Failure:
-test_class_binary_eh_erb(TestRDocParser) [/macruby-test/test-mri/test/rdoc/test_rdoc_parser.rb:20]:
-Failed assertion, no message given.
-
-5 tests, 10 assertions, 1 failures, 0 errors, 0 skips
+7 tests, 12 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_parser_c
 Started
-......F............
+........................................
 
-  1) Failure:
-test_find_body(TestRDocParserC) [/macruby-test/test-mri/test/rdoc/test_rdoc_parser_c.rb:338]:
-Expected "VALUE\nother_function() ", not "VALUE\nother_function() {\n}".
-
-19 tests, 48 assertions, 1 failures, 0 errors, 0 skips
+40 tests, 138 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
 ----------------------------------------
-/macruby-test/test-mri/test/rdoc/test_rdoc_parser_perl.rb:6:in `<main>': no such file to load -- rdoc/parser/perl (LoadError)
-
-----------------------------------------
 Loaded suite test/rdoc/test_rdoc_parser_ruby
 Started
-...........E..FF...........F......................F..........F........
+.......E.........................................E.......E..................E.....................E......
 
   1) Error:
-test_parse_statements_identifier_alias_method_before_original_method(TestRDocParserRuby):
-NoMethodError: undefined method `old_name' for nil:NilClass
-    /macruby-test/test-mri/test/rdoc/test_rdoc_parser_ruby.rb:1081:in `test_parse_statements_identifier_alias_method_before_original_method'
+test_remove_private_comments_encoding(TestRDocParserRuby):
+NameError: uninitialized constant Encoding::IBM437
+    /macruby-test/test-mri/test/rdoc/test_rdoc_parser_ruby.rb:199:in `test_remove_private_comments_encoding'
 
-  2) Failure:
-test_parse_constant_alias(TestRDocParserRuby) [/macruby-test/test-mri/test/rdoc/test_rdoc_parser_ruby.rb:613]:
-Expected <RDoc::NormalClass:0xXXXXXXXX class Foo::Foo::B < Object includes: [] attributes: [] methods: [] aliases: []>, not nil.
+  2) Error:
+test_collect_first_comment_encoding(TestRDocParserRuby):
+NameError: uninitialized constant Encoding::CP852
+    /macruby-test/test-mri/test/rdoc/test_rdoc_parser_ruby.rb:51:in `test_collect_first_comment_encoding'
 
-  3) Failure:
-test_parse_statements_identifier_constant(TestRDocParserRuby) [/macruby-test/test-mri/test/rdoc/test_rdoc_parser_ruby.rb:1121]:
-Expected "[      1,      2,      3   ]", not "[\n1,\n2,\n3\n]".
+  3) Error:
+test_parse_statements_encoding(TestRDocParserRuby):
+NameError: uninitialized constant Encoding::CP852
+    /macruby-test/test-mri/test/rdoc/test_rdoc_parser_ruby.rb:1549:in `test_parse_statements_encoding'
 
-  4) Failure:
-test_parse_class_single(TestRDocParserRuby) [/macruby-test/test-mri/test/rdoc/test_rdoc_parser_ruby.rb:442]:
-Expected ["A::B"], not ["A::B", "A::d"].
+  4) Error:
+test_remove_private_comments_toggle_encoding(TestRDocParserRuby):
+NameError: uninitialized constant Encoding::IBM437
+    /macruby-test/test-mri/test/rdoc/test_rdoc_parser_ruby.rb:275:in `test_remove_private_comments_toggle_encoding'
 
-  5) Failure:
-test_parse_class_nested_superclass(TestRDocParserRuby) [/macruby-test/test-mri/test/rdoc/test_rdoc_parser_ruby.rb:395]:
-Expected "Super", not NSObject.
+  5) Error:
+test_remove_private_comments_toggle_encoding_ruby_bug?(TestRDocParserRuby):
+NameError: uninitialized constant Encoding::IBM437
+    /macruby-test/test-mri/test/rdoc/test_rdoc_parser_ruby.rb:294:in `test_remove_private_comments_toggle_encoding_ruby_bug?'
 
-  6) Failure:
-test_look_for_directives_in_enddoc(TestRDocParserRuby) [/macruby-test/test-mri/test/rdoc/test_rdoc_parser_ruby.rb:73]:
-Expected :enddoc to have been thrown.
-
-70 tests, 232 assertions, 5 failures, 1 errors, 0 skips
+105 tests, 347 assertions, 0 failures, 5 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -3796,73 +3141,9 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_rdoc
 Started
-.FEEEFE.FE.E.
+.............
 
-  1) Failure:
-test_setup_output_dir_exists_empty_created_rid(TestRDocRDoc) [/macruby-test/test-mri/test/rdoc/test_rdoc_rdoc.rb:133]:
-[RDoc::Error] exception expected, not
-Class: <NoMethodError>
-Message: <"undefined method `dry_run' for nil:NilClass">
----Backtrace---
-/macruby-test/test-mri/test/rdoc/test_rdoc_rdoc.rb:134:in `block'
-/macruby-test/test-mri/test/rdoc/test_rdoc_rdoc.rb:133:in `block'
-/macruby-test/test-mri/test/rdoc/test_rdoc_rdoc.rb:130:in `test_setup_output_dir_exists_empty_created_rid'
----------------
-
-  2) Error:
-test_setup_output_dir(TestRDocRDoc):
-NoMethodError: undefined method `dry_run' for nil:NilClass
-    /macruby-test/test-mri/test/rdoc/test_rdoc_rdoc.rb:103:in `block'
-    /macruby-test/test-mri/test/rdoc/test_rdoc_rdoc.rb:100:in `test_setup_output_dir'
-
-  3) Error:
-test_read_file_contents(TestRDocRDoc):
-NoMethodError: undefined method `read_file_contents' for #<RDoc::RDoc:0xXXXXXXXX ...>
-    /macruby-test/test-mri/test/rdoc/test_rdoc_rdoc.rb:46:in `test_read_file_contents'
-
-  4) Error:
-test_read_file_contents_encoding_fancy(TestRDocRDoc):
-NoMethodError: undefined method `read_file_contents' for #<RDoc::RDoc:0xXXXXXXXX ...>
-    /macruby-test/test-mri/test/rdoc/test_rdoc_rdoc.rb:66:in `test_read_file_contents_encoding_fancy'
-
-  5) Failure:
-test_setup_output_dir_exists_file(TestRDocRDoc) [/macruby-test/test-mri/test/rdoc/test_rdoc_rdoc.rb:144]:
-[RDoc::Error] exception expected, not
-Class: <NoMethodError>
-Message: <"undefined method `dry_run' for nil:NilClass">
----Backtrace---
-/macruby-test/test-mri/test/rdoc/test_rdoc_rdoc.rb:145:in `block'
-/macruby-test/test-mri/test/rdoc/test_rdoc_rdoc.rb:144:in `test_setup_output_dir_exists_file'
----------------
-
-  6) Error:
-test_setup_output_dir_exists(TestRDocRDoc):
-NoMethodError: undefined method `dry_run' for nil:NilClass
-    /macruby-test/test-mri/test/rdoc/test_rdoc_rdoc.rb:120:in `block'
-    /macruby-test/test-mri/test/rdoc/test_rdoc_rdoc.rb:114:in `test_setup_output_dir_exists'
-
-  7) Failure:
-test_setup_output_dir_exists_not_rdoc(TestRDocRDoc) [/macruby-test/test-mri/test/rdoc/test_rdoc_rdoc.rb:156]:
-[RDoc::Error] exception expected, not
-Class: <NoMethodError>
-Message: <"undefined method `dry_run' for nil:NilClass">
----Backtrace---
-/macruby-test/test-mri/test/rdoc/test_rdoc_rdoc.rb:157:in `block'
-/macruby-test/test-mri/test/rdoc/test_rdoc_rdoc.rb:156:in `block'
-/macruby-test/test-mri/test/rdoc/test_rdoc_rdoc.rb:155:in `test_setup_output_dir_exists_not_rdoc'
----------------
-
-  8) Error:
-test_read_file_contents_encoding_with_signature(TestRDocRDoc):
-NoMethodError: undefined method `read_file_contents' for #<RDoc::RDoc:0xXXXXXXXX ...>
-    /macruby-test/test-mri/test/rdoc/test_rdoc_rdoc.rb:79:in `test_read_file_contents_encoding_with_signature'
-
-  9) Error:
-test_read_file_contents_encoding(TestRDocRDoc):
-NoMethodError: undefined method `read_file_contents' for #<RDoc::RDoc:0xXXXXXXXX ...>
-    /macruby-test/test-mri/test/rdoc/test_rdoc_rdoc.rb:55:in `test_read_file_contents_encoding'
-
-13 tests, 9 assertions, 3 failures, 6 errors, 0 skips
+13 tests, 25 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -3878,51 +3159,9 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_ri_driver
 Started
-...........F........F.................F.....F
+..................................................
 
-  1) Failure:
-test_add_includes_many(TestRDocRIDriver) [/macruby-test/test-mri/test/rdoc/test_rdoc_ri_driver.rb:148]:
-Expected [doc: [rule:1],
-  [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_14319/dot_ri)"],
-  blankline,
-  [para: "Inc"],
-  blankline,
-  [para: "Include thingy"],
-  blankline,
-  [verb: "  ", "Enumerable", "\n"]], not [doc: [rule:1],
-  [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_14319/dot_ri)"],
-  blankline,
-  [para: "Inc"],
-  blankline,
-  [para: "Include thingy"],
-  blankline,
-  [verb: "Enumerable", "\n"]].
-
-  2) Failure:
-test_add_includes_many_no_doc(TestRDocRIDriver) [/macruby-test/test-mri/test/rdoc/test_rdoc_ri_driver.rb:169]:
-Expected [doc: [rule:1],
-  [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_14319/dot_ri)"],
-  [verb: "  ", "Inc", "\n", "  ", "Enumerable", "\n"]], not [doc: [rule:1],
-  [head: 1 "Includes:"],
-  [para: "(from /var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rdoc_ri_driver_14319/dot_ri)"],
-  [verb: "Inc", "\n", "Enumerable", "\n"]].
-
-  3) Failure:
-test_add_method_list(TestRDocRIDriver) [/macruby-test/test-mri/test/rdoc/test_rdoc_ri_driver.rb:201]:
-Expected [doc: [head: 1 "Class methods:"], blankline, [verb: "  ", "new"], blankline], not [doc: [head: 1 "Class methods:"], blankline, [verb: "new"], blankline].
-
-  4) Failure:
-test_add_also_in(TestRDocRIDriver) [/macruby-test/test-mri/test/rdoc/test_rdoc_ri_driver.rb:89]:
-Expected [doc: [rule:1],
-  [para: "Also found in:"],
-  [verb: "  ", "ruby core", "\n", "  ", "~/.ri", "\n"]], not [doc: [rule:1],
-  [para: "Also found in:"],
-  [verb: "ruby core", "\n", "~/.ri", "\n"]].
-
-45 tests, 155 assertions, 4 failures, 0 errors, 0 skips
+50 tests, 165 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -3938,64 +3177,77 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_ri_store
 Started
-.......F....F....F..
+........................
 
-  1) Failure:
-test_save_class(TestRDocRIStore) [/macruby-test/test-mri/test/rdoc/test_rdoc_ri_store.rb:229]:
-Expected {:class_methods=>{}, :instance_methods=>{}, :attributes=>{"Object"=>["attr_accessor attr"]}, :modules=>["Object"], :ancestors=>{"Object"=>["Object"]}}, not {:class_methods=>{}, :instance_methods=>{}, :attributes=>{"Object"=>["attr_accessor attr"]}, :modules=>["Object"], :ancestors=>{"Object"=>[]}}.
+24 tests, 54 assertions, 0 failures, 0 errors, 0 skips
 
-  2) Failure:
-test_save_cache(TestRDocRIStore) [/macruby-test/test-mri/test/rdoc/test_rdoc_ri_store.rb:209]:
-Expected {:attributes=>{"Object"=>["attr_accessor attr"]}, :class_methods=>{"Object"=>["cmethod"]}, :instance_methods=>{"Object"=>["method"]}, :modules=>["Object", "Object::SubClass"], :ancestors=>{"Object"=>["Object"], "Object::SubClass"=>["Incl", "Object"]}}, not {:class_methods=>{"Object"=>["cmethod"]}, :instance_methods=>{"Object"=>["method"]}, :attributes=>{"Object"=>["attr_accessor attr"]}, :modules=>["Object", "Object::SubClass"], :ancestors=>{"Object"=>[], "Object::SubClass"=>["Incl", "Object"]}}.
+Test run options: --seed 0
 
-  3) Failure:
-test_save_class_methods(TestRDocRIStore) [/macruby-test/test-mri/test/rdoc/test_rdoc_ri_store.rb:273]:
-Expected {:class_methods=>{}, :instance_methods=>{}, :attributes=>{"Object"=>["attr_accessor attr"]}, :modules=>["Object"], :ancestors=>{"Object"=>["Object"]}}, not {:class_methods=>{}, :instance_methods=>{}, :attributes=>{"Object"=>["attr_accessor attr"]}, :modules=>["Object"], :ancestors=>{"Object"=>[]}}.
+----------------------------------------
+Loaded suite test/rdoc/test_rdoc_ruby_lex
+Started
+.
 
-20 tests, 45 assertions, 3 failures, 0 errors, 0 skips
+1 tests, 4 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 0
+
+----------------------------------------
+Loaded suite test/rdoc/test_rdoc_single_class
+Started
+.
+
+1 tests, 1 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 0
+
+----------------------------------------
+Loaded suite test/rdoc/test_rdoc_stats
+Started
+....................
+
+20 tests, 21 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_task
 Started
-......
+...........
 
-6 tests, 22 assertions, 0 failures, 0 errors, 0 skips
+11 tests, 30 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_text
 Started
-.F..F...F...
+........E.........F.......E......
 
-  1) Failure:
-test_strip_hashes(TestRDocText) [/macruby-test/test-mri/test/rdoc/test_rdoc_text.rb:123]:
-Expected "  \n  we don't worry too much.\n \n  The comments associated with\n", not "\n  we don't worry too much.\n\n  The comments associated with\n".
+  1) Error:
+test_strip_stars_encoding(TestRDocText):
+NameError: uninitialized constant Encoding::CP852
+    /macruby-test/test-mri/test/rdoc/test_rdoc_text.rb:254:in `test_strip_stars_encoding'
 
   2) Failure:
-test_markup(TestRDocText) [/macruby-test/test-mri/test/rdoc/test_rdoc_text.rb:68]:
-Expected "<p>\nhi\n</p>\n", not "\n<p>hi</p>\n".
+test_to_html_double_quote(TestRDocText) [/macruby-test/test-mri/test/rdoc/test_rdoc_text.rb:324]:
+Expected "“a”", not "“”".
 
-  3) Failure:
-test_strip_stars(TestRDocText) [/macruby-test/test-mri/test/rdoc/test_rdoc_text.rb:153]:
-Expected "  \n   * we don't worry too much.\n  \n   The comments associated with\n   \n", not "\n   * we don't worry too much.\n\n   The comments associated with\n".
+  3) Error:
+test_strip_hashes_encoding(TestRDocText):
+NameError: uninitialized constant Encoding::CP852
+    /macruby-test/test-mri/test/rdoc/test_rdoc_text.rb:184:in `test_strip_hashes_encoding'
 
-12 tests, 25 assertions, 3 failures, 0 errors, 0 skips
+33 tests, 64 assertions, 1 failures, 2 errors, 0 skips
 
 Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/rdoc/test_rdoc_top_level
 Started
-........F.......
+.................
 
-  1) Failure:
-test_last_modified(TestRDocTopLevel) [/macruby-test/test-mri/test/rdoc/test_rdoc_top_level.rb:97]:
-Expected "Unknown", not nil.
-
-16 tests, 30 assertions, 1 failures, 0 errors, 0 skips
+17 tests, 34 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -6038,7 +5290,7 @@ test_readpartial2(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:499]:
 
   9) Failure:
 test_unreadable(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:709]:
-Expected /- \/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/bug4274\-20120528\-14662\-10760bu\z/ to match "No such file or directory - open() failed".
+Expected /- \/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/bug4274\-20120529\-12359\-10760bu\z/ to match "No such file or directory - open() failed".
 
 42 tests, 164 assertions, 9 failures, 0 errors, 0 skips
 
@@ -6476,7 +5728,7 @@ Encoding::CompatibilityError expected but nothing was raised.
 
   4) Failure:
 test_inspect(TestDir) [/macruby-test/test-mri/test/ruby/test_dir.rb:63]:
-Expected /^#<Dir:\/private\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/__test_dir__20120528\-14784\-1o6inhj>$/ to match "#<Dir:/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/__test_dir__20120528-14784-1o6inhj".
+Expected /^#<Dir:\/private\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/__test_dir__20120529\-12482\-1o6inhj>$/ to match "#<Dir:/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/__test_dir__20120529-12482-1o6inhj".
 
 14 tests, 80 assertions, 2 failures, 1 errors, 1 skips
 
@@ -6485,52 +5737,52 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_dir_m17n
 Started
-/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120528-14787-12zdlt8/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120528-14787-1estiet/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120528-14787-16tc0n7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120528-14787-12pbsn7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120528-14787-u3bzm1/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120528-14787-19vmgph/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120528-14787-v2yjvo/-:6:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120528-14787-1rcd3ra/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120528-14787-1wg6zq0/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120529-12485-12zdlt8/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120529-12485-1estiet/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120529-12485-16tc0n7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120529-12485-12pbsn7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120529-12485-u3bzm1/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120529-12485-19vmgph/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120529-12485-v2yjvo/-:6:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120529-12485-1rcd3ra/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120529-12485-1wg6zq0/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
 F
 
   1) Failure:
 test_filename_as_bytes_extutf8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:50]:
-ruby exit status is not success: #<Process::Status: pid 14788 exit 1>
+ruby exit status is not success: #<Process::Status: pid 12486 exit 1>
 
   2) Failure:
 test_filename_bytes_euc_jp(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:148]:
-ruby exit status is not success: #<Process::Status: pid 14789 exit 1>
+ruby exit status is not success: #<Process::Status: pid 12487 exit 1>
 
   3) Failure:
 test_filename_euc_jp(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:162]:
-ruby exit status is not success: #<Process::Status: pid 14790 exit 1>
+ruby exit status is not success: #<Process::Status: pid 12488 exit 1>
 
   4) Failure:
 test_filename_ext_euc_jp_and_int_utf_8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:200]:
-ruby exit status is not success: #<Process::Status: pid 14791 exit 1>
+ruby exit status is not success: #<Process::Status: pid 12489 exit 1>
 
   5) Failure:
 test_filename_extutf8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:18]:
-ruby exit status is not success: #<Process::Status: pid 14792 exit 1>
+ruby exit status is not success: #<Process::Status: pid 12490 exit 1>
 
   6) Failure:
 test_filename_extutf8_inteucjp_representable(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:89]:
-ruby exit status is not success: #<Process::Status: pid 14793 exit 1>
+ruby exit status is not success: #<Process::Status: pid 12491 exit 1>
 
   7) Failure:
 test_filename_extutf8_inteucjp_unrepresentable(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:116]:
-ruby exit status is not success: #<Process::Status: pid 14794 exit 1>
+ruby exit status is not success: #<Process::Status: pid 12492 exit 1>
 
   8) Failure:
 test_filename_extutf8_invalid(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:31]:
-ruby exit status is not success: #<Process::Status: pid 14795 exit 1>
+ruby exit status is not success: #<Process::Status: pid 12493 exit 1>
 
   9) Failure:
 test_filename_utf8_raw_name(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:182]:
-ruby exit status is not success: #<Process::Status: pid 14796 exit 1>
+ruby exit status is not success: #<Process::Status: pid 12494 exit 1>
 
 9 tests, 9 assertions, 9 failures, 0 errors, 0 skips
 
@@ -7433,7 +6685,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_io
 Started
-..SS.........FSEEESEEE.EEEFEEES.F..E...F.....SF.........S....S2012-05-28 03:32:28.758 macruby[14870:903] *** Terminating app due to uncaught exception 'Errno::EAGAIN', reason: '/macruby-test/test-mri/test/ruby/test_io.rb:973:in `block': Resource temporarily unavailable - read would block (Errno::EAGAIN)
+..SS.........FSEEESEEE.EEEFEEES.F..E...F.....SF.........S....S2012-05-29 03:33:43.550 macruby[12567:903] *** Terminating app due to uncaught exception 'Errno::EAGAIN', reason: '/macruby-test/test-mri/test/ruby/test_io.rb:973:in `block': Resource temporarily unavailable - read would block (Errno::EAGAIN)
 	from /macruby-test/test-mri/test/ruby/test_io.rb:57:in `with_pipe'
 	from /macruby-test/test-mri/test/ruby/test_io.rb:971:in `test_read_nonblock_error'
 	from /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/lib/ruby/1.9.2/minitest/unit.rb:695:in `run'
@@ -8941,7 +8193,7 @@ Test run options: --seed 0
 Loaded suite test/ruby/test_process
 Started
 ..SE..EFFS...EFFEEEEEF........./bin/sh: -c: option requires an argument
-F...F../private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120528-14990-1rcd3ra/s:9:in `<main>': Operation timed out - pipe() failed (Errno::ETIMEDOUT)
+F...F../private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120529-12688-1rcd3ra/s:9:in `<main>': Operation timed out - pipe() failed (Errno::ETIMEDOUT)
 F.................
 
   1) Skipped:
@@ -9039,7 +8291,7 @@ Exception raised:
 
  18) Failure:
 test_rlimit_nofile(TestProcess) [/macruby-test/test-mri/test/ruby/test_process.rb:78]:
-pid 15054 exit 1.
+pid 12752 exit 1.
 <0> expected but was
 <256>.
 
@@ -9134,7 +8386,7 @@ test_rand_0xXXXXXXXX(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:65
 
  17) Failure:
 test_random_range(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:362]:
-<2012-05-28 03:34:33 +0900> expected but was
+<2012-05-29 03:35:47 +0900> expected but was
 <1.97626258336499e-323>.
 
  18) Failure:
@@ -9304,7 +8556,7 @@ test_eval(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb
 
   8) Failure:
 test_indentation_check(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:319]:
-<["/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20120528-15099-14cjxw8.rb:2: warning: mismatched indentations at 'end' with 'begin' at 1"]> expected but was
+<["/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20120529-12797-14cjxw8.rb:2: warning: mismatched indentations at 'end' with 'begin' at 1"]> expected but was
 <[]>.
 
   9) Failure:
@@ -10502,7 +9754,7 @@ Expected 0, not 16.
 
   2) Failure:
 test_self_user_dir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:1011]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15270/userhome/.gem/macruby/1.9.2", not "/Users/watson/.gem/macruby/1.9.2".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_12967/userhome/.gem/macruby/1.9.2", not "/Users/watson/.gem/macruby/1.9.2".
 
   3) Failure:
 test_self_default_dir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:577]:
@@ -10510,7 +9762,7 @@ Expected /\/.*?[Rr]uby.*?\/[Gg]ems\/[0-9.]+/ to match "/Library/Ruby/Gems/MacRub
 
   4) Failure:
 test_self_user_home(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:1016]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15270/userhome", not "/Users/watson".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_12967/userhome", not "/Users/watson".
 
   5) Failure:
 test_self_bindir_default_dir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:532]:
@@ -10518,7 +9770,7 @@ Expected "/Library/Frameworks/MacRuby.framework/Versions/0.12/usr/bin", not "/us
 
   6) Failure:
 test_self_datadir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:569]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15270/gemhome/gems/foo-2/data/foo", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15270/gemhome/gems/foo-2/data/foo".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_12967/gemhome/gems/foo-2/data/foo", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_12967/gemhome/gems/foo-2/data/foo".
 
 81 tests, 145 assertions, 6 failures, 0 errors, 0 skips
 
@@ -10549,11 +9801,11 @@ Started
 
   1) Failure:
 test_process_args_install(TestGemCommandManager) [/macruby-test/test-mri/test/rubygems/test_gem_command_manager.rb:85]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15281", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15281".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_12978", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_12978".
 
   2) Failure:
 test_process_args_update(TestGemCommandManager) [/macruby-test/test-mri/test/rubygems/test_gem_command_manager.rb:211]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15281", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15281".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_12978", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_12978".
 
 9 tests, 42 assertions, 2 failures, 0 errors, 0 skips
 
@@ -10723,15 +9975,15 @@ F.F..F
 
   1) Failure:
 test_sending_gem_default(TestGemCommandsPushCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_push_command.rb:42]:
-Expected 3072, not 3059.
+Expected 3072, not 3058.
 
   2) Failure:
 test_sending_gem_host(TestGemCommandsPushCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_push_command.rb:42]:
-Expected 3072, not 3059.
+Expected 3072, not 3058.
 
   3) Failure:
 test_sending_gem_ENV(TestGemCommandsPushCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_push_command.rb:42]:
-Expected 3072, not 3059.
+Expected 3072, not 3058.
 
 6 tests, 20 assertions, 3 failures, 0 errors, 0 skips
 
@@ -10976,7 +10228,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_ext_ext_conf_builder
 Started
-/bin/sh: line 1: 15431 Abort trap              /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/bin/macruby extconf.rb 2>&1
+/bin/sh: line 1: 13126 Abort trap              /Library/Frameworks/MacRuby.framework/Versions/0.12/usr/bin/macruby extconf.rb 2>&1
 ......
 
 6 tests, 21 assertions, 0 failures, 0 errors, 0 skips
@@ -11002,7 +10254,7 @@ F.......
 
   1) Failure:
 test_lib_dirs_for(TestGemGemPathSearcher) [/macruby-test/test-mri/test/rubygems/test_gem_gem_path_searcher.rb:62]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15494/gemhome/gems/foo-0.1/{lib,lib2}", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15494/gemhome/gems/foo-0.1/{lib,lib2}".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_13191/gemhome/gems/foo-0.1/{lib,lib2}", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_13191/gemhome/gems/foo-0.1/{lib,lib2}".
 
 8 tests, 11 assertions, 1 failures, 0 errors, 0 skips
 
@@ -11067,7 +10319,7 @@ test_generate_bin_script_wrappers(TestGemInstaller) [/macruby-test/test-mri/test
 
   3) Failure:
 test_initialize(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:565]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15519/installer/gems/a-2-x86-mswin32", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15519/installer/gems/a-2-x86-mswin32".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_13214/installer/gems/a-2-x86-mswin32", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_13214/installer/gems/a-2-x86-mswin32".
 
   4) Failure:
 test_install_post_build_false(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:786]:
@@ -11106,13 +10358,13 @@ E.E
 
   1) Error:
 test_each(TestGemPackageTarInput):
-Gem::Package::FormatError: no metadata found in /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15552/bla.tar
+Gem::Package::FormatError: no metadata found in /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_13247/bla.tar
     /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:75:in `block'
     /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:74:in `test_each'
 
   2) Error:
 test_extract_entry(TestGemPackageTarInput):
-Gem::Package::FormatError: no metadata found in /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_15552/bla.tar
+Gem::Package::FormatError: no metadata found in /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_13247/bla.tar
     /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:95:in `block'
     /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:94:in `test_extract_entry'
 
@@ -11337,7 +10589,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/scanf/test_scanf
 Started
-...........
+.........................
 ----------------------------------------
 Loaded suite test/scanf/test_scanfblocks
 Started
@@ -12865,7 +12117,12 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/thread/test_queue
 Started
-.
+..
+
+2 tests, 4 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 0
+
 ----------------------------------------
 Loaded suite test/uri/test_common
 Started
@@ -12965,25 +12222,25 @@ F.FF
 
   1) Failure:
 test_bad_header(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:129]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2012-05-28 03:48:53] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2012-05-29 03:47:03] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
 
   2) Failure:
 test_bad_uri(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:115]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2012-05-28 03:48:58] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2012-05-29 03:47:09] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
 
   3) Failure:
 test_cgi(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:40]:
 webrick log start:
-  [2012-05-28 03:48:58] INFO  WEBrick 1.3.1
-  [2012-05-28 03:48:58] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
-  [2012-05-28 03:48:58] INFO  WEBrick::HTTPServer#start: pid=15882 port=65150
-  [2012-05-28 03:48:58] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2012-05-29 03:47:09] INFO  WEBrick 1.3.1
+  [2012-05-29 03:47:09] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
+  [2012-05-29 03:47:09] INFO  WEBrick::HTTPServer#start: pid=13567 port=50500
+  [2012-05-29 03:47:09] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
-  [2012-05-28 03:49:03] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2012-05-29 03:47:13] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
-  [2012-05-28 03:49:07] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2012-05-29 03:47:17] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
-  [2012-05-28 03:49:11] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2012-05-29 03:47:22] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
 webrick log end.
 <"/\xA4ۤ\xB2/\xA4ۤ\xB2"> expected but was
