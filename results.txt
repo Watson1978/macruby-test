@@ -1,5 +1,5 @@
-Date    : 2012-07-03T03:09:43+09:00
-Version : 0.13, git commit 8e2d2331811cecc7511bd3bd60e976d6ad5a977b
+Date    : 2012-07-04T03:09:33+09:00
+Version : 0.13, git commit 30d0432aa0c9530539d8d07a0107a88add343d40
 
 ----------------------------------------
 /macruby-test/test-mri/test/-ext-/string/test_cstr.rb:2:in `<main>': no such file to load -- -test-/string/string (LoadError)
@@ -148,7 +148,17 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/cgi/test_cgi_session
 Started
-FFFF
+FFFmacruby(11319,0xXXXXXXXX) malloc: resurrection error for object 0xXXXXXXXX while assigning {conservative-block}[128](0xXXXXXXXX)[16] = FileStore[32](0xXXXXXXXX)
+garbage pointer stored into reachable memory, break on auto_zone_resurrection_error to debug
+macruby(11319,0xXXXXXXXX) malloc: resurrection error for object 0xXXXXXXXX while assigning {conservative-block}[32](0xXXXXXXXX)[0] = String[64](0xXXXXXXXX)
+garbage pointer stored into reachable memory, break on auto_zone_resurrection_error to debug
+macruby(11319,0xXXXXXXXX) malloc: resurrection error for object 0xXXXXXXXX while assigning {conservative-block}[96](0xXXXXXXXX)[0] = String[64](0xXXXXXXXX)
+garbage pointer stored into reachable memory, break on auto_zone_resurrection_error to debug
+macruby(11319,0xXXXXXXXX) malloc: resurrection error for object 0xXXXXXXXX while assigning {conservative-block}[32](0xXXXXXXXX)[0] = String[64](0xXXXXXXXX)
+garbage pointer stored into reachable memory, break on auto_zone_resurrection_error to debug
+macruby(11319,0xXXXXXXXX) malloc: resurrection error for object 0xXXXXXXXX while assigning {conservative-block}[96](0xXXXXXXXX)[0] = String[64](0xXXXXXXXX)
+garbage pointer stored into reachable memory, break on auto_zone_resurrection_error to debug
+F
 
   1) Failure:
 test_cgi_session_filestore(CGISessionTest) [/macruby-test/test-mri/test/cgi/test_cgi_session.rb:54]:
@@ -1081,7 +1091,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/net/http/test_http
 Started
-F.F..EE.....F.F...E..E...F......
+F.F..E......F.F...E..E...F......
 
   1) Failure:
 test_get(TestNetHTTP_v1_2) [/macruby-test/test-mri/test/net/http/test_http.rb:49]:
@@ -1101,33 +1111,25 @@ EOFError: end of file reached
     /macruby-test/test-mri/test/net/http/utils.rb:11:in `start'
     /macruby-test/test-mri/test/net/http/test_http.rb:131:in `test_post'
 
-  4) Error:
-test_request(TestNetHTTP_v1_2):
+  4) Failure:
+test_get(TestNetHTTP_v1_2_chunked) [/macruby-test/test-mri/test/net/http/test_http.rb:49]:
+Exception raised:
+<#<Errno::ECONNRESET: Connection reset by peer - read(2) failed.>>.
+
+  5) Failure:
+test_get__break(TestNetHTTP_v1_2_chunked) [/macruby-test/test-mri/test/net/http/test_http.rb:96]:
+<1> expected but was
+<4096>.
+
+  6) Error:
+test_request(TestNetHTTP_v1_2_chunked):
 EOFError: end of file reached
     /macruby-test/test-mri/test/net/http/test_http.rb:227:in `_test_request__file'
     /macruby-test/test-mri/test/net/http/test_http.rb:203:in `block'
     /macruby-test/test-mri/test/net/http/utils.rb:11:in `start'
     /macruby-test/test-mri/test/net/http/test_http.rb:201:in `test_request'
 
-  5) Failure:
-test_get(TestNetHTTP_v1_2_chunked) [/macruby-test/test-mri/test/net/http/test_http.rb:49]:
-Exception raised:
-<#<Errno::ECONNRESET: Connection reset by peer - read(2) failed.>>.
-
-  6) Failure:
-test_get__break(TestNetHTTP_v1_2_chunked) [/macruby-test/test-mri/test/net/http/test_http.rb:96]:
-<1> expected but was
-<4096>.
-
   7) Error:
-test_request(TestNetHTTP_v1_2_chunked):
-Errno::ECONNRESET: Connection reset by peer - read(2) failed.
-    /macruby-test/test-mri/test/net/http/test_http.rb:227:in `_test_request__file'
-    /macruby-test/test-mri/test/net/http/test_http.rb:203:in `block'
-    /macruby-test/test-mri/test/net/http/utils.rb:11:in `start'
-    /macruby-test/test-mri/test/net/http/test_http.rb:201:in `test_request'
-
-  8) Error:
 test_send_request(TestNetHTTP_v1_2_chunked):
 Errno::ECONNRESET: Connection reset by peer - read(2) failed.
     /macruby-test/test-mri/test/net/http/test_http.rb:304:in `_test_send_request__POST'
@@ -1135,12 +1137,12 @@ Errno::ECONNRESET: Connection reset by peer - read(2) failed.
     /macruby-test/test-mri/test/net/http/utils.rb:11:in `start'
     /macruby-test/test-mri/test/net/http/test_http.rb:286:in `test_send_request'
 
-  9) Failure:
+  8) Failure:
 test_get__break(TestNetHTTP_version_1_1) [/macruby-test/test-mri/test/net/http/test_http.rb:96]:
 <1> expected but was
 <2>.
 
-32 tests, 160 assertions, 5 failures, 4 errors, 0 skips
+32 tests, 178 assertions, 5 failures, 3 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -1292,7 +1294,7 @@ test_progress(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.r
 
   2) Failure:
 test_proxy(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.rb:205]:
-Expected /http:\/\/127\.0\.0\.1:50741/ to match "C\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00Content-Len".
+Expected /http:\/\/127\.0\.0\.1:54302/ to match "\xF6\x16\xB9\xAF\x00\x00\x00\x00`UT\x00\x02\x00\x00\x00\xC0MS\x00\x02\x00\x00\x00`5\v\x00\x02\x00\x00\x00\xE0\x11Q\x00\x02\x00\x00\x00`5\v".
 
 35 tests, 139 assertions, 2 failures, 0 errors, 0 skips
 
@@ -2175,7 +2177,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rake/test_rake_file_utils
 Started
-...............E2012-07-03 03:20:26.532 macruby[96289:903] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
+...............E2012-07-04 03:20:16.449 macruby[12291:903] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
 F.......
 
   1) Error:
@@ -4969,7 +4971,7 @@ test_readpartial2(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:499]:
 
   9) Failure:
 test_unreadable(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:709]:
-Expected /- \/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/bug4274\-20120703\-96912\-10760bu\z/ to match "No such file or directory - open() failed".
+Expected /- \/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/bug4274\-20120704\-12915\-10760bu\z/ to match "No such file or directory - open() failed".
 
 42 tests, 164 assertions, 9 failures, 0 errors, 0 skips
 
@@ -4997,8 +4999,8 @@ LoadError: continuations are not supported in MacRuby yet
 
   4) Failure:
 test_hash2(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:1878]:
-<-1426551585557166005> expected to be != to
-<-1426551585557166005>.
+<2251147413291387251> expected to be != to
+<2251147413291387251>.
 
   5) Failure:
 test_join(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:893]:
@@ -5403,7 +5405,7 @@ Encoding::CompatibilityError expected but nothing was raised.
 
   4) Failure:
 test_inspect(TestDir) [/macruby-test/test-mri/test/ruby/test_dir.rb:63]:
-Expected /^#<Dir:\/private\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/__test_dir__20120703\-97033\-1o6inhj>$/ to match "#<Dir:/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/__test_dir__20120703-97033-1o6inhj".
+Expected /^#<Dir:\/private\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/__test_dir__20120704\-13034\-1o6inhj>$/ to match "#<Dir:/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/__test_dir__20120704-13034-1o6inhj".
 
 14 tests, 80 assertions, 2 failures, 1 errors, 1 skips
 
@@ -5412,52 +5414,52 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_dir_m17n
 Started
-/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120703-97036-12zdlt8/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120703-97036-1estiet/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120703-97036-16tc0n7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120703-97036-12pbsn7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120703-97036-u3bzm1/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120703-97036-19vmgph/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120703-97036-v2yjvo/-:6:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120703-97036-1rcd3ra/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120703-97036-1wg6zq0/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120704-13037-12zdlt8/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120704-13037-1estiet/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120704-13037-16tc0n7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120704-13037-12pbsn7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120704-13037-u3bzm1/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120704-13037-19vmgph/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120704-13037-v2yjvo/-:6:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120704-13037-1rcd3ra/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120704-13037-1wg6zq0/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
 F
 
   1) Failure:
 test_filename_as_bytes_extutf8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:50]:
-ruby exit status is not success: #<Process::Status: pid 97037 exit 1>
+ruby exit status is not success: #<Process::Status: pid 13040 exit 1>
 
   2) Failure:
 test_filename_bytes_euc_jp(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:148]:
-ruby exit status is not success: #<Process::Status: pid 97038 exit 1>
+ruby exit status is not success: #<Process::Status: pid 13041 exit 1>
 
   3) Failure:
 test_filename_euc_jp(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:162]:
-ruby exit status is not success: #<Process::Status: pid 97039 exit 1>
+ruby exit status is not success: #<Process::Status: pid 13042 exit 1>
 
   4) Failure:
 test_filename_ext_euc_jp_and_int_utf_8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:200]:
-ruby exit status is not success: #<Process::Status: pid 97040 exit 1>
+ruby exit status is not success: #<Process::Status: pid 13043 exit 1>
 
   5) Failure:
 test_filename_extutf8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:18]:
-ruby exit status is not success: #<Process::Status: pid 97041 exit 1>
+ruby exit status is not success: #<Process::Status: pid 13044 exit 1>
 
   6) Failure:
 test_filename_extutf8_inteucjp_representable(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:89]:
-ruby exit status is not success: #<Process::Status: pid 97042 exit 1>
+ruby exit status is not success: #<Process::Status: pid 13045 exit 1>
 
   7) Failure:
 test_filename_extutf8_inteucjp_unrepresentable(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:116]:
-ruby exit status is not success: #<Process::Status: pid 97043 exit 1>
+ruby exit status is not success: #<Process::Status: pid 13046 exit 1>
 
   8) Failure:
 test_filename_extutf8_invalid(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:31]:
-ruby exit status is not success: #<Process::Status: pid 97044 exit 1>
+ruby exit status is not success: #<Process::Status: pid 13047 exit 1>
 
   9) Failure:
 test_filename_utf8_raw_name(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:182]:
-ruby exit status is not success: #<Process::Status: pid 97045 exit 1>
+ruby exit status is not success: #<Process::Status: pid 13048 exit 1>
 
 9 tests, 9 assertions, 9 failures, 0 errors, 0 skips
 
@@ -6351,7 +6353,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_io
 Started
-..SS.........FSEEESEEE.EEEFEEES.F..E...F.....SF.........S....S2012-07-03 03:35:46.150 macruby[97115:903] *** Terminating app due to uncaught exception 'Errno::EAGAIN', reason: '/macruby-test/test-mri/test/ruby/test_io.rb:973:in `block': Resource temporarily unavailable - read would block (Errno::EAGAIN)
+..SS.........FSEEESEEE.EEEFEEES.F..E...F.....SF.........S....S2012-07-04 03:35:37.069 macruby[13118:903] *** Terminating app due to uncaught exception 'Errno::EAGAIN', reason: '/macruby-test/test-mri/test/ruby/test_io.rb:973:in `block': Resource temporarily unavailable - read would block (Errno::EAGAIN)
 	from /macruby-test/test-mri/test/ruby/test_io.rb:57:in `with_pipe'
 	from /macruby-test/test-mri/test/ruby/test_io.rb:971:in `test_read_nonblock_error'
 	from /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:695:in `run'
@@ -8140,6 +8142,298 @@ Expected /not-implemented/ to match "#<Method: Class(NSObject)#fork>".
 Test run options: --seed 0
 
 ----------------------------------------
+Loaded suite test/ruby/test_nsarray
+Started
+..................F.........FS....E....F.......F...........FSFF....
+----------------------------------------
+Loaded suite test/ruby/test_nsdictionary
+Started
+EF..E.S.F.EF..S.SSS.........E....FE........FFS....F.F.E.F...FF........
+
+  1) Error:
+test_AREF(TestNSDictionary):
+RuntimeError: NSInvalidArgumentException: *** -[NSCFDictionary initWithObjects:forKeys:count:]: attempt to insert nil value at objects[4] (key: 2012-07-04 03:39:54 +0900)
+    /macruby-test/test-mri/test/ruby/test_nsdictionary.rb:12:in `[]'
+    /macruby-test/test-mri/test/ruby/test_nsdictionary.rb:119:in `test_AREF'
+
+  2) Failure:
+test_ASET(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:163]:
+<"time"> expected but was
+<nil>.
+
+  3) Error:
+test_callcc(TestNSDictionary):
+NoMethodError: undefined method `callcc' for #<TestNSDictionary:0xXXXXXXXX ...>
+    /macruby-test/test-mri/test/ruby/test_nsdictionary.rb:851:in `block'
+    /macruby-test/test-mri/test/ruby/test_nsdictionary.rb:851:in `test_callcc'
+
+  4) Skipped:
+test_clear2(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:764]:
+[BUG : #???]
+
+  5) Failure:
+test_compare_by_identity(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:873]:
+Failed assertion, no message given.
+
+  6) Error:
+test_default(TestNSDictionary):
+ArgumentError: wrong number of arguments
+    /macruby-test/test-mri/test/ruby/test_nsdictionary.rb:12:in `[]'
+    /macruby-test/test-mri/test/ruby/test_nsdictionary.rb:226:in `test_default'
+
+  7) Failure:
+test_default=(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:234]:
+<:xyzzy> expected but was
+<nil>.
+
+  8) Skipped:
+test_delete_if(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:258]:
+[BUG : #???]
+
+  9) Skipped:
+test_each(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:320]:
+[BUG : #???]
+
+ 10) Skipped:
+test_each_key(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:334]:
+[BUG : #???]
+
+ 11) Skipped:
+test_each_pair(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:348]:
+[BUG : #???]
+
+ 12) Error:
+test_hash_bignum_hash(TestNSDictionary):
+TypeError: can't copy Bignum
+    /macruby-test/test-mri/test/ruby/test_nsdictionary.rb:12:in `[]'
+    /macruby-test/test-mri/test/ruby/test_nsdictionary.rb:901:in `test_hash_bignum_hash'
+
+ 13) Failure:
+test_invert(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:450]:
+Failed assertion, no message given.
+
+ 14) Error:
+test_keep_if(TestNSDictionary):
+NoMethodError: undefined method `keep_if' for {3=>4, 1=>2, 5=>6}
+    /macruby-test/test-mri/test/ruby/test_nsdictionary.rb:295:in `test_keep_if'
+
+ 15) Failure:
+test_recursive_key(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:916]:
+<:foo> expected but was
+<nil>.
+
+ 16) Failure:
+test_rehash(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:494]:
+<100> expected but was
+<nil>.
+
+ 17) Skipped:
+test_rehash2(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:707]:
+[BUG : #???]
+
+ 18) Failure:
+test_replace2(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:776]:
+<:foo> expected but was
+<nil>.
+
+ 19) Failure:
+test_security_check(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:684]:
+SecurityError expected but nothing was raised.
+
+ 20) Error:
+test_select!(TestNSDictionary):
+NoMethodError: undefined method `select!' for {3=>4, 1=>2, 5=>6}
+    /macruby-test/test-mri/test/ruby/test_nsdictionary.rb:757:in `test_select!'
+
+ 21) Failure:
+test_shift2(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:731]:
+<:foo> expected but was
+<nil>.
+
+ 22) Failure:
+test_store(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:595]:
+<"self"> expected but was
+<nil>.
+
+ 23) Failure:
+test_to_a(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:627]:
+<true> expected but was
+<false>.
+
+70 tests, 307 assertions, 11 failures, 6 errors, 6 skips
+
+Test run options: --seed 0
+
+----------------------------------------
+Loaded suite test/ruby/test_nsstring
+Started
+..F.E.....F.........E.EEF.F....EF.E....FFFS..F......................F.F..........F.FF..FF......F.......FSSFF.S...SSS
+
+  1) Failure:
+test_CMP(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:192]:
+<-1> expected but was
+<1>.
+
+  2) Error:
+test_LSHIFT(TestNSString):
+RuntimeError: can't modify frozen/immutable string
+    /macruby-test/test-mri/test/ruby/test_nsstring.rb:223:in `test_LSHIFT'
+
+  3) Failure:
+test_ascii_incomat_inspect(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:1926]:
+<"\"\\u3042\\u3044\\u3046\""> expected but was
+<"\"あいう\"">.
+
+  4) Error:
+test_clear_nonasciicompat(TestNSString):
+ArgumentError: unknown encoding name - ISO-2022-JP
+    /macruby-test/test-mri/test/ruby/test_nsstring.rb:1866:in `test_clear_nonasciicompat'
+
+  5) Error:
+test_compare_different_encoding_string(TestNSString):
+ArgumentError: method `force_encoding:' does not work on NSStrings
+    /macruby-test/test-mri/test/ruby/test_nsstring.rb:1879:in `test_compare_different_encoding_string'
+
+  6) Error:
+test_concat(TestNSString):
+RuntimeError: can't modify frozen/immutable string
+    /macruby-test/test-mri/test/ruby/test_nsstring.rb:486:in `test_concat'
+
+  7) Failure:
+test_count(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:497]:
+<5> expected but was
+<2>.
+
+  8) Failure:
+test_delete(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:514]:
+[ruby-talk:329267].
+<1062> expected but was
+<786420>.
+
+  9) Error:
+test_dump(TestNSString):
+RuntimeError: can't modify frozen/immutable string
+    /macruby-test/test-mri/test/ruby/test_nsstring.rb:578:in `test_dump'
+
+ 10) Failure:
+test_dup(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:596]:
+<true> expected but was
+<false>.
+
+ 11) Error:
+test_each_byte(TestNSString):
+ArgumentError: method `each_byte' does not work on NSStrings
+    /macruby-test/test-mri/test/ruby/test_nsstring.rb:625:in `test_each_byte'
+
+ 12) Failure:
+test_frozen_check(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:1696]:
+RuntimeError expected but nothing was raised.
+
+ 13) Failure:
+test_gsub(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:680]:
+Failed assertion, no message given.
+
+ 14) Failure:
+test_gsub!(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:711]:
+Failed assertion, no message given.
+
+ 15) Skipped:
+test_gsub_enumerator(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:1860]:
+[BUG : #___] External Iterator : not supported yet
+
+ 16) Failure:
+test_hash_random(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:752]:
+<["516202353"]> expected to be != to
+<["516202353"]>.
+
+ 17) Failure:
+test_rstrip(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:1898]:
+[Encoding::CompatibilityError] exception expected, not
+Class: <ArgumentError>
+Message: <"unknown encoding name - ISO-2022-JP">
+---Backtrace---
+/macruby-test/test-mri/test/ruby/test_nsstring.rb:1898:in `block'
+---------------
+
+ 18) Failure:
+test_scan(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:986]:
+[ruby-core:33338] #4087
+
+ 19) Failure:
+test_strip(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:1193]:
+<"ぢ〠"> expected but was
+<"ぢ">.
+
+ 20) Failure:
+test_sub(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:1257]:
+Failed assertion, no message given.
+
+ 21) Failure:
+test_sub!(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:1301]:
+Failed assertion, no message given.
+
+ 22) Failure:
+test_succ(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:1314]:
+<"No.10"> expected but was
+<"Np.0">.
+
+ 23) Failure:
+test_succ!(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:1363]:
+<"No.10"> expected but was
+<"Np.0">.
+
+ 24) Failure:
+test_tainted_str_new(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:1706]:
+Failed assertion, no message given.
+
+ 25) Failure:
+test_to_str(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:1482]:
+[NoMethodError] exception expected, not
+Class: <RuntimeError>
+Message: <"can't modify frozen/immutable string">
+---Backtrace---
+/macruby-test/test-mri/test/ruby/test_nsstring.rb:1482:in `block'
+---------------
+
+ 26) Skipped:
+test_tr(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:1486]:
+[BUG : #???] Assertion
+
+ 27) Skipped:
+test_tr!(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:1502]:
+[BUG : #???] Assertion
+
+ 28) Failure:
+test_tr_s(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:1528]:
+<"hypo"> expected but was
+<"hyppo">.
+
+ 29) Failure:
+test_tr_s!(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:1537]:
+<"hypo"> expected but was
+<"hyppo">.
+
+ 30) Skipped:
+test_unpack(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:1547]:
+[BUG : #???]
+
+ 31) Skipped:
+test_upto(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:1647]:
+[BUG : #???]
+
+ 32) Skipped:
+test_upto_nonalnum(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:1676]:
+[BUG : #???]
+
+ 33) Skipped:
+test_upto_numeric(TestNSString) [/macruby-test/test-mri/test/ruby/test_nsstring.rb:1661]:
+[BUG : #???]
+
+116 tests, 897 assertions, 20 failures, 6 errors, 7 skips
+
+Test run options: --seed 0
+
+----------------------------------------
 Loaded suite test/ruby/test_numeric
 Started
 ....F.....F....
@@ -8488,7 +8782,7 @@ Started
 ..SE..E-e:1:in `<main>': Bad file descriptor - fcntl(2) failed (Errno::EBADF)
 FF/usr/local/bin/macruby:1: Invalid char `\x07' in expression
 F...EFFEEEEEF........./bin/sh: -c: option requires an argument
-F....../private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120703-97227-1wg6zq0/s:9:in `<main>': Operation timed out - pipe() failed (Errno::ETIMEDOUT)
+F....../private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120704-13254-1wg6zq0/s:9:in `<main>': Operation timed out - pipe() failed (Errno::ETIMEDOUT)
 F.................
 
   1) Skipped:
@@ -8582,7 +8876,7 @@ test_popen_fork(TestProcess) [/macruby-test/test-mri/test/ruby/test_process.rb:5
 
  17) Failure:
 test_rlimit_nofile(TestProcess) [/macruby-test/test-mri/test/ruby/test_process.rb:78]:
-pid 97299 exit 1.
+pid 13326 exit 1.
 <0> expected but was
 <256>.
 
@@ -8677,7 +8971,7 @@ test_rand_0xXXXXXXXX(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:65
 
  17) Failure:
 test_random_range(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:362]:
-<2012-07-03 03:37:49 +0900> expected but was
+<2012-07-04 03:40:53 +0900> expected but was
 <1.97626258336499e-323>.
 
  18) Failure:
@@ -8847,7 +9141,7 @@ test_eval(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb
 
   8) Failure:
 test_indentation_check(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:319]:
-<["/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20120703-97342-14cjxw8.rb:2: warning: mismatched indentations at 'end' with 'begin' at 1"]> expected but was
+<["/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20120704-13369-14cjxw8.rb:2: warning: mismatched indentations at 'end' with 'begin' at 1"]> expected but was
 <[]>.
 
   9) Failure:
@@ -9381,67 +9675,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_time
 Started
-.FF....F......FFSFF.......F.F.F........
-
-  1) Failure:
-test_at(TestTime) [/macruby-test/test-mri/test/ruby/test_time.rb:141]:
-<100000> expected but was
-<99999>.
-
-  2) Failure:
-test_at2(TestTime) [/macruby-test/test-mri/test/ruby/test_time.rb:211]:
-<100> expected but was
-<99>.
-
-  3) Failure:
-test_delegate(TestTime) [/macruby-test/test-mri/test/ruby/test_time.rb:649]:
-<-1> expected but was
-<nil>.
-
-  4) Failure:
-test_marshal_ivar(TestTime) [/macruby-test/test-mri/test/ruby/test_time.rb:264]:
-<1973-11-30 06:33:09 +0900> (subsec=2120971504224043/2147483648000000) expected but was
-<1973-11-30 06:33:09 +0900> (987654000[ns]).
-
-  5) Failure:
-test_marshal_nsec(TestTime) [/macruby-test/test-mri/test/ruby/test_time.rb:243]:
-<1970-01-01 09:00:00 +0900> (subsec=553942754166571/4503599627370496000000) expected but was
-<1970-01-01 09:00:00 +0900> (0[ns]).
-
-  6) Skipped:
-test_marshal_nsec_191(TestTime) [/macruby-test/test-mri/test/ruby/test_time.rb:248]:
-[BUG : #???] Segmentation fault
-
-  7) Failure:
-test_marshal_rational(TestTime) [/macruby-test/test-mri/test/ruby/test_time.rb:257]:
-<1970-01-01 09:00:00 +0900> (subsec=1/3000000) expected but was
-<1970-01-01 09:00:00 +0900> (0[ns]).
-
-  8) Failure:
-test_marshal_timezone(TestTime) [/macruby-test/test-mri/test/ruby/test_time.rb:275]:
-[ruby-dev:40063].
-<-7200> expected but was
-<32400>.
-
-  9) Failure:
-test_strftime(TestTime) [/macruby-test/test-mri/test/ruby/test_time.rb:544]:
-<"123456789"> expected but was
-<"123456788">.
-
- 10) Failure:
-test_time_add(TestTime) [/macruby-test/test-mri/test/ruby/test_time.rb:33]:
-<0> expected but was
-<999999>.
-
- 11) Failure:
-test_time_subt(TestTime) [/macruby-test/test-mri/test/ruby/test_time.rb:51]:
-<900000> expected but was
-<899999>.
-
-39 tests, 323 assertions, 10 failures, 0 errors, 1 skips
-
-Test run options: --seed 0
-
+.FF....F......FFSFF.....
 ----------------------------------------
 Loaded suite test/ruby/test_time_tz
 Started
@@ -10006,7 +10240,7 @@ Expected 0, not 16.
 
   2) Failure:
 test_self_user_dir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:1011]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_97509/userhome/.gem/macruby/1.9.2", not "/Users/watson/.gem/macruby/1.9.2".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_13535/userhome/.gem/macruby/1.9.2", not "/Users/watson/.gem/macruby/1.9.2".
 
   3) Failure:
 test_self_default_dir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:577]:
@@ -10014,7 +10248,7 @@ Expected /\/.*?[Rr]uby.*?\/[Gg]ems\/[0-9.]+/ to match "/Library/Ruby/Gems/MacRub
 
   4) Failure:
 test_self_user_home(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:1016]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_97509/userhome", not "/Users/watson".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_13535/userhome", not "/Users/watson".
 
   5) Failure:
 test_self_bindir_default_dir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:532]:
@@ -10022,7 +10256,7 @@ Expected "/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/bin", not "/us
 
   6) Failure:
 test_self_datadir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:569]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_97509/gemhome/gems/foo-2/data/foo", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_97509/gemhome/gems/foo-2/data/foo".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_13535/gemhome/gems/foo-2/data/foo", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_13535/gemhome/gems/foo-2/data/foo".
 
 81 tests, 145 assertions, 6 failures, 0 errors, 0 skips
 
@@ -10053,11 +10287,11 @@ Started
 
   1) Failure:
 test_process_args_install(TestGemCommandManager) [/macruby-test/test-mri/test/rubygems/test_gem_command_manager.rb:85]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_97518", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_97518".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_13547", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_13547".
 
   2) Failure:
 test_process_args_update(TestGemCommandManager) [/macruby-test/test-mri/test/rubygems/test_gem_command_manager.rb:211]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_97518", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_97518".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_13547", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_13547".
 
 9 tests, 42 assertions, 2 failures, 0 errors, 0 skips
 
@@ -10227,15 +10461,15 @@ F.F..F
 
   1) Failure:
 test_sending_gem_default(TestGemCommandsPushCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_push_command.rb:42]:
-Expected 3072, not 3055.
+Expected 3072, not 3052.
 
   2) Failure:
 test_sending_gem_host(TestGemCommandsPushCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_push_command.rb:42]:
-Expected 3072, not 3055.
+Expected 3072, not 3052.
 
   3) Failure:
 test_sending_gem_ENV(TestGemCommandsPushCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_push_command.rb:42]:
-Expected 3072, not 3055.
+Expected 3072, not 3052.
 
 6 tests, 20 assertions, 3 failures, 0 errors, 0 skips
 
@@ -10475,7 +10709,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_ext_ext_conf_builder
 Started
-/bin/sh: line 1: 97659 Abort trap              /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/bin/macruby extconf.rb 2>&1
+/bin/sh: line 1: 13687 Abort trap              /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/bin/macruby extconf.rb 2>&1
 ......
 
 6 tests, 21 assertions, 0 failures, 0 errors, 0 skips
@@ -10501,7 +10735,7 @@ F.......
 
   1) Failure:
 test_lib_dirs_for(TestGemGemPathSearcher) [/macruby-test/test-mri/test/rubygems/test_gem_gem_path_searcher.rb:62]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_97719/gemhome/gems/foo-0.1/{lib,lib2}", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_97719/gemhome/gems/foo-0.1/{lib,lib2}".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_13747/gemhome/gems/foo-0.1/{lib,lib2}", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_13747/gemhome/gems/foo-0.1/{lib,lib2}".
 
 8 tests, 11 assertions, 1 failures, 0 errors, 0 skips
 
@@ -10566,7 +10800,7 @@ test_generate_bin_script_wrappers(TestGemInstaller) [/macruby-test/test-mri/test
 
   3) Failure:
 test_initialize(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:565]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_97742/installer/gems/a-2-x86-mswin32", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_97742/installer/gems/a-2-x86-mswin32".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_13773/installer/gems/a-2-x86-mswin32", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_13773/installer/gems/a-2-x86-mswin32".
 
   4) Failure:
 test_install_post_build_false(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:786]:
@@ -10605,13 +10839,13 @@ E.E
 
   1) Error:
 test_each(TestGemPackageTarInput):
-Gem::Package::FormatError: no metadata found in /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_97776/bla.tar
+Gem::Package::FormatError: no metadata found in /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_13804/bla.tar
     /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:75:in `block'
     /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:74:in `test_each'
 
   2) Error:
 test_extract_entry(TestGemPackageTarInput):
-Gem::Package::FormatError: no metadata found in /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_97776/bla.tar
+Gem::Package::FormatError: no metadata found in /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_13804/bla.tar
     /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:95:in `block'
     /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:94:in `test_extract_entry'
 
@@ -10828,7 +11062,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/scanf/test_scanf
 Started
-................................
+...............
 ----------------------------------------
 Loaded suite test/scanf/test_scanfblocks
 Started
@@ -11435,7 +11669,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/socket/test_unix
 Started
-......S.E........F...........
+......S.E....................
 
   1) Skipped:
 test_fd_passing_race_condition(TestSocket_UNIXSocket) [/macruby-test/test-mri/test/socket/test_unix.rb:108]:
@@ -11446,11 +11680,7 @@ test_getcred_xucred(TestSocket_UNIXSocket):
 NameError: uninitialized constant Socket::LOCAL_PEERCRED
     /macruby-test/test-mri/test/socket/test_unix.rb:435:in `block'
 
-  3) Failure:
-test_nul(TestSocket_UNIXSocket) [/macruby-test/test-mri/test/socket/test_unix.rb:332]:
-ArgumentError expected but nothing was raised.
-
-29 tests, 49 assertions, 1 failures, 1 errors, 1 skips
+29 tests, 49 assertions, 0 failures, 1 errors, 1 skips
 
 Test run options: --seed 0
 
@@ -12258,11 +12488,6 @@ Started
 ----------------------------------------
 Loaded suite test/test_timeout
 Started
-...
-
-3 tests, 4 assertions, 0 failures, 0 errors, 0 skips
-
-Test run options: --seed 0
 
 ----------------------------------------
 Loaded suite test/test_tracer
@@ -12302,7 +12527,12 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/thread/test_queue
 Started
-.
+..
+
+2 tests, 4 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 0
+
 ----------------------------------------
 Loaded suite test/uri/test_common
 Started
@@ -12398,35 +12628,45 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/webrick/test_cgi
 Started
-F.FF
+FEFF
 
   1) Failure:
 test_bad_header(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:129]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2012-07-03 03:52:07] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2012-07-04 03:52:51] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
 
-  2) Failure:
-test_bad_uri(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:115]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2012-07-03 03:52:12] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
+  2) Error:
+test_bad_request(TestWEBrickCGI):
+Errno::EPIPE: Broken pipe - write() failed
+    /macruby-test/test-mri/test/webrick/test_cgi.rb:89:in `block'
+    /macruby-test/test-mri/test/webrick/test_cgi.rb:25:in `block'
+    /macruby-test/test-mri/test/webrick/utils.rb:40:in `start_server'
+    /macruby-test/test-mri/test/webrick/utils.rb:51:in `start_httpserver'
+    /macruby-test/test-mri/test/webrick/test_cgi.rb:24:in `start_cgi_server'
+    /macruby-test/test-mri/test/webrick/test_cgi.rb:86:in `test_bad_request'
 
   3) Failure:
+test_bad_uri(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:115]:
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2012-07-04 03:52:52] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
+
+  4) Failure:
 test_cgi(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:40]:
 webrick log start:
-  [2012-07-03 03:52:12] INFO  WEBrick 1.3.1
-  [2012-07-03 03:52:12] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
-  [2012-07-03 03:52:12] INFO  WEBrick::HTTPServer#start: pid=98095 port=51038
-  [2012-07-03 03:52:12] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2012-07-04 03:52:52] INFO  WEBrick 1.3.1
+  [2012-07-04 03:52:52] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
+  [2012-07-04 03:52:52] INFO  WEBrick::HTTPServer#start: pid=14114 port=54601
+  [2012-07-04 03:52:52] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
-  [2012-07-03 03:52:17] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2012-07-04 03:52:57] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
-  [2012-07-03 03:52:21] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2012-07-04 03:53:01] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
-  [2012-07-03 03:52:25] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2012-07-04 03:53:05] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
 webrick log end.
 <"/\xA4ۤ\xB2/\xA4ۤ\xB2"> expected but was
 <"/\xC2\xA4U\xCC\x82\xC2\xA4\xC2\xB2/\xC2\xA4U\xCC\x82\xC2\xA4\xC2\xB2">.
 
-4 tests, 9 assertions, 3 failures, 0 errors, 0 skips
+4 tests, 8 assertions, 3 failures, 1 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -12514,9 +12754,19 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/webrick/test_server
 Started
-...
+..F
 
-3 tests, 10 assertions, 0 failures, 0 errors, 0 skips
+  1) Failure:
+test_server(TestWEBrickServer) [/macruby-test/test-mri/test/webrick/test_server.rb:18]:
+webrick log start:
+  [2012-07-04 03:54:14] INFO  WEBrick 1.3.1
+  [2012-07-04 03:54:14] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
+  [2012-07-04 03:54:14] INFO  TestWEBrickServer::Echo#start: pid=14149 port=54689
+webrick log end.
+<"foo\n"> expected but was
+<"foo">.
+
+3 tests, 7 assertions, 1 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -12678,15 +12928,9 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/xmlrpc/test_cookie
 Started
-E
+.
 
-  1) Error:
-test_cookie(TestCookie):
-Errno::ECONNRESET: Connection reset by peer - read(2) failed.
-    /macruby-test/test-mri/test/xmlrpc/test_cookie.rb:93:in `do_test'
-    /macruby-test/test-mri/test/xmlrpc/test_cookie.rb:80:in `test_cookie'
-
-1 tests, 3 assertions, 0 failures, 1 errors, 0 skips
+1 tests, 5 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -12734,18 +12978,9 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/xmlrpc/test_webrick_server
 Started
-F
+.
 
-  1) Failure:
-test_client_server(Test_Webrick) [/macruby-test/test-mri/test/xmlrpc/test_webrick_server.rb:71]:
-[XMLRPC::FaultException] exception expected, not
-Class: <Errno::ECONNRESET>
-Message: <"Connection reset by peer - read(2) failed.">
----Backtrace---
-/macruby-test/test-mri/test/xmlrpc/test_webrick_server.rb:71:in `block'
----------------
-
-1 tests, 2 assertions, 1 failures, 0 errors, 0 skips
+1 tests, 13 assertions, 0 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
