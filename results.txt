@@ -1,5 +1,5 @@
-Date    : 2012-08-18T03:09:41+09:00
-Version : 0.13, git commit 542dc07c8a80922e1710bed062cefd8d4f4538e8
+Date    : 2012-08-19T03:09:42+09:00
+Version : 0.13, git commit a1087cc8be54cbd08babd61abfcd4635292abbf9
 
 ----------------------------------------
 /macruby-test/test-mri/test/-ext-/string/test_cstr.rb:2:in `<main>': no such file to load -- -test-/string/string (LoadError)
@@ -148,7 +148,17 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/cgi/test_cgi_session
 Started
-FFFF
+FFFmacruby(941,0xXXXXXXXX) malloc: resurrection error for object 0xXXXXXXXX while assigning {conservative-block}[128](0xXXXXXXXX)[16] = FileStore[32](0xXXXXXXXX)
+garbage pointer stored into reachable memory, break on auto_zone_resurrection_error to debug
+macruby(941,0xXXXXXXXX) malloc: resurrection error for object 0xXXXXXXXX while assigning {conservative-block}[32](0xXXXXXXXX)[0] = String[64](0xXXXXXXXX)
+garbage pointer stored into reachable memory, break on auto_zone_resurrection_error to debug
+macruby(941,0xXXXXXXXX) malloc: resurrection error for object 0xXXXXXXXX while assigning {conservative-block}[96](0xXXXXXXXX)[0] = String[64](0xXXXXXXXX)
+garbage pointer stored into reachable memory, break on auto_zone_resurrection_error to debug
+macruby(941,0xXXXXXXXX) malloc: resurrection error for object 0xXXXXXXXX while assigning {conservative-block}[32](0xXXXXXXXX)[0] = String[64](0xXXXXXXXX)
+garbage pointer stored into reachable memory, break on auto_zone_resurrection_error to debug
+macruby(941,0xXXXXXXXX) malloc: resurrection error for object 0xXXXXXXXX while assigning {conservative-block}[96](0xXXXXXXXX)[0] = String[64](0xXXXXXXXX)
+garbage pointer stored into reachable memory, break on auto_zone_resurrection_error to debug
+F
 
   1) Failure:
 test_cgi_session_filestore(CGISessionTest) [/macruby-test/test-mri/test/cgi/test_cgi_session.rb:54]:
@@ -556,6 +566,8 @@ Started
 Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
 .terminate called after throwing an instance of 'RoxorThreadRaiseException*'
 .terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
 .terminate called after throwing an instance of 'RoxorThreadRaiseException*'
 
 ----------------------------------------
@@ -1063,7 +1075,7 @@ F.F.........F.F...E..E...F......
   1) Failure:
 test_get(TestNetHTTP_v1_2) [/macruby-test/test-mri/test/net/http/test_http.rb:49]:
 Exception raised:
-<#<EOFError: end of file reached>>.
+<#<Errno::ECONNRESET: Connection reset by peer - read(2) failed.>>.
 
   2) Failure:
 test_get__break(TestNetHTTP_v1_2) [/macruby-test/test-mri/test/net/http/test_http.rb:96]:
@@ -1082,7 +1094,7 @@ test_get__break(TestNetHTTP_v1_2_chunked) [/macruby-test/test-mri/test/net/http/
 
   5) Error:
 test_request(TestNetHTTP_v1_2_chunked):
-EOFError: end of file reached
+Errno::ECONNRESET: Connection reset by peer - read(2) failed.
     /macruby-test/test-mri/test/net/http/test_http.rb:227:in `_test_request__file'
     /macruby-test/test-mri/test/net/http/test_http.rb:203:in `block'
     /macruby-test/test-mri/test/net/http/utils.rb:11:in `start'
@@ -1253,7 +1265,7 @@ test_progress(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.r
 
   2) Failure:
 test_proxy(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.rb:205]:
-Expected /http:\/\/127\.0\.0\.1:63294/ to match "`\"\x01\x00\x02\x00\x00\x00\x00\t\x00\x00\x00\x00\x00\x00\xE0!\x01\x00\x02\x00\x00\x007\x00\x00\x00\x00\x00\x00\x00.\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00".
+Expected /http:\/\/127\.0\.0\.1:64840/ to match "Y\x04\x00\x00\x00\x00\x00\x00\xC0\\\f\x00\x02\x00\x00\x00\xA0e\f\x00\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xC0_G\x00\x02\x00\x00\x00\xC0c\f".
 
 35 tests, 139 assertions, 2 failures, 0 errors, 0 skips
 
@@ -2136,7 +2148,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rake/test_rake_file_utils
 Started
-...............E2012-08-18 03:15:54.875 macruby[85798:903] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
+...............E2012-08-19 03:15:55.808 macruby[1880:903] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
 F.......
 
   1) Error:
@@ -3126,31 +3138,6 @@ test_core_02(Rinda::TupleSpaceTest) [/macruby-test/test-mri/test/rinda/test_rind
   8) Skipped:
 test_ruby_talk_264062(Rinda::TupleSpaceTest) [/macruby-test/test-mri/test/rinda/test_rinda.rb:243]:
 [BUG : #???] Timeout, MacRuby doesn't finish
-
-*** Thread 0xXXXXXXXX exited prematurely because of an uncaught exception:
-/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/rinda/rinda.rb:154:in `block': key not found (KeyError)
-	from /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/rinda/rinda.rb:88:in `block'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/rinda/rinda.rb:88:in `each'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/rinda/rinda.rb:152:in `match'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/rinda/rinda.rb:170:in `==='
-	from /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/rinda/rinda.rb:158:in `block'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/rinda/rinda.rb:88:in `block'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/rinda/rinda.rb:88:in `each'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/rinda/rinda.rb:152:in `match'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/rinda/tuplespace.rb:169:in `==='
-	from /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/rinda/tuplespace.rb:374:in `block'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/forwardable.rb:182:in `each'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/rinda/tuplespace.rb:400:in `block'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/rinda/tuplespace.rb:399:in `each_entry'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/rinda/tuplespace.rb:373:in `find_all_template'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/rinda/tuplespace.rb:608:in `notify_event'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/rinda/tuplespace.rb:597:in `block'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/rinda/tuplespace.rb:596:in `block'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/monitor.rb:201:in `synchronize'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/rinda/tuplespace.rb:586:in `keep_clean'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/rinda/tuplespace.rb:623:in `block'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/monitor.rb:201:in `synchronize'
-	from /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/rinda/tuplespace.rb:621:in `block'
 
 25 tests, 248 assertions, 0 failures, 0 errors, 8 skips
 
@@ -4938,7 +4925,7 @@ test_readpartial2(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:499]:
 
   9) Failure:
 test_unreadable(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:709]:
-Expected /- \/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/bug4274\-20120818\-86393\-10760bu\z/ to match "No such file or directory - open() failed".
+Expected /- \/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/bug4274\-20120819\-2476\-10760bu\z/ to match "No such file or directory - open() failed".
 
 42 tests, 164 assertions, 9 failures, 0 errors, 0 skips
 
@@ -4966,8 +4953,8 @@ LoadError: continuations are not supported in MacRuby yet
 
   4) Failure:
 test_hash2(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:1878]:
-<-1209502569419036222> expected to be != to
-<-1209502569419036222>.
+<-790318292833734236> expected to be != to
+<-790318292833734236>.
 
   5) Failure:
 test_join(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:893]:
@@ -5363,7 +5350,7 @@ Encoding::CompatibilityError expected but nothing was raised.
 
   4) Failure:
 test_inspect(TestDir) [/macruby-test/test-mri/test/ruby/test_dir.rb:63]:
-Expected /^#<Dir:\/private\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/__test_dir__20120818\-86512\-1o6inhj>$/ to match "#<Dir:/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/__test_dir__20120818-86512-1o6inhj".
+Expected /^#<Dir:\/private\/var\/folders\/oT\/oThzhuLmHjSucjbf7BR6f\+\+\+\+TI\/\-Tmp\-\/__test_dir__20120819\-2595\-1o6inhj>$/ to match "#<Dir:/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/__test_dir__20120819-2595-1o6inhj".
 
 14 tests, 80 assertions, 2 failures, 1 errors, 1 skips
 
@@ -5372,52 +5359,52 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_dir_m17n
 Started
-/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120818-86515-12zdlt8/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120818-86515-1estiet/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120818-86515-16tc0n7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120818-86515-12pbsn7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120818-86515-u3bzm1/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120818-86515-19vmgph/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120818-86515-v2yjvo/-:6:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120818-86515-1rcd3ra/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120818-86515-1wg6zq0/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120819-2598-12zdlt8/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120819-2598-1estiet/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120819-2598-16tc0n7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120819-2598-12pbsn7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120819-2598-u3bzm1/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120819-2598-19vmgph/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120819-2598-v2yjvo/-:6:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120819-2598-1rcd3ra/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120819-2598-1wg6zq0/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
 F
 
   1) Failure:
 test_filename_as_bytes_extutf8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:50]:
-ruby exit status is not success: #<Process::Status: pid 86516 exit 1>
+ruby exit status is not success: #<Process::Status: pid 2599 exit 1>
 
   2) Failure:
 test_filename_bytes_euc_jp(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:148]:
-ruby exit status is not success: #<Process::Status: pid 86517 exit 1>
+ruby exit status is not success: #<Process::Status: pid 2600 exit 1>
 
   3) Failure:
 test_filename_euc_jp(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:162]:
-ruby exit status is not success: #<Process::Status: pid 86518 exit 1>
+ruby exit status is not success: #<Process::Status: pid 2601 exit 1>
 
   4) Failure:
 test_filename_ext_euc_jp_and_int_utf_8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:200]:
-ruby exit status is not success: #<Process::Status: pid 86519 exit 1>
+ruby exit status is not success: #<Process::Status: pid 2602 exit 1>
 
   5) Failure:
 test_filename_extutf8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:18]:
-ruby exit status is not success: #<Process::Status: pid 86520 exit 1>
+ruby exit status is not success: #<Process::Status: pid 2603 exit 1>
 
   6) Failure:
 test_filename_extutf8_inteucjp_representable(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:89]:
-ruby exit status is not success: #<Process::Status: pid 86521 exit 1>
+ruby exit status is not success: #<Process::Status: pid 2604 exit 1>
 
   7) Failure:
 test_filename_extutf8_inteucjp_unrepresentable(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:116]:
-ruby exit status is not success: #<Process::Status: pid 86522 exit 1>
+ruby exit status is not success: #<Process::Status: pid 2605 exit 1>
 
   8) Failure:
 test_filename_extutf8_invalid(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:31]:
-ruby exit status is not success: #<Process::Status: pid 86523 exit 1>
+ruby exit status is not success: #<Process::Status: pid 2606 exit 1>
 
   9) Failure:
 test_filename_utf8_raw_name(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:182]:
-ruby exit status is not success: #<Process::Status: pid 86524 exit 1>
+ruby exit status is not success: #<Process::Status: pid 2607 exit 1>
 
 9 tests, 9 assertions, 9 failures, 0 errors, 0 skips
 
@@ -6475,7 +6462,7 @@ NoMethodError: undefined method `each_codepoint' for #<File:0xXXXXXXXX>
  22) Failure:
 test_foreach(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1467]:
 <["foo\n", "bar\n", "baz\n"]> expected but was
-<["foo\n", "bar", "\n", "baz", "\n"]>.
+<["foo\n", "bar", "\n", "baz\n"]>.
 
  23) Skipped:
 test_lines(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1149]:
@@ -6525,7 +6512,7 @@ IOError expected but nothing was raised.
 test_uninitialized(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1644]:
 IOError expected but nothing was raised.
 
-93 tests, 212 assertions, 11 failures, 13 errors, 9 skips
+93 tests, 211 assertions, 11 failures, 13 errors, 9 skips
 
 Test run options: --seed 0
 
@@ -8291,7 +8278,7 @@ Failed assertion, no message given.
 
   9) Failure:
 test_hash2(TestNSArray) [/macruby-test/test-mri/test/ruby/test_nsarray.rb:1907]:
-<1938268476845064219> expected but was
+<-1791207897796994198> expected but was
 <1>.
 
  10) Skipped:
@@ -8393,7 +8380,7 @@ EF..E...F.EF................E....F.........FFF....F.F...F...FF........
 
   1) Error:
 test_AREF(TestNSDictionary):
-RuntimeError: NSInvalidArgumentException: *** -[NSCFDictionary initWithObjects:forKeys:count:]: attempt to insert nil value at objects[4] (key: 2012-08-18 03:25:40 +0900)
+RuntimeError: NSInvalidArgumentException: *** -[NSCFDictionary initWithObjects:forKeys:count:]: attempt to insert nil value at objects[4] (key: 2012-08-19 03:25:39 +0900)
     /macruby-test/test-mri/test/ruby/test_nsdictionary.rb:12:in `[]'
     /macruby-test/test-mri/test/ruby/test_nsdictionary.rb:119:in `test_AREF'
 
@@ -8439,7 +8426,7 @@ test_recursive_key(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdi
 <nil>.
 
  10) Failure:
-test_rehash(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:490]:
+test_rehash(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:486]:
 <100> expected but was
 <nil>.
 
@@ -8471,7 +8458,7 @@ test_to_a(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.
 <true> expected but was
 <false>.
 
-70 tests, 362 assertions, 12 failures, 4 errors, 0 skips
+70 tests, 360 assertions, 12 failures, 4 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -8651,8 +8638,8 @@ TypeError expected but nothing was raised.
   2) Failure:
 test_quo(TestNumeric) [/macruby-test/test-mri/test/ruby/test_numeric.rb:57]:
 [ArgumentError] exception expected, not
-Class: <NoMethodError>
-Message: <"undefined method `<' for #<TestNumeric::DummyNumeric:0xXXXXXXXX>">
+Class: <TypeError>
+Message: <"TestNumeric::DummyNumeric can't be coerced into Fixnum">
 ---Backtrace---
 /macruby-test/test-mri/test/ruby/test_numeric.rb:57:in `block'
 ---------------
@@ -8988,7 +8975,7 @@ Started
 ..SE..E-e:1:in `<main>': Bad file descriptor - fcntl(2) failed (Errno::EBADF)
 FF/usr/local/bin/macruby:1: Invalid char `\x07' in expression
 F...EFFEEEEEF........./bin/sh: -c: option requires an argument
-F....../private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120818-86731-1wg6zq0/s:9:in `<main>': Operation timed out - pipe() failed (Errno::ETIMEDOUT)
+F....../private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/d20120819-2814-1wg6zq0/s:9:in `<main>': Operation timed out - pipe() failed (Errno::ETIMEDOUT)
 F.................
 
   1) Skipped:
@@ -9082,7 +9069,7 @@ test_popen_fork(TestProcess) [/macruby-test/test-mri/test/ruby/test_process.rb:5
 
  17) Failure:
 test_rlimit_nofile(TestProcess) [/macruby-test/test-mri/test/ruby/test_process.rb:78]:
-pid 86803 exit 1.
+pid 2886 exit 1.
 <0> expected but was
 <256>.
 
@@ -9177,7 +9164,7 @@ test_rand_0xXXXXXXXX(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:65
 
  17) Failure:
 test_random_range(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:362]:
-<2012-08-18 03:26:13 +0900> expected but was
+<2012-08-19 03:26:11 +0900> expected but was
 <1.97626258336499e-323>.
 
  18) Failure:
@@ -9347,7 +9334,7 @@ test_eval(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb
 
   8) Failure:
 test_indentation_check(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:319]:
-<["/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20120818-86849-14cjxw8.rb:2: warning: mismatched indentations at 'end' with 'begin' at 1"]> expected but was
+<["/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_ruby_test_rubyoption20120819-2932-14cjxw8.rb:2: warning: mismatched indentations at 'end' with 'begin' at 1"]> expected but was
 <[]>.
 
   9) Failure:
@@ -9827,45 +9814,39 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/ruby/test_thread
 Started
-F...............F........S..S...F.ESS.F
+F........................S..S...F.ESS.F
 
   1) Failure:
 test_abort_on_exception(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:384]:
 <["true", "2"]> expected but was
 <["true", "1"]>.
 
-  2) Failure:
-test_local_barrier(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:227]:
-[ruby-dev:30653].
-<"exit."> expected but was
-<"2: cont">.
-
-  3) Skipped:
+  2) Skipped:
 test_priority(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:232]:
 [BUG : #1283] Segfault occurs when gets the busy loop with some threads.
 
-  4) Skipped:
+  3) Skipped:
 test_select_wait(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:502]:
 [BUG : #1233] Abort occurs when kill a thread waiting with IO.select
 
-  5) Failure:
+  4) Failure:
 test_thread_local_security(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:484]:
 SecurityError expected but nothing was raised.
 
-  6) Error:
+  5) Error:
 test_backtrace(TestThreadGroup):
 NoMethodError: undefined method `backtrace' for #<Thread:0xXXXXXXXX run>
     /macruby-test/test-mri/test/ruby/test_thread.rb:656:in `block'
 
-  7) Skipped:
+  6) Skipped:
 test_enclosed_thgroup(TestThreadGroup) [/macruby-test/test-mri/test/ruby/test_thread.rb:625]:
 [BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
 
-  8) Skipped:
+  7) Skipped:
 test_frozen_thgroup(TestThreadGroup) [/macruby-test/test-mri/test/ruby/test_thread.rb:603]:
 [BUG : #1085] Assertion failed: ((b->flags & flags) == flags)
 
-  9) Failure:
+  8) Failure:
 test_uninitialized(TestThreadGroup) [/macruby-test/test-mri/test/ruby/test_thread.rb:651]:
 [ThreadError] exception expected, not
 Class: <NoMethodError>
@@ -9874,7 +9855,7 @@ Message: <"undefined method `start' for #<#<Class:0xXXXXXXXX>:0xXXXXXXXX run>">
 /macruby-test/test-mri/test/ruby/test_thread.rb:651:in `block'
 ---------------
 
-39 tests, 73 assertions, 4 failures, 1 errors, 4 skips
+39 tests, 73 assertions, 3 failures, 1 errors, 4 skips
 
 Test run options: --seed 0
 
@@ -10506,7 +10487,7 @@ Expected 0, not 16.
 
   2) Failure:
 test_self_user_dir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:1011]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_87014/userhome/.gem/macruby/1.9.2", not "/Users/watson/.gem/macruby/1.9.2".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_3096/userhome/.gem/macruby/1.9.2", not "/Users/watson/.gem/macruby/1.9.2".
 
   3) Failure:
 test_self_default_dir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:577]:
@@ -10514,7 +10495,7 @@ Expected /\/.*?[Rr]uby.*?\/[Gg]ems\/[0-9.]+/ to match "/Library/Ruby/Gems/MacRub
 
   4) Failure:
 test_self_user_home(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:1016]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_87014/userhome", not "/Users/watson".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_3096/userhome", not "/Users/watson".
 
   5) Failure:
 test_self_bindir_default_dir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:532]:
@@ -10522,7 +10503,7 @@ Expected "/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/bin", not "/us
 
   6) Failure:
 test_self_datadir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:569]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_87014/gemhome/gems/foo-2/data/foo", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_87014/gemhome/gems/foo-2/data/foo".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_3096/gemhome/gems/foo-2/data/foo", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_3096/gemhome/gems/foo-2/data/foo".
 
 81 tests, 145 assertions, 6 failures, 0 errors, 0 skips
 
@@ -10553,11 +10534,11 @@ Started
 
   1) Failure:
 test_process_args_install(TestGemCommandManager) [/macruby-test/test-mri/test/rubygems/test_gem_command_manager.rb:85]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_87023", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_87023".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_3105", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_3105".
 
   2) Failure:
 test_process_args_update(TestGemCommandManager) [/macruby-test/test-mri/test/rubygems/test_gem_command_manager.rb:211]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_87023", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_87023".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_3105", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_3105".
 
 9 tests, 42 assertions, 2 failures, 0 errors, 0 skips
 
@@ -10727,15 +10708,15 @@ F.F..F
 
   1) Failure:
 test_sending_gem_default(TestGemCommandsPushCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_push_command.rb:42]:
-Expected 3072, not 3057.
+Expected 3072, not 3061.
 
   2) Failure:
 test_sending_gem_host(TestGemCommandsPushCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_push_command.rb:42]:
-Expected 3072, not 3057.
+Expected 3072, not 3061.
 
   3) Failure:
 test_sending_gem_ENV(TestGemCommandsPushCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_push_command.rb:42]:
-Expected 3072, not 3057.
+Expected 3072, not 3061.
 
 6 tests, 20 assertions, 3 failures, 0 errors, 0 skips
 
@@ -10975,7 +10956,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/rubygems/test_gem_ext_ext_conf_builder
 Started
-/bin/sh: line 1: 87158 Abort trap              /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/bin/macruby extconf.rb 2>&1
+/bin/sh: line 1:  3240 Abort trap              /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/bin/macruby extconf.rb 2>&1
 ......
 
 6 tests, 21 assertions, 0 failures, 0 errors, 0 skips
@@ -11001,7 +10982,7 @@ F.......
 
   1) Failure:
 test_lib_dirs_for(TestGemGemPathSearcher) [/macruby-test/test-mri/test/rubygems/test_gem_gem_path_searcher.rb:62]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_87218/gemhome/gems/foo-0.1/{lib,lib2}", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_87218/gemhome/gems/foo-0.1/{lib,lib2}".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_3300/gemhome/gems/foo-0.1/{lib,lib2}", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_3300/gemhome/gems/foo-0.1/{lib,lib2}".
 
 8 tests, 11 assertions, 1 failures, 0 errors, 0 skips
 
@@ -11066,7 +11047,7 @@ test_generate_bin_script_wrappers(TestGemInstaller) [/macruby-test/test-mri/test
 
   3) Failure:
 test_initialize(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:565]:
-Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_87241/installer/gems/a-2-x86-mswin32", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_87241/installer/gems/a-2-x86-mswin32".
+Expected "/private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_3323/installer/gems/a-2-x86-mswin32", not "/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_3323/installer/gems/a-2-x86-mswin32".
 
   4) Failure:
 test_install_post_build_false(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem_installer.rb:786]:
@@ -11105,13 +11086,13 @@ E.E
 
   1) Error:
 test_each(TestGemPackageTarInput):
-Gem::Package::FormatError: no metadata found in /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_87274/bla.tar
+Gem::Package::FormatError: no metadata found in /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_3355/bla.tar
     /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:75:in `block'
     /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:74:in `test_each'
 
   2) Error:
 test_extract_entry(TestGemPackageTarInput):
-Gem::Package::FormatError: no metadata found in /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_87274/bla.tar
+Gem::Package::FormatError: no metadata found in /private/var/folders/oT/oThzhuLmHjSucjbf7BR6f++++TI/-Tmp-/test_rubygems_3355/bla.tar
     /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:95:in `block'
     /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:94:in `test_extract_entry'
 
@@ -11328,1169 +11309,89 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/scanf/test_scanf
 Started
-..........EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE.........................................................................................................................................FFFFFF.F.F.......................................................................................
-
-  1) Error:
-test_108(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:318:in `block'
-
-  2) Error:
-test_109(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-  3) Error:
-test_11(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-  4) Error:
-test_110(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-  5) Error:
-test_111(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-  6) Error:
-test_112(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-  7) Error:
-test_113(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-  8) Error:
-test_114(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-  9) Error:
-test_115(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 10) Error:
-test_116(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 11) Error:
-test_117(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 12) Error:
-test_118(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 13) Error:
-test_119(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 14) Error:
-test_12(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 15) Error:
-test_120(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 16) Error:
-test_121(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 17) Error:
-test_122(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 18) Error:
-test_123(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 19) Error:
-test_124(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 20) Error:
-test_125(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 21) Error:
-test_126(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 22) Error:
-test_127(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 23) Error:
-test_128(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 24) Error:
-test_129(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 25) Error:
-test_13(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 26) Error:
-test_130(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 27) Error:
-test_131(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 28) Error:
-test_132(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 29) Error:
-test_133(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 30) Error:
-test_134(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 31) Error:
-test_135(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 32) Error:
-test_136(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 33) Error:
-test_137(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 34) Error:
-test_138(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 35) Error:
-test_139(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 36) Error:
-test_14(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 37) Error:
-test_140(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 38) Error:
-test_141(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 39) Error:
-test_142(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 40) Error:
-test_143(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 41) Error:
-test_144(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 42) Error:
-test_145(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 43) Error:
-test_146(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 44) Error:
-test_147(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 45) Error:
-test_148(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 46) Error:
-test_149(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 47) Error:
-test_15(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 48) Error:
-test_150(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 49) Error:
-test_151(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 50) Error:
-test_152(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 51) Error:
-test_153(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 52) Error:
-test_154(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 53) Error:
-test_155(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 54) Error:
-test_156(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 55) Error:
-test_157(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 56) Error:
-test_158(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 57) Error:
-test_159(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 58) Error:
-test_16(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 59) Error:
-test_160(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 60) Error:
-test_161(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 61) Error:
-test_162(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 62) Error:
-test_163(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 63) Error:
-test_164(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 64) Error:
-test_165(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 65) Error:
-test_166(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 66) Error:
-test_167(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 67) Error:
-test_168(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 68) Error:
-test_169(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 69) Error:
-test_17(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 70) Error:
-test_170(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 71) Error:
-test_171(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 72) Error:
-test_172(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 73) Error:
-test_173(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 74) Error:
-test_174(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 75) Error:
-test_175(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 76) Error:
-test_176(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 77) Error:
-test_177(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 78) Error:
-test_178(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 79) Error:
-test_179(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 80) Error:
-test_18(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 81) Error:
-test_180(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 82) Error:
-test_181(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 83) Error:
-test_182(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 84) Error:
-test_183(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 85) Error:
-test_184(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 86) Error:
-test_185(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 87) Error:
-test_186(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 88) Error:
-test_187(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 89) Error:
-test_188(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 90) Error:
-test_189(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 91) Error:
-test_19(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 92) Error:
-test_190(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 93) Error:
-test_191(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 94) Error:
-test_192(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 95) Error:
-test_193(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 96) Error:
-test_194(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 97) Error:
-test_195(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 98) Error:
-test_196(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
- 99) Error:
-test_197(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-100) Error:
-test_198(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-101) Error:
-test_199(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-102) Error:
-test_2(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-103) Error:
-test_20(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-104) Error:
-test_200(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-105) Error:
-test_201(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-106) Error:
-test_202(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-107) Error:
-test_203(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-108) Error:
-test_204(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-109) Error:
-test_205(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-110) Error:
-test_206(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-111) Error:
-test_207(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-112) Error:
-test_208(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-113) Error:
-test_209(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-114) Error:
-test_21(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-115) Error:
-test_210(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-116) Error:
-test_211(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-117) Error:
-test_212(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-118) Error:
-test_213(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-119) Error:
-test_214(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-120) Error:
-test_215(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-121) Error:
-test_216(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-122) Error:
-test_217(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-123) Error:
-test_218(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-124) Error:
-test_219(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-125) Error:
-test_22(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-126) Error:
-test_220(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-127) Error:
-test_221(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-128) Error:
-test_222(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-129) Error:
-test_223(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-130) Error:
-test_224(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-131) Error:
-test_225(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-132) Error:
-test_226(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-133) Error:
-test_227(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-134) Error:
-test_228(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-135) Error:
-test_229(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-136) Error:
-test_23(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-137) Error:
-test_230(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-138) Error:
-test_231(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-139) Error:
-test_232(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-140) Error:
-test_233(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-141) Error:
-test_234(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-142) Error:
-test_24(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-143) Error:
-test_25(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-144) Error:
-test_26(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-145) Error:
-test_27(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-146) Error:
-test_28(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-147) Error:
-test_29(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-148) Error:
-test_3(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-149) Error:
-test_30(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-150) Error:
-test_31(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-151) Error:
-test_32(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-152) Error:
-test_33(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-153) Error:
-test_34(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-154) Error:
-test_35(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-155) Error:
-test_36(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-156) Error:
-test_37(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-157) Error:
-test_38(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-158) Error:
-test_39(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-159) Error:
-test_4(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-160) Error:
-test_40(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-161) Error:
-test_41(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-162) Error:
-test_42(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-163) Error:
-test_43(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-164) Error:
-test_44(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-165) Error:
-test_45(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-166) Error:
-test_46(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-167) Error:
-test_47(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-168) Error:
-test_48(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-169) Error:
-test_49(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-170) Error:
-test_5(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-171) Error:
-test_50(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-172) Error:
-test_51(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-173) Error:
-test_52(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-174) Error:
-test_53(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-175) Error:
-test_54(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-176) Error:
-test_55(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-177) Error:
-test_56(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-178) Error:
-test_57(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-179) Error:
-test_58(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-180) Error:
-test_59(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-181) Error:
-test_6(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-182) Error:
-test_60(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-183) Error:
-test_61(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-184) Error:
-test_62(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-185) Error:
-test_63(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-186) Error:
-test_64(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-187) Error:
-test_65(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-188) Error:
-test_66(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-189) Error:
-test_67(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-190) Error:
-test_68(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-191) Error:
-test_69(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-192) Error:
-test_7(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-193) Error:
-test_70(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-194) Error:
-test_71(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-195) Error:
-test_72(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-196) Error:
-test_73(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-197) Error:
-test_74(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-198) Error:
-test_75(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-199) Error:
-test_76(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-200) Error:
-test_77(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-201) Error:
-test_78(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-202) Error:
-test_79(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-203) Error:
-test_8(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-204) Error:
-test_80(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-205) Error:
-test_81(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-206) Error:
-test_82(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-207) Error:
-test_83(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-208) Error:
-test_84(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-209) Error:
-test_85(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-210) Error:
-test_86(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-211) Error:
-test_87(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-212) Error:
-test_88(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-213) Error:
-test_89(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-214) Error:
-test_9(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-215) Error:
-test_90(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-216) Error:
-test_91(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-217) Error:
-test_92(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-218) Error:
-test_93(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-219) Error:
-test_94(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-220) Error:
-test_95(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-221) Error:
-test_96(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-222) Error:
-test_97(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-223) Error:
-test_98(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-224) Error:
-test_99(TestIOScanf):
-TypeError: #<Scanf::FormatSpecifier:0xXXXXXXXX @spec_string="%s" @re_string="\\A(\\S+)" @handler=:extract_plain @matched=true @conversion="x" @matched_string="x"> is not a class/module
-    /macruby-test/test-mri/test/scanf/test_scanf.rb:314:in `block'
-
-225) Failure:
+.........................................................................................................................................FFFFFF.F.F................................................................................................................................................................................................................................FFFFFF.F.F.......................................................................................
+
+  1) Failure:
+test_222(TestIOScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:316]:
+<[]> expected but was
+<[0.0]>.
+
+  2) Failure:
+test_223(TestIOScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:316]:
+<[1.23e+45]> expected but was
+<[]>.
+
+  3) Failure:
+test_224(TestIOScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:316]:
+<[3.25]> expected but was
+<[]>.
+
+  4) Failure:
+test_225(TestIOScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:316]:
+<[3.0]> expected but was
+<[]>.
+
+  5) Failure:
+test_226(TestIOScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:316]:
+<[3.25]> expected but was
+<[]>.
+
+  6) Failure:
+test_227(TestIOScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:316]:
+<[325.0]> expected but was
+<[]>.
+
+  7) Failure:
+test_229(TestIOScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:316]:
+<[1024.0]> expected but was
+<[]>.
+
+  8) Failure:
+test_230(TestIOScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:316]:
+<[1.1851510441584e+30]> expected but was
+<[]>.
+
+  9) Failure:
 test_222(TestStringScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:299]:
 <[]> expected but was
 <[0.0]>.
 
-226) Failure:
+ 10) Failure:
 test_223(TestStringScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:299]:
 <[1.23e+45]> expected but was
 <[]>.
 
-227) Failure:
+ 11) Failure:
 test_224(TestStringScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:299]:
 <[3.25]> expected but was
 <[]>.
 
-228) Failure:
+ 12) Failure:
 test_225(TestStringScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:299]:
 <[3.0]> expected but was
 <[]>.
 
-229) Failure:
+ 13) Failure:
 test_226(TestStringScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:299]:
 <[3.25]> expected but was
 <[]>.
 
-230) Failure:
+ 14) Failure:
 test_227(TestStringScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:299]:
 <[325.0]> expected but was
 <[]>.
 
-231) Failure:
+ 15) Failure:
 test_229(TestStringScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:299]:
 <[1024.0]> expected but was
 <[]>.
 
-232) Failure:
+ 16) Failure:
 test_230(TestStringScanf) [/macruby-test/test-mri/test/scanf/test_scanf.rb:299]:
 <[1.1851510441584e+30]> expected but was
 <[]>.
 
-468 tests, 245 assertions, 8 failures, 224 errors, 0 skips
+468 tests, 468 assertions, 16 failures, 0 errors, 0 skips
 
 Test run options: --seed 0
 
@@ -13968,7 +12869,7 @@ Test run options: --seed 0
 ----------------------------------------
 Loaded suite test/thread/test_queue
 Started
-.
+
 ----------------------------------------
 Loaded suite test/uri/test_common
 Started
@@ -14068,25 +12969,25 @@ F.FF
 
   1) Failure:
 test_bad_header(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:129]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2012-08-18 03:35:54] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2012-08-19 03:36:21] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
 
   2) Failure:
 test_bad_uri(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:115]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2012-08-18 03:35:59] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2012-08-19 03:36:26] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
 
   3) Failure:
 test_cgi(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:40]:
 webrick log start:
-  [2012-08-18 03:35:59] INFO  WEBrick 1.3.1
-  [2012-08-18 03:35:59] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
-  [2012-08-18 03:35:59] INFO  WEBrick::HTTPServer#start: pid=87594 port=63570
-  [2012-08-18 03:35:59] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2012-08-19 03:36:26] INFO  WEBrick 1.3.1
+  [2012-08-19 03:36:26] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
+  [2012-08-19 03:36:26] INFO  WEBrick::HTTPServer#start: pid=3684 port=65074
+  [2012-08-19 03:36:26] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
-  [2012-08-18 03:36:03] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2012-08-19 03:36:31] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
-  [2012-08-18 03:36:07] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2012-08-19 03:36:35] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
-  [2012-08-18 03:36:11] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2012-08-19 03:36:39] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
 webrick log end.
 <"/\xA4ۤ\xB2/\xA4ۤ\xB2"> expected but was
