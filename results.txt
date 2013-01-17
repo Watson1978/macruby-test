@@ -1,5 +1,5 @@
-Date    : 2013-01-10T03:04:19+09:00
-Version : 0.13, git commit 8db7332057ec5281eecaf3e2c9463c58371e9b1d
+Date    : 2013-01-18T06:19:11+09:00
+Version : 0.13, git commit cbc4ed44383d1d22c31e83e2efc7894576d1506e
 
 ----------------------------------------
 /macruby-test/test-mri/test/-ext-/string/test_cstr.rb:2:in `<main>': no such file to load -- -test-/string/string (LoadError)
@@ -798,35 +798,11 @@ Run options: --seed 0
 
 # Running tests:
 
-libc++abi.dylib: terminate called throwing an exception
-F.libc++abi.dylib: terminate called throwing an exception
-.libc++abi.dylib: terminate called throwing an exception
-.libc++abi.dylib: terminate called throwing an exception
-Flibc++abi.dylib: terminate called throwing an exception
-.libc++abi.dylib: terminate called throwing an exception
-Flibc++abi.dylib: terminate called throwing an exception
-libc++abi.dylib: terminate called throwing an exception
-..libc++abi.dylib: terminate called throwing an exception
-Elibc++abi.dylib: terminate called throwing an exception
-.libc++abi.dylib: terminate called throwing an exception
-Flibc++abi.dylib: terminate called throwing an exception
-WARNING: MiniTest::MINI_DIR was removed. Don't violate other's internals.
-WARNING: Used by /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/test/unit/assertions.rb:143:in `assert_respond_to'.
-.libc++abi.dylib: terminate called throwing an exception
-.libc++abi.dylib: terminate called throwing an exception
-Flibc++abi.dylib: terminate called throwing an exception
-.libc++abi.dylib: terminate called throwing an exception
-.libc++abi.dylib: terminate called throwing an exception
-.libc++abi.dylib: terminate called throwing an exception
-.libc++abi.dylib: terminate called throwing an exception
-.libc++abi.dylib: terminate called throwing an exception
-.libc++abi.dylib: terminate called throwing an exception
-.libc++abi.dylib: terminate called throwing an exception
-.libc++abi.dylib: terminate called throwing an exception
-.libc++abi.dylib: terminate called throwing an exception
-Flibc++abi.dylib: terminate called throwing an exception
-.libc++abi.dylib: terminate called throwing an exception
-libc++abi.dylib: terminate called throwing an exception
+Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+.terminate called after throwing an instance of 'RoxorThreadRaiseException*'
+Fterminate called after throwing an instance of 'RoxorThreadRaiseException*'
 
 ----------------------------------------
 /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/drb/drb.rb:767:in `open_server': can't parse uri:--seed (DRb::DRbBadURI)
@@ -1022,7 +998,7 @@ Run options: --seed 0
 .........
 
 
-9 tests, 2762 assertions, 0 failures, 0 errors, 0 skips
+9 tests, 1291 assertions, 0 failures, 0 errors, 0 skips
 
 ----------------------------------------
 /macruby-test/test-mri/test/fiddle/helper.rb:2:in `<main>': no such file to load -- dl (LoadError)
@@ -1121,10 +1097,10 @@ Run options: --seed 0
 
 # Running tests:
 
-...............................................
 
 
-47 tests, 954 assertions, 0 failures, 0 errors, 0 skips
+
+0 tests, 0 assertions, 0 failures, 0 errors, 0 skips
 
 ----------------------------------------
 Run options: --seed 0
@@ -1890,10 +1866,20 @@ Run options: --seed 0
 
 # Running tests:
 
-......
+..F.F.
 
 
-6 tests, 18 assertions, 0 failures, 0 errors, 0 skips
+  1) Failure:
+test_killed_thread_in_synchronize(TestMonitor) [/macruby-test/test-mri/test/monitor/test_monitor.rb:80]:
+<[:main]> expected but was
+<[:main, :t1]>.
+
+  2) Failure:
+test_timedwait(TestMonitor) [/macruby-test/test-mri/test/monitor/test_monitor.rb:141]:
+<"bar"> expected but was
+<"foo">.
+
+6 tests, 13 assertions, 2 failures, 0 errors, 0 skips
 
 ----------------------------------------
 Run options: --seed 0
@@ -1906,7 +1892,7 @@ F.F.........F.F...E..E...F......
   1) Failure:
 test_get(TestNetHTTP_v1_2) [/macruby-test/test-mri/test/net/http/test_http.rb:49]:
 Exception raised:
-<#<EOFError: end of file reached>>.
+<#<Errno::ECONNRESET: Connection reset by peer - read(2) failed.>>.
 
   2) Failure:
 test_get__break(TestNetHTTP_v1_2) [/macruby-test/test-mri/test/net/http/test_http.rb:96]:
@@ -1921,7 +1907,7 @@ Exception raised:
   4) Failure:
 test_get__break(TestNetHTTP_v1_2_chunked) [/macruby-test/test-mri/test/net/http/test_http.rb:96]:
 <1> expected but was
-<4097>.
+<4096>.
 
   5) Error:
 test_request(TestNetHTTP_v1_2_chunked):
@@ -1944,7 +1930,7 @@ EOFError: end of file reached
 
   6) Error:
 test_send_request(TestNetHTTP_v1_2_chunked):
-EOFError: end of file reached
+Errno::ECONNRESET: Connection reset by peer - read(2) failed.
     /macruby-test/test-mri/test/net/http/test_http.rb:304:in `_test_send_request__POST'
     /macruby-test/test-mri/test/net/http/test_http.rb:288:in `block'
     /macruby-test/test-mri/test/net/http/utils.rb:11:in `start'
@@ -2019,12 +2005,28 @@ Run options: --seed 0
 
 # Running tests:
 
-.....WARNING: MiniTest::MINI_DIR was removed. Don't violate other's internals.
+..E..WARNING: MiniTest::MINI_DIR was removed. Don't violate other's internals.
 WARNING: Used by /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/test/unit/assertions.rb:143:in `assert_respond_to'.
 ..........
 
 
-15 tests, 26 assertions, 0 failures, 0 errors, 0 skips
+  1) Error:
+test_exception_during_idle(IMAPTest):
+IOError: closed stream
+    /macruby-test/test-mri/test/net/imap/test_imap.rb:254:in `test_exception_during_idle'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+15 tests, 23 assertions, 0 failures, 1 errors, 0 skips
 
 ----------------------------------------
 Run options: --seed 0
@@ -2176,16 +2178,19 @@ Run options: --seed 0
 
 .......WARNING: MiniTest::MINI_DIR was removed. Don't violate other's internals.
 WARNING: Used by /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/test/unit/assertions.rb:143:in `assert_respond_to'.
-......macruby(24341,0xXXXXXXXX) malloc: resurrection error for block 0xXXXXXXXX while assigning 0xXXXXXXXX[0] = 0xXXXXXXXX
-garbage pointer stored into reachable memory, break on auto_zone_resurrection_error to debug
-..........F...........
+..............F.F...........
 
 
   1) Failure:
-test_proxy(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.rb:205]:
-Expected /http:\/\/127\.0\.0\.1:57300/ to match "?j]\xFF\xFB\xFF\xFF\xFF\xFFk]\xFF\xFB\xFF\xFF\xFF@\x00\x00\x00\x00\x00\x00\x0000/proxy HTTP/1.1\r\n".
+test_progress(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.rb:394]:
+<100000> expected but was
+<81508>.
 
-35 tests, 153 assertions, 1 failures, 0 errors, 0 skips
+  2) Failure:
+test_proxy(TestOpenURI) [/macruby-test/test-mri/test/open-uri/test_open-uri.rb:205]:
+Expected /http:\/\/127\.0\.0\.1:50692/ to match "\xA0\x02\x01\x00\x02\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00 \a\x01\x00\x02\x00\x00\x00\x0E\x00\x00\x00\x00\x00\x00\x00\f\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00".
+
+35 tests, 152 assertions, 2 failures, 0 errors, 0 skips
 
 ----------------------------------------
 Run options: --seed 0
@@ -3827,7 +3832,7 @@ Run options: --seed 0
 
 # Running tests:
 
-................2013-01-10 03:09:57.009 macruby[24580:707] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
+................2013-01-18 06:26:00.979 macruby[38500:903] -[NSObject copyWithZone:]: unrecognized selector sent to instance 0xXXXXXXXX
 F.......
 
 
@@ -8862,7 +8867,7 @@ Run options: --seed 0
 
 F........F....WARNING: MiniTest::MINI_DIR was removed. Don't violate other's internals.
 WARNING: Used by /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/test/unit/assertions.rb:143:in `assert_respond_to'.
-..........FFFF.....FF......F
+..........FFFF.....FF..F...F
 
 
   1) Failure:
@@ -8890,7 +8895,7 @@ test_lineno(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:92]:
 test_lineno2(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:112]:
 [ruby-dev:34445]: line 116.
 <"1"> expected but was
-<"3">.
+<"">.
 
   6) Failure:
 test_lineno3(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:131]:
@@ -8909,10 +8914,16 @@ test_readpartial2(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:499]:
 <"-e:4:in `block': TODO() function is unimplemented on this machine (NotImplementedError)\n\tfrom -e:3:in `<main>'\n">.
 
   9) Failure:
+test_set_pos(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:327]:
+[ruby-dev:34445]: line 333.
+<"nil"> expected but was
+<"">.
+
+ 10) Failure:
 test_unreadable(TestArgf) [/macruby-test/test-mri/test/ruby/test_argf.rb:708]:
 Errno::ENOENT expected but nothing was raised.
 
-42 tests, 171 assertions, 9 failures, 0 errors, 0 skips
+42 tests, 169 assertions, 10 failures, 0 errors, 0 skips
 
 ----------------------------------------
 Run options: --seed 0
@@ -8963,8 +8974,8 @@ LoadError: continuations are not supported in MacRuby yet
 
   4) Failure:
 test_hash2(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:1878]:
-<674700733951332073> expected to be != to
-<674700733951332073>.
+<1554955175843724214> expected to be != to
+<1554955175843724214>.
 
   5) Failure:
 test_join(TestArray) [/macruby-test/test-mri/test/ruby/test_array.rb:893]:
@@ -9516,7 +9527,7 @@ Encoding::CompatibilityError expected but nothing was raised.
 
   3) Failure:
 test_inspect(TestDir) [/macruby-test/test-mri/test/ruby/test_dir.rb:63]:
-Expected /^#<Dir:\/private\/var\/folders\/nx\/7csdyjw56xv6gsx_n7xh9mzm0000gn\/T\/__test_dir__20130110\-25363\-1o6inhj>$/ to match "#<Dir:/private/var/folders/nx/7csdyjw56xv6gsx_n7xh9mzm0000gn/T/__test_dir__20130110-25363-1o6inhj".
+Expected /^#<Dir:\/private\/var\/folders\/xf\/xfzN\-\+krFyeYywp\+bDKolU\+\+\+TI\/\-Tmp\-\/__test_dir__20130118\-39368\-1o6inhj>$/ to match "#<Dir:/private/var/folders/xf/xfzN-+krFyeYywp+bDKolU+++TI/-Tmp-/__test_dir__20130118-39368-1o6inhj".
 
 14 tests, 81 assertions, 2 failures, 1 errors, 1 skips
 
@@ -9525,53 +9536,53 @@ Run options: --seed 0
 
 # Running tests:
 
-/private/var/folders/nx/7csdyjw56xv6gsx_n7xh9mzm0000gn/T/d20130110-25366-12zdlt8/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/nx/7csdyjw56xv6gsx_n7xh9mzm0000gn/T/d20130110-25366-1estiet/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/nx/7csdyjw56xv6gsx_n7xh9mzm0000gn/T/d20130110-25366-16tc0n7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/nx/7csdyjw56xv6gsx_n7xh9mzm0000gn/T/d20130110-25366-12pbsn7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/nx/7csdyjw56xv6gsx_n7xh9mzm0000gn/T/d20130110-25366-u3bzm1/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/nx/7csdyjw56xv6gsx_n7xh9mzm0000gn/T/d20130110-25366-19vmgph/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/nx/7csdyjw56xv6gsx_n7xh9mzm0000gn/T/d20130110-25366-v2yjvo/-:6:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/nx/7csdyjw56xv6gsx_n7xh9mzm0000gn/T/d20130110-25366-1rcd3ra/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
-F/private/var/folders/nx/7csdyjw56xv6gsx_n7xh9mzm0000gn/T/d20130110-25366-1wg6zq0/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+/private/var/folders/xf/xfzN-+krFyeYywp+bDKolU+++TI/-Tmp-/d20130118-39371-12zdlt8/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/xf/xfzN-+krFyeYywp+bDKolU+++TI/-Tmp-/d20130118-39371-1estiet/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/xf/xfzN-+krFyeYywp+bDKolU+++TI/-Tmp-/d20130118-39371-16tc0n7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/xf/xfzN-+krFyeYywp+bDKolU+++TI/-Tmp-/d20130118-39371-12pbsn7/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/xf/xfzN-+krFyeYywp+bDKolU+++TI/-Tmp-/d20130118-39371-u3bzm1/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/xf/xfzN-+krFyeYywp+bDKolU+++TI/-Tmp-/d20130118-39371-19vmgph/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/xf/xfzN-+krFyeYywp+bDKolU+++TI/-Tmp-/d20130118-39371-v2yjvo/-:6:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/xf/xfzN-+krFyeYywp+bDKolU+++TI/-Tmp-/d20130118-39371-1rcd3ra/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
+F/private/var/folders/xf/xfzN-+krFyeYywp+bDKolU+++TI/-Tmp-/d20130118-39371-1wg6zq0/-:4:in `<main>': wrong number of arguments (2 for 1) (ArgumentError)
 F
 
 
   1) Failure:
 test_filename_as_bytes_extutf8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:50]:
-ruby exit status is not success: #<Process::Status: pid 25367 exit 1>
+ruby exit status is not success: #<Process::Status: pid 39372 exit 1>
 
   2) Failure:
 test_filename_bytes_euc_jp(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:148]:
-ruby exit status is not success: #<Process::Status: pid 25368 exit 1>
+ruby exit status is not success: #<Process::Status: pid 39373 exit 1>
 
   3) Failure:
 test_filename_euc_jp(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:162]:
-ruby exit status is not success: #<Process::Status: pid 25369 exit 1>
+ruby exit status is not success: #<Process::Status: pid 39374 exit 1>
 
   4) Failure:
 test_filename_ext_euc_jp_and_int_utf_8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:200]:
-ruby exit status is not success: #<Process::Status: pid 25370 exit 1>
+ruby exit status is not success: #<Process::Status: pid 39375 exit 1>
 
   5) Failure:
 test_filename_extutf8(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:18]:
-ruby exit status is not success: #<Process::Status: pid 25371 exit 1>
+ruby exit status is not success: #<Process::Status: pid 39376 exit 1>
 
   6) Failure:
 test_filename_extutf8_inteucjp_representable(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:89]:
-ruby exit status is not success: #<Process::Status: pid 25372 exit 1>
+ruby exit status is not success: #<Process::Status: pid 39377 exit 1>
 
   7) Failure:
 test_filename_extutf8_inteucjp_unrepresentable(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:116]:
-ruby exit status is not success: #<Process::Status: pid 25373 exit 1>
+ruby exit status is not success: #<Process::Status: pid 39378 exit 1>
 
   8) Failure:
 test_filename_extutf8_invalid(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:31]:
-ruby exit status is not success: #<Process::Status: pid 25374 exit 1>
+ruby exit status is not success: #<Process::Status: pid 39379 exit 1>
 
   9) Failure:
 test_filename_utf8_raw_name(TestDir_M17N) [/macruby-test/test-mri/test/ruby/test_dir_m17n.rb:182]:
-ruby exit status is not success: #<Process::Status: pid 25375 exit 1>
+ruby exit status is not success: #<Process::Status: pid 39380 exit 1>
 
 9 tests, 9 assertions, 9 failures, 0 errors, 0 skips
 
@@ -11161,7 +11172,7 @@ Run options: --seed 0
 ..................................
 
 
-34 tests, 272 assertions, 0 failures, 0 errors, 0 skips
+34 tests, 284 assertions, 0 failures, 0 errors, 0 skips
 
 ----------------------------------------
 Run options: --seed 0
@@ -11623,7 +11634,7 @@ Run options: --seed 0
 
 # Running tests:
 
-..F...E...E..
+..F...E......
 
 
   1) Failure:
@@ -11646,23 +11657,7 @@ NoMethodError: undefined method `odd?' for 1:Fixnum
     /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
     /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
 
-  3) Error:
-test_succ(TestInteger):
-NoMethodError: undefined method `succ' for 1:Fixnum
-    /macruby-test/test-mri/test/ruby/test_integer.rb:128:in `test_succ'
-    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
-    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
-    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
-    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
-    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
-
-13 tests, 77 assertions, 1 failures, 2 errors, 0 skips
+13 tests, 79 assertions, 1 failures, 1 errors, 0 skips
 
 ----------------------------------------
 Run options: --seed 0
@@ -11697,7 +11692,7 @@ Run options: --seed 0
 
 # Running tests:
 
-..SS.........FSEEESEEE.EEEFEEES.F..E...F....WARNING: MiniTest::MINI_DIR was removed. Don't violate other's internals.
+..SS.........FSEEESEEE.EEEFEEES.F..E........WARNING: MiniTest::MINI_DIR was removed. Don't violate other's internals.
 WARNING: Used by /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/test/unit/assertions.rb:143:in `assert_respond_to'.
 .SF.........S....S.......S.......F..FF....FF.F...
 
@@ -11990,50 +11985,1004 @@ NoMethodError: undefined method `each_codepoint' for #<File:0xXXXXXXXX>
     /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
 
  17) Failure:
-test_foreach(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1467]:
-<["foo\n", "bar\n", "baz\n"]> expected but was
-<["foo\n", "bar", "\n", "baz\n"]>.
-
- 18) Failure:
 test_new_with_block(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1614]:
 <[]> expected but was
 <["/macruby-test/test-mri/-:1:in `<main>': can't convert IO into Integer (TypeError)"]>.
 
- 19) Failure:
+ 18) Failure:
 test_set_lineno(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1103]:
 <"0,1,2,2,1001,1001,1001,1,2,3,3"> expected but was
 <"nil,1,2,2,1001,1001,1001,1,2,3,3">.
 
- 20) Failure:
+ 19) Failure:
 test_sysread(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1310]:
 IOError expected but nothing was raised.
 
- 21) Failure:
+ 20) Failure:
 test_sysseek(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1289]:
 IOError expected but nothing was raised.
 
- 22) Failure:
+ 21) Failure:
 test_ungetbyte(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:203]:
 <-1> expected but was
 <0>.
 
- 23) Failure:
+ 22) Failure:
 test_ungetc(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:194]:
 [ruby-dev:31650].
 IOError expected but nothing was raised.
 
- 24) Failure:
+ 23) Failure:
 test_uninitialized(TestIO) [/macruby-test/test-mri/test/ruby/test_io.rb:1644]:
 IOError expected but nothing was raised.
 
-93 tests, 213 assertions, 11 failures, 13 errors, 9 skips
+93 tests, 220 assertions, 10 failures, 13 errors, 9 skips
 
 ----------------------------------------
 Run options: --seed 0
 
 # Running tests:
 
-EFFFFFFF.SS..FSSF.EFSSEEF.FFFFFFEEEFEEEEEFFFFEEFEEFSSSSFFEEEEESSFFFFFFEFFFF
+EFFFFFFF.SS..FSSF.EFSSEEF.FFFFFFEEEFEEEEEFFFFEEFEEFSSSSFFEEEEESSFFFFFFEFFFFFFFFFFFFESSSSFSSSSSFF.FFFFE.FFFF.FSFSEEEEEEEE.FSSSSE.F
+
+
+  1) Error:
+test_binary(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1758:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/tmpdir.rb:91:in `mktmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:15:in `with_tmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1752:in `test_binary'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+  2) Failure:
+test_binmode(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1775]:
+<"\n"> expected but was
+<"\r">.
+
+  3) Failure:
+test_binmode2(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1794]:
+<"\n"> expected but was
+<"\r">.
+
+  4) Failure:
+test_binmode3(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1815]:
+"\xE3\x81\x82\r\n".force_encoding("ASCII-8BIT") expected but not equal to
+"あ\r\n".force_encoding("UTF-8").
+
+  5) Failure:
+test_binmode_paragraph_nonasciicompat(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:2075]:
+[ruby-dev:41803].
+<"[ruby-dev:41803]\n\n"> (UTF-32BE) expected but was
+<"[ruby-dev:41803]\n\n"> (UTF-8).
+
+  6) Failure:
+test_binmode_write_ascii_incompat_internal(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1741]:
+<"a\nb\n"> expected but was
+<"\x00a\x00\n\x00b\x00\n">.
+
+  7) Failure:
+test_both_textmode_binmode(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1379]:
+[ArgumentError] exception expected, not
+Class: <TypeError>
+Message: <"can't convert Hash into Integer">
+---Backtrace---
+/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1379:in `block'
+/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:370:in `assert_raises'
+/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/test/unit/assertions.rb:27:in `assert_raise'
+/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1379:in `test_both_textmode_binmode'
+/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+---------------
+
+  8) Failure:
+test_cbuf(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1985]:
+[ruby-dev:40493].
+IOError expected but nothing was raised.
+
+  9) Failure:
+test_getc_invalid(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:474]:
+Encoding::InvalidByteSequenceError expected but nothing was raised.
+
+ 10) Failure:
+test_getc_newlineconv(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:499]:
+<true> expected but was
+<false>.
+
+ 11) Error:
+test_getc_stateful_conversion(TestIO_M17N):
+ArgumentError: unknown encoding name - iso-2022-jp
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:482:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/tmpdir.rb:91:in `mktmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:15:in `with_tmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:481:in `test_getc_stateful_conversion'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 12) Failure:
+test_gets_invalid(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:851]:
+Encoding::InvalidByteSequenceError expected but nothing was raised.
+
+ 13) Error:
+test_invalid_r(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1824:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/tmpdir.rb:91:in `mktmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:15:in `with_tmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1822:in `test_invalid_r'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 14) Error:
+test_invalid_w(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1864:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/tmpdir.rb:91:in `mktmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:15:in `with_tmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1862:in `test_invalid_w'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 15) Failure:
+test_io_new_enc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:284]:
+<#<Encoding:Shift_JIS>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 16) Failure:
+test_nonascii_terminator(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:417]:
+ArgumentError expected but nothing was raised.
+
+ 17) Failure:
+test_open_ascii(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:585]:
+<#<Encoding:ASCII-8BIT>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 18) Failure:
+test_open_nonascii(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:598]:
+<#<Encoding:ASCII-8BIT>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 19) Failure:
+test_open_pipe_r_enc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1250]:
+<#<Encoding:ASCII-8BIT>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 20) Failure:
+test_open_r(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:82]:
+<nil> expected but was
+<#<Encoding:UTF-8>>.
+
+ 21) Failure:
+test_open_r_enc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:101]:
+<#<Encoding:EUC-JP>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 22) Error:
+test_open_r_enc_enc(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:150:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/tmpdir.rb:91:in `mktmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:15:in `with_tmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:148:in `test_open_r_enc_enc'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 23) Error:
+test_open_r_enc_enc_in_opt(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:180:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/tmpdir.rb:91:in `mktmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:15:in `with_tmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:178:in `test_open_r_enc_enc_in_opt'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 24) Error:
+test_open_r_enc_in_opt(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:110:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/tmpdir.rb:91:in `mktmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:15:in `with_tmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:108:in `test_open_r_enc_in_opt'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 25) Failure:
+test_open_r_encname_encname(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:161]:
+<#<Encoding:EUC-JP>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 26) Error:
+test_open_r_encname_encname_in_opt(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:170:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/tmpdir.rb:91:in `mktmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:15:in `with_tmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:168:in `test_open_r_encname_encname_in_opt'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 27) Error:
+test_open_r_encname_in_opt(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:120:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/tmpdir.rb:91:in `mktmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:15:in `with_tmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:118:in `test_open_r_encname_in_opt'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 28) Error:
+test_open_r_ext_enc_in_opt(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:130:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/tmpdir.rb:91:in `mktmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:15:in `with_tmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:128:in `test_open_r_ext_enc_in_opt'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 29) Error:
+test_open_r_ext_encname_in_opt(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:140:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/tmpdir.rb:91:in `mktmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:15:in `with_tmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:138:in `test_open_r_ext_encname_in_opt'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 30) Error:
+test_open_r_externalencname_internalencname_in_opt(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:190:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/tmpdir.rb:91:in `mktmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:15:in `with_tmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:188:in `test_open_r_externalencname_internalencname_in_opt'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 31) Failure:
+test_open_rb(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:91]:
+<#<Encoding:ASCII-8BIT>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 32) Failure:
+test_open_w(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:200]:
+<nil> expected but was
+<#<Encoding:UTF-8>>.
+
+ 33) Failure:
+test_open_w_enc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:218]:
+<#<Encoding:EUC-JP>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 34) Failure:
+test_open_w_enc_enc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:245]:
+<#<Encoding:EUC-JP>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 35) Error:
+test_open_w_enc_enc_in_opt(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:253:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/tmpdir.rb:91:in `mktmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:15:in `with_tmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:252:in `test_open_w_enc_enc_in_opt'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 36) Error:
+test_open_w_enc_enc_in_opt2(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:262:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/tmpdir.rb:91:in `mktmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:15:in `with_tmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:261:in `test_open_w_enc_enc_in_opt2'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 37) Failure:
+test_open_w_enc_enc_perm(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:272]:
+<#<Encoding:EUC-JP>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 38) Error:
+test_open_w_enc_in_opt(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:226:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/tmpdir.rb:91:in `mktmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:15:in `with_tmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:225:in `test_open_w_enc_in_opt'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 39) Error:
+test_open_w_enc_in_opt2(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:235:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/tmpdir.rb:91:in `mktmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:15:in `with_tmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:234:in `test_open_w_enc_in_opt2'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 40) Failure:
+test_open_wb(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:209]:
+<#<Encoding:ASCII-8BIT>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 41) Failure:
+test_popen_r_enc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1180]:
+<#<Encoding:ASCII-8BIT>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 42) Failure:
+test_popen_r_enc_enc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1210]:
+<#<Encoding:Shift_JIS>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 43) Error:
+test_popen_r_enc_enc_in_opt(TestIO_M17N):
+ArgumentError: wrong number of arguments (3 for 2)
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1219:in `test_popen_r_enc_enc_in_opt'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 44) Error:
+test_popen_r_enc_enc_in_opt2(TestIO_M17N):
+ArgumentError: wrong number of arguments (3 for 2)
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1229:in `test_popen_r_enc_enc_in_opt2'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 45) Error:
+test_popen_r_enc_in_opt(TestIO_M17N):
+ArgumentError: wrong number of arguments (3 for 2)
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1189:in `test_popen_r_enc_in_opt'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 46) Error:
+test_popen_r_enc_in_opt2(TestIO_M17N):
+ArgumentError: wrong number of arguments (3 for 2)
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1199:in `test_popen_r_enc_in_opt2'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 47) Error:
+test_popenv_r_enc_enc_in_opt2(TestIO_M17N):
+ArgumentError: wrong number of arguments (3 for 2)
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1239:in `test_popenv_r_enc_enc_in_opt2'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 48) Failure:
+test_read_all_invalid(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:927]:
+Encoding::InvalidByteSequenceError expected but nothing was raised.
+
+ 49) Failure:
+test_read_encoding(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:612]:
+<#<Encoding:ASCII-8BIT>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 50) Failure:
+test_read_mode(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1584]:
+<"a\nb\nc\n¢"> expected but was
+<"a\rb\r\nc\n¢">.
+
+ 51) Failure:
+test_read_newline_conversion_error(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1563]:
+ArgumentError expected but nothing was raised.
+
+ 52) Failure:
+test_read_newline_conversion_with_encoding_conversion(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1531]:
+<"a\r\nb\r\n"> (UTF-16BE) expected but was
+<"a\r\nb\r\n"> (UTF-8).
+
+ 53) Failure:
+test_read_newline_conversion_without_encoding_conversion(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1554]:
+<"a\r\nb\r\n"> expected but was
+<"\x00a\x00\r\x00\n\x00b\x00\r\x00\n">.
+
+ 54) Error:
+test_read_stateful(TestIO_M17N):
+ArgumentError: unknown encoding name - iso-2022-jp
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1155:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:27:in `block'
+
+ 55) Failure:
+test_s_foreach_enc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1262]:
+<#<Encoding:ASCII-8BIT>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 56) Failure:
+test_s_foreach_enc_enc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1292]:
+<#<Encoding:EUC-JP>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 57) Failure:
+test_s_foreach_enc_enc_in_opt(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1302]:
+<#<Encoding:EUC-JP>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 58) Failure:
+test_s_foreach_enc_enc_in_opt2(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1312]:
+<#<Encoding:EUC-JP>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 59) Failure:
+test_s_foreach_enc_in_opt(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1272]:
+<#<Encoding:ASCII-8BIT>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 60) Failure:
+test_s_foreach_enc_in_opt2(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1282]:
+<#<Encoding:ASCII-8BIT>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 61) Failure:
+test_s_foreach_open_args_enc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1322]:
+<#<Encoding:ASCII-8BIT>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 62) Failure:
+test_s_foreach_open_args_enc_enc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1352]:
+<#<Encoding:EUC-JP>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 63) Failure:
+test_s_foreach_open_args_enc_enc_in_opt(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1362]:
+<#<Encoding:EUC-JP>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 64) Failure:
+test_s_foreach_open_args_enc_enc_in_opt2(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1372]:
+<#<Encoding:EUC-JP>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 65) Failure:
+test_s_foreach_open_args_enc_in_opt(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1332]:
+<#<Encoding:ASCII-8BIT>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 66) Failure:
+test_s_foreach_open_args_enc_in_opt2(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1342]:
+<#<Encoding:ASCII-8BIT>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 67) Error:
+test_s_pipe_invalid(TestIO_M17N):
+ArgumentError: wrong number of arguments (3 for 2)
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:24:in `pipe'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:297:in `test_s_pipe_invalid'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 68) Failure:
+test_set_encoding_binmode(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1058]:
+ArgumentError expected but nothing was raised.
+
+ 69) Failure:
+test_stderr(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:375]:
+<nil> expected but was
+<#<Encoding:UTF-8>>.
+
+ 70) Failure:
+test_stdin(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:366]:
+<nil> expected but was
+<#<Encoding:UTF-8>>.
+
+ 71) Failure:
+test_stdout(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:370]:
+<nil> expected but was
+<#<Encoding:UTF-8>>.
+
+ 72) Failure:
+test_strip_bom(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1970]:
+<"a"> expected but was
+<"\xEF\xBB\xBFa">.
+
+ 73) Failure:
+test_terminator_conversion(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:385]:
+<#<Encoding:ISO-8859-1>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 74) Failure:
+test_terminator_conversion2(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:397]:
+"before 、■ after".force_encoding("UTF-8") expected but not equal to
+"before \xA1\xA2\xA2\xA3 after".force_encoding("UTF-8").
+
+ 75) Error:
+test_terminator_stateful_conversion(TestIO_M17N):
+ArgumentError: unknown encoding name - iso-2022-jp
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:403:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/tmpdir.rb:91:in `mktmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:15:in `with_tmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:402:in `test_terminator_stateful_conversion'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 76) Failure:
+test_textmode_decode_universal_newline_getc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1406]:
+<"\n"> expected but was
+<"\r">.
+
+ 77) Failure:
+test_textmode_decode_universal_newline_gets(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1442]:
+<"a\n"> expected but was
+<"a\r\n">.
+
+ 78) Failure:
+test_textmode_decode_universal_newline_read(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1385]:
+<"a\nb\nc\n"> expected but was
+<"a\r\nb\r\nc\r\n">.
+
+ 79) Failure:
+test_textmode_decode_universal_newline_utf16(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1469]:
+<"a\nb\nc\n"> expected but was
+<"\x00a\x00\r\x00\n\x00b\x00\r\x00\n\x00c\x00\r\x00\n">.
+
+ 80) Failure:
+test_textmode_encode_newline_enc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:1522]:
+<"abc\xA4\xA2\ndef\xA4\xA4\n"> expected but was
+<"abcあ\ndefい\n">.
+
+ 81) Failure:
+test_textmode_paragraph_nonasciicompat(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:2059]:
+[ruby-dev:41803].
+<"[ruby-dev:41803]\n\n"> (UTF-32BE) expected but was
+<"[ruby-dev:41803]\n\n"> (UTF-8).
+
+ 82) Error:
+test_undef_r(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1844:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/tmpdir.rb:91:in `mktmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:15:in `with_tmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1842:in `test_undef_r'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 83) Error:
+test_undef_w_stateful(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1906:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/tmpdir.rb:91:in `mktmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:15:in `with_tmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1904:in `test_undef_w_stateful'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 84) Error:
+test_undef_w_stateless(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1886:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/tmpdir.rb:91:in `mktmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:15:in `with_tmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1884:in `test_undef_w_stateless'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 85) Error:
+test_ungetc_int(TestIO_M17N):
+RangeError: integer 2217845817 too big to convert to `int'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:528:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:527:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/tmpdir.rb:91:in `mktmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:15:in `with_tmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:525:in `test_ungetc_int'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 86) Error:
+test_ungetc_stateful_conversion(TestIO_M17N):
+ArgumentError: unknown encoding name - iso-2022-jp
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:550:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/tmpdir.rb:91:in `mktmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:15:in `with_tmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:549:in `test_ungetc_stateful_conversion'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 87) Error:
+test_ungetc_stateful_conversion2(TestIO_M17N):
+ArgumentError: unknown encoding name - iso-2022-jp
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:563:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/tmpdir.rb:91:in `mktmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:15:in `with_tmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:562:in `test_ungetc_stateful_conversion2'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 88) Error:
+test_ungetc_str(TestIO_M17N):
+ArgumentError: unknown encoding name - GB18030
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:540:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:539:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/tmpdir.rb:91:in `mktmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:15:in `with_tmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:537:in `test_ungetc_str'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 89) Error:
+test_w_xml_attr(TestIO_M17N):
+TypeError: can't convert Hash into Integer
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1925:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:17:in `block'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:16:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/tmpdir.rb:91:in `mktmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:15:in `with_tmpdir'
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1924:in `test_w_xml_attr'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 90) Failure:
+test_write_conversion(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:686]:
+<#<Encoding:EUC-JP>> expected but was
+<#<Encoding:UTF-8>>.
+
+ 91) Error:
+test_write_mode(TestIO_M17N):
+ArgumentError: unknown encoding name - iso-2022-jp
+    /macruby-test/test-mri/test/ruby/test_io_m17n.rb:1644:in `test_write_mode'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+
+ 92) Failure:
+test_write_noenc(TestIO_M17N) [/macruby-test/test-mri/test/ruby/test_io_m17n.rb:676]:
+<"\xC2\xA1\n\xC2\xA1\n\xC2\xA1\n\xC2\xA1\n"> expected but was
+<"¡\n¡\n¡\n¡\n">.
+
+129 tests, 78 assertions, 59 failures, 33 errors, 27 skips
+
 ----------------------------------------
 Run options: --seed 0
 
@@ -12944,7 +13893,7 @@ test_valid_encoding(TestM17N) [/macruby-test/test-mri/test/ruby/test_m17n.rb:130
 <true> expected but was
 <false>.
 
-106 tests, 563 assertions, 35 failures, 35 errors, 1 skips
+106 tests, 567 assertions, 35 failures, 35 errors, 1 skips
 
 ----------------------------------------
 Run options: --seed 0
@@ -13754,7 +14703,7 @@ Run options: --seed 0
 
 # Running tests:
 
-..................F.........FS....E............F...........FS.F....SFFF.....FF.S...S....ESESF......F.FF...........E..S.............F....F...
+..................F.........FS....E............F...........FSFF....SFFF.....FF.S...S....ESESF......F.FF...........F..S.............F....F...
 
 
   1) Failure:
@@ -13810,34 +14759,38 @@ test_flatten_error(TestNSArray) [/macruby-test/test-mri/test/ruby/test_nsarray.r
 RuntimeError expected but nothing was raised.
 
   6) Failure:
-test_hash2(TestNSArray) [/macruby-test/test-mri/test/ruby/test_nsarray.rb:1908]:
-<-1188531201046214428> expected to be != to
-<-1188531201046214428>.
+test_hash(TestNSArray) [/macruby-test/test-mri/test/ruby/test_nsarray.rb:885]:
+Failed assertion, no message given.
 
   7) Failure:
+test_hash2(TestNSArray) [/macruby-test/test-mri/test/ruby/test_nsarray.rb:1907]:
+<-1414637002653639735> expected but was
+<1>.
+
+  8) Failure:
 test_insert(TestNSArray) [/macruby-test/test-mri/test/ruby/test_nsarray.rb:1802]:
 RuntimeError expected but nothing was raised.
 
-  8) Failure:
+  9) Failure:
 test_inspect(TestNSArray) [/macruby-test/test-mri/test/ruby/test_nsarray.rb:2016]:
 <true> expected but was
 <false>.
 
-  9) Failure:
+ 10) Failure:
 test_join(TestNSArray) [/macruby-test/test-mri/test/ruby/test_nsarray.rb:921]:
 <#<Encoding:US-ASCII>> expected but was
 <#<Encoding:UTF-8>>.
 
- 10) Failure:
+ 11) Failure:
 test_modify_check(TestNSArray) [/macruby-test/test-mri/test/ruby/test_nsarray.rb:1672]:
 RuntimeError expected but nothing was raised.
 
- 11) Failure:
+ 12) Failure:
 test_pack(TestNSArray) [/macruby-test/test-mri/test/ruby/test_nsarray.rb:996]:
 <"\x86"> (UTF-8) expected but was
 <"\x86"> (ASCII-8BIT).
 
- 12) Error:
+ 13) Error:
 test_repeated_combination(TestNSArray):
 NoMethodError: undefined method `repeated_combination' for [1, 2, 3]
     /macruby-test/test-mri/test/ruby/test_nsarray.rb:1622:in `test_repeated_combination'
@@ -13853,7 +14806,7 @@ NoMethodError: undefined method `repeated_combination' for [1, 2, 3]
     /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
     /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
 
- 13) Error:
+ 14) Error:
 test_repeated_permutation(TestNSArray):
 NoMethodError: undefined method `repeated_permutation' for [1, 2]
     /macruby-test/test-mri/test/ruby/test_nsarray.rb:1597:in `test_repeated_permutation'
@@ -13869,61 +14822,50 @@ NoMethodError: undefined method `repeated_permutation' for [1, 2]
     /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
     /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
 
- 14) Failure:
+ 15) Failure:
 test_replace(TestNSArray) [/macruby-test/test-mri/test/ruby/test_nsarray.rb:1123]:
 RuntimeError expected but nothing was raised.
 
- 15) Failure:
+ 16) Failure:
 test_rindex2(TestNSArray) [/macruby-test/test-mri/test/ruby/test_nsarray.rb:1771]:
 <1> expected but was
 <nil>.
 
- 16) Failure:
+ 17) Failure:
 test_rotate!(TestNSArray) [/macruby-test/test-mri/test/ruby/test_nsarray.rb:2108]:
 RuntimeError expected but nothing was raised.
 
- 17) Failure:
+ 18) Failure:
 test_sample(TestNSArray) [/macruby-test/test-mri/test/ruby/test_nsarray.rb:1944]:
 <10> expected but was
 <8>.
 
- 18) Error:
-test_sort!(TestNSArray):
-RuntimeError: can't modify frozen/immutable array
-    /macruby-test/test-mri/test/ruby/test_nsarray.rb:1308:in `test_sort!'
-    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
-    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
-    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
-    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
-    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
-    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
-    /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
-
  19) Failure:
+test_sort!(TestNSArray) [/macruby-test/test-mri/test/ruby/test_nsarray.rb:1305]:
+<[1, 2, 3, 4]> expected but was
+<[6, 7, 8, 9]>.
+
+ 20) Failure:
 test_uniq!(TestNSArray) [/macruby-test/test-mri/test/ruby/test_nsarray.rb:1488]:
 RuntimeError expected but nothing was raised.
 
- 20) Failure:
+ 21) Failure:
 test_unshift_error(TestNSArray) [/macruby-test/test-mri/test/ruby/test_nsarray.rb:1742]:
 RuntimeError expected but nothing was raised.
 
-140 tests, 4294 assertions, 16 failures, 4 errors, 8 skips
+140 tests, 4293 assertions, 18 failures, 3 errors, 8 skips
 
 ----------------------------------------
 Run options: --seed 0
 
 # Running tests:
 
-EF..E...F.EF.F..FFF....F....E....F.F...F...FFF....F.F..FFF..FF....FFFF
+EF..E...F.EF................E....F.........FFF....F.F...F...FF........
 
 
   1) Error:
 test_AREF(TestNSDictionary):
-RuntimeError: NSInvalidArgumentException: *** -[__NSPlaceholderDictionary initWithObjects:forKeys:count:]: attempt to insert nil object from objects[4]
+RuntimeError: NSInvalidArgumentException: *** -[NSCFDictionary initWithObjects:forKeys:count:]: attempt to insert nil value at objects[4] (key: 2013-01-18 06:37:03 +0900)
     /macruby-test/test-mri/test/ruby/test_nsdictionary.rb:12:in `[]'
     /macruby-test/test-mri/test/ruby/test_nsdictionary.rb:119:in `test_AREF'
     /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
@@ -13939,8 +14881,8 @@ RuntimeError: NSInvalidArgumentException: *** -[__NSPlaceholderDictionary initWi
     /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
 
   2) Failure:
-test_ASET(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:176]:
-<"self"> expected but was
+test_ASET(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:163]:
+<"time"> expected but was
 <nil>.
 
   3) Error:
@@ -13966,7 +14908,7 @@ Failed assertion, no message given.
 
   5) Error:
 test_default(TestNSDictionary):
-RuntimeError: NSInvalidArgumentException: *** -[NSDictionary initWithDictionary:copyItems:]: dictionary argument is not an NSDictionary
+ArgumentError: wrong number of arguments
     /macruby-test/test-mri/test/ruby/test_nsdictionary.rb:12:in `[]'
     /macruby-test/test-mri/test/ruby/test_nsdictionary.rb:226:in `test_default'
     /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
@@ -13986,32 +14928,7 @@ test_default=(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdiction
 <:xyzzy> expected but was
 <nil>.
 
-  7) Failure:
-test_delete(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:243]:
-<{1=>"one", 2=>"two"}> expected but was
-<{2=>"two"}>.
-
-  8) Failure:
-test_each(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:326]:
-<{}> expected but was
-<{#<TestNSDictionary:0xXXXXXXXX @__name__="test_each" @__io__=nil @passed=nil @_assertions=0 @cls=#<NSDictionaryWraper:0xXXXXXXXX>>=>nil}>.
-
-  9) Failure:
-test_each_key(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:338]:
-<{}> expected but was
-<{#<TestNSDictionary:0xXXXXXXXX @__name__="test_each_key" @__io__=nil @passed=nil @_assertions=0 @cls=#<NSDictionaryWraper:0xXXXXXXXX>>=>nil}>.
-
- 10) Failure:
-test_each_pair(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:350]:
-<{}> expected but was
-<{#<TestNSDictionary:0xXXXXXXXX @__name__="test_each_pair" @__io__=nil @passed=nil @_assertions=0 @cls=#<NSDictionaryWraper:0xXXXXXXXX>>=>nil}>.
-
- 11) Failure:
-test_fetch(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:379]:
-<"one"> expected but was
-<"true">.
-
- 12) Error:
+  7) Error:
 test_hash_bignum_hash(TestNSDictionary):
 TypeError: can't copy Bignum
     /macruby-test/test-mri/test/ruby/test_nsdictionary.rb:12:in `[]'
@@ -14028,87 +14945,49 @@ TypeError: can't copy Bignum
     /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
     /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
 
- 13) Failure:
-test_invert(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:437]:
-<1> expected but was
-<nil>.
+  8) Failure:
+test_invert(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:442]:
+Failed assertion, no message given.
 
- 14) Failure:
-test_key(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:409]:
-<1> expected but was
-<nil>.
-
- 15) Failure:
-test_length(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:471]:
-<7> expected but was
-<6>.
-
- 16) Failure:
+  9) Failure:
 test_recursive_key(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:904]:
 <:foo> expected but was
 <nil>.
 
- 17) Failure:
+ 10) Failure:
 test_rehash(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:490]:
 <100> expected but was
 <nil>.
 
- 18) Failure:
+ 11) Failure:
 test_rehash2(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:701]:
 RuntimeError expected but nothing was raised.
 
- 19) Failure:
+ 12) Failure:
 test_replace2(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:764]:
 <:foo> expected but was
 <nil>.
 
- 20) Failure:
+ 13) Failure:
 test_security_check(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:676]:
 SecurityError expected but nothing was raised.
 
- 21) Failure:
-test_shift(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:550]:
-Failed assertion, no message given.
-
- 22) Failure:
+ 14) Failure:
 test_shift2(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:721]:
 <:foo> expected but was
 <nil>.
 
- 23) Failure:
-test_size(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:559]:
-<7> expected but was
-<6>.
-
- 24) Failure:
+ 15) Failure:
 test_store(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:587]:
 <"self"> expected but was
 <nil>.
 
- 25) Failure:
+ 16) Failure:
 test_to_a(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:619]:
 <true> expected but was
 <false>.
 
- 26) Failure:
-test_value2?(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:660]:
-Failed assertion, no message given.
-
- 27) Failure:
-test_value?(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:395]:
-Failed assertion, no message given.
-
- 28) Failure:
-test_values(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:670]:
-<[]> expected but was
-<["self"]>.
-
- 29) Failure:
-test_values_at(TestNSDictionary) [/macruby-test/test-mri/test/ruby/test_nsdictionary.rb:427]:
-<["three", "two", "one", "nil"]> expected but was
-<["three", "two", "true", "nil"]>.
-
-70 tests, 328 assertions, 25 failures, 4 errors, 0 skips
+70 tests, 355 assertions, 12 failures, 4 errors, 0 skips
 
 ----------------------------------------
 Run options: --seed 0
@@ -14351,7 +15230,26 @@ Run options: --seed 0
 
   1) Failure:
 test_dummynumeric(TestNumeric) [/macruby-test/test-mri/test/ruby/test_numeric.rb:25]:
-TypeError expected but nothing was raised.
+[TypeError] exception expected, not
+Class: <NoMethodError>
+Message: <"undefined method `-@' for #<TestNumeric::DummyNumeric:0xXXXXXXXX>">
+---Backtrace---
+/macruby-test/test-mri/test/ruby/test_numeric.rb:25:in `block'
+/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:370:in `assert_raises'
+/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/test/unit/assertions.rb:27:in `assert_raise'
+/macruby-test/test-mri/test/ruby/test_numeric.rb:25:in `test_dummynumeric'
+/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
+/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
+/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
+/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
+/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
+/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
+/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
+/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
+/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
+/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
+/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
+---------------
 
   2) Failure:
 test_quo(TestNumeric) [/macruby-test/test-mri/test/ruby/test_numeric.rb:57]:
@@ -14459,20 +15357,7 @@ Run options: --seed 0
 
 # Running tests:
 
-FF...................
-
-
-  1) Failure:
-test_count_objects(TestObjectSpace) [/macruby-test/test-mri/test/ruby/test_objectspace.rb:50]:
-TypeError expected but nothing was raised.
-
-  2) Failure:
-test_finalizer(TestObjectSpace) [/macruby-test/test-mri/test/ruby/test_objectspace.rb:59]:
-<[":ok", ":ok", ":ok", ":ok"]> expected but was
-<[":ok", ":ok"]>.
-
-21 tests, 27 assertions, 2 failures, 0 errors, 0 skips
-
+FF
 ----------------------------------------
 Run options: --seed 0
 
@@ -14859,7 +15744,7 @@ WARNING: Used by /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/rub
 ..E-e:1:in `<main>': Bad file descriptor - fcntl(2) failed (Errno::EBADF)
 FF/usr/local/bin/macruby:1: Invalid char `\x07' in expression
 F...EFFEEEEEF........./bin/sh: -c: option requires an argument
-F....../private/var/folders/nx/7csdyjw56xv6gsx_n7xh9mzm0000gn/T/d20130110-25576-1wg6zq0/s:9:in `<main>': Operation timed out - pipe() failed (Errno::ETIMEDOUT)
+F....../private/var/folders/xf/xfzN-+krFyeYywp+bDKolU+++TI/-Tmp-/d20130118-39633-1wg6zq0/s:9:in `<main>': Operation timed out - pipe() failed (Errno::ETIMEDOUT)
 F.................
 
 
@@ -15066,7 +15951,7 @@ test_popen_fork(TestProcess) [/macruby-test/test-mri/test/ruby/test_process.rb:5
 
  16) Failure:
 test_rlimit_nofile(TestProcess) [/macruby-test/test-mri/test/ruby/test_process.rb:78]:
-pid 25646 exit 1.
+pid 39715 exit 1.
 <0> expected but was
 <256>.
 
@@ -15164,7 +16049,7 @@ test_rand_0xXXXXXXXX(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:65
 
  17) Failure:
 test_random_range(TestRand) [/macruby-test/test-mri/test/ruby/test_rand.rb:362]:
-<2013-01-10 03:18:19 +0900> expected but was
+<2013-01-18 06:37:42 +0900> expected but was
 <1.97626258336499e-323>.
 
  18) Failure:
@@ -15344,7 +16229,7 @@ test_eval(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb
 
   8) Failure:
 test_indentation_check(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:319]:
-<["/var/folders/nx/7csdyjw56xv6gsx_n7xh9mzm0000gn/T/test_ruby_test_rubyoption20130110-25690-14cjxw8.rb:2: warning: mismatched indentations at 'end' with 'begin' at 1"]> expected but was
+<["/var/folders/xf/xfzN-+krFyeYywp+bDKolU+++TI/-Tmp-/test_ruby_test_rubyoption20130118-39764-14cjxw8.rb:2: warning: mismatched indentations at 'end' with 'begin' at 1"]> expected but was
 <[]>.
 
   9) Failure:
@@ -15387,7 +16272,7 @@ test_safe_level(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyopti
 test_segv_test(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:408]:
 Expected /\A
       -e:(?:1:)?\s\[BUG\]\sSegmentation\sfault\n
-      MacRuby\ 0\.13\ \(ruby\ 1\.9\.2\)\ \[universal\-darwin12\.1,\ x86_64\]\n\n
+      MacRuby\ 0\.13\ \(ruby\ 1\.9\.2\)\ \[universal\-darwin10\.0,\ x86_64\]\n\n
       --\scontrol\sframe\s----------\n
       (?:c:.*\n)*
       ---------------------------\n
@@ -15428,11 +16313,11 @@ test_unmatching_glob(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rub
 
  19) Failure:
 test_verbose(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:66]:
-Expected /^ruby 1.9.2(?:[p ]|dev).*? \[universal-darwin12.1\]$/ to match "MacRuby 0.13 (ruby 1.9.2) [universal-darwin12.1, x86_64]".
+Expected /^ruby 1.9.2(?:[p ]|dev).*? \[universal-darwin10.0\]$/ to match "MacRuby 0.13 (ruby 1.9.2) [universal-darwin10.0, x86_64]".
 
  20) Failure:
 test_version(TestRubyOptions) [/macruby-test/test-mri/test/ruby/test_rubyoptions.rb:112]:
-Expected /^ruby 1.9.2(?:[p ]|dev).*? \[universal-darwin12.1\]$/ to match "MacRuby 0.13 (ruby 1.9.2) [universal-darwin12.1, x86_64]".
+Expected /^ruby 1.9.2(?:[p ]|dev).*? \[universal-darwin10.0\]$/ to match "MacRuby 0.13 (ruby 1.9.2) [universal-darwin10.0, x86_64]".
 
 34 tests, 112 assertions, 20 failures, 0 errors, 0 skips
 
@@ -16160,7 +17045,7 @@ test_abort_on_exception(TestThread) [/macruby-test/test-mri/test/ruby/test_threa
 test_local_barrier(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:227]:
 [ruby-dev:30653].
 <"exit."> expected but was
-<"7: cont">.
+<"8: cont">.
 
   3) Failure:
 test_thread_local_security(TestThread) [/macruby-test/test-mri/test/ruby/test_thread.rb:484]:
@@ -17555,7 +18440,7 @@ test_self_user_dir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:10
 --- expected
 +++ actual
 @@ -1 +1 @@
--"/private/var/folders/nx/7csdyjw56xv6gsx_n7xh9mzm0000gn/T/test_rubygems_25846/userhome/.gem/macruby/1.9.2"
+-"/private/var/folders/xf/xfzN-+krFyeYywp+bDKolU+++TI/-Tmp-/test_rubygems_39938/userhome/.gem/macruby/1.9.2"
 +"/Users/watson/.gem/macruby/1.9.2"
 
 
@@ -17568,7 +18453,7 @@ test_self_user_home(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:1
 --- expected
 +++ actual
 @@ -1 +1 @@
--"/private/var/folders/nx/7csdyjw56xv6gsx_n7xh9mzm0000gn/T/test_rubygems_25846/userhome"
+-"/private/var/folders/xf/xfzN-+krFyeYywp+bDKolU+++TI/-Tmp-/test_rubygems_39938/userhome"
 +"/Users/watson"
 
 
@@ -17586,8 +18471,8 @@ test_self_datadir(TestGem) [/macruby-test/test-mri/test/rubygems/test_gem.rb:569
 --- expected
 +++ actual
 @@ -1 +1 @@
--"/private/var/folders/nx/7csdyjw56xv6gsx_n7xh9mzm0000gn/T/test_rubygems_25846/gemhome/gems/foo-2/data/foo"
-+"/var/folders/nx/7csdyjw56xv6gsx_n7xh9mzm0000gn/T/test_rubygems_25846/gemhome/gems/foo-2/data/foo"
+-"/private/var/folders/xf/xfzN-+krFyeYywp+bDKolU+++TI/-Tmp-/test_rubygems_39938/gemhome/gems/foo-2/data/foo"
++"/var/folders/xf/xfzN-+krFyeYywp+bDKolU+++TI/-Tmp-/test_rubygems_39938/gemhome/gems/foo-2/data/foo"
 
 
 81 tests, 145 assertions, 6 failures, 0 errors, 0 skips
@@ -17625,8 +18510,8 @@ test_process_args_install(TestGemCommandManager) [/macruby-test/test-mri/test/ru
 --- expected
 +++ actual
 @@ -1 +1 @@
--"/private/var/folders/nx/7csdyjw56xv6gsx_n7xh9mzm0000gn/T/test_rubygems_25861"
-+"/var/folders/nx/7csdyjw56xv6gsx_n7xh9mzm0000gn/T/test_rubygems_25861"
+-"/private/var/folders/xf/xfzN-+krFyeYywp+bDKolU+++TI/-Tmp-/test_rubygems_39953"
++"/var/folders/xf/xfzN-+krFyeYywp+bDKolU+++TI/-Tmp-/test_rubygems_39953"
 
 
   2) Failure:
@@ -17634,8 +18519,8 @@ test_process_args_update(TestGemCommandManager) [/macruby-test/test-mri/test/rub
 --- expected
 +++ actual
 @@ -1 +1 @@
--"/private/var/folders/nx/7csdyjw56xv6gsx_n7xh9mzm0000gn/T/test_rubygems_25861"
-+"/var/folders/nx/7csdyjw56xv6gsx_n7xh9mzm0000gn/T/test_rubygems_25861"
+-"/private/var/folders/xf/xfzN-+krFyeYywp+bDKolU+++TI/-Tmp-/test_rubygems_39953"
++"/var/folders/xf/xfzN-+krFyeYywp+bDKolU+++TI/-Tmp-/test_rubygems_39953"
 
 
 9 tests, 42 assertions, 2 failures, 0 errors, 0 skips
@@ -17695,21 +18580,10 @@ Run options: --seed 0
 
 # Running tests:
 
-..F.......
+..........
 
 
-  1) Failure:
-test_execute_remote(TestGemCommandsDependencyCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_dependency_command.rb:184]:
---- expected
-+++ actual
-@@ -1,4 +1,3 @@
- "Gem foo-2
--  bar (> 1)
- 
- "
-
-
-10 tests, 21 assertions, 1 failures, 0 errors, 0 skips
+10 tests, 22 assertions, 0 failures, 0 errors, 0 skips
 
 ----------------------------------------
 Run options: --seed 0
@@ -17756,41 +18630,7 @@ Run options: --seed 0
 
 # Running tests:
 
-.F...........
-
-
-  1) Failure:
-test_execute_remote(TestGemCommandsInstallCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_install_command.rb:241]:
-[Gem::SystemExitException] exception expected, not
-Class: <Gem::MockGemUi::TermError>
-Message: <1>
----Backtrace---
-/macruby-test/test-mri/test/rubygems/test_gem_commands_install_command.rb:243:in `block'
-/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:487:in `block'
-/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:734:in `block'
-/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:985:in `block'
-/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:985:in `synchronize'
-/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:733:in `synchronize'
-/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:482:in `capture_io'
-/macruby-test/test-mri/test/rubygems/test_gem_commands_install_command.rb:242:in `block'
-/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:370:in `assert_raises'
-/macruby-test/test-mri/test/rubygems/test_gem_commands_install_command.rb:241:in `block'
-/macruby-test/test-mri/test/rubygems/test_gem_commands_install_command.rb:240:in `test_execute_remote'
-/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
-/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:919:in `block'
-/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:912:in `_run_suite'
-/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `block'
-/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:899:in `_run_suites'
-/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:867:in `_run_anything'
-/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1060:in `run_tests'
-/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1047:in `block'
-/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1046:in `_run'
-/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
-/Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
----------------
-
-13 tests, 54 assertions, 1 failures, 0 errors, 0 skips
-
+.
 ----------------------------------------
 Run options: --seed 0
 
@@ -17852,17 +18692,17 @@ F.F..F
   1) Failure:
 test_sending_gem_default(TestGemCommandsPushCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_push_command.rb:42]:
 Expected: 3072
-  Actual: 3057
+  Actual: 3059
 
   2) Failure:
 test_sending_gem_host(TestGemCommandsPushCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_push_command.rb:42]:
 Expected: 3072
-  Actual: 3057
+  Actual: 3059
 
   3) Failure:
 test_sending_gem_ENV(TestGemCommandsPushCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_push_command.rb:42]:
 Expected: 3072
-  Actual: 3057
+  Actual: 3059
 
 6 tests, 20 assertions, 3 failures, 0 errors, 0 skips
 
@@ -17947,15 +18787,10 @@ Run options: --seed 0
 
 # Running tests:
 
-..F..
+.....
 
 
-  1) Failure:
-test_execute_removes_executable(TestGemCommandsUninstallCommand) [/macruby-test/test-mri/test/rubygems/test_gem_commands_uninstall_command.rb:90]:
-Expected: false
-  Actual: true
-
-5 tests, 17 assertions, 1 failures, 0 errors, 0 skips
+5 tests, 18 assertions, 0 failures, 0 errors, 0 skips
 
 ----------------------------------------
 Run options: --seed 0
@@ -18259,7 +19094,7 @@ Run options: --seed 0
 
 # Running tests:
 
-/bin/sh: line 1: 26036 Abort trap: 6           /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/bin/macruby extconf.rb 2>&1
+/bin/sh: line 1: 40163 Abort trap              /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/bin/macruby extconf.rb 2>&1
 ......
 
 
@@ -18291,8 +19126,8 @@ test_lib_dirs_for(TestGemGemPathSearcher) [/macruby-test/test-mri/test/rubygems/
 --- expected
 +++ actual
 @@ -1 +1 @@
--"/private/var/folders/nx/7csdyjw56xv6gsx_n7xh9mzm0000gn/T/test_rubygems_26096/gemhome/gems/foo-0.1/{lib,lib2}"
-+"/var/folders/nx/7csdyjw56xv6gsx_n7xh9mzm0000gn/T/test_rubygems_26096/gemhome/gems/foo-0.1/{lib,lib2}"
+-"/private/var/folders/xf/xfzN-+krFyeYywp+bDKolU+++TI/-Tmp-/test_rubygems_40223/gemhome/gems/foo-0.1/{lib,lib2}"
++"/var/folders/xf/xfzN-+krFyeYywp+bDKolU+++TI/-Tmp-/test_rubygems_40223/gemhome/gems/foo-0.1/{lib,lib2}"
 
 
 8 tests, 11 assertions, 1 failures, 0 errors, 0 skips
@@ -18384,8 +19219,8 @@ test_initialize(TestGemInstaller) [/macruby-test/test-mri/test/rubygems/test_gem
 --- expected
 +++ actual
 @@ -1 +1 @@
--"/private/var/folders/nx/7csdyjw56xv6gsx_n7xh9mzm0000gn/T/test_rubygems_26122/installer/gems/a-2-x86-mswin32"
-+"/var/folders/nx/7csdyjw56xv6gsx_n7xh9mzm0000gn/T/test_rubygems_26122/installer/gems/a-2-x86-mswin32"
+-"/private/var/folders/xf/xfzN-+krFyeYywp+bDKolU+++TI/-Tmp-/test_rubygems_40262/installer/gems/a-2-x86-mswin32"
++"/var/folders/xf/xfzN-+krFyeYywp+bDKolU+++TI/-Tmp-/test_rubygems_40262/installer/gems/a-2-x86-mswin32"
 
 
   4) Failure:
@@ -18456,7 +19291,7 @@ E.E
 
   1) Error:
 test_each(TestGemPackageTarInput):
-Gem::Package::FormatError: no metadata found in /private/var/folders/nx/7csdyjw56xv6gsx_n7xh9mzm0000gn/T/test_rubygems_26159/bla.tar
+Gem::Package::FormatError: no metadata found in /private/var/folders/xf/xfzN-+krFyeYywp+bDKolU+++TI/-Tmp-/test_rubygems_40299/bla.tar
     /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:75:in `block'
     /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:74:in `test_each'
     /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
@@ -18473,7 +19308,7 @@ Gem::Package::FormatError: no metadata found in /private/var/folders/nx/7csdyjw5
 
   2) Error:
 test_extract_entry(TestGemPackageTarInput):
-Gem::Package::FormatError: no metadata found in /private/var/folders/nx/7csdyjw56xv6gsx_n7xh9mzm0000gn/T/test_rubygems_26159/bla.tar
+Gem::Package::FormatError: no metadata found in /private/var/folders/xf/xfzN-+krFyeYywp+bDKolU+++TI/-Tmp-/test_rubygems_40299/bla.tar
     /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:95:in `block'
     /macruby-test/test-mri/test/rubygems/test_gem_package_tar_input.rb:94:in `test_extract_entry'
     /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1301:in `run'
@@ -18747,7 +19582,7 @@ Run options: --seed 0
 
 # Running tests:
 
-....................................................................
+...................
 ----------------------------------------
 Run options: --seed 0
 
@@ -20115,7 +20950,7 @@ Message: <"Resource temporarily unavailable - read would block">
 
   3) Error:
 test_recvmsg_nonblock_error(TestSocketNonblock):
-NoMethodError: undefined method `recvmsg_nonblock' for #<UDPSocket:fd 4>
+NoMethodError: undefined method `recvmsg_nonblock' for #<UDPSocket:fd 3>
     /macruby-test/test-mri/test/socket/test_nonblock.rb:236:in `block'
     /macruby-test/test-mri/test/socket/test_nonblock.rb:155:in `udp_pair'
     /macruby-test/test-mri/test/socket/test_nonblock.rb:234:in `test_recvmsg_nonblock_error'
@@ -20133,7 +20968,7 @@ NoMethodError: undefined method `recvmsg_nonblock' for #<UDPSocket:fd 4>
 
   4) Error:
 test_sendmsg_nonblock_error(TestSocketNonblock):
-NoMethodError: undefined method `sendmsg_nonblock' for #<UDPSocket:fd 4>
+NoMethodError: undefined method `sendmsg_nonblock' for #<UDPSocket:fd 3>
     /macruby-test/test-mri/test/socket/test_nonblock.rb:221:in `block'
     /macruby-test/test-mri/test/socket/test_nonblock.rb:220:in `block'
     /macruby-test/test-mri/test/socket/test_nonblock.rb:155:in `udp_pair'
@@ -20270,7 +21105,7 @@ NameError: uninitialized constant Socket::Option
 
   2) Error:
 test_udp_server(TestSocket):
-NoMethodError: undefined method `sendmsg' for #<Socket:fd 12>
+NoMethodError: undefined method `sendmsg' for #<Socket:fd 8>
     /macruby-test/test-mri/test/socket/test_socket.rb:315:in `block'
     /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/site_ruby/1.9.2/socket.rb:39:in `connect_internal'
     /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/site_ruby/1.9.2/socket.rb:86:in `connect'
@@ -20329,7 +21164,7 @@ IOError: closed stream
     /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:1035:in `run'
     /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
 
-21 tests, 36 assertions, 0 failures, 4 errors, 3 skips
+21 tests, 34 assertions, 0 failures, 4 errors, 3 skips
 
 ----------------------------------------
 Run options: --seed 0
@@ -21282,22 +22117,22 @@ FFFFS....F...F......
   1) Failure:
 test_block(TestOpen3) [/macruby-test/test-mri/test/test_open3.rb:47]:
 <"qux"> expected but was
-<[#<IO:fd 5>, #<IO:fd 6>, #<IO:fd 8>]>.
+<[#<IO:fd 4>, #<IO:fd 5>, #<IO:fd 7>]>.
 
   2) Failure:
 test_capture2(TestOpen3) [/macruby-test/test-mri/test/test_open3.rb:143]:
 <"io"> expected but was
-<#<IO:fd 7>>.
+<#<IO:fd 6>>.
 
   3) Failure:
 test_capture2e(TestOpen3) [/macruby-test/test-mri/test/test_open3.rb:149]:
 <"ioie"> expected but was
-<#<IO:fd 10>>.
+<#<IO:fd 9>>.
 
   4) Failure:
 test_capture3(TestOpen3) [/macruby-test/test-mri/test/test_open3.rb:127]:
 <"io"> expected but was
-<#<IO:fd 12>>.
+<#<IO:fd 11>>.
 
   5) Failure:
 test_pipeline(TestOpen3) [/macruby-test/test-mri/test/test_open3.rb:233]:
@@ -21746,7 +22581,7 @@ Run options: --seed 0
 
 # Running tests:
 
-E..E.F.
+E..EFF.
 
 
   1) Error:
@@ -21782,10 +22617,15 @@ NameError: uninitialized constant Encoding::ISO_2022_JP
     /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:789:in `block'
 
   3) Failure:
+test_extract(URI::TestCommon) [/macruby-test/test-mri/test/uri/test_common.rb:26]:
+<["http://", "mailto:"]> expected but was
+<["", "http://"]>.
+
+  4) Failure:
 test_kernel_uri(URI::TestCommon) [/macruby-test/test-mri/test/uri/test_common.rb:50]:
 NoMethodError expected but nothing was raised.
 
-7 tests, 35 assertions, 1 failures, 2 errors, 0 skips
+7 tests, 34 assertions, 2 failures, 2 errors, 0 skips
 
 ----------------------------------------
 Run options: --seed 0
@@ -21869,25 +22709,25 @@ F.FF
 
   1) Failure:
 test_bad_header(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:129]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2013-01-10 03:24:06] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2013-01-18 06:45:04] ERROR bad header '\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F\r\n".
 
   2) Failure:
 test_bad_uri(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:115]:
-Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2013-01-10 03:24:08] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
+Expected /\\x7F\\x01\\x02\\x03\\x04\\x05\\x06\\a\\b\\x0E\\x0F\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1A\\e\\x1C\\x1D\\x1E\\x1F/ to match "  [2013-01-18 06:45:07] ERROR bad URI `/\x7F\x01\x02\x03\x04\x05\x06\a\b\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\e\x1C\x1D\x1E\x1F'.\n".
 
   3) Failure:
 test_cgi(TestWEBrickCGI) [/macruby-test/test-mri/test/webrick/test_cgi.rb:40]:
 webrick log start:
-  [2013-01-10 03:24:08] INFO  WEBrick 1.3.1
-  [2013-01-10 03:24:08] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin12.1]
-  [2013-01-10 03:24:08] INFO  WEBrick::HTTPServer#start: pid=26455 port=57557
-  [2013-01-10 03:24:08] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2013-01-18 06:45:07] INFO  WEBrick 1.3.1
+  [2013-01-18 06:45:07] INFO  ruby 1.9.2 (2008-06-03) [universal-darwin10.0]
+  [2013-01-18 06:45:07] INFO  WEBrick::HTTPServer#start: pid=40643 port=50968
+  [2013-01-18 06:45:07] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
-  [2013-01-10 03:24:10] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2013-01-18 06:45:10] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
-  [2013-01-10 03:24:12] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2013-01-18 06:45:13] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
-  [2013-01-10 03:24:14] WARN  :RequestHandler is deprecated, please use :RequestCallback
+  [2013-01-18 06:45:15] WARN  :RequestHandler is deprecated, please use :RequestCallback
   
 webrick log end.
 <"/\xA4ۤ\xB2/\xA4ۤ\xB2"> expected but was
@@ -22253,8 +23093,8 @@ F
   1) Failure:
 test_client_server(Test_Webrick) [/macruby-test/test-mri/test/xmlrpc/test_webrick_server.rb:71]:
 [XMLRPC::FaultException] exception expected, not
-Class: <Errno::ECONNRESET>
-Message: <"Connection reset by peer - read(2) failed.">
+Class: <EOFError>
+Message: <"end of file reached">
 ---Backtrace---
 /macruby-test/test-mri/test/xmlrpc/test_webrick_server.rb:71:in `block'
 /Library/Frameworks/MacRuby.framework/Versions/0.13/usr/lib/ruby/1.9.2/minitest/unit.rb:370:in `assert_raises'
